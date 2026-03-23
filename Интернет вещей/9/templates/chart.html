@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>График очков - Chart.js</title>
+    <script src="https://unpkg.com/chart.js@3.5.0/dist/chart.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <h1>Визуализация очков за броски</h1>
+    <p><a href="/">На главную</a> | <a href="/history">История</a></p>
+    <canvas id="myChart" width="400" height="200"></canvas>
+    <script>
+        fetch('/api/chart_data')
+            .then(response => response.json())
+            .then(data => {
+                const ctx = document.getElementById('myChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: data.labels,
+                        datasets: [{
+                            label: 'Очки за бросок',
+                            data: data.data,
+                            borderColor: 'rgb(75, 192, 192)',
+                            tension: 0.3,
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: { display: true }
+                        },
+                        scales: {
+                            y: {
+                                min: 0,
+                                max: 4,
+                                ticks: { stepSize: 1 }
+                            }
+                        }
+                    }
+                });
+            });
+    </script>
+</body>
+</html>

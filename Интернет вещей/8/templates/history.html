@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>История очков - Умное баскетбольное поле</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+    <h1>История попаданий (очки)</h1>
+    <p><a href="/">На главную</a></p>
+    <table border="1" cellpadding="8">
+        <tr>
+            <th>Время</th>
+            <th>Очки</th>
+        </tr>
+        {% for record in records %}
+        <tr>
+            <td>{{ record.timeStamp }}</td>
+            <td>{{ record.Points }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

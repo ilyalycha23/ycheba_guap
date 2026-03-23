@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Умное баскетбольное поле</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+</head>
+<body>
+    <div id="monitoring_data">
+        <h2>Умное игровое поле для игры в баскетбол</h2>
+        <input type="text" id="value" placeholder="Введите очки (1, 2 или 3)">
+        <button onclick="send_data()">Отправить</button>
+        <br>
+        <label>Состояние:</label>
+        <input type="text" id="command" disabled placeholder="On/Off">
+        <label>Табло:</label>
+        <input type="text" id="scoreboard" disabled placeholder="Off">
+        <p>
+            <a href="/history">История очков</a> |
+            <a href="/chart">График (Chart.js)</a>
+        </p>
+    </div>
+</body>
+</html>

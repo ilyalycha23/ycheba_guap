@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторная работа №3 — обо мне</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/lab3.css">
+  <style>
+    /* Внутренняя таблица стилей — дополнение к внешней */
+    hr {
+      border: none;
+      border-top: 2px dashed #94a3b8;
+      margin: 1.5rem 0;
+    }
+    body.home ol > li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body class="home page-tile">
+  <h1>Немного обо мне</h1>
+  <p class="intro" style="font-weight: 500; color: #0c4a6e;">
+    Встроенный стиль: этот абзац выделен жирностью 500 и цветом текста для демонстрации inline-оформления (п. методички ЛР2).
+  </p>
+  <p class="intro">
+    Примеры жирности в одном абзаце:
+    <span class="w300">лёгкий текст (300)</span>,
+    <span class="w500">средний (500)</span>,
+    <span class="w700">жирный (700)</span>.
+  </p>
+  <p id="lead">
+    Меня зовут Лаврешин Илья, я учусь на направлении, связанном с информационными технологиями.
+    Подготовку в области web-технологий я получал самостоятельно
+    по открытым материалам в интернете. Мне интересно углубить знания HTML, CSS и основ клиентской
+    разработки, чтобы уверенно создавать доступные и аккуратно оформленные веб-страницы.
+  </p>
+
+  <hr>
+
+  <br><br><br>
+
+  <h2>Мои любимые поэты и их произведения</h2>
+  <ol>
+    <li>
+      А. С. Пушкин
+      <ul>
+        <li><a href="poems.html#pushkin-zimnee">Зимнее утро</a></li>
+        <li><a href="poems.html#pushkin-osen">Осень (отрывок)</a></li>
+      </ul>
+    </li>
+    <li>
+      М. Ю. Лермонтов
+      <ul>
+        <li><a href="poems.html#lermontov-parus">Парус</a></li>
+        <li><a href="poems.html#lermontov-utro">Утро в горах</a></li>
+      </ul>
+    </li>
+    <li>
+      А. А. Ахматова
+      <ul>
+        <li><a href="poems.html#ahmatova-gosti">Гость</a></li>
+        <li><a href="poems.html#ahmatova-molitva">Молитва</a></li>
+      </ul>
+    </li>
+  </ol>
+
+  <p><a href="tables.html">Страница с таблицами (задание ЛР3)</a></p>
+
+  <p>
+    <a href="sample.docx" download>Скачать дополнительный текстовый документ (.docx)</a>
+  </p>
+  <p>
+    Связаться по электронной почте:
+    <a href="mailto:ilyalavreshin@gmail.com?subject=Web-%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8">ilyalavreshin@gmail.com</a>
+  </p>
+</body>
+</html>

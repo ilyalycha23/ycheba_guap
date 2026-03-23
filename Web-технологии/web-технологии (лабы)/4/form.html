@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЛР4 — Форма: дистанционное обучение</title>
+  <style>
+    /* Тема формы: п.1 методички — «Дистанционное обучение» (номер ПК в аудитории). */
+    body {
+      font-family: "Segoe UI", system-ui, sans-serif;
+      background: #f8fafc;
+      margin: 0;
+      padding: 1.5rem;
+      color: #0f172a;
+    }
+    h1 {
+      margin-top: 0;
+    }
+    form {
+      max-width: 640px;
+      background: #fff;
+      padding: 1.25rem 1.5rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    }
+    /* Поля строго друг под другом; ширина метки не ломает выравнивание полей */
+    .field-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      column-gap: 12px;
+      row-gap: 14px;
+      align-items: center;
+    }
+    .field-grid label {
+      justify-self: start;
+    }
+    .field-grid input:not([type="radio"]):not([type="checkbox"]),
+    .field-grid select,
+    .field-grid textarea {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 8px 10px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font: inherit;
+    }
+    textarea {
+      min-height: 96px;
+      resize: vertical;
+    }
+    fieldset {
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      margin: 0 0 14px;
+      padding: 10px 12px 12px;
+    }
+    legend {
+      padding: 0 6px;
+      font-weight: 600;
+    }
+    .stack {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .inline-option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    button {
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: 1px solid #334155;
+      background: #1e293b;
+      color: #fff;
+      font: inherit;
+      cursor: pointer;
+    }
+    button[type="reset"] {
+      background: #fff;
+      color: #1e293b;
+    }
+  </style>
+</head>
+<body>
+  <h1>Анкета слушателя дистанционных курсов</h1>
+  <p>Форма создана в рамках лабораторной работы №4 по дисциплине «Web-технологии».</p>
+
+  <form action="#" method="post">
+    <div class="field-grid">
+      <label for="fullname">ФИО <span title="Обязательное поле">*</span></label>
+      <input id="fullname" name="fullname" type="text" required placeholder="Иванов Иван Иванович">
+
+      <label for="email">Электронная почта <span title="Обязательное поле">*</span></label>
+      <input id="email" name="email" type="text" required placeholder="name@university.edu">
+
+      <label for="password">Пароль для личного кабинета</label>
+      <input id="password" name="password" type="password" autocomplete="new-password" placeholder="Не менее 8 символов">
+
+      <label for="program">Выберите программу</label>
+      <select id="program" name="program" required>
+        <option value="" disabled selected>— раскрывающийся список —</option>
+        <option value="web">Основы web-разработки</option>
+        <option value="data">Анализ данных</option>
+        <option value="pm">Управление проектами</option>
+      </select>
+
+      <label for="start">Предполагаемая дата старта</label>
+      <input id="start" name="start" type="date" value="2026-09-01">
+
+      <label for="comment">Комментарий</label>
+      <textarea id="comment" name="comment" placeholder="Кратко опишите ожидания от обучения"></textarea>
+    </div>
+
+    <fieldset>
+      <legend>Формат занятий (первая группа переключателей)</legend>
+      <div class="stack">
+        <label class="inline-option"><input type="radio" name="format_a" value="sync" checked> Синхронные вебинары</label>
+        <label class="inline-option"><input type="radio" name="format_a" value="async"> Асинхронные материалы</label>
+        <label class="inline-option"><input type="radio" name="format_a" value="mixed"> Смешанный формат</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Уровень подготовки (вторая группа переключателей)</legend>
+      <div class="stack">
+        <label class="inline-option"><input type="radio" name="level" value="beginner" checked> Начинающий</label>
+        <label class="inline-option"><input type="radio" name="level" value="middle"> Средний</label>
+        <label class="inline-option"><input type="radio" name="level" value="advanced"> Продвинутый</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Интересующие темы (флажки, группа 1)</legend>
+      <div class="stack">
+        <label class="inline-option"><input type="checkbox" name="topic_html" value="1"> HTML и доступность</label>
+        <label class="inline-option"><input type="checkbox" name="topic_css" value="1" checked> CSS и вёрстка</label>
+        <label class="inline-option"><input type="checkbox" name="topic_js" value="1"> Основы JavaScript</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Технические условия (флажки, группа 2)</legend>
+      <div class="stack">
+        <label class="inline-option"><input type="checkbox" name="has_mic" value="1" checked> Есть микрофон</label>
+        <label class="inline-option"><input type="checkbox" name="has_cam" value="1"> Есть камера</label>
+        <label class="inline-option"><input type="checkbox" name="stable_net" value="1" checked> Стабильное подключение к сети</label>
+      </div>
+    </fieldset>
+
+    <div class="actions">
+      <button type="submit">Отправить</button>
+      <button type="reset">Очистить</button>
+    </div>
+  </form>
+</body>
+</html>

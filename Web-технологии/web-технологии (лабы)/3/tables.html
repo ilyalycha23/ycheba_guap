@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторная работа №3 — таблицы</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/lab3.css">
+</head>
+<body class="home tables-page">
+  <!-- В методичке номер варианта совпадает с номером ПК. Здесь выполнен вариант 1. -->
+  <p><a href="index.html">На первую страницу</a> · <a href="poems.html">На вторую страницу</a></p>
+
+  <h1>Таблица по варианту задания</h1>
+
+  <table class="guap-v1">
+    <caption>Приём документов в магистратуру ГУАП</caption>
+    <tr class="budget-row">
+      <th scope="row">Магистратура<br>(бюджет)</th>
+      <td>с 20 июня по<br>15 августа</td>
+      <td>Очная форма обучения</td>
+    </tr>
+    <tr class="extra-row">
+      <th scope="row">Магистратура<br>(внебюджет)</th>
+      <td>с 20 июня по<br>15 августа</td>
+      <td>Очная форма обучения</td>
+    </tr>
+    <tr class="zao-row">
+      <td colspan="2">с 20 июня по<br>15 сентября</td>
+      <td>Заочная форма обучения</td>
+    </tr>
+    <tr>
+      <td colspan="3" class="programs-cell">
+        <strong>Программы вступительных испытаний</strong><br>
+        Со всеми программами вступительных испытаний в магистратуру можно ознакомиться на сайте ГУАП
+      </td>
+    </tr>
+  </table>
+
+  <h1>Прайс-лист</h1>
+  <table class="price-list">
+    <thead>
+      <tr>
+        <th class="col-num">№ п/п</th>
+        <th class="col-name">Наименование</th>
+        <th class="col-price">Цена, ₽</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="col-num">1</td><td class="col-name">USB-флешка 32 ГБ</td><td class="col-price">590</td></tr>
+      <tr><td class="col-num">2</td><td class="col-name">USB-флешка 64 ГБ</td><td class="col-price">890</td></tr>
+      <tr><td class="col-num">3</td><td class="col-name">USB-флешка 128 ГБ</td><td class="col-price">1290</td></tr>
+      <tr><td class="col-num">4</td><td class="col-name">SSD 256 ГБ SATA</td><td class="col-price">2490</td></tr>
+      <tr><td class="col-num">5</td><td class="col-name">SSD 512 ГБ NVMe</td><td class="col-price">3990</td></tr>
+      <tr><td class="col-num">6</td><td class="col-name">SSD 1 ТБ NVMe</td><td class="col-price">6490</td></tr>
+      <tr><td class="col-num">7</td><td class="col-name">Жёсткий диск 1 ТБ 2.5"</td><td class="col-price">3190</td></tr>
+      <tr><td class="col-num">8</td><td class="col-name">Жёсткий диск 2 ТБ 3.5"</td><td class="col-price">4590</td></tr>
+      <tr><td class="col-num">9</td><td class="col-name">Карта памяти microSD 64 ГБ</td><td class="col-price">790</td></tr>
+      <tr><td class="col-num">10</td><td class="col-name">Карта памяти microSD 128 ГБ</td><td class="col-price">1190</td></tr>
+      <tr><td class="col-num">11</td><td class="col-name">Внешний HDD 1 ТБ</td><td class="col-price">4290</td></tr>
+      <tr><td class="col-num">12</td><td class="col-name">Внешний SSD 500 ГБ</td><td class="col-price">5290</td></tr>
+    </tbody>
+  </table>
+</body>
+</html>

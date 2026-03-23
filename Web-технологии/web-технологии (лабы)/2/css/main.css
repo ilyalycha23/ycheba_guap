@@ -1,0 +1,158 @@
+@charset "UTF-8";
+
+/* Внешняя таблица стилей — ЛР2 (разные типы селекторов) */
+
+body.home {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f9ff;
+  margin: 0;
+  padding: 1.5rem;
+  line-height: 1.45;
+}
+
+body.poems-page {
+  font-family: Georgia, "Times New Roman", serif;
+  background-color: #fff7ed;
+  margin: 0;
+  padding: 1.5rem;
+}
+
+/* Заголовки 1–2 уровней: размер и цвет (п.1 методички) */
+body.home h1 {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+body.home h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1d4ed8;
+}
+
+p.intro {
+  font-size: 16px;
+}
+
+/* Несколько значений жирности шрифта (п.1) */
+span.w300 {
+  font-weight: 300;
+}
+
+span.w500 {
+  font-weight: 500;
+}
+
+span.w700 {
+  font-weight: 700;
+}
+
+#lead {
+  font-size: 1.05em;
+  font-weight: 400;
+  font-style: normal;
+  color: #334155;
+}
+
+/* Списки (п.3) */
+body.home ol {
+  list-style-type: upper-roman;
+  list-style-position: outside;
+}
+
+body.home ol ul {
+  list-style-type: square;
+  list-style-position: inside;
+}
+
+/* Псевдоклассы ссылок и изображения (п.6) */
+body.home a:link {
+  color: #2563eb;
+}
+
+body.home a:visited {
+  color: #6d28d9;
+}
+
+body.home a:hover {
+  color: #dc2626;
+}
+
+body.poems-page a:link {
+  color: #0369a1;
+}
+
+body.poems-page a:visited {
+  color: #7c3aed;
+}
+
+body.poems-page a:hover {
+  color: #b45309;
+}
+
+body.poems-page a:hover img {
+  opacity: 0.85;
+}
+
+/* Контейнер на 2-й странице: рамка (п.4) */
+div.experiment-panel {
+  border-style: solid;
+  border-color: #0ea5e9;
+  border-width: 3px;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-top: 1.5rem;
+  background-color: #ffffffcc;
+}
+
+/* Текстовые эксперименты внутри панели (п.2) */
+.experiment-panel .row-a {
+  text-decoration: underline;
+  text-align: left;
+  line-height: 1.9;
+  letter-spacing: 0.08em;
+  word-spacing: 0.35em;
+  text-indent: 2.5rem;
+  text-shadow: 1px 1px 2px rgba(15, 23, 42, 0.25);
+}
+
+.experiment-panel .row-b {
+  text-decoration: line-through;
+  text-align: center;
+  line-height: 2.2;
+  letter-spacing: -0.02em;
+  word-spacing: 0.1em;
+  text-indent: 0;
+}
+
+.experiment-panel .row-c {
+  text-decoration: overline;
+  text-align: right;
+  line-height: 1.5;
+}
+
+.experiment-panel .inline-mix img {
+  vertical-align: middle;
+  margin-right: 0.35rem;
+}
+
+.experiment-panel sup {
+  vertical-align: super;
+  font-size: 0.75em;
+}
+
+.experiment-panel sub {
+  vertical-align: sub;
+  font-size: 0.75em;
+}
+
+body.poems-page article h2 {
+  font-weight: 700;
+  font-style: italic;
+  color: #0f172a;
+}
+
+body.poems-page article + article {
+  margin-top: 1.25rem;
+}

@@ -1,0 +1,229 @@
+@charset "UTF-8";
+
+/* Общая страница — как в ЛР5 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #f1f5f9;
+  color: #0f172a;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Навигация — как в ЛР5 (flex-nav, space-around) */
+.flex-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 8px;
+  background: #0f172a;
+}
+
+.flex-nav a {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.flex-nav a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Подвал — как в ЛР5 */
+.footer-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  background: #111827;
+  color: #e5e7eb;
+}
+
+.footer-bar a {
+  color: #93c5fd;
+}
+
+/* Сетка ЛР6 (часть 1) */
+.mosaic {
+  flex: 1 1 auto;
+  display: grid;
+  column-gap: max(8px, 1vw);
+  row-gap: max(8px, 1.2vmin);
+  padding: 16px;
+  box-sizing: border-box;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 26vh 26vh;
+  border-radius: max(10px, 0.8vmax);
+}
+
+.shot,
+.article {
+  margin: 0;
+  background: #111827;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #1f2937;
+  color: #e2e8f0;
+}
+
+.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 22vh;
+  object-fit: cover;
+}
+
+.shot figcaption {
+  padding: 8px 10px 10px;
+  font-size: 0.95rem;
+  color: #cbd5e1;
+}
+
+.article {
+  padding: 12px 16px 16px;
+}
+
+.article h1 {
+  margin: 0 0 10px;
+  font-size: clamp(1.4rem, 2vw, 1.8rem);
+}
+
+.article p {
+  line-height: 1.55;
+  margin: 0 0 10px;
+}
+
+.article code {
+  color: #bae6fd;
+}
+
+.shot-1 {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.shot-2 {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.article {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.shot-3 {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+.shot-4 {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+/* Меню в колонку при <800px — как в ЛР5 */
+@media (max-width: 800px) {
+  .flex-nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 701px) {
+  .mosaic {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+
+  .shot-1 {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .shot-2 {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+
+  .shot-3 {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .shot-4 {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+
+  .article {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+}
+
+@media (max-width: 700px) {
+  .mosaic {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  .shot img {
+    max-height: none;
+  }
+
+  .shot-1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .shot-2 {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+
+  .shot-3 {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+  }
+
+  .shot-4 {
+    grid-column: 1 / 2;
+    grid-row: 4 / 5;
+  }
+
+  .article {
+    grid-column: 1 / 2;
+    grid-row: 5 / 6;
+  }
+}

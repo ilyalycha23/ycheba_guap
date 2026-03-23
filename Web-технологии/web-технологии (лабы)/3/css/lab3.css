@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+/* ЛР3: фоновые изображения для страниц из предыдущих работ */
+
+/* Перекрываем сплошной заливкой из main.css, чтобы не смешивалась с паттерном/cover */
+body.home.page-tile {
+  background-color: #e0f2fe;
+  background-image: url("../assets/pattern.svg");
+  background-repeat: repeat;
+  background-position: 0 0;
+  min-height: 100vh;
+}
+
+body.poems-page.page-cover-bg {
+  background-color: #0c4a6e;
+  background-image: url("../assets/bg-cover.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Читаемость текста и стихов поверх cover */
+body.page-cover-bg .experiment-panel {
+  background-color: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
+}
+
+/* Карточки стихов: перекрывают пунктир из внутренних стилей poems.html */
+body.page-cover-bg .poem-stack article {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+body.page-cover-bg .poem-stack article + article {
+  margin-top: 0.75rem;
+}
+
+/* Чёрный контурный аватар — светлая подложка на cover */
+body.page-cover-bg p:last-child a {
+  display: inline-block;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+body.page-cover-bg p:last-child img {
+  display: block;
+}
+
+/* Таблица по варианту 1 (номер варианта = номер ПК в аудитории) */
+table.guap-v1 {
+  border-collapse: collapse;
+  border: 2px solid #e11d48;
+  margin: 2rem 0;
+}
+
+table.guap-v1 th,
+table.guap-v1 td {
+  border: 2px solid #e11d48;
+  padding: 5px;
+  vertical-align: middle;
+}
+
+tr.budget-row th,
+tr.budget-row td {
+  background-color: #bfdbfe;
+}
+
+tr.extra-row th,
+tr.extra-row td {
+  background-color: #bbf7d0;
+}
+
+tr.zao-row td {
+  background-color: #bbf7d0;
+}
+
+td.programs-cell {
+  text-align: center;
+}
+
+/* Прайс-лист (п.4) */
+table.price-list {
+  border-collapse: collapse;
+  border: 2px solid #334155;
+  width: 100%;
+  max-width: 720px;
+  margin: 2rem 0;
+}
+
+table.price-list th,
+table.price-list td {
+  border: 1px solid #475569;
+  padding: 8px;
+}
+
+table.price-list thead th {
+  font-size: 1.25rem;
+  background-color: #1e293b;
+  color: #f8fafc;
+}
+
+table.price-list tbody tr:nth-child(odd) {
+  background-color: #f1f5f9;
+}
+
+table.price-list tbody tr:nth-child(even) {
+  background-color: #e2e8f0;
+}
+
+table.price-list .col-num {
+  text-align: center;
+}
+
+table.price-list .col-name {
+  text-align: left;
+}
+
+table.price-list .col-price {
+  text-align: right;
+}
+
+/* Страница таблиц: не обнуляем отступ у всех h1 — только у первого после навигации */
+.tables-page > h1:first-of-type {
+  margin-top: 0.5rem;
+}
+
+.tables-page h1:not(:first-of-type) {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.tables-page table + h1 {
+  margin-top: 2.5rem;
+}

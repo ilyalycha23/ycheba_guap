@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой сайт</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <!-- затемнение фона -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+    
+    <!-- бургер меню -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">Сайт?Легко!</div>
+        <ul class="mobile-menu-items" id="mobileMenuItems">
+            <!-- Пункты будут добавлены через React -->
+        </ul>
+    </div>
+
+    <!-- десктоп меню -->
+    <div id="root"></div>
+    
+    <div class="main-container">
+        <div id="content" class="content">
+            <h1>Загрузка...</h1>
+        </div>
+    </div>
+
+    <script src="data/home.js"></script>
+    <script src="data/portfolio.js"></script>
+    <script src="data/services.js"></script>
+    <script src="data/blog.js"></script>
+    <script src="data/contacts.js"></script>
+
+    <script src="data/post1.js"></script>
+    <script src="data/post2.js"></script>
+    <script src="data/post3.js"></script>
+    <script src="data/post4.js"></script>
+    <script src="data/post5.js"></script>
+
+    <script src="data/privacy-policy.js"></script>
+    <script src="data/terms-of-use.js"></script>
+    
+    <!-- отвечает только за верхнее меню -->
+    <script type="text/babel">
+        // закрытие мобильного меню и оверлея
+        const closeMenu = () => {
+            document.getElementById('mobileMenu').classList.remove('active');
+            document.getElementById('menuOverlay').classList.remove('active');
+            document.querySelector('.burger-btn')?.classList.remove('open');
+        };
+
+        // бургер + десктоп навигация
+        const Menu = () => {
+            const [activeItem, setActiveItem] = React.useState('home');
+            
+            const menuItems = [
+            { id: 'home', label: 'Главная' },
+            { id: 'portfolio', label: 'Портфолио' },
+            { id: 'services', label: 'Услуги' },
+            { id: 'blog', label: 'Блог' },
+            { id: 'contacts', label: 'Контакты' }
+            ];
+            
+            const handleClick = (itemId, e) => {
+                e.preventDefault();
+                setActiveItem(itemId);
+                closeMenu();
+                if (window.updateContent) {
+                    window.updateContent(itemId);
+                }
+            };
+            
+            // синхр бургер меню с тем же списком пунктов
+            React.useEffect(() => {
+                const mobileMenu = document.getElementById('mobileMenuItems');
+                if(mobileMenu) {
+                    mobileMenu.innerHTML = '';
+                    menuItems.forEach(item => {
+                        const li = document.createElement('li');
+                        const a = document.createElement('a');
+                        a.href = '#';
+                        a.textContent = item.label;
+                        a.onclick = (e) => handleClick(item.id, e);
+                        li.appendChild(a);
+                        mobileMenu.appendChild(li);
+                    });
+                }
+            }, []);
+            
+            return (
+                <>
+                    {/* кнопка для открытия/закрытия мобильного меню */}
+                    <button className="burger-btn" id="burgerBtn" onClick={() => {
+                        document.getElementById('mobileMenu').classList.toggle('active');
+                        document.getElementById('menuOverlay').classList.toggle('active');
+                        document.getElementById('burgerBtn').classList.toggle('open');
+                    }}>
+                        <span className="burger-line"></span>
+                        <span className="burger-line"></span>
+                        <span className="burger-line"></span>
+                    </button>
+                    
+                    {/* десктоп меню */}
+                    <nav className="menu">
+                        <div className="menu-container">
+                            <a href="/" className="logo" onClick={(e) => handleClick('home', e)}>
+                                Сайт?Легко!
+                            </a>
+                            <ul className="menu-items">
+                                {menuItems.map(item => (
+                                    <li key={item.id}>
+                                        <a 
+                                            href="#"
+                                            className={activeItem === item.id ? 'active' : ''}
+                                            onClick={(e) => handleClick(item.id, e)}
+                                        >
+                                            {item.label}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </nav>
+                </>
+            );
+        };
+
+        // закрытие меню по клику на затемнённый фон
+        document.getElementById('menuOverlay').onclick = closeMenu;
+
+        // react-меню в корневой контейнер
+        ReactDOM.createRoot(document.getElementById('root')).render(<Menu />);
+    </script>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <p>© 2026 - ООО "Сайт?Легко!" - Все права защищены.</p>
+                <div class="footer-links">
+                <a href="#" onclick="window.updateContent('privacy-policy'); return false;">Политика Конфиденциальности</a>
+                <span class="footer-separator">|</span>
+                <a href="#" onclick="window.updateContent('terms-of-use'); return false;">Пользовательское Соглашение</a>
+            </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Отправка в Telegram через скрытый iframe (обходит CORS; fetch с api.telegram.org из браузера часто блокируется) -->
+    <iframe name="telegramSubmitFrame" id="telegramSubmitFrame" title="Telegram" style="width:0;height:0;border:0;visibility:hidden;position:absolute" aria-hidden="true"></iframe>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Стихотворения — ЛР2</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    /* Внутренняя таблица стилей для второй страницы */
+    .poem-stack article {
+      padding-bottom: 0.5rem;
+      border-bottom: 1px dotted #cbd5e1;
+    }
+    .poem-stack article:last-of-type {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body class="poems-page">
+  <div class="experiment-panel">
+    <p class="row-a">
+      Пример оформления текста: подчёркнутый, с увеличенным межстрочным интервалом, красной строкой и тенью.
+    </p>
+    <p class="row-b">
+      Второй фрагмент: зачёркнутый центрированный текст с иным межсимвольным и межсловным интервалом.
+    </p>
+    <p class="row-c">
+      Третий фрагмент: надчёркнутый, выровненный вправо. Формула: E = mc<sup>2</sup>, индекс: H<sub>2</sub>O.
+      <span class="inline-mix">
+        <img src="img/inline-dot.svg" width="18" height="18" alt="">Маленькое изображение в строке с выравниванием по вертикали.
+      </span>
+    </p>
+  </div>
+
+  <div class="poem-stack">
+    <article id="pushkin-zimnee">
+      <h2>Зимнее утро</h2>
+      <p>
+        Мороз и солнце; день чудесный!<br>
+        Ещё ты дремлешь, друг прелестный —<br>
+        Пора, красавица, проснись...
+      </p>
+    </article>
+
+    <article id="pushkin-osen">
+      <h2>Осень (отрывок)</h2>
+      <p>
+        Унылая пора! очей очарованье!<br>
+        Приятна мне твоя прощальная краса...
+      </p>
+    </article>
+
+    <article id="lermontov-parus">
+      <h2>Парус</h2>
+      <p>
+        Белеет парус одинокой<br>
+        В тумане моря голубом!..
+      </p>
+    </article>
+
+    <article id="lermontov-utro">
+      <h2>Утро в горах</h2>
+      <p>
+        Собрались тучки золотые,<br>
+        Румянец дня уж гаснет...
+      </p>
+    </article>
+
+    <article id="ahmatova-gosti">
+      <h2>Гость</h2>
+      <p>
+        Я жду его — вечерний гость,<br>
+        Его приветный шорох у дверей...
+      </p>
+    </article>
+
+    <article id="ahmatova-molitva">
+      <h2>Молитва</h2>
+      <p>
+        Дай мне сегодняшний день,<br>
+        Господи, и ничего больше не надо...
+      </p>
+    </article>
+  </div>
+
+  <p>
+    <a href="index.html" title="На главную страницу лабораторной работы">
+      <img src="img/avatar.svg" width="96" height="96" alt="На главную страницу">
+    </a>
+  </p>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЛР6 — часть 1: CSS Grid (линии)</title>
+  <link rel="stylesheet" href="grid-part1.css">
+</head>
+<body>
+  <header class="nav-bar" aria-label="Основная навигация">
+    <nav class="flex-nav">
+      <a href="#about">О курсе</a>
+      <a href="#program">Программа</a>
+      <a href="#teachers">Преподаватели</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+  </header>
+
+  <main class="mosaic">
+    <figure class="shot shot-1">
+      <img src="shot1.svg" width="400" height="240" alt="Фото 1">
+      <figcaption>Фото 1</figcaption>
+    </figure>
+    <figure class="shot shot-2">
+      <img src="shot2.svg" width="400" height="240" alt="Фото 2">
+      <figcaption>Фото 2</figcaption>
+    </figure>
+    <figure class="shot shot-3">
+      <img src="shot3.svg" width="400" height="240" alt="Фото 3">
+      <figcaption>Фото 3</figcaption>
+    </figure>
+    <figure class="shot shot-4">
+      <img src="shot4.svg" width="400" height="240" alt="Фото 4">
+      <figcaption>Фото 4</figcaption>
+    </figure>
+    <article class="article">
+      <h1>Статья</h1>
+      <p>
+        Учебный макет для лабораторной работы №6: сетка построена с помощью свойств
+        <code>grid-row-start</code>, <code>grid-row-end</code>, <code>grid-column-start</code> и
+        <code>grid-column-end</code>. Дорожки заданы в долях <code>fr</code>, а также с использованием
+        единиц <code>vh</code>, <code>vw</code>, <code>vmin</code> и <code>vmax</code> для размеров и отступов.
+      </p>
+      <p>
+        Текст обтекает изображение справа: изображение выровнено слева внутри блока, строки текста продолжаются справа от него. Так демонстрируется сочетание Flexbox для колонок и обтекания в центральной области макета. При сужении окна блоки перестраиваются в колонку согласно медиазапросу 800px. Верстка web-страницы – это процесс ее формирования по готовому макету. Макет создается с использованием графических редакторов, часто в настоящее время для этих целей используется приложение Figma, представляющее собой кроссплатформенный онлайн-сервис для дизайнеров интерфейсов и веб-разработчиков. Грамотная верстка должна учитывать различное разрешение мониторов пользователей, многообразие браузеров, обеспечивать выделение логических блоков, создавать компактный и красивый код. В настоящее время используется блочная верстка. В последние годы широкую популярность приобрели технологии Flexbox и CSS Grid. С их помощью можно достаточно просто обеспечить резиновый, адаптивный, а также отзывчивый дизайн. Данная лабораторная работа посвящена изучению технологии Flexbox, а также использованию медиазапросов, позволяющих перестраивать макет сайта с учетом размера экрана устройства, на котором отображается web-страница. 
+      </p>
+    </article>
+  </main>
+
+  <footer class="footer-bar">
+    <div class="footer-left">Телефон: <a href="tel:+70000000000">+7 (000) 000-00-00</a></div>
+    <div class="footer-right">Адрес: Санкт-Петербург, ул. Пушкина, д. 1</div>
+  </footer>
+</body>
+</html>

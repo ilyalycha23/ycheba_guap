@@ -1,0 +1,121 @@
+@charset "UTF-8";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #f1f5f9;
+  color: #0f172a;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 1) Навигация: space-around — половинные отступы по краям */
+.flex-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 8px;
+  background: #0f172a;
+}
+
+.flex-nav a {
+  color: #e2e8f0;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.flex-nav a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* 2) Три блока: центр ~ в 2 раза шире боковых, высота на всю ось */
+.main-trio {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 16px;
+  padding: 16px;
+}
+
+.main-trio .side {
+  flex: 1 1 0;
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+.main-trio .center {
+  flex: 2 1 0;
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px 14px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+.media-row img {
+  float: left;
+  margin: 4px 14px 8px 0;
+  min-width: 200px;
+  max-width: 46%;
+  height: auto;
+}
+
+.media-row p {
+  margin: 0;
+  line-height: 1.55;
+}
+
+.media-row::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* 3) Подвал: контакты в двух блоках */
+.footer-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  background: #111827;
+  color: #e5e7eb;
+}
+
+.footer-bar a {
+  color: #93c5fd;
+}
+
+/* Адаптивность: < 800px */
+@media (max-width: 800px) {
+  .flex-nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .main-trio {
+    flex-direction: column;
+  }
+
+  .main-trio .side,
+  .main-trio .center {
+    flex: 1 1 auto;
+    width: 100%;
+  }
+
+  .media-row img {
+    max-width: 100%;
+  }
+
+  /* Подвал не перестраивается — только может менять ширину содержимого */
+}

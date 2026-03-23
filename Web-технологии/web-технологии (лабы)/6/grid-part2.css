@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #f8fafc;
+  color: #0f172a;
+}
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  gap: 12px;
+  padding: 12px;
+  box-sizing: border-box;
+  grid-template-columns: 240px 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "menu article"
+    "contacts contacts";
+}
+
+.site-title {
+  grid-area: header;
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.site-menu {
+  grid-area: menu;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.site-menu a {
+  color: #1d4ed8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.site-menu a:hover {
+  text-decoration: underline;
+}
+
+.site-article {
+  grid-area: article;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 14px 16px 18px;
+}
+
+.site-article h1 {
+  margin-top: 0;
+}
+
+.site-contacts {
+  grid-area: contacts;
+  background: #e0f2fe;
+  border: 1px solid #bae6fd;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  .page {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "header"
+      "menu"
+      "article"
+      "contacts";
+  }
+}

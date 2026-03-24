@@ -1,0 +1,51 @@
+/* Простое оформление: читаемый текст, без тёмной темы и сеток */
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  max-width: 44rem;
+  margin: 1.5rem auto;
+  padding: 0 1rem 2rem;
+  line-height: 1.5;
+  color: #222;
+  background: #fff;
+}
+
+h1 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0.5rem;
+}
+
+p {
+  margin: 0 0 0.75rem;
+}
+
+ul,
+ol {
+  margin: 0 0 0.75rem;
+  padding-left: 1.35rem;
+}
+
+li + li {
+  margin-top: 0.25rem;
+}
+
+code {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 0.93em;
+  background: #f0f0f0;
+  padding: 0.05em 0.35em;
+  border-radius: 3px;
+}
+
+.note {
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #555;
+}

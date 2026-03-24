@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Баскетбольная площадка (Flask)</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  </head>
+  <body>
+    <h1>Баскетбольная площадка (Flask)</h1>
+    <h2>Что сделано</h2>
+    <ul>
+      <li>Классы по ранее созданной таблце классов — в <code>things.py</code> (<code>Thing</code>, датчики, табло,
+        <code>MainControlUnit</code>, <code>CourtDataStore</code>).</li>
+      <li>При каждом открытии главной страницы (каждый <code>GET /</code>) в терминале сервера
+        видны вызовы методов и сообщения лога.</li>
+    </ul>
+
+    <h2>Запуск</h2>
+    <ol>
+      <li>В каталоге проекта: <code>python app.py</code>.</li>
+      <li>В браузере открыть <code>http://127.0.0.1:5000/</code>.</li>
+    </ol>
+  </body>
+</html>

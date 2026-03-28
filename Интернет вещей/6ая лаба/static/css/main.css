@@ -1,0 +1,52 @@
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  max-width: 52rem;
+  margin: 1rem auto;
+  padding: 0 1rem 2rem;
+  line-height: 1.45;
+  color: #1a1a1a;
+}
+
+h1 {
+  font-size: 1.35rem;
+}
+h2 {
+  font-size: 1.05rem;
+  margin-top: 1.5rem;
+}
+
+.nav {
+  line-height: 1.7;
+}
+
+.note {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+label {
+  display: block;
+}
+
+input[type="text"] {
+  min-width: 8rem;
+}
+
+pre {
+  background: #f4f4f4;
+  padding: 0.75rem;
+  overflow: auto;
+  font-size: 0.85rem;
+}
+
+.chart-wrap {
+  max-width: 100%;
+  margin-top: 1rem;
+}

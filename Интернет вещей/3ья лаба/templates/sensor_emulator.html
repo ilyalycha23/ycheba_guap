@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title>Эмуляторы — лаб. 3</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+  </head>
+  <body>
+    <p><a href="{{ url_for('index') }}">← На главную</a></p>
+    <h1>Мониторинг (лаб. 3)</h1>
+    <p>Отдельный ajax GET на каждую вещь, обновление раз в секунду (<code>setInterval</code>).</p>
+    <div class="row">
+      <label>Температура °C <input type="text" id="mon_env" readonly /></label>
+      <label>Счёт <input type="text" id="mon_score" readonly /></label>
+    </div>
+    <div class="row">
+      <label>Зона <input type="text" id="mon_zone" readonly /></label>
+      <label>Табло <input type="text" id="mon_board" readonly /></label>
+    </div>
+  </body>
+</html>

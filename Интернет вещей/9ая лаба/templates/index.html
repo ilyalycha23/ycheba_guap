@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Курс IoT — баскетбольная площадка</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+  </head>
+  <body>
+    <h1>Лабораторные 2–9 (полный цикл)</h1>
+    <p>Баскетбольное поле, иерархия классов из лаб. №1, далее — по разделам пособия.</p>
+    <ul class="nav">
+      <li><a href="{{ url_for('lab2_page') }}">Лаб. 2 — демо MCU и лог в консоли</a></li>
+      <li><a href="{{ url_for('emulator_page') }}">Лаб. 3–6 — эмуляторы, GET/Ajax, команды, валидация, обогреватель</a></li>
+      <li><a href="{{ url_for('charts_page') }}">Лаб. 8–9 — статистика и график (Chart.js)</a></li>
+    </ul>
+    <p class="note">
+      Лаб. 7–8: журнал в MongoDB (локально <code>localhost:27017</code>). Если сервер не запущен, данные
+      накапливаются в памяти процесса.
+    </p>
+  </body>
+</html>

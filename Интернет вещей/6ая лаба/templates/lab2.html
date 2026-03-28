@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Лаб. 2 — баскетбольная площадка</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
+  </head>
+  <body>
+    <p><a href="{{ url_for('index') }}">← На главную</a></p>
+    <h1>Лаб. 2 — демонстрация цикла управления</h1>
+    <p>
+      При открытии этой страницы в консоли сервера выполняются <code>collectData</code>,
+      <code>calculateScore</code>, <code>updateScoreboard</code>.
+    </p>
+    <p><a href="{{ url_for('lab2_page') }}">Обновить страницу</a> — цикл повторится.</p>
+  </body>
+</html>

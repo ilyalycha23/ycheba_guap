@@ -1,8 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Лаб. 2–4: передача управляющих команд через request.args (методичка, лаб. 4).
-"""
-
 from __future__ import annotations
 
 from flask import Flask, jsonify, render_template, request
@@ -56,7 +51,6 @@ def monitor_board():
 
 @app.route("/connect")
 def connect():
-    """Лаб. 4: команда для датчика температуры (как temp_sensor.connect(request))."""
     return jsonify(env_sensor.connect_with_commands(request))
 
 

@@ -1,8 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Лаб. 2–3: мониторинг через GET и ajax (лаб. 3), без передачи управляющих команд (лаб. 4+).
-"""
-
 from __future__ import annotations
 
 from flask import Flask, jsonify, render_template

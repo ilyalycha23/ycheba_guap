@@ -1,8 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Объектная модель баскетбольной площадки (лаб. 1–2) и лаб. 3: emulate + connect() только для мониторинга (GET).
-"""
-
 from __future__ import annotations
 
 import abc
@@ -10,7 +5,6 @@ import random
 from typing import Any, Dict, List, Optional
 
 class Thing(abc.ABC):
-    """Базовая «вещь» (лаб. 1): getStatus; для лаб. 3+ — emulate и connect."""
 
     def __init__(self, thing_id: str, name: str) -> None:
         self.id = thing_id
@@ -21,11 +15,9 @@ class Thing(abc.ABC):
         pass
 
     def emulate(self) -> None:
-        """Лаб. 3: имитация обновления показаний (как рис. 12 методички)."""
         pass
 
     def connect(self, request: Any = None) -> Dict[str, Any]:
-        """Лаб. 3–6: обмен с интерфейсом; возвращает dict для json.dumps в app.py."""
         raise NotImplementedError
 
 
@@ -84,7 +76,6 @@ class EnvSensor(Thing):
         self.lightLux = float(random.randint(300, 600))
 
     def connect(self, request: Any = None) -> Dict[str, Any]:
-        """Мониторинг (лаб. 3): как Sensor в методичке — поле value для ajax."""
         self.emulate()
         return {
             "id": self.id,

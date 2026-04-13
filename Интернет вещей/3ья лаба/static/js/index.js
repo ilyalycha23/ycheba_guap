@@ -1,5 +1,3 @@
-/* Лаб. 3: setInterval + отдельный $.ajax на каждую вещь (методичка, рис. 16–17). */
-
 function poll(url, id, pick) {
   $.ajax({
     type: "GET",

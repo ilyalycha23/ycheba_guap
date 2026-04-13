@@ -1,5 +1,3 @@
-/* Лаб. 3: setInterval + ajax GET (методичка, рис. 16); лаб. 4 — отправка команд. */
-
 function poll(url, id, pick) {
   $.ajax({
     type: "GET",
@@ -57,7 +55,10 @@ $(function () {
 
   $("#btn_env").on("click", function () {
     sendCommand("/connect", "cmd_env", function (r) {
-      $("#cmd_env_reply").text("heat=" + r.heater_power);
+      var h = r.heater_power;
+      $("#cmd_env_reply").text(
+        h !== undefined && h !== null && String(h) !== "" ? "heat=" + h : ""
+      );
       $("#chain_out").text(JSON.stringify(r, null, 2));
     });
   });

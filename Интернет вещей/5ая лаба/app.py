@@ -1,8 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Лаб. 2–5: проверка входящих данных (try/except, регулярное выражение) без Heater и без MongoDB.
-"""
-
 from __future__ import annotations
 
 from flask import Flask, jsonify, render_template, request
@@ -56,7 +51,6 @@ def monitor_board():
 
 @app.route("/connect")
 def connect():
-    """Лаб. 5: только проверка температуры (float) в connect_with_commands."""
     return jsonify(env_sensor.connect_with_commands(request))
 
 

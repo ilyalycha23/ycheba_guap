@@ -1,11 +1,4 @@
-# -*- coding: utf-8 -*-
-"""
-Flask-приложение: лаб. 2 (демо MCU), лаб. 3–9 по методическому пособию.
-"""
-
 from __future__ import annotations
-
-import json
 
 from flask import Flask, jsonify, render_template, request
 
@@ -13,7 +6,6 @@ import things
 
 app = Flask(__name__)
 
-# --- глобальные «вещи» (лаб. 3: объект не внутри hello_world, а в скрипте) ---
 env_sensor = things.EnvSensor("es1", "Микроклимат зала", 22.0, 400.0)
 score_sensor = things.ScoreSensor("ss1", "Кольцо команды A", is_goal=False)
 zone_sensor = things.ZoneSensor("zs1", "Разметка площадки", "three-point-arc")
@@ -30,7 +22,6 @@ mcu = things.MainControlUnit(
 
 
 def demo_iot_cycle() -> None:
-    """Лаб. 2: цикл управления + лог в консоль."""
     print("=== collectData ===")
     mcu.collectData()
     print("=== calculateScore ===")
@@ -40,7 +31,6 @@ def demo_iot_cycle() -> None:
     print("=== getRecords ===", len(store.getRecords()))
 
 
-# ----- лаб. 3: отдельные GET для мониторинга каждой вещи -----
 @app.route("/monitor/env")
 def monitor_env():
     return jsonify(env_sensor.connect())
@@ -61,13 +51,8 @@ def monitor_board():
     return jsonify(scoreboard.connect())
 
 
-# ----- лаб. 4–8: управление + цепочка датчик — обогреватель — журнал (как в приложении методички) -----
 @app.route("/connect")
 def connect():
-    """
-    Лаб. 4–5: request.args; лаб. 6: auto_power; лаб. 7: logger;
-    лаб. 8: среднее и макс в ответе.
-    """
     response = env_sensor.connect_with_commands(request)
     heater.auto_power(env_sensor.temperature)
     logger.insert_temperature(env_sensor.temperature)
@@ -86,7 +71,6 @@ def connect_heater():
     return jsonify(heater.connect())
 
 
-# Лаб. 4: управляющие команды для остальных вещей (отдельные запросы).
 @app.route("/command/score")
 def command_score():
     return jsonify(score_sensor.connect_with_commands(request))
@@ -102,7 +86,6 @@ def command_board():
     return jsonify(scoreboard.connect_with_commands(request))
 
 
-# ----- лаб. 9: данные для Chart.js -----
 @app.route("/chart_data")
 def chart_data():
     series = logger.chart_series(limit=40)
@@ -119,14 +102,12 @@ def stats():
     )
 
 
-# ----- лаб. 2: демо при открытии отдельной страницы -----
 @app.route("/lab2")
 def lab2_page():
     demo_iot_cycle()
     return render_template("lab2.html")
 
 
-# ----- главная: хаб + эмулятор (лаб. 3–6) -----
 @app.route("/")
 def index():
     return render_template("index.html")

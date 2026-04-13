@@ -1,9 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Объектная модель баскетбольной площадки (лаб. 1–2) и расширения по методичке лаб. 3–9:
-connect / emulate, валидация, Heater, Logger (MongoDB), анализ и данные для графика.
-"""
-
 from __future__ import annotations
 
 import abc
@@ -12,7 +6,6 @@ import random
 import re
 from typing import Any, Dict, List, Optional
 
-# --- лаб. 7–8: pymongo (при отсутствии сервера — работа в памяти) ---
 try:
     import pymongo
 except ImportError:
@@ -20,8 +13,6 @@ except ImportError:
 
 
 class Thing(abc.ABC):
-    """Базовая «вещь» (лаб. 1): getStatus; для лаб. 3+ — emulate и connect."""
-
     def __init__(self, thing_id: str, name: str) -> None:
         self.id = thing_id
         self.name = name
@@ -31,11 +22,9 @@ class Thing(abc.ABC):
         pass
 
     def emulate(self) -> None:
-        """Лаб. 3: имитация обновления показаний (как рис. 12 методички)."""
         pass
 
     def connect(self, request: Any = None) -> Dict[str, Any]:
-        """Лаб. 3–6: обмен с интерфейсом; возвращает dict для json.dumps в app.py."""
         raise NotImplementedError
 
 
@@ -55,7 +44,6 @@ class ScoreSensor(Thing):
         return {"id": self.id, "value": 1 if self.is_goal else 0, "is_goal": self.is_goal}
 
     def connect_with_commands(self, request: Any) -> Dict[str, Any]:
-        """Лаб. 4–5: команда из интерфейса (например коррекция)."""
         if request is not None:
             raw = request.args.get("value", "")
             try:
@@ -84,7 +72,6 @@ class ZoneSensor(Thing):
         return {"id": self.id, "value": self.zone, "zone": self.zone}
 
     def connect_with_commands(self, request: Any) -> Dict[str, Any]:
-        """Лаб. 5: строка — проверка регулярным выражением."""
         if request is None:
             return {"zone": self.zone}
         raw = request.args.get("value", "") or ""
@@ -116,7 +103,6 @@ class EnvSensor(Thing):
         self.lightLux = float(random.randint(300, 600))
 
     def connect(self, request: Any = None) -> Dict[str, Any]:
-        """Мониторинг (лаб. 3): как Sensor в методичке — поле value для ajax."""
         self.emulate()
         return {
             "id": self.id,
@@ -126,7 +112,6 @@ class EnvSensor(Thing):
         }
 
     def connect_with_commands(self, request: Any) -> Dict[str, Any]:
-        """Лаб. 5–6: float из запроса (try/except как рис. 25)."""
         if request is None:
             return {"power": "on", "value": self.temperature}
         raw = request.args.get("value", "")
@@ -192,8 +177,6 @@ class Scoreboard(Thing):
 
 
 class Heater:
-    """Лаб. 6: обогреватель по температуре (класс Heater, рис. 27)."""
-
     def __init__(self, name: str, switch_on_temperature: float) -> None:
         self.name = name
         self.power = "Off"
@@ -207,11 +190,6 @@ class Heater:
 
 
 class Logger:
-    """
-    Лаб. 7–9: журнал в MongoDB; два разных метода — в разные коллекции.
-    При недоступности MongoDB — хранение в списках в памяти.
-    """
-
     def __init__(self, db_name: str) -> None:
         self.db_name = db_name
         self._mongo_db: Any = None
@@ -245,7 +223,6 @@ class Logger:
         return doc
 
     def insert_heater_event(self, power_state: str) -> Optional[Any]:
-        """Вторая коллекция — события обогревателя (лаб. 7: два метода)."""
         ts = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         doc = {"timeStamp": ts, "heater_power": power_state}
         if self._mongo_db is not None:

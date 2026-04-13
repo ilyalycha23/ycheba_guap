@@ -1,5 +1,3 @@
-/* Лаб. 9: Chart.js по данным /chart_data и /stats */
-
 async function loadStats() {
   var r = await fetch("/stats");
   var j = await r.json();
@@ -37,7 +35,7 @@ async function loadChart() {
       responsive: true,
       plugins: {
         legend: { display: true },
-        title: { display: true, text: "Журнал температуры (MongoDB или память)" },
+        title: { display: true, text: "Журнал температуры" },
       },
       scales: {
         y: { beginAtZero: false },

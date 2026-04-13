@@ -2,17 +2,17 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
-    <title>Эмуляторы вещей — лаб. 3–6</title>
+    <title>Эмуляторы вещей</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="{{ url_for('static', filename='js/index.js') }}"></script>
   </head>
   <body>
     <p><a href="{{ url_for('index') }}">← На главную</a></p>
-    <h1>Мониторинг и команды (методичка, лаб. 3–6)</h1>
+    <h1>Мониторинг и команды</h1>
 
     <section>
-      <h2>Мониторинг (лаб. 3: каждую секунду GET, отдельный ajax на вещь)</h2>
+      <h2>Мониторинг</h2>
       <div class="row">
         <label>Температура °C <input type="text" id="mon_env" readonly /></label>
         <label>Счёт (гол) <input type="text" id="mon_score" readonly /></label>
@@ -24,19 +24,19 @@
     </section>
 
     <section>
-      <h2>Управление (лаб. 4–5: команды на сервер)</h2>
-      <p>Температура: ввод числа → <code>/connect</code> (цепочка с обогревателем и журналом).</p>
+      <h2>Управление</h2>
+      <p>Температура: ввод числа → <code>/connect</code>.</p>
       <input type="text" id="cmd_env" placeholder="23.5" />
       <button type="button" id="btn_env">Отправить температуру</button>
       <span id="cmd_env_reply"></span>
 
       <p>Счёт 0/1: <input type="text" id="cmd_score" placeholder="1" /> <button type="button" id="btn_score">Отправить</button></p>
-      <p>Зона (латиница, цифры, дефис): <input type="text" id="cmd_zone" placeholder="paint" /> <button type="button" id="btn_zone">Отправить</button></p>
+      <p>Зона: <input type="text" id="cmd_zone" placeholder="paint" /> <button type="button" id="btn_zone">Отправить</button></p>
       <p>Счёт табло «A-B»: <input type="text" id="cmd_board" placeholder="12-10" /> <button type="button" id="btn_board">Отправить</button></p>
     </section>
 
     <section>
-      <h2>Ответ цепочки /connect (лаб. 6–8)</h2>
+      <h2>Ответ /connect</h2>
       <pre id="chain_out"></pre>
     </section>
   </body>

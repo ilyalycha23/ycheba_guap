@@ -2,14 +2,14 @@
 <html lang="ru">
   <head>
     <meta charset="utf-8" />
-    <title>Эмуляторы вещей — лаб. 3–6</title>
+    <title>Эмуляторы вещей</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" />
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="{{ url_for('static', filename='js/index.js') }}"></script>
   </head>
   <body>
     <p><a href="{{ url_for('index') }}">← На главную</a></p>
-    <h1>Мониторинг и команды (методичка, лаб. 3–6)</h1>
+    <h1>Мониторинг и команды</h1>
 
     <section>
       <h2>Мониторинг</h2>
@@ -25,7 +25,7 @@
 
     <section>
       <h2>Управление</h2>
-      <p>Температура: ввод числа → <code>/connect</code> (цепочка с обогревателем и журналом).</p>
+      <p>Температура: ввод числа → <code>/connect</code>.</p>
       <input type="text" id="cmd_env" placeholder="23.5" />
       <button type="button" id="btn_env">Отправить температуру</button>
       <span id="cmd_env_reply"></span>
@@ -36,7 +36,7 @@
     </section>
 
     <section>
-      <h2>Ответ цепочки /connect</h2>
+      <h2>Ответ /connect</h2>
       <pre id="chain_out"></pre>
     </section>
   </body>

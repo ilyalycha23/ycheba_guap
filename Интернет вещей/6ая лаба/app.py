@@ -1,8 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Лаб. 2–6 по методичке: обогреватель Heater и auto_power; без журнала MongoDB (лаб. 7+).
-"""
-
 from __future__ import annotations
 
 from flask import Flask, jsonify, render_template, request
@@ -57,7 +52,6 @@ def monitor_board():
 
 @app.route("/connect")
 def connect():
-    """Лаб. 4–6: команда температуры, auto_power обогревателя."""
     response = env_sensor.connect_with_commands(request)
     heater.auto_power(env_sensor.temperature)
     response["heater_power"] = heater.power

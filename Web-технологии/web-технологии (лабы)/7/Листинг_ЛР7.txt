@@ -1,0 +1,218 @@
+// ============================
+// File: cities.html - HTML-разметка страницы
+// ============================
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЛР7 — города и изображения</title>
+  <link rel="stylesheet" href="lab7.css">
+</head>
+<body>
+  <h1>Загрузка фото города по клику</h1>
+  <p>Вариант 9: обработчики заданы через свойство элемента <code>onclick</code>.</p>
+
+  <div class="btn-row">
+    <button type="button" id="btn-krd">Краснодар</button>
+    <button type="button" id="btn-sbp">Санкт-Петербург</button>
+    <button type="button" id="btn-msk">Москва</button>
+  </div>
+
+  <img id="city-photo" class="city-preview" src="image/krd.jpg" alt="Краснодар" width="640" height="427">
+
+  <p><a href="index.html">← К основной странице ЛР7</a></p>
+
+  <script src="js/cities.js"></script>
+</body>
+</html>
+
+
+// ============================
+// File: index.html - HTML-разметка страницы
+// ============================
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЛР7 — JavaScript</title>
+  <link rel="stylesheet" href="lab7.css">
+</head>
+<body>
+  <h1>Лабораторная работа №7 — сценарии JavaScript</h1>
+
+  <section aria-labelledby="h-part1">
+    <h2 id="h-part1">Часть 1</h2>
+    <p>
+      Три способа объявления функции - по клику выводится одинаковый результат.
+    </p>
+    <div class="btn-row">
+      <button type="button" id="btn-declaration">Function Declaration</button>
+      <button type="button" id="btn-expression">Function Expression</button>
+      <button type="button" id="btn-arrow">Arrow function</button>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-var9">
+    <h2 id="h-var9">Часть 2, вариант 9 — «Мой Петербург»</h2>
+    <p>По клику поочерёдно открываются окна <code>alert</code> с названиями любимых мест.</p>
+    <div class="btn-row">
+      <button type="button" class="secondary" id="btn-petersburg">Мой Петербург</button>
+    </div>
+    <p style="margin-top:1rem"><a href="cities.html">Страница с городами и изображениями →</a></p>
+  </section>
+
+  <script src="js/greeting.js"></script>
+  <script src="js/interactive.js" defer></script>
+</body>
+</html>
+
+
+// ============================
+// File: lab7.css - CSS-стили страницы
+// ============================
+/* ЛР7 — оформление в духе предыдущих работ курса */
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #f8fafc;
+  margin: 0;
+  padding: 1.5rem;
+  color: #0f172a;
+  line-height: 1.5;
+  max-width: 720px;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 1.35rem;
+}
+
+h2 {
+  font-size: 1.1rem;
+  margin: 1.5rem 0 0.75rem;
+}
+
+section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem 1.25rem 1.25rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 0.5rem;
+}
+
+button {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #334155;
+}
+
+button.secondary {
+  background: #0f766e;
+  border-color: #0f766e;
+}
+
+button.secondary:hover {
+  background: #115e59;
+}
+
+a {
+  color: #0369a1;
+}
+
+.city-preview {
+  margin-top: 1rem;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.12);
+}
+
+
+// ============================
+// File: js/cities.js - JavaScript-логика страницы
+// ============================
+const cityPhotos = {
+  krd: { src: 'image/krd.jpg', label: 'Краснодар' },
+  sbp: { src: 'image/spb.jpg', label: 'Санкт-Петербург' },
+  msk: { src: 'image/msk.jpg', label: 'Москва' },
+};
+
+const img = document.getElementById('city-photo');
+
+document.getElementById('btn-krd').onclick = function () {
+  img.src = cityPhotos.krd.src;
+  img.alt = cityPhotos.krd.label;
+};
+
+document.getElementById('btn-sbp').onclick = function () {
+  img.src = cityPhotos.sbp.src;
+  img.alt = cityPhotos.sbp.label;
+};
+
+document.getElementById('btn-msk').onclick = function () {
+  img.src = cityPhotos.msk.src;
+  img.alt = cityPhotos.msk.label;
+};
+
+
+// ============================
+// File: js/greeting.js - JavaScript-логика страницы
+// ============================
+/* П. 1 ч. 1: приветствие при загрузке страницы */
+alert('Здравствуйте! Меня зовут Лаврешин Илья.');
+
+
+// ============================
+// File: js/interactive.js - JavaScript-логика страницы
+// ============================
+/**
+ * Ч. 1: три способа объявления функции с одинаковым результатом;
+ * вариант 9 ч. 2: кнопка «Мой Петербург».
+ */
+
+function showSimpleResult() {
+  alert('Function Declaration');
+}
+
+const showSimpleResultExpr = function () {
+  alert('Function Expression');
+};
+
+const showSimpleResultArrow = () => {
+  alert('Стрелочная функция (arrow function)');
+};
+
+const favoritePlaces = [
+  'Исаакиевский собор',
+  'Гранд Макет Россия',
+  'Петропавловская крепость',
+];
+
+function showPetersburgPlaces() {
+  favoritePlaces.forEach(function (place) {
+    alert(place);
+  });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('btn-declaration').addEventListener('click', showSimpleResult);
+  document.getElementById('btn-expression').addEventListener('click', showSimpleResultExpr);
+  document.getElementById('btn-arrow').addEventListener('click', showSimpleResultArrow);
+  document.getElementById('btn-petersburg').addEventListener('click', showPetersburgPlaces);
+});
+

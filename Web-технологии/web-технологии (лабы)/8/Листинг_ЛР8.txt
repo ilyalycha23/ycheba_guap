@@ -1,0 +1,676 @@
+// ============================
+// File: gallery.css - CSS-стили страницы
+// ============================
+.gallery-page {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.gallery-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.gallery-toolbar button {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.gallery-toolbar button:hover {
+  background: #334155;
+}
+
+.gallery-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  align-items: stretch;
+}
+
+.gallery-strip figure {
+  margin: 0;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.gallery-strip img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  vertical-align: middle;
+}
+
+.gallery-strip figcaption {
+  padding: 8px 10px;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.gallery-note {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-top: 1rem;
+}
+
+@media (max-width: 700px) {
+  .gallery-strip {
+    grid-template-columns: 1fr;
+  }
+  .gallery-strip img {
+    height: auto;
+    max-height: 280px;
+  }
+}
+
+
+// ============================
+// File: gallery.html - HTML-разметка страницы
+// ============================
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЛР8 — галерея</title>
+  <link rel="stylesheet" href="lab8-common.css">
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body class="gallery-page">
+  <p class="nav-back"><a href="index.html">← К списку заданий</a></p>
+  <h1>Галерея</h1>
+
+  <div class="gallery-toolbar">
+    <button type="button" id="btn-prev" aria-label="Предыдущие три">← Назад</button>
+    <span id="gallery-counter"></span>
+    <button type="button" id="btn-next" aria-label="Следующие три">Вперёд →</button>
+  </div>
+
+  <div class="gallery-strip">
+    <figure>
+      <img src="image/3cc96a9d82a0c10bfc5acad04b874a6e.jpg" alt="">
+      <figcaption></figcaption>
+    </figure>
+    <figure>
+      <img src="image/81-sankt_peterburg.jpg" alt="">
+      <figcaption></figcaption>
+    </figure>
+    <figure>
+      <img src="image/ieijxw12dj25cjjt6lw0wuob1sg8j3fj.jpg" alt="">
+      <figcaption></figcaption>
+    </figure>
+  </div>
+  <script src="gallery.js"></script>
+</body>
+</html>
+
+
+// ============================
+// File: gallery.js - JavaScript-логика страницы
+// ============================
+const galleryImages = [
+  { src: 'image/3cc96a9d82a0c10bfc5acad04b874a6e.jpg', title: 'Театральный зал' },
+  { src: 'image/81-sankt_peterburg.jpg', title: 'Исаакиевский собор' },
+  { src: 'image/ieijxw12dj25cjjt6lw0wuob1sg8j3fj.jpg', title: 'Большой Петергофский дворец' },
+  { src: 'image/images.jpg', title: 'Алые паруса' },
+  { src: 'image/krd.jpg', title: 'Краснодар' },
+  { src: 'image/msk.jpg', title: 'Москва' },
+  { src: 'image/piter-1-2190x1230.jpg', title: 'Панорама Санкт-Петербурга' },
+  { src: 'image/spb.jpg', title: 'Казанский собор' },
+];
+
+let offset = 0;
+
+function updateGallery() {
+  const maxOffset = galleryImages.length - 3;
+  const imgs = Array.from(document.querySelectorAll('.gallery-strip img'));
+  const caps = Array.from(document.querySelectorAll('.gallery-strip figcaption'));
+  for (let i = 0; i < 3; i += 1) {
+    const item = galleryImages[offset + i];
+    imgs[i].src = item.src;
+    imgs[i].alt = item.title;
+    caps[i].textContent = item.title;
+  }
+  document.getElementById('gallery-counter').textContent =
+    'Позиция: ' + (offset + 1) + '–' + (offset + 3) + ' из ' + galleryImages.length;
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.getElementById('btn-prev').addEventListener('click', function () {
+    const maxOffset = galleryImages.length - 3;
+    offset = (offset - 1 + (maxOffset + 1)) % (maxOffset + 1);
+    updateGallery();
+  });
+  document.getElementById('btn-next').addEventListener('click', function () {
+    const maxOffset = galleryImages.length - 3;
+    offset = (offset + 1) % (maxOffset + 1);
+    updateGallery();
+  });
+  updateGallery();
+});
+
+
+// ============================
+// File: index.html - HTML-разметка страницы
+// ============================
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЛР8 — задания</title>
+  <link rel="stylesheet" href="lab8-common.css">
+  <style>
+    ul.tasks { line-height: 1.9; }
+  </style>
+</head>
+<body>
+  <h1>Лабораторная работа №8</h1>
+  <p>Управление позиционированием и отображением элементов (JavaScript).</p>
+  <ul class="tasks">
+    <li><a href="slideshow.html">Задание 1 — слайд-шоу</a></li>
+    <li><a href="menu.html">Задание 2 — выпадающее меню</a></li>
+    <li><a href="gallery.html">Задание 3 — галерея изображений</a></li>
+  </ul>
+</body>
+</html>
+
+
+// ============================
+// File: lab8-common.css - CSS-стили страницы
+// ============================
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #f1f5f9;
+  margin: 0;
+  padding: 1.25rem 1.5rem 2rem;
+  color: #0f172a;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 1.35rem;
+}
+
+.nav-back {
+  margin-bottom: 1rem;
+}
+
+.nav-back a {
+  color: #0369a1;
+}
+
+
+// ============================
+// File: menu.html - HTML-разметка страницы
+// ============================
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЛР8 — выпадающее меню</title>
+  <link rel="stylesheet" href="pulldown.css">
+</head>
+<body>
+  <main class="menu-page">
+    <p class="menu-back"><a href="index.html">← К списку заданий</a></p>
+    <h1>Задание 2 — выпадающее меню</h1>
+    <p class="subtitle">Пункты меню раскрываются по наведению. По клику выполняется переход на отдельную страницу с выбранной темой.</p>
+
+    <nav class="top-nav" aria-label="Навигационная панель">
+      <div class="menu-item">
+        <a class="nav-link" href="#">HTML</a>
+        <div class="pulldown-menu">
+          <a class="pulldown-item" href="topic.html?topic=html-semantics">Семантика</a>
+          <a class="pulldown-item" href="topic.html?topic=html-structure">Структура</a>
+          <a class="pulldown-item" href="topic.html?topic=html-links">Ссылки</a>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <a class="nav-link" href="#">CSS</a>
+        <div class="pulldown-menu">
+          <a class="pulldown-item" href="topic.html?topic=css-selectors">Селекторы</a>
+          <a class="pulldown-item" href="topic.html?topic=css-layout">Вёрстка</a>
+          <a class="pulldown-item" href="topic.html?topic=css-adaptive">Адаптив</a>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <a class="nav-link" href="#">JavaScript</a>
+        <div class="pulldown-menu">
+          <a class="pulldown-item" href="topic.html?topic=js-syntax">Синтаксис</a>
+          <a class="pulldown-item" href="topic.html?topic=js-dom">DOM</a>
+          <a class="pulldown-item" href="topic.html?topic=js-events">События</a>
+        </div>
+      </div>
+    </nav>
+  </main>
+</body>
+</html>
+
+
+// ============================
+// File: pulldown.css - CSS-стили страницы
+// ============================
+body {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  margin: 0;
+  padding: 1.5rem;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: #0f172a;
+}
+
+.menu-page {
+  max-width: 920px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.25rem;
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+}
+
+h1 {
+  margin: 0.25rem 0 0.5rem;
+  font-size: 1.45rem;
+}
+
+.subtitle {
+  margin: 0 0 1.1rem;
+  color: #475569;
+}
+
+a {
+  text-decoration: none;
+}
+
+.menu-back {
+  margin: 0;
+}
+
+.menu-back a {
+  color: #0369a1;
+  font-size: 0.95rem;
+}
+
+.top-nav {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.menu-item {
+  position: relative;
+  min-width: 190px;
+  padding-bottom: 8px;
+}
+
+.nav-link {
+  display: block;
+  background: #0f172a;
+  color: #f8fafc;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  transition: background 0.2s ease;
+}
+
+.menu-item:hover .nav-link {
+  background: #1e293b;
+}
+
+.pulldown-menu {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.13);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  z-index: 20;
+}
+
+.menu-item:hover .pulldown-menu,
+.menu-item:focus-within .pulldown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.pulldown-item {
+  display: block;
+  color: #0f172a;
+  padding: 11px 12px;
+  border-bottom: 1px solid #e2e8f0;
+  font-size: 0.96rem;
+}
+
+.pulldown-item:last-child {
+  border-bottom: none;
+}
+
+.pulldown-item:hover {
+  background: #f1f5f9;
+  color: #0369a1;
+}
+
+.content-card {
+  margin-top: 1.25rem;
+  background: #ffffff;
+  border: 1px solid #dbe4ef;
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
+}
+
+.content-card h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.content-card p {
+  margin: 0;
+  color: #334155;
+  line-height: 1.55;
+}
+
+@media (max-width: 760px) {
+  .top-nav {
+    flex-direction: column;
+  }
+
+  .menu-item {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .pulldown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    margin-top: 6px;
+    display: none;
+  }
+
+  .menu-item:hover .pulldown-menu {
+    display: block;
+  }
+}
+
+
+// ============================
+// File: script.js - JavaScript-логика страницы
+// ============================
+/**
+ * Задание 2: один HTML-файл.
+ * Контент подменяется по клику на пункты выпадающих списков.
+ */
+const topics = {
+  'html-semantics': {
+    title: 'HTML: семантическая разметка',
+    text: 'Семантические теги (header, main, section, article, footer) помогают браузеру и поисковым системам понимать структуру документа.',
+  },
+  'html-structure': {
+    title: 'HTML: структура документа',
+    text: 'Базовый каркас страницы включает <!DOCTYPE html>, элементы head и body. В head размещаются метаданные, стили и подключение скриптов.',
+  },
+  'html-links': {
+    title: 'HTML: гиперссылки',
+    text: 'Тег a связывает страницы между собой. Полезно задавать информативный текст ссылки, а для внешних ресурсов использовать target и rel при необходимости.',
+  },
+  'css-selectors': {
+    title: 'CSS: селекторы',
+    text: 'Селекторы определяют, к каким элементам применяются стили: по тегу, классу, id, состоянию (:hover, :focus) и структуре документа.',
+  },
+  'css-layout': {
+    title: 'CSS: вёрстка',
+    text: 'Современная вёрстка обычно строится на Flexbox и CSS Grid. Они позволяют удобно создавать адаптивные и читаемые интерфейсы.',
+  },
+  'css-adaptive': {
+    title: 'CSS: адаптивный дизайн',
+    text: 'С помощью медиазапросов интерфейс подстраивается под разные ширины экрана: перестраиваются колонки, размеры шрифтов и отступы.',
+  },
+  'js-syntax': {
+    title: 'JavaScript: синтаксис',
+    text: 'Язык поддерживает переменные let/const, функции, условия, циклы и объекты. Скрипты делают страницу интерактивной и динамичной.',
+  },
+  'js-dom': {
+    title: 'JavaScript: DOM',
+    text: 'DOM API позволяет находить элементы, менять текст, классы и атрибуты. Именно так подменяется содержимое текущего блока на странице.',
+  },
+  'js-events': {
+    title: 'JavaScript: события',
+    text: 'События (click, input, submit и др.) связывают действия пользователя с кодом. Обработчики можно задавать через addEventListener.',
+  },
+};
+
+document.addEventListener('DOMContentLoaded', function () {
+  const titleEl = document.getElementById('topic-title');
+  const textEl = document.getElementById('topic-text');
+
+  document.querySelectorAll('.pulldown-item').forEach(function (item) {
+    item.addEventListener('click', function (e) {
+      e.preventDefault();
+      const key = item.dataset.topic;
+      const topic = topics[key];
+      if (!topic) {
+        return;
+      }
+      titleEl.textContent = topic.title;
+      textEl.textContent = topic.text;
+    });
+  });
+});
+
+
+// ============================
+// File: slideshow.css - CSS-стили страницы
+// ============================
+.slideshow-wrap {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.slideshow-wrap figure {
+  margin: 1rem 0;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.slideshow-wrap img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-radius: 8px;
+}
+
+.slideshow-wrap figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+
+// ============================
+// File: slideshow.html - HTML-разметка страницы
+// ============================
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЛР8 — слайд-шоу</title>
+  <link rel="stylesheet" href="lab8-common.css">
+  <link rel="stylesheet" href="slideshow.css">
+</head>
+<body>
+  <p class="nav-back"><a href="index.html">← К списку заданий</a></p>
+  <h1>Слайд-шоу (3 изображения, интервал 1 с)</h1>
+  <div class="slideshow-wrap">
+    <figure>
+      <a id="slide-link" href="image/spb.jpg">
+        <img id="slide-img" src="image/spb.jpg" width="640" height="427" alt="">
+      </a>
+      <figcaption id="slide-caption"></figcaption>
+    </figure>
+  </div>
+  <script src="slideshow.js"></script>
+</body>
+</html>
+
+
+// ============================
+// File: slideshow.js - JavaScript-логика страницы
+// ============================
+/**
+ * Задание 1: три изображения, смена каждую 1 с;
+ * ссылка ведёт на файл текущего кадра.
+ */
+const slides = [
+  { file: 'image/spb.jpg', title: 'Санкт-Петербург' },
+  { file: 'image/msk.jpg', title: 'Москва' },
+  { file: 'image/krd.jpg', title: 'Краснодар' },
+];
+
+let slideIndex = 0;
+
+function updateSlide() {
+  const s = slides[slideIndex];
+  const link = document.getElementById('slide-link');
+  const img = document.getElementById('slide-img');
+  const cap = document.getElementById('slide-caption');
+  link.href = s.file;
+  img.src = s.file;
+  img.alt = s.title;
+  cap.textContent = s.title + ' — перейти к файлу изображения можно по клику на фото';
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+  updateSlide();
+  setInterval(function () {
+    slideIndex = (slideIndex + 1) % slides.length;
+    updateSlide();
+  }, 1000);
+});
+
+
+// ============================
+// File: topic.html - HTML-разметка страницы
+// ============================
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЛР8 — тема меню</title>
+  <link rel="stylesheet" href="lab8-common.css">
+  <style>
+    .topic-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid #dbe4ef;
+      border-radius: 14px;
+      padding: 1.25rem;
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+    }
+    .topic-wrap p {
+      color: #475569;
+      line-height: 1.55;
+    }
+  </style>
+</head>
+<body>
+  <main class="topic-wrap">
+    <p class="nav-back"><a href="menu.html">← Назад к выпадающему меню</a></p>
+    <h1 id="topic-title">Тема не найдена</h1>
+    <p id="topic-description">Проверьте ссылку и выберите пункт меню заново.</p>
+  </main>
+  <script src="topic.js"></script>
+</body>
+</html>
+
+
+// ============================
+// File: topic.js - JavaScript-логика страницы
+// ============================
+const TOPIC_MAP = {
+  "html-semantics": {
+    title: "HTML: семантическая разметка",
+    description: "Использование тегов header, main, section, article и footer делает структуру страницы понятной для браузера и поисковых систем.",
+  },
+  "html-structure": {
+    title: "HTML: структура документа",
+    description: "Базовый шаблон включает <!DOCTYPE html>, элементы head и body, а также подключение стилей и скриптов в корректных местах.",
+  },
+  "html-links": {
+    title: "HTML: гиперссылки",
+    description: "Ссылки создаются тегом a. Для удобства пользователя текст ссылки должен быть понятным и отражать конечную цель перехода.",
+  },
+  "css-selectors": {
+    title: "CSS: селекторы",
+    description: "Селекторы позволяют выбирать элементы по тегу, классу, id, атрибутам и состояниям, включая псевдоклассы hover и focus.",
+  },
+  "css-layout": {
+    title: "CSS: вёрстка",
+    description: "Современная вёрстка строится с помощью Flexbox и Grid, что помогает создавать адаптивные и аккуратные интерфейсы.",
+  },
+  "css-adaptive": {
+    title: "CSS: адаптивный дизайн",
+    description: "Медиазапросы позволяют менять структуру и размеры элементов для корректного отображения на телефонах, планшетах и ПК.",
+  },
+  "js-syntax": {
+    title: "JavaScript: синтаксис",
+    description: "JavaScript поддерживает переменные let и const, функции, условия, циклы и объекты для управления логикой веб-страницы.",
+  },
+  "js-dom": {
+    title: "JavaScript: DOM",
+    description: "DOM API используется для поиска элементов, изменения текста и атрибутов, а также динамического обновления содержимого страницы.",
+  },
+  "js-events": {
+    title: "JavaScript: события",
+    description: "События click, input и submit связывают действия пользователя с кодом. Обычно обработчики задаются через addEventListener.",
+  },
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+  const params = new URLSearchParams(window.location.search);
+  const topicKey = params.get("topic");
+  const topic = TOPIC_MAP[topicKey];
+
+  const titleEl = document.getElementById("topic-title");
+  const descEl = document.getElementById("topic-description");
+
+  if (!topic) {
+    titleEl.textContent = "Тема не найдена";
+    descEl.textContent = "Параметр topic отсутствует или имеет некорректное значение.";
+    return;
+  }
+
+  titleEl.textContent = topic.title;
+  descEl.textContent = topic.description;
+});
+

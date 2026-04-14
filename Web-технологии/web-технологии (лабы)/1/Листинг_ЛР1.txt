@@ -1,0 +1,128 @@
+// ============================
+// File: index.html - HTML-разметка страницы
+// ============================
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторная работа №1 — обо мне</title>
+</head>
+<body>
+  <h1>Немного обо мне</h1>
+  <p>
+    Меня зовут Лаврешин Илья, я учусь на направлении, связанном с информационными технологиями.
+    Подготовку в области web-технологий я получал самостоятельно
+    по открытым материалам в интернете. Мне интересно углубить знания HTML, CSS и основ клиентской
+    разработки, чтобы уверенно создавать доступные и аккуратно оформленные веб-страницы.
+  </p>
+
+  <hr>
+
+  <br>
+  <br>
+  <br>
+
+  <h2>Мои любимые поэты и их произведения</h2>
+  <ol>
+    <li>
+      А. С. Пушкин
+      <ul>
+        <li><a href="poems.html#pushkin-zimnee">Зимнее утро</a></li>
+        <li><a href="poems.html#pushkin-osen">Осень (отрывок)</a></li>
+      </ul>
+    </li>
+    <li>
+      М. Ю. Лермонтов
+      <ul>
+        <li><a href="poems.html#lermontov-parus">Парус</a></li>
+        <li><a href="poems.html#lermontov-utro">Утро в горах</a></li>
+      </ul>
+    </li>
+    <li>
+      А. А. Ахматова
+      <ul>
+        <li><a href="poems.html#ahmatova-gosti">Гость</a></li>
+        <li><a href="poems.html#ahmatova-molitva">Молитва</a></li>
+      </ul>
+    </li>
+  </ol>
+
+  <p>
+    <a href="sample.docx" download>Скачать дополнительный текстовый документ (.docx)</a>
+  </p>
+  <p>
+    Связаться по электронной почте:
+    <a href="mailto:ilyalavreshin@gmail.com?subject=Web-%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8">ilyalavreshin@gmail.com</a>
+  </p>
+</body>
+</html>
+
+
+// ============================
+// File: poems.html - HTML-разметка страницы
+// ============================
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Стихотворения — ЛР1</title>
+</head>
+<body>
+  <article id="pushkin-zimnee">
+    <h2>Зимнее утро</h2>
+    <p>
+      Мороз и солнце; день чудесный!<br>
+      Ещё ты дремлешь, друг прелестный —<br>
+      Пора, красавица, проснись...
+    </p>
+  </article>
+
+  <article id="pushkin-osen">
+    <h2>Осень (отрывок)</h2>
+    <p>
+      Унылая пора! очей очарованье!<br>
+      Приятна мне твоя прощальная краса...
+    </p>
+  </article>
+
+  <article id="lermontov-parus">
+    <h2>Парус</h2>
+    <p>
+      Белеет парус одинокой<br>
+      В тумане моря голубом!..
+    </p>
+  </article>
+
+  <article id="lermontov-utro">
+    <h2>Утро в горах</h2>
+    <p>
+      Собрались тучки золотые,<br>
+      Румянец дня уж гаснет...
+    </p>
+  </article>
+
+  <article id="ahmatova-gosti">
+    <h2>Гость</h2>
+    <p>
+      Я жду его — вечерний гость,<br>
+      Его приветный шорох у дверей...
+    </p>
+  </article>
+
+  <article id="ahmatova-molitva">
+    <h2>Молитва</h2>
+    <p>
+      Дай мне сегодняшний день,<br>
+      Господи, и ничего больше не надо...
+    </p>
+  </article>
+
+  <p>
+    <a href="index.html" title="На главную страницу лабораторной работы">
+      <img src="img/avatar.svg" width="96" height="96" alt="На главную страницу">
+    </a>
+  </p>
+</body>
+</html>

@@ -1,0 +1,542 @@
+// ============================
+// File: index.html - HTML-разметка страницы
+// ============================
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторная работа №3 — обо мне</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/lab3.css">
+  <style>
+    /* Внутренняя таблица стилей — дополнение к внешней */
+    hr {
+      border: none;
+      border-top: 2px dashed #94a3b8;
+      margin: 1.5rem 0;
+    }
+    body.home ol > li {
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body class="home page-tile">
+  <h1>Немного обо мне</h1>
+  <p class="intro" style="font-weight: 500; color: #0c4a6e;">
+    Встроенный стиль: этот абзац выделен жирностью 500 и цветом текста для демонстрации inline-оформления (п. методички ЛР2).
+  </p>
+  <p class="intro">
+    Примеры жирности в одном абзаце:
+    <span class="w300">лёгкий текст (300)</span>,
+    <span class="w500">средний (500)</span>,
+    <span class="w700">жирный (700)</span>.
+  </p>
+  <p id="lead">
+    Меня зовут Лаврешин Илья, я учусь на направлении, связанном с информационными технологиями.
+    Подготовку в области web-технологий я получал самостоятельно
+    по открытым материалам в интернете. Мне интересно углубить знания HTML, CSS и основ клиентской
+    разработки, чтобы уверенно создавать доступные и аккуратно оформленные веб-страницы.
+  </p>
+
+  <hr>
+
+  <br><br><br>
+
+  <h2>Мои любимые поэты и их произведения</h2>
+  <ol>
+    <li>
+      А. С. Пушкин
+      <ul>
+        <li><a href="poems.html#pushkin-zimnee">Зимнее утро</a></li>
+        <li><a href="poems.html#pushkin-osen">Осень (отрывок)</a></li>
+      </ul>
+    </li>
+    <li>
+      М. Ю. Лермонтов
+      <ul>
+        <li><a href="poems.html#lermontov-parus">Парус</a></li>
+        <li><a href="poems.html#lermontov-utro">Утро в горах</a></li>
+      </ul>
+    </li>
+    <li>
+      А. А. Ахматова
+      <ul>
+        <li><a href="poems.html#ahmatova-gosti">Гость</a></li>
+        <li><a href="poems.html#ahmatova-molitva">Молитва</a></li>
+      </ul>
+    </li>
+  </ol>
+
+  <p><a href="tables.html">Страница с таблицами (задание ЛР3)</a></p>
+
+  <p>
+    <a href="sample.docx" download>Скачать дополнительный текстовый документ (.docx)</a>
+  </p>
+  <p>
+    Связаться по электронной почте:
+    <a href="mailto:ilyalavreshin@gmail.com?subject=Web-%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8">ilyalavreshin@gmail.com</a>
+  </p>
+</body>
+</html>
+
+
+// ============================
+// File: poems.html - HTML-разметка страницы
+// ============================
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Стихотворения — ЛР3</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/lab3.css">
+  <style>
+    /* Внутренняя таблица стилей для второй страницы */
+    .poem-stack article {
+      padding-bottom: 0.5rem;
+      border-bottom: 1px dotted #cbd5e1;
+    }
+    .poem-stack article:last-of-type {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body class="poems-page page-cover-bg">
+  <div class="experiment-panel">
+    <p class="row-a">
+      Пример оформления текста: подчёркнутый, с увеличенным межстрочным интервалом, красной строкой и тенью.
+    </p>
+    <p class="row-b">
+      Второй фрагмент: зачёркнутый центрированный текст с иным межсимвольным и межсловным интервалом.
+    </p>
+    <p class="row-c">
+      Третий фрагмент: надчёркнутый, выровненный вправо. Формула: E = mc<sup>2</sup>, индекс: H<sub>2</sub>O.
+      <span class="inline-mix">
+        <img src="img/inline-dot.svg" width="18" height="18" alt="">Маленькое изображение в строке с выравниванием по вертикали.
+      </span>
+    </p>
+  </div>
+
+  <div class="poem-stack">
+    <article id="pushkin-zimnee">
+      <h2>Зимнее утро</h2>
+      <p>
+        Мороз и солнце; день чудесный!<br>
+        Ещё ты дремлешь, друг прелестный —<br>
+        Пора, красавица, проснись...
+      </p>
+    </article>
+
+    <article id="pushkin-osen">
+      <h2>Осень (отрывок)</h2>
+      <p>
+        Унылая пора! очей очарованье!<br>
+        Приятна мне твоя прощальная краса...
+      </p>
+    </article>
+
+    <article id="lermontov-parus">
+      <h2>Парус</h2>
+      <p>
+        Белеет парус одинокой<br>
+        В тумане моря голубом!..
+      </p>
+    </article>
+
+    <article id="lermontov-utro">
+      <h2>Утро в горах</h2>
+      <p>
+        Собрались тучки золотые,<br>
+        Румянец дня уж гаснет...
+      </p>
+    </article>
+
+    <article id="ahmatova-gosti">
+      <h2>Гость</h2>
+      <p>
+        Я жду его — вечерний гость,<br>
+        Его приветный шорох у дверей...
+      </p>
+    </article>
+
+    <article id="ahmatova-molitva">
+      <h2>Молитва</h2>
+      <p>
+        Дай мне сегодняшний день,<br>
+        Господи, и ничего больше не надо...
+      </p>
+    </article>
+  </div>
+
+  <p>
+    <a href="index.html" title="На главную страницу лабораторной работы">
+      <img src="img/avatar.svg" width="96" height="96" alt="На главную страницу">
+    </a>
+  </p>
+</body>
+</html>
+
+
+// ============================
+// File: tables.html - HTML-разметка страницы
+// ============================
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лабораторная работа №3 — таблицы</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/lab3.css">
+</head>
+<body class="home tables-page">
+  <!-- В методичке номер варианта совпадает с номером ПК. Здесь выполнен вариант 1. -->
+  <p><a href="index.html">На первую страницу</a> · <a href="poems.html">На вторую страницу</a></p>
+
+  <h1>Таблица по варианту задания</h1>
+
+  <table class="guap-v1">
+    <caption>Приём документов в магистратуру ГУАП</caption>
+    <tr class="budget-row">
+      <th scope="row">Магистратура<br>(бюджет)</th>
+      <td>с 20 июня по<br>15 августа</td>
+      <td>Очная форма обучения</td>
+    </tr>
+    <tr class="extra-row">
+      <th scope="row">Магистратура<br>(внебюджет)</th>
+      <td>с 20 июня по<br>15 августа</td>
+      <td>Очная форма обучения</td>
+    </tr>
+    <tr class="zao-row">
+      <td colspan="2">с 20 июня по<br>15 сентября</td>
+      <td>Заочная форма обучения</td>
+    </tr>
+    <tr>
+      <td colspan="3" class="programs-cell">
+        <strong>Программы вступительных испытаний</strong><br>
+        Со всеми программами вступительных испытаний в магистратуру можно ознакомиться на сайте ГУАП
+      </td>
+    </tr>
+  </table>
+
+  <h1>Прайс-лист</h1>
+  <table class="price-list">
+    <thead>
+      <tr>
+        <th class="col-num">№ п/п</th>
+        <th class="col-name">Наименование</th>
+        <th class="col-price">Цена, ₽</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="col-num">1</td><td class="col-name">USB-флешка 32 ГБ</td><td class="col-price">590</td></tr>
+      <tr><td class="col-num">2</td><td class="col-name">USB-флешка 64 ГБ</td><td class="col-price">890</td></tr>
+      <tr><td class="col-num">3</td><td class="col-name">USB-флешка 128 ГБ</td><td class="col-price">1290</td></tr>
+      <tr><td class="col-num">4</td><td class="col-name">SSD 256 ГБ SATA</td><td class="col-price">2490</td></tr>
+      <tr><td class="col-num">5</td><td class="col-name">SSD 512 ГБ NVMe</td><td class="col-price">3990</td></tr>
+      <tr><td class="col-num">6</td><td class="col-name">SSD 1 ТБ NVMe</td><td class="col-price">6490</td></tr>
+      <tr><td class="col-num">7</td><td class="col-name">Жёсткий диск 1 ТБ 2.5"</td><td class="col-price">3190</td></tr>
+      <tr><td class="col-num">8</td><td class="col-name">Жёсткий диск 2 ТБ 3.5"</td><td class="col-price">4590</td></tr>
+      <tr><td class="col-num">9</td><td class="col-name">Карта памяти microSD 64 ГБ</td><td class="col-price">790</td></tr>
+      <tr><td class="col-num">10</td><td class="col-name">Карта памяти microSD 128 ГБ</td><td class="col-price">1190</td></tr>
+      <tr><td class="col-num">11</td><td class="col-name">Внешний HDD 1 ТБ</td><td class="col-price">4290</td></tr>
+      <tr><td class="col-num">12</td><td class="col-name">Внешний SSD 500 ГБ</td><td class="col-price">5290</td></tr>
+    </tbody>
+  </table>
+</body>
+</html>
+
+
+// ============================
+// File: css/lab3.css - CSS-стили страницы
+// ============================
+@charset "UTF-8";
+body.home.page-tile {
+  background-color: #e0f2fe;
+  background-image: url("../assets/pattern.svg");
+  background-repeat: repeat;
+  background-position: 0 0;
+  min-height: 100vh;
+}
+
+body.poems-page.page-cover-bg {
+  background-color: #0c4a6e;
+  background-image: url("../assets/bg-cover.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+body.page-cover-bg .experiment-panel {
+  background-color: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
+}
+
+body.page-cover-bg .poem-stack article {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+body.page-cover-bg .poem-stack article + article {
+  margin-top: 0.75rem;
+}
+
+body.page-cover-bg p:last-child a {
+  display: inline-block;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+body.page-cover-bg p:last-child img {
+  display: block;
+}
+
+table.guap-v1 {
+  border-collapse: collapse;
+  border: 2px solid #e11d48;
+  margin: 2rem 0;
+}
+
+table.guap-v1 th,
+table.guap-v1 td {
+  border: 2px solid #e11d48;
+  padding: 5px;
+  vertical-align: middle;
+}
+
+tr.budget-row th,
+tr.budget-row td {
+  background-color: #bfdbfe;
+}
+
+tr.extra-row th,
+tr.extra-row td {
+  background-color: #bbf7d0;
+}
+
+tr.zao-row td {
+  background-color: #bbf7d0;
+}
+
+td.programs-cell {
+  text-align: center;
+}
+
+/* Прайс-лист (п.4) */
+table.price-list {
+  border-collapse: collapse;
+  border: 2px solid #334155;
+  width: 100%;
+  max-width: 720px;
+  margin: 2rem 0;
+}
+
+table.price-list th,
+table.price-list td {
+  border: 1px solid #475569;
+  padding: 8px;
+}
+
+table.price-list thead th {
+  font-size: 1.25rem;
+  background-color: #1e293b;
+  color: #f8fafc;
+}
+
+table.price-list tbody tr:nth-child(odd) {
+  background-color: #f1f5f9;
+}
+
+table.price-list tbody tr:nth-child(even) {
+  background-color: #e2e8f0;
+}
+
+table.price-list .col-num {
+  text-align: center;
+}
+
+table.price-list .col-name {
+  text-align: left;
+}
+
+table.price-list .col-price {
+  text-align: right;
+}
+
+.tables-page > h1:first-of-type {
+  margin-top: 0.5rem;
+}
+
+.tables-page h1:not(:first-of-type) {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.tables-page table + h1 {
+  margin-top: 2.5rem;
+}
+
+
+// ============================
+// File: css/main.css - CSS-стили страницы
+// ============================
+@charset "UTF-8";
+
+body.home {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f9ff;
+  margin: 0;
+  padding: 1.5rem;
+  line-height: 1.45;
+}
+
+body.poems-page {
+  font-family: Georgia, "Times New Roman", serif;
+  background-color: #fff7ed;
+  margin: 0;
+  padding: 1.5rem;
+}
+
+body.home h1 {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+body.home h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1d4ed8;
+}
+
+p.intro {
+  font-size: 16px;
+}
+
+span.w300 {
+  font-weight: 300;
+}
+
+span.w500 {
+  font-weight: 500;
+}
+
+span.w700 {
+  font-weight: 700;
+}
+
+#lead {
+  font-size: 1.05em;
+  font-weight: 400;
+  font-style: normal;
+  color: #334155;
+}
+
+body.home ol {
+  list-style-type: upper-roman;
+  list-style-position: outside;
+}
+
+body.home ol ul {
+  list-style-type: square;
+  list-style-position: inside;
+}
+
+/* Псевдоклассы ссылок и изображения (п.6) */
+body.home a:link {
+  color: #2563eb;
+}
+
+body.home a:visited {
+  color: #6d28d9;
+}
+
+body.home a:hover {
+  color: #dc2626;
+}
+
+body.poems-page a:link {
+  color: #0369a1;
+}
+
+body.poems-page a:visited {
+  color: #7c3aed;
+}
+
+body.poems-page a:hover {
+  color: #b45309;
+}
+
+body.poems-page a:hover img {
+  opacity: 0.85;
+}
+
+div.experiment-panel {
+  border-style: solid;
+  border-color: #0ea5e9;
+  border-width: 3px;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  margin-top: 1.5rem;
+  background-color: #ffffffcc;
+}
+
+.experiment-panel .row-a {
+  text-decoration: underline;
+  text-align: left;
+  line-height: 1.9;
+  letter-spacing: 0.08em;
+  word-spacing: 0.35em;
+  text-indent: 2.5rem;
+  text-shadow: 1px 1px 2px rgba(15, 23, 42, 0.25);
+}
+
+.experiment-panel .row-b {
+  text-decoration: line-through;
+  text-align: center;
+  line-height: 2.2;
+  letter-spacing: -0.02em;
+  word-spacing: 0.1em;
+  text-indent: 0;
+}
+
+.experiment-panel .row-c {
+  text-decoration: overline;
+  text-align: right;
+  line-height: 1.5;
+}
+
+.experiment-panel .inline-mix img {
+  vertical-align: middle;
+  margin-right: 0.35rem;
+}
+
+.experiment-panel sup {
+  vertical-align: super;
+  font-size: 0.75em;
+}
+
+.experiment-panel sub {
+  vertical-align: sub;
+  font-size: 0.75em;
+}
+
+body.poems-page article h2 {
+  font-weight: 700;
+  font-style: italic;
+  color: #0f172a;
+}
+
+body.poems-page article + article {
+  margin-top: 1.25rem;
+}
+

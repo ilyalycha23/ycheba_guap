@@ -1,15 +1,12 @@
-/**
- * Задание 3: не менее 7 изображений, одновременно видны три; кнопки влево/вправо.
- */
 const galleryImages = [
-  { src: 'image/3cc96a9d82a0c10bfc5acad04b874a6e.jpg', title: 'Фото 1' },
-  { src: 'image/81-sankt_peterburg.jpg', title: 'Санкт-Петербург' },
-  { src: 'image/ieijxw12dj25cjjt6lw0wuob1sg8j3fj.jpg', title: 'Фото 3' },
-  { src: 'image/images.jpg', title: 'Коллаж' },
+  { src: 'image/3cc96a9d82a0c10bfc5acad04b874a6e.jpg', title: 'Театральный зал' },
+  { src: 'image/81-sankt_peterburg.jpg', title: 'Исаакиевский собор' },
+  { src: 'image/ieijxw12dj25cjjt6lw0wuob1sg8j3fj.jpg', title: 'Большой Петергофский дворец' },
+  { src: 'image/images.jpg', title: 'Алые паруса' },
   { src: 'image/krd.jpg', title: 'Краснодар' },
   { src: 'image/msk.jpg', title: 'Москва' },
-  { src: 'image/piter-1-2190x1230.jpg', title: 'Петербург' },
-  { src: 'image/spb.jpg', title: 'СПб' },
+  { src: 'image/piter-1-2190x1230.jpg', title: 'Панорама Санкт-Петербурга' },
+  { src: 'image/spb.jpg', title: 'Казанский собор' },
 ];
 
 let offset = 0;

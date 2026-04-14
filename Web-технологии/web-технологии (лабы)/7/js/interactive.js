@@ -4,15 +4,15 @@
  */
 
 function showSimpleResult() {
-  alert('Результат: 2 + 2 = 4');
+  alert('Function Declaration');
 }
 
 const showSimpleResultExpr = function () {
-  alert('Результат: 2 + 2 = 4');
+  alert('Function Expression');
 };
 
 const showSimpleResultArrow = () => {
-  alert('Результат: 2 + 2 = 4');
+  alert('Стрелочная функция (arrow function)');
 };
 
 const favoritePlaces = [

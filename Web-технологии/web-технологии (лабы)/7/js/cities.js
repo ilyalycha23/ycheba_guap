@@ -1,8 +1,3 @@
-/**
- * Вариант 9 ч. 2: загрузка изображения по клику.
- * Обработчики назначены через свойство DOM onclick.
- */
-
 const cityPhotos = {
   krd: { src: 'image/krd.jpg', label: 'Краснодар' },
   sbp: { src: 'image/spb.jpg', label: 'Санкт-Петербург' },

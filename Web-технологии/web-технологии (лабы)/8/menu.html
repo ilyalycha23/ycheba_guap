@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЛР8 — выпадающее меню</title>
+  <link rel="stylesheet" href="pulldown.css">
+</head>
+<body>
+  <p class="menu-back"><a href="index.html">← К списку заданий</a></p>
+
+  <div class="grid-container">
+    <div class="el-1">
+      <div class="nav_pulldown">
+        <a id="list-html" href="#" class="nav_link">HTML</a>
+        <div id="pulldown-html" class="pulldown_menu">
+          <a class="pulldown_item" href="pages/html-semantics.html">Семантика</a>
+          <a class="pulldown_item" href="pages/html-structure.html">Структура</a>
+          <a class="pulldown_item" href="pages/html-links.html">Ссылки</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="el-2">
+      <div class="nav_pulldown">
+        <a id="list-css" href="#" class="nav_link">CSS</a>
+        <div id="pulldown-css" class="pulldown_menu">
+          <a class="pulldown_item" href="pages/css-selectors.html">Селекторы</a>
+          <a class="pulldown_item" href="pages/css-layout.html">Вёрстка</a>
+          <a class="pulldown_item" href="pages/css-adaptive.html">Адаптив</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="el-3">
+      <div class="nav_pulldown">
+        <a id="list-js" href="#" class="nav_link">JavaScript</a>
+        <div id="pulldown-js" class="pulldown_menu">
+          <a class="pulldown_item" href="pages/js-syntax.html">Синтаксис</a>
+          <a class="pulldown_item" href="pages/js-dom.html">DOM</a>
+          <a class="pulldown_item" href="pages/js-events.html">События</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="el-4">
+      <p>Нижняя область сетки (как в приложении к методичке) — для дополнительных материалов.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

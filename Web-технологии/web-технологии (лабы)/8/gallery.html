@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЛР8 — галерея</title>
+  <link rel="stylesheet" href="lab8-common.css">
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body class="gallery-page">
+  <p class="nav-back"><a href="index.html">← К списку заданий</a></p>
+  <h1>Галерея (8 изображений, видно 3)</h1>
+  <p>Используются файлы из папки <code>image</code>.</p>
+
+  <div class="gallery-toolbar">
+    <button type="button" id="btn-prev" aria-label="Предыдущие три">← Назад</button>
+    <span id="gallery-counter"></span>
+    <button type="button" id="btn-next" aria-label="Следующие три">Вперёд →</button>
+  </div>
+
+  <div class="gallery-strip">
+    <figure>
+      <img src="image/3cc96a9d82a0c10bfc5acad04b874a6e.jpg" alt="">
+      <figcaption></figcaption>
+    </figure>
+    <figure>
+      <img src="image/81-sankt_peterburg.jpg" alt="">
+      <figcaption></figcaption>
+    </figure>
+    <figure>
+      <img src="image/ieijxw12dj25cjjt6lw0wuob1sg8j3fj.jpg" alt="">
+      <figcaption></figcaption>
+    </figure>
+  </div>
+
+  <p class="gallery-note">Кнопки сдвигают «окно» из трёх снимков по всему набору из восьми файлов.</p>
+
+  <script src="gallery.js"></script>
+</body>
+</html>

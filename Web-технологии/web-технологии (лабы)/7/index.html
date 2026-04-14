@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЛР7 — JavaScript</title>
+  <link rel="stylesheet" href="lab7.css">
+</head>
+<body>
+  <h1>Лабораторная работа №7 — сценарии JavaScript</h1>
+
+  <section aria-labelledby="h-part1">
+    <h2 id="h-part1">Часть 1 (общая)</h2>
+    <p>
+      После загрузки страницы выводится приветствие во внешнем скрипте
+      <code>js/greeting.js</code>. Ниже — три способа объявления функции; по клику выводится одинаковый результат.
+    </p>
+    <div class="btn-row">
+      <button type="button" id="btn-declaration">Function Declaration</button>
+      <button type="button" id="btn-expression">Function Expression</button>
+      <button type="button" id="btn-arrow">Arrow function</button>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-var9">
+    <h2 id="h-var9">Часть 2, вариант 9 — «Мой Петербург»</h2>
+    <p>По клику поочерёдно открываются окна <code>alert</code> с названиями любимых мест.</p>
+    <div class="btn-row">
+      <button type="button" class="secondary" id="btn-petersburg">Мой Петербург</button>
+    </div>
+    <p style="margin-top:1rem"><a href="cities.html">Страница с городами и изображениями →</a></p>
+  </section>
+
+  <script src="js/greeting.js"></script>
+  <script src="js/interactive.js" defer></script>
+</body>
+</html>

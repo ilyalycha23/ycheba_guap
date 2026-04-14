@@ -1,0 +1,92 @@
+/* По приложению к ЛР8: сетка и выпадающие меню; цвет navy вместо опечатки #navy */
+body {
+  background: #9fc;
+  margin: 0;
+  padding: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-rows: 110px 500px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1vw;
+}
+
+.el-1,
+.el-2,
+.el-3,
+.el-4 {
+  text-align: center;
+}
+
+.el-1 {
+  grid-row-start: 1;
+  grid-column-start: 1;
+}
+
+.el-2 {
+  grid-row-start: 1;
+  grid-column-start: 2;
+}
+
+.el-3 {
+  grid-row-start: 1;
+  grid-column-start: 3;
+}
+
+.el-4 {
+  grid-row-start: 2;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 8px;
+}
+
+* {
+  text-decoration: none;
+}
+
+.pulldown_menu {
+  visibility: hidden;
+  padding: 10px;
+}
+
+.nav_link {
+  font-size: 20px;
+  font-weight: bold;
+  color: navy;
+}
+
+.show.pulldown_menu {
+  visibility: visible;
+}
+
+.nav_pulldown {
+  padding: 10px;
+}
+
+.pulldown_item {
+  display: block;
+  background: #9fc;
+  color: navy;
+  width: 120px;
+  text-align: center;
+  padding: 6px;
+  font-size: 15px;
+  border: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+a:hover {
+  color: red;
+}
+
+.menu-back {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  color: navy;
+  font-size: 14px;
+}

@@ -39,7 +39,7 @@ function createFeatures(features) {
 function renderTestimonialsInner(testimonials) {
     return `
             <div class="testimonials-slider">
-                <button class="testimonial-btn prev" onclick="prevTestimonial()">❮</button>
+                <button class="testimonial-btn prev" data-testimonial-action="prev">❮</button>
                 <div class="testimonials-container" id="testimonialsContainer">
                     ${testimonials.map((t, i) => `
                         <div class="testimonial-card" data-index="${i}">
@@ -49,11 +49,11 @@ function renderTestimonialsInner(testimonials) {
                         </div>
                     `).join('')}
                 </div>
-                <button class="testimonial-btn next" onclick="nextTestimonial()">❯</button>
+                <button class="testimonial-btn next" data-testimonial-action="next">❯</button>
             </div>
             <div class="testimonial-dots" id="testimonialDots">
                 ${testimonials.map((_, i) => `
-                    <span class="testimonial-dot ${i === 0 ? 'active' : ''}" onclick="goToTestimonial(${i})"></span>
+                    <span class="testimonial-dot ${i === 0 ? 'active' : ''}" data-testimonial-index="${i}"></span>
                 `).join('')}
             </div>
     `;
@@ -122,25 +122,26 @@ function animateNumbers() {
 
 // логика слайдера
 let currentTestimonial = 0;
+let activePostData = null;
 
-window.prevTestimonial = function() {
+function prevTestimonial() {
     const testimonials = window.homeData?.testimonials || [];
     if (testimonials.length === 0) return;
     currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
     updateTestimonialDisplay();
-};
+}
 
-window.nextTestimonial = function() {
+function nextTestimonial() {
     const testimonials = window.homeData?.testimonials || [];
     if (testimonials.length === 0) return;
     currentTestimonial = (currentTestimonial + 1) % testimonials.length;
     updateTestimonialDisplay();
-};
+}
 
-window.goToTestimonial = function(index) {
+function goToTestimonial(index) {
     currentTestimonial = index;
     updateTestimonialDisplay();
-};
+}
 
 // Обновление активного отзыва и точек слайдера
 function updateTestimonialDisplay() {
@@ -233,7 +234,7 @@ function buildPage(pageId) {
                                 ).join('') : ''}
                             </div>
                             ${project.photo ? `
-                                <a href="${project.photo}" class="portfolio-link" target="_blank" onclick="event.preventDefault(); window.open(this.href);">Посмотреть →</a>
+                                <a href="${project.photo}" class="portfolio-link" target="_blank" rel="noopener noreferrer">Посмотреть →</a>
                             ` : ''}
                         </div>
                     </div>
@@ -250,7 +251,7 @@ function buildPage(pageId) {
             
             ${data.contactText ? `
             <div class="portfolio-contact">
-                <p>Хотите такой же сайт? <a href="#" onclick="window.updateContent('contacts'); return false;">Свяжитесь со мной</a> в разделе "Контакты"!</p>
+                <p>Хотите такой же сайт? <a href="#" data-nav-target="contacts">Свяжитесь со мной</a> в разделе "Контакты"!</p>
             </div>
         ` : ''}
         </div>
@@ -270,7 +271,7 @@ function buildPage(pageId) {
                         <div class="service-time">⏱️ ${item.time}</div>
                         <p class="service-description">${item.description || ''}</p>
                         <div class="service-price">${item.price || 'Цена договорная'}</div>
-                        <button class="service-order" onclick="window.orderService('${item.name}')">Заказать сайт</button>
+                        <button class="service-order" data-order-service="${item.name}">Заказать сайт</button>
                     </div>
                 `;
             });
@@ -309,7 +310,7 @@ function buildPage(pageId) {
                                     <span>❤️ ${post.likes || 0}</span>
                                     <span>💬 ${post.comments || 0}</span>
                                 </div>
-                                <button class="read-more" onclick="window.showPost(${index + 1})">Читать →</button>
+                                <button class="read-more" data-post-id="${index + 1}">Читать →</button>
                             </div>
                         </div>
                     </div>
@@ -399,7 +400,7 @@ function buildPage(pageId) {
                     <div class="contacts-right">
                         <div class="contact-form-section">
                             <h3>Напишите мне</h3>
-                            <form class="contact-form" id="contactForm" onsubmit="handleFormSubmit(event)">
+                            <form class="contact-form" id="contactForm">
                                 <input type="text" placeholder="Ваше имя" required>
                                 <input type="email" placeholder="Ваш email" required>
                                 <input type="text" placeholder="Тема">
@@ -429,7 +430,7 @@ function buildPage(pageId) {
                 
                 <div class="contact-map">
                     <h3>Как нас найти</h3>
-                    <div class="map-placeholder" onclick="window.open('https://yandex.ru/maps/?ll=${data.coordinates.lng},${data.coordinates.lat}&z=17&pt=${data.coordinates.lng},${data.coordinates.lat},pm2blm', '_blank')">
+                    <div class="map-placeholder" data-map-url="https://yandex.ru/maps/?ll=${data.coordinates.lng},${data.coordinates.lat}&z=17&pt=${data.coordinates.lng},${data.coordinates.lat},pm2blm">
                         <div class="map-overlay">
                             <span>🗺️ Открыть карту</span>
                             <small>${data.address || 'Нажмите чтобы открыть'}</small>
@@ -443,7 +444,7 @@ function buildPage(pageId) {
     html += `
         <div class="legal-page">
             <div class="legal-content">${data.content}</div>
-            <button class="nav-btn" onclick="window.updateContent('home')">← На главную</button>
+            <button class="nav-btn" data-nav-target="home">← На главную</button>
         </div>
     `;
 } else if (pageId === 'terms-of-use') {
@@ -451,7 +452,7 @@ function buildPage(pageId) {
     html += `
         <div class="legal-page">
             <div class="legal-content">${data.content}</div>
-            <button class="nav-btn" onclick="window.updateContent('home')">← На главную</button>
+            <button class="nav-btn" data-nav-target="home">← На главную</button>
         </div>
     `;
 }
@@ -485,7 +486,7 @@ window.showPost = function(postId) {
     
     const postHtml = `
         <div class="post-page">
-            <button class="back-btn" onclick="window.updateContent('blog')">← Назад к блогу</button>
+            <button class="back-btn" data-nav-target="blog">← Назад к блогу</button>
             
             <article class="post-article">
                 <h1>${post.title}</h1>
@@ -514,8 +515,8 @@ window.showPost = function(postId) {
                 </div>
                 
                 <div class="post-navigation">
-                    <button class="nav-btn" onclick="window.updateContent('blog')">← Все статьи</button>
-                    <button class="nav-btn" id="shareBtn">📤 Поделиться</button>
+                    <button class="nav-btn" data-nav-target="blog">← Все статьи</button>
+                    <button class="nav-btn" data-action="share-post">📤 Поделиться</button>
                 </div>
             </article>
         </div>
@@ -524,36 +525,7 @@ window.showPost = function(postId) {
     // пост в контент
     document.getElementById('content').innerHTML = postHtml;
     
-    //  ОБРАБОТЧИК ДЛЯ КНОПКИ "ПОДЕЛИТЬСЯ" 
-    setTimeout(() => {
-        const shareBtn = document.getElementById('shareBtn');
-        if (shareBtn) {
-            shareBtn.onclick = async () => {
-                const shareData = {
-                    title: post.title,
-                    text: post.preview || post.content.replace(/<[^>]*>/g, '').substring(0, 100) + '...',
-                    url: window.location.href
-                };
-                
-                //  Web Share API (работает на телефонах)
-                if (navigator.share) {
-                    try {
-                        await navigator.share(shareData);
-                        console.log('Успешно поделились!');
-                        return;
-                    } catch (err) {
-                        if (err.name !== 'AbortError') {
-                            console.error('Ошибка шаринга:', err);
-                            fallbackShare(shareData);
-                        }
-                    }
-                } else {
-                    // Если Web Share не поддерживается, то fallback
-                    fallbackShare(shareData);
-                }
-            };
-        }
-    }, 100);
+    activePostData = post;
     
     window.scrollTo({ top: 0, behavior: 'smooth' });
 };
@@ -577,6 +549,32 @@ function fallbackShare(shareData) {
         const telegramUrl = `https://t.me/share/url?url=${encodeURIComponent(shareData.url)}&text=${encodeURIComponent(shareData.title)}`;
         window.open(telegramUrl, '_blank', 'width=600,height=400');
     }
+}
+
+async function shareActivePost() {
+    if (!activePostData) return;
+
+    const shareData = {
+        title: activePostData.title,
+        text: activePostData.preview || activePostData.content.replace(/<[^>]*>/g, '').substring(0, 100) + '...',
+        url: window.location.href
+    };
+
+    if (navigator.share) {
+        try {
+            await navigator.share(shareData);
+            console.log('Успешно поделились!');
+            return;
+        } catch (err) {
+            if (err.name !== 'AbortError') {
+                console.error('Ошибка шаринга:', err);
+                fallbackShare(shareData);
+            }
+            return;
+        }
+    }
+
+    fallbackShare(shareData);
 }
 
 // переопределение функции updateContent, чтобы онаработала и с post-* ID
@@ -712,5 +710,58 @@ window.orderService = function(serviceName) {
 
 //  инициализация
 document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('click', (event) => {
+        const navLink = event.target.closest('[data-nav-target]');
+        if (navLink) {
+            event.preventDefault();
+            window.updateContent(navLink.dataset.navTarget);
+            return;
+        }
+
+        const testimonialBtn = event.target.closest('[data-testimonial-action]');
+        if (testimonialBtn) {
+            const action = testimonialBtn.dataset.testimonialAction;
+            if (action === 'prev') prevTestimonial();
+            if (action === 'next') nextTestimonial();
+            return;
+        }
+
+        const testimonialDot = event.target.closest('[data-testimonial-index]');
+        if (testimonialDot) {
+            goToTestimonial(Number(testimonialDot.dataset.testimonialIndex));
+            return;
+        }
+
+        const serviceBtn = event.target.closest('[data-order-service]');
+        if (serviceBtn) {
+            window.orderService(serviceBtn.dataset.orderService);
+            return;
+        }
+
+        const readMoreBtn = event.target.closest('[data-post-id]');
+        if (readMoreBtn) {
+            window.showPost(readMoreBtn.dataset.postId);
+            return;
+        }
+
+        const mapBlock = event.target.closest('[data-map-url]');
+        if (mapBlock) {
+            window.open(mapBlock.dataset.mapUrl, '_blank', 'noopener,noreferrer');
+            return;
+        }
+
+        const shareBtn = event.target.closest('[data-action="share-post"]');
+        if (shareBtn) {
+            shareActivePost();
+        }
+    });
+
+    document.addEventListener('submit', (event) => {
+        const form = event.target;
+        if (form && form.id === 'contactForm') {
+            window.handleFormSubmit(event);
+        }
+    });
+
     window.updateContent('home');
 });

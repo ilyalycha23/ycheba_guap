@@ -3,7 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Мой сайт</title>
+    <title>Сайт?Легко! — Создание сайтов и веб-услуги</title>
+    <meta name="description" content="Сайт?Легко! — разработка современных сайтов, портфолио, веб-услуги и сопровождение проектов для бизнеса.">
+    <meta name="keywords" content="создание сайтов, веб-разработка, услуги, портфолио, блог, сайт под ключ">
+    <meta name="author" content="ООО Сайт?Легко!">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="Сайт?Легко!">
+    <meta property="og:title" content="Сайт?Легко! — Создание сайтов и веб-услуги">
+    <meta property="og:description" content="Разработка современных сайтов, портфолио, веб-услуги и сопровождение проектов.">
+    <meta property="og:url" content="/">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Сайт?Легко! — Создание сайтов и веб-услуги">
+    <meta name="twitter:description" content="Разработка современных сайтов, портфолио, веб-услуги и сопровождение проектов.">
     <link rel="stylesheet" href="style.css">
     
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
@@ -86,7 +102,7 @@
                         const a = document.createElement('a');
                         a.href = '#';
                         a.textContent = item.label;
-                        a.onclick = (e) => handleClick(item.id, e);
+                        a.addEventListener('click', (e) => handleClick(item.id, e));
                         li.appendChild(a);
                         mobileMenu.appendChild(li);
                     });
@@ -132,7 +148,7 @@
         };
 
         // закрытие меню по клику на затемнённый фон
-        document.getElementById('menuOverlay').onclick = closeMenu;
+        document.getElementById('menuOverlay').addEventListener('click', closeMenu);
 
         // react-меню в корневой контейнер
         ReactDOM.createRoot(document.getElementById('root')).render(<Menu />);
@@ -142,9 +158,9 @@
             <div class="footer-content">
                 <p>© 2026 - ООО "Сайт?Легко!" - Все права защищены.</p>
                 <div class="footer-links">
-                <a href="#" onclick="window.updateContent('privacy-policy'); return false;">Политика Конфиденциальности</a>
+                <a href="#" data-nav-target="privacy-policy">Политика Конфиденциальности</a>
                 <span class="footer-separator">|</span>
-                <a href="#" onclick="window.updateContent('terms-of-use'); return false;">Пользовательское Соглашение</a>
+                <a href="#" data-nav-target="terms-of-use">Пользовательское Соглашение</a>
             </div>
             </div>
         </div>

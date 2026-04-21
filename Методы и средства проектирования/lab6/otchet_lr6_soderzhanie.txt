@@ -1,0 +1,28 @@
+Лабораторная работа №6 — содержание отчёта (методичка.pdf, п. 6.4, вариант 12)
+
+1. Цель
+   Хранимые процедуры и функции в PostgreSQL: вставка с пополнением справочника, удаление с проверками и ручным каскадом, агрегат, статистика во временной таблице; управляющие конструкции (п. 6.1); скалярная и табличная функции (п. 6.3).
+
+2. Ход работы (текстом, по шагам)
+   Подготовка: **lab1/01_schema.sql**, **lab2/01_insert_test_data.sql**; при повторе — **09_drop_lr6_objects.sql**.  
+   По порядку выполнить **01–08**, описать словами назначение каждого объекта; выполнить демонстрации **CALL**/**SELECT** (в т.ч. **10_demo_transaction.sql** с ROLLBACK).  
+   Развёрнутый связный текст — в **otchet_lr6.docx** (раздел 2).
+
+3. Объекты ЛР6 (листинги)
+   Тексты из файлов lab6/01–08: процедуры lr6_insert_hire_with_position, lr6_delete_employee, lr6_delete_leaf_subdept, lr6_fill_stats_temp; функции lr6_sum_staff_units, lr6_child_count, lr6_direct_subdepts; блок DO в 06_batch_control_flow.sql.
+
+4. Выполнение и результаты
+   Скриншоты или вывод psql:
+   — CALL lr6_insert_hire_with_position(…) и проверка строк в должность / прием;
+   — lr6_delete_employee / lr6_delete_leaf_subdept (по согласованию с преподавателем: копия БД или сценарий с ROLLBACK — см. 10_demo_transaction.sql);
+   — SELECT lr6_sum_staff_units(2);
+   — CALL lr6_fill_stats_temp(); SELECT * FROM lr6_stat;
+   — \i 06_batch_control_flow.sql (сообщения NOTICE);
+   — SELECT с.ид, lr6_child_count(с.ид) FROM сотрудник с;
+   — SELECT * FROM lr6_direct_subdepts(1).
+
+5. Вывод
+   Кратко: зачем процедура вместо «сырого» DML; чем отличается TEMP-таблица от обычной; когда удобна табличная функция.
+
+6. Приложения
+   Файлы lab6/*.sql, при необходимости lab1/01_schema.sql, lab2/01_insert_test_data.sql.

@@ -5,26 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ЛР9 — анимация и визуализация данных</title>
   <link rel="stylesheet" href="lab9.css">
-  <!-- Библиотеки по методичке: jQuery (анимация), Chart.js (диаграмма) -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 </head>
 <body>
   <div class="page">
     <h1>Лабораторная работа №9</h1>
-    <p class="note">
-      Использование библиотек JavaScript для анимации элементов и визуализации данных.
-      Данные диаграммы — учебный пример (порядок величин по открытым сводкам, округлённо).
-    </p>
 
-    <!-- П.1: анимация через jQuery .animate() с настройкой длительности и easing -->
     <section aria-labelledby="h-anim">
       <span class="badge">Пункт 1</span>
       <h2 id="h-anim">Анимационный эффект (jQuery)</h2>
-      <p class="note">
-        Параметры: длительность (duration), функция плавности (easing: <code>swing</code> / <code>linear</code>),
-        колбэк <code>complete</code>. Тематика — веб-курс: появление блока с приглашением к изучению материалов.
-      </p>
       <button type="button" id="replay-anim">Повторить анимацию</button>
       <div id="anim-box" class="anim-box" aria-live="polite">
         Web-технологии
@@ -32,14 +22,9 @@
       </div>
     </section>
 
-    <!-- П.2: диаграмма Chart.js, вариант 9 методички -->
     <section aria-labelledby="h-chart">
-      <span class="badge">Пункт 2 · вариант 9</span>
+      <span class="badge">Пункт 2</span>
       <h2 id="h-chart">Диаграмма: крупнейшие библиотеки России</h2>
-      <p class="note">
-        Вид диаграммы — горизонтальные столбцы (удобно сравнивать доли по фонду, млн ед. хранения).
-        Количество точек: 6 (в диапазоне 5–7 по методичке).
-      </p>
       <div class="chart-wrap">
         <canvas id="libraries-chart" aria-label="Диаграмма по фондам библиотек"></canvas>
       </div>

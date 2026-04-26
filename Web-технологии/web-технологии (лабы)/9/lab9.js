@@ -1,14 +1,9 @@
-/**
- * ЛР9 — пункт 1: jQuery-анимация (duration, easing, complete).
- * Пункт 2: Chart.js — столбчатая диаграмма по варианту 9.
- */
 (function () {
   'use strict';
 
-  /** Запуск появления блока: сначала «жёсткая» установка стартовых свойств, затем .animate() */
   function runIntroAnimation() {
     var $box = $('#anim-box');
-    // старт: смещение влево и прозрачность
+    //смещение влево и прозрачность
     $box.css({
       marginLeft: -280,
       opacity: 0,
@@ -22,7 +17,7 @@
         duration: 1400,
         easing: 'swing',
         complete: function () {
-          // вторая короткая анимация с другим easing — демонстрация параметра «функция плавности»
+          //параметр функция плавности
           $box.animate(
             { paddingLeft: 28, paddingRight: 28 },
             {
@@ -47,7 +42,7 @@
       runIntroAnimation();
     });
 
-    // --- П.2: Chart.js (горизонтальный bar chart), вариант 9 ---
+    // горизонтальный bar chart
     var ctx = document.getElementById('libraries-chart');
     if (!ctx || typeof Chart === 'undefined') {
       return;
@@ -61,7 +56,6 @@
       'Национальная библиотека Республики Татарстан',
       'Российская государственная библиотека искусств',
     ];
-    // млн единиц хранения, округлённые учебные значения
     var dataMln = [48.2, 36.5, 6.8, 4.1, 3.5, 2.9];
 
     new Chart(ctx, {

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ЛР9 — анимация и визуализация данных</title>
+  <link rel="stylesheet" href="lab9.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="page">
+    <h1>Лабораторная работа №9</h1>
+
+    <section aria-labelledby="h-anim">
+      <span class="badge">Пункт 1</span>
+      <h2 id="h-anim">Анимационный эффект (jQuery)</h2>
+      <button type="button" id="replay-anim">Повторить анимацию</button>
+      <div id="anim-box" class="anim-box" aria-live="polite">
+        Web-технологии
+        <small>Анимация появления блока с настраиваемой кривой и длительностью</small>
+      </div>
+    </section>
+
+    <section aria-labelledby="h-chart">
+      <span class="badge">Пункт 2</span>
+      <h2 id="h-chart">Диаграмма: крупнейшие библиотеки России</h2>
+      <div class="chart-wrap">
+        <canvas id="libraries-chart" aria-label="Диаграмма по фондам библиотек"></canvas>
+      </div>
+    </section>
+  </div>
+
+  <script src="lab9.js"></script>
+</body>
+</html>

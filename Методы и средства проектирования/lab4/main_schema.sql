@@ -1,71 +1,161 @@
-create table подразделение (
-    ид int primary key,
-    наименование varchar(200) not null,
-    ид_родительское int null,
-    check (ид is distinct from ид_родительское),
-    foreign key (ид_родительское) references подразделение (ид) on delete no action on update cascade
+-- Цельный первый скрипт: схема БД + тестовые данные (как lab2) + дополнения для ЛР4.
+-- Выполнить один раз в пустой схеме или при полной пересборке учебной БД.
+
+DROP TABLE IF EXISTS
+    увольнение,
+    перевод,
+    прием,
+    дети,
+    штатное_расписание,
+    сотрудник,
+    должность,
+    подразделение
+CASCADE;
+
+CREATE TABLE подразделение (
+    ид int PRIMARY KEY,
+    наименование varchar(200) NOT NULL,
+    ид_родительское int NULL,
+    CHECK (ид IS DISTINCT FROM ид_родительское),
+    FOREIGN KEY (ид_родительское) REFERENCES подразделение (ид) ON DELETE NO ACTION ON UPDATE CASCADE
 );
 
-create table должность (
-    ид int primary key,
-    наименование varchar(150) not null unique,
-    категория varchar(20) not null check (категория in ('инженер', 'техник', 'прочее'))
+CREATE TABLE должность (
+    ид int PRIMARY KEY,
+    наименование varchar(150) NOT NULL UNIQUE,
+    категория varchar(20) NOT NULL CHECK (категория IN ('инженер', 'техник', 'прочее'))
 );
 
-create table штатное_расписание (
-    ид int primary key,
-    ид_подразделения int not null,
-    ид_должности int not null,
-    количество_единиц smallint not null check (количество_единиц > 0),
-    unique (ид_подразделения, ид_должности),
-    foreign key (ид_подразделения) references подразделение (ид) on delete no action on update cascade,
-    foreign key (ид_должности) references должность (ид) on delete no action on update cascade
+CREATE TABLE штатное_расписание (
+    ид int PRIMARY KEY,
+    ид_подразделения int NOT NULL,
+    ид_должности int NOT NULL,
+    количество_единиц smallint NOT NULL CHECK (количество_единиц > 0),
+    UNIQUE (ид_подразделения, ид_должности),
+    FOREIGN KEY (ид_подразделения) REFERENCES подразделение (ид) ON DELETE NO ACTION ON UPDATE CASCADE,
+    FOREIGN KEY (ид_должности) REFERENCES должность (ид) ON DELETE NO ACTION ON UPDATE CASCADE
 );
 
-create table сотрудник (
-    ид int primary key,
-    фио varchar(200) not null,
-    дата_рождения date null
+CREATE TABLE сотрудник (
+    ид int PRIMARY KEY,
+    фио varchar(200) NOT NULL,
+    дата_рождения date NULL
 );
 
-create table дети (
-    ид int primary key,
-    ид_сотрудника int not null,
-    фио varchar(200) not null,
-    пол char(1) not null check (пол in ('М', 'Ж')),
-    дата_рождения date null,
-    foreign key (ид_сотрудника) references сотрудник (ид) on delete no action on update cascade
+CREATE TABLE дети (
+    ид int PRIMARY KEY,
+    ид_сотрудника int NOT NULL,
+    фио varchar(200) NOT NULL,
+    пол char(1) NOT NULL CHECK (пол IN ('М', 'Ж')),
+    дата_рождения date NULL,
+    FOREIGN KEY (ид_сотрудника) REFERENCES сотрудник (ид) ON DELETE NO ACTION ON UPDATE CASCADE
 );
 
-create table прием (
-    ид int primary key,
-    ид_сотрудника int not null,
-    ид_подразделения int not null,
-    ид_должности int not null,
-    дата_приема date not null,
-    совместительство bit(1) not null default '0'::bit(1),
-    foreign key (ид_сотрудника) references сотрудник (ид) on delete no action on update cascade,
-    foreign key (ид_подразделения) references подразделение (ид) on delete no action on update cascade,
-    foreign key (ид_должности) references должность (ид) on delete no action on update cascade
+CREATE TABLE прием (
+    ид int PRIMARY KEY,
+    ид_сотрудника int NOT NULL,
+    ид_подразделения int NOT NULL,
+    ид_должности int NOT NULL,
+    дата_приема date NOT NULL,
+    совместительство bit(1) NOT NULL DEFAULT '0'::bit(1),
+    FOREIGN KEY (ид_сотрудника) REFERENCES сотрудник (ид) ON DELETE NO ACTION ON UPDATE CASCADE,
+    FOREIGN KEY (ид_подразделения) REFERENCES подразделение (ид) ON DELETE NO ACTION ON UPDATE CASCADE,
+    FOREIGN KEY (ид_должности) REFERENCES должность (ид) ON DELETE NO ACTION ON UPDATE CASCADE
 );
 
-create table перевод (
-    ид int primary key,
-    ид_сотрудника int not null,
-    ид_подразделения_откуда int not null,
-    ид_подразделения_куда int not null,
-    дата_перевода date not null,
-    ид_новой_должности int null,
-    check (ид_подразделения_откуда is distinct from ид_подразделения_куда),
-    foreign key (ид_сотрудника) references сотрудник (ид) on delete no action on update cascade,
-    foreign key (ид_подразделения_откуда) references подразделение (ид) on delete no action on update cascade,
-    foreign key (ид_подразделения_куда) references подразделение (ид) on delete no action on update cascade,
-    foreign key (ид_новой_должности) references должность (ид) on delete no action on update cascade
+CREATE TABLE перевод (
+    ид int PRIMARY KEY,
+    ид_сотрудника int NOT NULL,
+    ид_подразделения_откуда int NOT NULL,
+    ид_подразделения_куда int NOT NULL,
+    дата_перевода date NOT NULL,
+    ид_новой_должности int NULL,
+    CHECK (ид_подразделения_откуда IS DISTINCT FROM ид_подразделения_куда),
+    FOREIGN KEY (ид_сотрудника) REFERENCES сотрудник (ид) ON DELETE NO ACTION ON UPDATE CASCADE,
+    FOREIGN KEY (ид_подразделения_откуда) REFERENCES подразделение (ид) ON DELETE NO ACTION ON UPDATE CASCADE,
+    FOREIGN KEY (ид_подразделения_куда) REFERENCES подразделение (ид) ON DELETE NO ACTION ON UPDATE CASCADE,
+    FOREIGN KEY (ид_новой_должности) REFERENCES должность (ид) ON DELETE NO ACTION ON UPDATE CASCADE
 );
 
-create table увольнение (
-    ид int primary key,
-    ид_сотрудника int not null,
-    дата_увольнения date not null,
-    foreign key (ид_сотрудника) references сотрудник (ид) on delete no action on update cascade
+CREATE TABLE увольнение (
+    ид int PRIMARY KEY,
+    ид_сотрудника int NOT NULL,
+    дата_увольнения date NOT NULL,
+    FOREIGN KEY (ид_сотрудника) REFERENCES сотрудник (ид) ON DELETE NO ACTION ON UPDATE CASCADE
 );
+
+BEGIN;
+
+INSERT INTO подразделение (ид, наименование, ид_родительское) VALUES
+    (1, 'ООО «Промтех»', NULL),
+    (2, 'Цех механической обработки', 1),
+    (3, 'Отдел главного конструктора', 1),
+    (4, 'Сектор расчётов ОГК', 3);
+
+INSERT INTO должность (ид, наименование, категория) VALUES
+    (1, 'Инженер-конструктор 1 кат.', 'инженер'),
+    (2, 'Инженер-технолог', 'инженер'),
+    (3, 'Техник', 'техник'),
+    (4, 'Лаборант', 'прочее');
+
+INSERT INTO штатное_расписание (ид, ид_подразделения, ид_должности, количество_единиц) VALUES
+    (1, 2, 1, 3),
+    (2, 2, 3, 5),
+    (3, 3, 2, 2),
+    (4, 3, 3, 1),
+    (5, 4, 1, 2),
+    (6, 4, 3, 1);
+
+INSERT INTO сотрудник (ид, фио, дата_рождения) VALUES
+    (1, 'Иванов Иван Иванович', '1985-04-12'),
+    (2, 'Петрова Мария Сергеевна', '1990-11-03'),
+    (3, 'Сидоров Пётр Алексеевич', '1978-02-20'),
+    (4, 'Козлова Анна Викторовна', '1995-07-08'),
+    (5, 'Николаев Олег Олегович', '1982-09-15'),
+    (6, 'Большая Семья Инженер', '1980-01-01'),
+    (7, 'Только техники (руководитель цеха)', '1975-05-05'),
+    (8, 'Васильев Тимур Тимурович', '1993-04-04'),
+    (9, 'Техник ОГК А', '1988-01-01'),
+    (10, 'Техник ОГК Б', '1989-02-02'),
+    (11, 'Техник ОГК В', '1991-03-03');
+
+INSERT INTO дети (ид, ид_сотрудника, фио, пол, дата_рождения) VALUES
+    (1, 1, 'Иванов А.И.', 'М', '2012-03-01'),
+    (2, 1, 'Иванова С.И.', 'Ж', '2015-08-20'),
+    (3, 2, 'Петрова К.М.', 'Ж', '2018-01-10'),
+    (4, 3, 'Сидоров А.П.', 'М', '2010-12-12'),
+    (5, 4, 'Козлов В.А.', 'М', '2020-05-05'),
+    (6, 4, 'Козлова Е.А.', 'Ж', '2022-01-01'),
+    (7, 6, 'Ребёнок 1', 'М', '2005-01-01'),
+    (8, 6, 'Ребёнок 2', 'М', '2006-01-01'),
+    (9, 6, 'Ребёнок 3', 'М', '2007-01-01'),
+    (10, 6, 'Ребёнок 4', 'М', '2008-01-01'),
+    (11, 6, 'Ребёнок 5', 'М', '2009-01-01'),
+    (12, 6, 'Ребёнок 6', 'М', '2010-01-01'),
+    (13, 6, 'Ребёнок 7', 'Ж', '2011-06-01');
+
+INSERT INTO прием (ид, ид_сотрудника, ид_подразделения, ид_должности, дата_приема, совместительство) VALUES
+    (1, 1, 2, 1, '2015-01-10', '0'::bit(1)),
+    (2, 2, 2, 3, '2016-06-01', '0'::bit(1)),
+    (3, 3, 3, 2, '2010-03-15', '0'::bit(1)),
+    (4, 4, 3, 1, '2018-09-01', '0'::bit(1)),
+    (5, 5, 2, 3, '2019-01-20', '0'::bit(1)),
+    (6, 6, 3, 1, '2005-05-05', '0'::bit(1)),
+    (7, 2, 4, 1, '2020-01-01', '1'::bit(1)),
+    (8, 7, 2, 3, '2000-01-01', '0'::bit(1)),
+    (9, 8, 3, 3, '2021-01-11', '0'::bit(1)),
+    (10, 9, 3, 3, '2017-01-01', '0'::bit(1)),
+    (11, 10, 3, 3, '2017-02-01', '0'::bit(1)),
+    (12, 11, 3, 3, '2017-03-01', '0'::bit(1));
+
+INSERT INTO перевод (ид, ид_сотрудника, ид_подразделения_откуда, ид_подразделения_куда, дата_перевода, ид_новой_должности) VALUES
+    (1, 1, 2, 3, '2022-01-01', NULL);
+
+INSERT INTO увольнение (ид, ид_сотрудника, дата_увольнения) VALUES
+    (1, 5, '2024-06-01');
+
+INSERT INTO должность (ид, наименование, категория)
+SELECT 5, 'Слесарь (копия справочника)', 'техник'
+WHERE NOT EXISTS (SELECT 1 FROM должность WHERE ид = 5);
+
+COMMIT;

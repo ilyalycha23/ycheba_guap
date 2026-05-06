@@ -8,7 +8,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ЛР4 — Форма: дистанционное обучение</title>
   <style>
-    /* Тема формы: п.1 методички — «Дистанционное обучение» (номер ПК в аудитории). */
     body {
       font-family: "Segoe UI", system-ui, sans-serif;
       background: #f8fafc;
@@ -26,7 +25,6 @@
       border-radius: 12px;
       box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
     }
-    /* Поля строго друг под другом; ширина метки не ломает выравнивание полей */
     .field-grid {
       display: grid;
       grid-template-columns: 220px 1fr;
@@ -164,4 +162,3 @@
   </form>
 </body>
 </html>
-

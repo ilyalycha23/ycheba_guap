@@ -15,7 +15,7 @@
 
 Снятие объектов ЛР7: `09_drop_lr7_objects.sql`.  
 
-В отчёте: листинги `CREATE FUNCTION` / `CREATE TRIGGER`, условия срабатывания, скриншоты или вывод psql. Структура: `otchet_lr7_soderzhanie.txt`.  
+В отчёте: листинги `CREATE FUNCTION` / `CREATE TRIGGER`, условия срабатывания, скриншоты или вывод psql. Структура: `otchet_lr7_soderzhanie.txt`. Подробный ход работы: **`лаба7_ход_работы.txt`**.  
 Шаблон в Word: **otchet_lr7.docx** (в т.ч. **ход работы** текстом). Пересборка: `python build_lab_reports_5_8_docx.py` из корня каталога дисциплины.
 
 **Синтаксис триггера в PG 11:** в конце указано `EXECUTE PROCEDURE … ()` (в PG 14+ допускается и `FUNCTION`).

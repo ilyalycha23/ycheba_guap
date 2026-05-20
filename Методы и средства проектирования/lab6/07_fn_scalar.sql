@@ -8,5 +8,7 @@ AS $$
     SELECT COUNT(*)::int FROM дети WHERE ид_сотрудника = p_сотрудник;
 $$;
 
--- Пример:
--- SELECT с.ид, с.фио, lr6_child_count(с.ид) AS детей FROM сотрудник с ORDER BY с.ид;
+-- === Результат выполнения скрипта ===
+SELECT с.ид, с.фио, lr6_child_count(с.ид) AS детей
+FROM сотрудник с
+ORDER BY с.ид;

@@ -1,17 +1,21 @@
--- Снять объекты ЛР8 (сначала представления, затем индексы).
+-- Снять объекты ЛР8.
 
-DROP VIEW IF EXISTS lr8_vw_subdept_tree;
-DROP VIEW IF EXISTS lr8_vw_shtat_enriched;
-DROP VIEW IF EXISTS lr8_vw_priyom_details;
+DROP TRIGGER IF EXISTS lr8_trg_refresh_priem_stats ON прием;
 
-DROP INDEX IF EXISTS lr8_idx_priyom_sotr;
-DROP INDEX IF EXISTS lr8_idx_priyom_podr;
-DROP INDEX IF EXISTS lr8_idx_priyom_dolzh;
-DROP INDEX IF EXISTS lr8_idx_deti_sotr;
-DROP INDEX IF EXISTS lr8_idx_perevod_sotr;
-DROP INDEX IF EXISTS lr8_idx_uvoln_sotr;
-DROP INDEX IF EXISTS lr8_idx_shtat_podr;
+DROP PROCEDURE IF EXISTS lr8_fill_priem_stats();
+DROP PROCEDURE IF EXISTS lr8_reset_sovmest_old_priem();
+DROP PROCEDURE IF EXISTS lr8_delete_demo_priem_cursor();
 
--- Если создавали роль из 06_grants_example.sql:
--- DROP OWNED BY lr8_reader;
--- DROP ROLE IF EXISTS lr8_reader;
+DROP FUNCTION IF EXISTS lr8_fn_refresh_priem_stats();
+
+DROP TABLE IF EXISTS lr8_priem_stats;
+
+-- === Результат выполнения скрипта (Data Output) ===
+SELECT routine_name, routine_type
+FROM information_schema.routines
+WHERE routine_schema = 'public' AND routine_name LIKE 'lr8_%'
+UNION ALL
+SELECT table_name, 'TABLE'
+FROM information_schema.tables
+WHERE table_schema = 'public' AND table_name LIKE 'lr8_%'
+ORDER BY 1;

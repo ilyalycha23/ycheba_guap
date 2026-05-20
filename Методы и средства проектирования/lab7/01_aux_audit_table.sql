@@ -13,3 +13,10 @@ CREATE TABLE IF NOT EXISTS lr7_employee_audit (
 );
 
 COMMENT ON TABLE lr7_employee_audit IS 'ЛР7: журнал DML по таблице сотрудник (триггер AFTER).';
+
+-- === Результат выполнения скрипта ===
+SELECT column_name, data_type, is_nullable
+FROM information_schema.columns
+WHERE table_schema = 'public' AND table_name = 'lr7_employee_audit'
+ORDER BY ordinal_position;
+SELECT COUNT(*)::bigint AS строк_в_журнале FROM lr7_employee_audit;

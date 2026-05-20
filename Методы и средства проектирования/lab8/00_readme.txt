@@ -1,18 +1,25 @@
-Лабораторная работа №8 — по методичка.pdf (глава **8**, п. **8.4** «Лабораторная работа 8» — типично **представления и индексы** / доступ к данным; при расхождении с методичкой поправьте формулировки в отчёте). Вариант 12. СУБД: **PostgreSQL 11+** (для рекурсивного представления — `WITH RECURSIVE` внутри `CREATE VIEW`).
+Лабораторная работа №8 — методичка.pdf, глава 8 (стр. 61–69), п. 8.3.
+Вариант 12. СУБД: PostgreSQL 11+ (CREATE PROCEDURE, CALL, курсоры PL/pgSQL).
 
 Подготовка:
-1) ../lab1/01_schema.sql  
-2) ../lab2/01_insert_test_data.sql  
+1) ../lab1/01_schema.sql
+2) ../lab2/01_insert_test_data.sql
 
-Порядок (объекты с префиксом `lr8_`):
-1) `01_view_priyom_details.sql` — представление: приём + сотрудник + подразделение + должность.  
-2) `02_view_shtat_enriched.sql` — представление: штатное расписание с расшифровкой справочников.  
-3) `03_view_subdept_tree.sql` — представление с **рекурсией**: иерархия подразделений (уровень, путь).  
-4) `04_indexes.sql` — дополнительные **B-tree** индексы на часто используемых столбцах связей.  
-5) `05_explain_demo.sql` — примеры **EXPLAIN** до/после (для отчёта сравнить планы на малых данных).  
-6) `06_grants_example.sql` — закомментированный пример **GRANT** на роль (выполнять вручную под суперпользователем, если требует методичка).  
+Порядок (объекты lr8_*):
+1) 01_aux_stats_table.sql      — таблица сводки lr8_priem_stats
+2) 02_proc_fill_stats_iso_cursor.sql — ХП с курсором (ISO: DECLARE/OPEN/FETCH/CLOSE)
+3) 03_proc_update_where_current_of.sql — UPDATE … WHERE CURRENT OF
+4) 04_proc_delete_where_current_of.sql — DELETE … WHERE CURRENT OF
+5) 05_demo_cursor_types.sql    — NO SCROLL / SCROLL / аналоги STATIC и DYNAMIC + T-SQL
+6) 06_trg_refresh_stats_cursor.sql — триггер AFTER STATEMENT с курсором
+7) 07_demo_all.sql             — сводная проверка
 
-Снятие объектов ЛР8: `09_drop_lr8_objects.sql`.  
+Перед повторной установкой: 09_drop_lr8_objects.sql
 
-В отчёте: тексты `CREATE VIEW` / `CREATE INDEX`, назначение, выборки из представлений, фрагменты планов. Структура: `otchet_lr8_soderzhanie.txt`. Подробный ход работы: **`лаба8_ход_работы.txt`**.  
-Шаблон в Word: **otchet_lr8.docx** (в т.ч. **ход работы** текстом). Пересборка: `python build_lab_reports_5_8_docx.py` из корня каталога дисциплины.
+PostgreSQL и методичка (T-SQL):
+- ISO-синтаксис курсора — полностью в 02–04.
+- STATIC / KEYSET / DYNAMIC — ключевые слова MS SQL; в 05 даны учебные аналоги и таблица соответствий.
+- WHERE CURRENT OF — в 03 и 04 (курсор FOR UPDATE).
+
+В отчёте: листинги ХП/триггера, вывод Data Output, сравнение типов курсоров (п. 8.2).
+Структура отчёта: otchet_lr8_soderzhanie.txt. Ход работы: лаба8_ход_работы.txt.

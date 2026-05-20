@@ -6,3 +6,9 @@ DROP PROCEDURE IF EXISTS lr6_fill_stats_temp();
 DROP FUNCTION IF EXISTS lr6_sum_staff_units(integer);
 DROP FUNCTION IF EXISTS lr6_child_count(integer);
 DROP FUNCTION IF EXISTS lr6_direct_subdepts(integer);
+
+-- === Результат выполнения скрипта ===
+SELECT routine_schema, routine_name, routine_type
+FROM information_schema.routines
+WHERE routine_schema = 'public' AND routine_name LIKE 'lr6_%'
+ORDER BY routine_name;

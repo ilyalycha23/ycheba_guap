@@ -24,6 +24,6 @@ BEGIN
 END;
 $$;
 
--- После вызова в той же сессии:
--- CALL lr6_fill_stats_temp();
--- SELECT * FROM lr6_stat ORDER BY ид_подразделения;
+-- === Результат выполнения скрипта ===
+CALL lr6_fill_stats_temp();
+SELECT * FROM lr6_stat ORDER BY ид_подразделения;

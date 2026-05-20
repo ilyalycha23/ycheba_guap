@@ -11,3 +11,16 @@ DROP FUNCTION IF EXISTS lr7_fn_deti_limit();
 DROP FUNCTION IF EXISTS lr7_fn_subdept_delete_guard();
 
 DROP TABLE IF EXISTS lr7_employee_audit;
+
+-- === Результат выполнения скрипта ===
+SELECT trigger_name
+FROM information_schema.triggers
+WHERE trigger_schema = 'public' AND trigger_name LIKE 'lr7_%'
+UNION ALL
+SELECT routine_name
+FROM information_schema.routines
+WHERE routine_schema = 'public' AND routine_name LIKE 'lr7_%'
+UNION ALL
+SELECT table_name
+FROM information_schema.tables
+WHERE table_schema = 'public' AND table_name LIKE 'lr7_%';

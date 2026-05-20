@@ -29,3 +29,14 @@ CREATE TRIGGER lr7_trg_deti_limit
     BEFORE INSERT ON дети
     FOR EACH ROW
     EXECUTE PROCEDURE lr7_fn_deti_limit();
+
+-- === Результат выполнения скрипта ===
+SELECT trigger_name, action_timing, event_manipulation
+FROM information_schema.triggers
+WHERE trigger_schema = 'public' AND trigger_name = 'lr7_trg_deti_limit';
+
+SELECT с.ид, с.фио, COUNT(д.ид)::int AS детей_в_таблице
+FROM сотрудник с
+LEFT JOIN дети д ON д.ид_сотрудника = с.ид
+WHERE с.ид = 6
+GROUP BY с.ид, с.фио;

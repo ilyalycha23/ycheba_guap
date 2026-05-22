@@ -14,7 +14,6 @@ body {
   flex-direction: column;
 }
 
-/* 1) Навигация: space-around — половинные отступы по краям */
 .flex-nav {
   display: flex;
   flex-direction: row;
@@ -35,9 +34,8 @@ body {
   text-decoration: underline;
 }
 
-/* 2) Три блока: центр ~ в 2 раза шире боковых, высота на всю ось */
 .main-trio {
-  flex: 1 1 auto;
+  flex: 1 1 auto; /* увеличение, сжим, размер */
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -65,7 +63,7 @@ body {
   float: left;
   margin: 4px 14px 8px 0;
   min-width: 200px;
-  max-width: 46%;
+  max-width: 45%;
   height: auto;
 }
 
@@ -80,7 +78,6 @@ body {
   clear: both;
 }
 
-/* 3) Подвал: контакты в двух блоках */
 .footer-bar {
   display: flex;
   flex-direction: row;
@@ -95,7 +92,6 @@ body {
   color: #93c5fd;
 }
 
-/* Адаптивность: < 800px */
 @media (max-width: 800px) {
   .flex-nav {
     flex-direction: column;
@@ -117,5 +113,5 @@ body {
     max-width: 100%;
   }
 
-  /* Подвал не перестраивается — только может менять ширину содержимого */
+  /* Подвал меняет только ширину содержимого */
 }

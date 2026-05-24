@@ -1,0 +1,59 @@
+Нумерация: отдельно для каждого листа (Unit_0, Unit_1).
+Порядок номеров: сверху-вниз, слева-направо по Position.
+=== Лист «Подготовка выборок»: 19 блоков ===
+  1. Разбиение 70/30, seed=42
+  2. SAMPLE = train
+  3. Импорт ecg_train.txt
+  4. Объединение train+valid+test
+  5. Итоговый датасет (3233)
+  6. Объединение train+test
+  7. OBJECT (уникальный id)
+  8. Фильтр CLASS=1 (норма для train)
+  9. IsTestSet (FALSE для train)
+  10. SAMPLE = valid
+  11. Датасет ECG (публичный)
+  12. Экспорт Выход-скрипта.txt
+  13. Разбиение 50/50 valid/test, seed=42
+  14. Импорт ecg_test.txt
+  15. Остаток нормальных + аномалии
+  16. SAMPLE = test
+  17. Переменные сценария
+  18. Статистика (контроль)
+  19. Статистика (контроль)
+=== Лист «Построение модели»: 30 блоков ===
+  1. model.fitter — скоринг valid
+  2. Отбор SAMPLE = valid
+  3. Изменение (valid)
+  4. Замена: outlier_label, CLASS (valid)
+  5. classification metrics — valid (Fβ)
+  6. Отбор SAMPLE = test
+  7. model.fitter — скоринг test
+  8. Изменение (test)
+  9. Замена: outlier_label, CLASS (test)
+  10. Meta-scaling (z-нормализация)
+  11. classification metrics — test (F1)
+  12. Ссылка: датасет ЛР8
+  13. model.fitter — сохранение модели
+  14. neighbors.LOF Novelty (k, c)
+  15. simple.fitter — обучение LOF (train)
+  16. preprocessing.Scaler (параметры)
+  17. Замена: CLASS (train)
+  18. Удаление, Изменение (train)
+  19. Статистика: valid
+  20. Статистика: test
+  21. Таблица: метрики test
+  22. Таблица: valid
+  23. Таблица: z-scores
+  24. Переменные сценария
+  25. Таблица: LOF scores
+  26. Статистика: train
+  27. Статистика: метрики
+  28. Таблица: метрики valid
+  29. Таблица: train
+  30. Таблица: test
+
+Проверка по методичке:
+  [+] Сценарий 1: train/valid/test 70:15:15, seed=42, SAMPLE, IsTestSet
+  [+] Сценарий 2: Meta-scaling, LOF Novelty, train-only, скоринг valid/test
+  [+] Замена меток, classification metrics (Fβ valid, F1 test)
+  [+] Метрики на скрине: valid fn≈11, test fn≈4 (k=15, c=0.05) — OK

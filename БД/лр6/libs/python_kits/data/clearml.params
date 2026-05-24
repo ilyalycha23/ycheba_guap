@@ -1,0 +1,9 @@
+api {
+    web_server:null
+    api_server:null
+    files_server:null
+    credentials {
+        "access_key"="null"
+        "secret_key"="null"
+    }
+}

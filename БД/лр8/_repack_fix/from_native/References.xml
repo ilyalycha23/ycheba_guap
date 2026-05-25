@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<References>
+	<Item Guid="22fe6b1c-b3f0-4415-a83f-b32315f00cf3" HintPath="../ЛР4/libs/silver_kit/silver_kit/loginom_silver_kit.lgp">
+		<Name Guid="f343d16a-62c2-4d3c-a925-e2c2fbed245e" Name="loginom_silver_kit" VersionMask="^3.1.6"/>
+	</Item>
+	<Item Guid="7f239426-d1b4-4236-af18-b8e9fc3f3988" HintPath="../ЛР4/libs/python_kits/python_kits/loginom_sklearn_meta.lgp">
+		<Name Guid="29e80fae-7e4d-421c-9680-45a797e58ab2" Name="loginom_sklearn_meta" VersionMask="^3.3.1"/>
+	</Item>
+	<Item Guid="af1bdedf-7447-4d10-bda7-436d2157666d" HintPath="../ЛР4/libs/python_kits/python_kits/loginom_sklearn_kit.lgp">
+		<Name Guid="7fb77bb3-1ebb-44a8-8092-efa3c951300c" Name="loginom_sklearn_kit" VersionMask="^3.3.1"/>
+	</Item>
+</References>

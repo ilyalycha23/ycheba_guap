@@ -1,0 +1,2593 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Unit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<WorkFlow xsi:type="TBGPackageModelWorkFlow">
+		<Nodes>
+			<Item Guid="d713e1dc-3a94-48d7-a7ee-e8fe5f6f2c20" DisplayName="ecg_train.txt" VendorGuid="dd767700-1321-4c70-ab92-2acfc4db4492" GenerateNodeTitle="false">
+				<InputPorts>
+					<Item Guid="78ce58f4-e818-3754-bc2e-6af868677420" Name="Connection" DisplayName="Подключение"/>
+					<Item Guid="455b65c3-0587-3a9c-b47e-9b0d285bff3c" Name="ControlVariables" DisplayName="Управляющие переменные"/>
+				</InputPorts>
+				<OutputPorts>
+					<Item Guid="58f7e6c3-511e-39d7-8853-036e0a1a7612" Name="DataSet" DisplayName="Набор данных"/>
+				</OutputPorts>
+				<ServiceInputPorts>
+					<Item Guid="00bd0b43-e4b5-3ac1-b95a-ac1bee14f858" Name="SynchronizationInputPort" DisplayName="Порядок выполнения"/>
+				</ServiceInputPorts>
+				<ServiceOutputPorts>
+					<Item Guid="ca080ff0-2342-32b0-b480-586f9747bace" Name="SynchronizationOutputPort" DisplayName="Порядок выполнения"/>
+					<Item Guid="e98be5ba-c627-3a55-af82-a399dd13c73b" Name="ComponentOutputPort" DisplayName="Компонент"/>
+					<Item Guid="58922a98-d1ea-36de-9099-3ce26fe160e2" Name="DependentNodeOutputPort" DisplayName="Зависимые узлы"/>
+				</ServiceOutputPorts>
+				<Component>
+					<InputSockets>
+						<Item Guid="78ce58f4-e818-3754-bc2e-6af868677420" Name="Connection" DisplayName="Подключение">
+							<Socket xsi:type="TBGConnectionInputSocket" Virgin="true">
+								<Constraints/>
+							</Socket>
+						</Item>
+						<Item Guid="455b65c3-0587-3a9c-b47e-9b0d285bff3c" Name="ControlVariables" DisplayName="Управляющие переменные">
+							<Socket xsi:type="TBGTuneVariablesSocket" Virgin="true">
+								<Constraints/>
+								<Variables SyncThroughVariables="true">
+									<Elements/>
+								</Variables>
+							</Socket>
+						</Item>
+					</InputSockets>
+					<OutputSockets>
+						<Item Guid="58f7e6c3-511e-39d7-8853-036e0a1a7612" Name="DataSet" DisplayName="Набор данных">
+							<Socket xsi:type="TBGDataSetOutputSocket">
+								<DataSource SyncThroughColumns="true">
+									<ColumnDefs/>
+								</DataSource>
+							</Socket>
+						</Item>
+					</OutputSockets>
+					<Engine xsi:type="TBGImportTextFile" FileName="data/ecg_train.txt" CodePage="65001" DelimiterChar="," DecimalSeparator="." ColumnsRequired="false">
+						<ColumnDefs>
+							<Item Name="CLASS" DataType="dtInteger" DataKind="dkDiscrete" UsageType="utActive"/>
+							<Item Name="VAR2" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR3" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR4" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR5" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR6" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR7" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR8" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR9" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR10" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR11" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR12" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR13" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR14" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR15" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR16" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR17" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR18" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR19" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR20" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR21" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR22" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR23" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR24" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR25" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR26" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR27" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR28" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR29" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR30" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR31" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR32" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR33" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR34" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR35" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR36" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR37" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR38" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR39" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR40" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR41" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR42" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR43" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR44" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR45" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR46" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR47" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR48" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR49" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR50" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR51" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR52" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR53" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR54" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR55" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR56" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR57" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR58" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR59" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR60" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR61" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR62" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR63" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR64" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR65" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR66" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR67" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR68" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR69" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR70" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR71" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR72" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR73" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR74" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR75" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR76" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR77" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR78" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR79" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR80" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR81" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR82" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR83" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR84" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR85" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR86" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR87" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR88" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR89" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR90" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR91" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR92" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR93" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR94" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR95" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR96" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR97" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR98" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR99" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR100" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR101" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR102" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR103" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR104" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR105" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR106" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR107" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR108" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR109" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR110" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR111" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR112" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR113" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR114" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR115" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR116" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR117" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR118" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR119" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR120" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR121" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR122" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR123" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR124" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR125" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR126" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR127" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR128" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR129" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR130" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR131" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR132" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR133" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR134" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR135" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR136" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR137" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR138" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR139" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR140" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR141" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+						</ColumnDefs>
+					</Engine>
+				</Component>
+				<Position Left="148" Top="256"/>
+			</Item>
+			<Item Guid="f526c35a-d747-43d4-a309-888fc7b4384a" DisplayName="ecg_test.txt" VendorGuid="dd767700-1321-4c70-ab92-2acfc4db4492" GenerateNodeTitle="false">
+				<InputPorts>
+					<Item Guid="78ce58f4-e818-3754-bc2e-6af868677420" Name="Connection" DisplayName="Подключение"/>
+					<Item Guid="455b65c3-0587-3a9c-b47e-9b0d285bff3c" Name="ControlVariables" DisplayName="Управляющие переменные"/>
+				</InputPorts>
+				<OutputPorts>
+					<Item Guid="58f7e6c3-511e-39d7-8853-036e0a1a7612" Name="DataSet" DisplayName="Набор данных"/>
+				</OutputPorts>
+				<ServiceInputPorts>
+					<Item Guid="00bd0b43-e4b5-3ac1-b95a-ac1bee14f858" Name="SynchronizationInputPort" DisplayName="Порядок выполнения"/>
+				</ServiceInputPorts>
+				<ServiceOutputPorts>
+					<Item Guid="ca080ff0-2342-32b0-b480-586f9747bace" Name="SynchronizationOutputPort" DisplayName="Порядок выполнения"/>
+					<Item Guid="e98be5ba-c627-3a55-af82-a399dd13c73b" Name="ComponentOutputPort" DisplayName="Компонент"/>
+					<Item Guid="58922a98-d1ea-36de-9099-3ce26fe160e2" Name="DependentNodeOutputPort" DisplayName="Зависимые узлы"/>
+				</ServiceOutputPorts>
+				<Component>
+					<InputSockets>
+						<Item Guid="78ce58f4-e818-3754-bc2e-6af868677420" Name="Connection" DisplayName="Подключение">
+							<Socket xsi:type="TBGConnectionInputSocket" Virgin="true">
+								<Constraints/>
+							</Socket>
+						</Item>
+						<Item Guid="455b65c3-0587-3a9c-b47e-9b0d285bff3c" Name="ControlVariables" DisplayName="Управляющие переменные">
+							<Socket xsi:type="TBGTuneVariablesSocket" Virgin="true">
+								<Constraints/>
+								<Variables SyncThroughVariables="true">
+									<Elements/>
+								</Variables>
+							</Socket>
+						</Item>
+					</InputSockets>
+					<OutputSockets>
+						<Item Guid="58f7e6c3-511e-39d7-8853-036e0a1a7612" Name="DataSet" DisplayName="Набор данных">
+							<Socket xsi:type="TBGDataSetOutputSocket">
+								<DataSource SyncThroughColumns="true">
+									<ColumnDefs/>
+								</DataSource>
+							</Socket>
+						</Item>
+					</OutputSockets>
+					<Engine xsi:type="TBGImportTextFile" FileName="data/ecg_test.txt" CodePage="65001" DelimiterChar="," DecimalSeparator="." ColumnsRequired="false">
+						<ColumnDefs>
+							<Item Name="CLASS" DataType="dtInteger" DataKind="dkDiscrete" UsageType="utActive"/>
+							<Item Name="VAR2" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR3" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR4" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR5" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR6" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR7" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR8" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR9" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR10" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR11" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR12" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR13" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR14" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR15" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR16" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR17" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR18" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR19" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR20" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR21" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR22" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR23" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR24" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR25" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR26" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR27" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR28" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR29" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR30" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR31" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR32" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR33" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR34" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR35" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR36" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR37" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR38" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR39" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR40" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR41" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR42" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR43" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR44" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR45" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR46" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR47" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR48" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR49" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR50" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR51" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR52" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR53" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR54" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR55" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR56" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR57" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR58" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR59" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR60" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR61" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR62" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR63" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR64" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR65" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR66" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR67" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR68" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR69" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR70" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR71" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR72" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR73" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR74" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR75" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR76" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR77" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR78" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR79" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR80" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR81" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR82" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR83" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR84" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR85" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR86" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR87" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR88" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR89" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR90" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR91" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR92" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR93" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR94" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR95" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR96" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR97" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR98" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR99" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR100" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR101" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR102" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR103" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR104" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR105" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR106" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR107" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR108" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR109" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR110" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR111" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR112" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR113" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR114" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR115" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR116" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR117" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR118" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR119" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR120" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR121" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR122" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR123" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR124" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR125" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR126" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR127" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR128" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR129" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR130" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR131" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR132" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR133" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR134" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR135" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR136" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR137" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR138" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR139" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR140" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+							<Item Name="VAR141" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive"/>
+						</ColumnDefs>
+					</Engine>
+				</Component>
+				<Position Left="144" Top="392"/>
+			</Item>
+			<Item Guid="8669e7c7-f285-486f-9731-1f92301ced06" DisplayName="Общий датасет" VendorGuid="f5aa91d2-9fe5-439d-9f7f-1e17996da272" GenerateNodeTitle="false">
+				<InputPorts>
+					<Item Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="MainDataSource" DisplayName="Главная таблица"/>
+					<Item Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="JoinedDataSource" DisplayName="Присоединяемая таблица"/>
+				</InputPorts>
+				<OutputPorts>
+					<Item Guid="4ba0e2c2-69ad-3a32-bbdc-75714efe7a51" Name="DataSource" DisplayName="Выходной набор данных"/>
+				</OutputPorts>
+				<ServiceInputPorts>
+					<Item Guid="00bd0b43-e4b5-3ac1-b95a-ac1bee14f858" Name="SynchronizationInputPort" DisplayName="Порядок выполнения"/>
+					<Item Guid="455b65c3-0587-3a9c-b47e-9b0d285bff3c" Name="ControlVariables" DisplayName="Управляющие переменные"/>
+				</ServiceInputPorts>
+				<ServiceOutputPorts>
+					<Item Guid="ca080ff0-2342-32b0-b480-586f9747bace" Name="SynchronizationOutputPort" DisplayName="Порядок выполнения"/>
+					<Item Guid="e98be5ba-c627-3a55-af82-a399dd13c73b" Name="ComponentOutputPort" DisplayName="Компонент"/>
+					<Item Guid="58922a98-d1ea-36de-9099-3ce26fe160e2" Name="DependentNodeOutputPort" DisplayName="Зависимые узлы"/>
+				</ServiceOutputPorts>
+				<Component>
+					<InputSockets>
+						<Item Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="MainDataSource" DisplayName="Главная таблица">
+							<Socket xsi:type="TBGTuneDataSourceSocket">
+								<Constraints/>
+								<DataSource SyncThroughColumns="true">
+									<ColumnDefs>
+										<Item Name="CLASS" DataType="dtInteger" DataKind="dkDiscrete" UsageType="utActive" InputColumnInfoName="CLASS"/>
+										<Item Name="VAR2" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR2"/>
+										<Item Name="VAR3" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR3"/>
+										<Item Name="VAR4" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR4"/>
+										<Item Name="VAR5" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR5"/>
+										<Item Name="VAR6" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR6"/>
+										<Item Name="VAR7" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR7"/>
+										<Item Name="VAR8" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR8"/>
+										<Item Name="VAR9" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR9"/>
+										<Item Name="VAR10" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR10"/>
+										<Item Name="VAR11" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR11"/>
+										<Item Name="VAR12" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR12"/>
+										<Item Name="VAR13" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR13"/>
+										<Item Name="VAR14" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR14"/>
+										<Item Name="VAR15" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR15"/>
+										<Item Name="VAR16" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR16"/>
+										<Item Name="VAR17" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR17"/>
+										<Item Name="VAR18" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR18"/>
+										<Item Name="VAR19" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR19"/>
+										<Item Name="VAR20" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR20"/>
+										<Item Name="VAR21" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR21"/>
+										<Item Name="VAR22" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR22"/>
+										<Item Name="VAR23" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR23"/>
+										<Item Name="VAR24" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR24"/>
+										<Item Name="VAR25" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR25"/>
+										<Item Name="VAR26" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR26"/>
+										<Item Name="VAR27" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR27"/>
+										<Item Name="VAR28" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR28"/>
+										<Item Name="VAR29" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR29"/>
+										<Item Name="VAR30" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR30"/>
+										<Item Name="VAR31" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR31"/>
+										<Item Name="VAR32" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR32"/>
+										<Item Name="VAR33" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR33"/>
+										<Item Name="VAR34" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR34"/>
+										<Item Name="VAR35" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR35"/>
+										<Item Name="VAR36" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR36"/>
+										<Item Name="VAR37" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR37"/>
+										<Item Name="VAR38" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR38"/>
+										<Item Name="VAR39" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR39"/>
+										<Item Name="VAR40" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR40"/>
+										<Item Name="VAR41" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR41"/>
+										<Item Name="VAR42" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR42"/>
+										<Item Name="VAR43" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR43"/>
+										<Item Name="VAR44" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR44"/>
+										<Item Name="VAR45" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR45"/>
+										<Item Name="VAR46" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR46"/>
+										<Item Name="VAR47" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR47"/>
+										<Item Name="VAR48" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR48"/>
+										<Item Name="VAR49" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR49"/>
+										<Item Name="VAR50" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR50"/>
+										<Item Name="VAR51" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR51"/>
+										<Item Name="VAR52" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR52"/>
+										<Item Name="VAR53" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR53"/>
+										<Item Name="VAR54" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR54"/>
+										<Item Name="VAR55" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR55"/>
+										<Item Name="VAR56" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR56"/>
+										<Item Name="VAR57" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR57"/>
+										<Item Name="VAR58" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR58"/>
+										<Item Name="VAR59" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR59"/>
+										<Item Name="VAR60" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR60"/>
+										<Item Name="VAR61" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR61"/>
+										<Item Name="VAR62" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR62"/>
+										<Item Name="VAR63" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR63"/>
+										<Item Name="VAR64" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR64"/>
+										<Item Name="VAR65" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR65"/>
+										<Item Name="VAR66" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR66"/>
+										<Item Name="VAR67" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR67"/>
+										<Item Name="VAR68" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR68"/>
+										<Item Name="VAR69" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR69"/>
+										<Item Name="VAR70" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR70"/>
+										<Item Name="VAR71" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR71"/>
+										<Item Name="VAR72" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR72"/>
+										<Item Name="VAR73" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR73"/>
+										<Item Name="VAR74" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR74"/>
+										<Item Name="VAR75" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR75"/>
+										<Item Name="VAR76" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR76"/>
+										<Item Name="VAR77" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR77"/>
+										<Item Name="VAR78" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR78"/>
+										<Item Name="VAR79" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR79"/>
+										<Item Name="VAR80" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR80"/>
+										<Item Name="VAR81" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR81"/>
+										<Item Name="VAR82" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR82"/>
+										<Item Name="VAR83" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR83"/>
+										<Item Name="VAR84" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR84"/>
+										<Item Name="VAR85" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR85"/>
+										<Item Name="VAR86" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR86"/>
+										<Item Name="VAR87" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR87"/>
+										<Item Name="VAR88" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR88"/>
+										<Item Name="VAR89" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR89"/>
+										<Item Name="VAR90" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR90"/>
+										<Item Name="VAR91" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR91"/>
+										<Item Name="VAR92" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR92"/>
+										<Item Name="VAR93" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR93"/>
+										<Item Name="VAR94" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR94"/>
+										<Item Name="VAR95" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR95"/>
+										<Item Name="VAR96" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR96"/>
+										<Item Name="VAR97" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR97"/>
+										<Item Name="VAR98" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR98"/>
+										<Item Name="VAR99" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR99"/>
+										<Item Name="VAR100" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR100"/>
+										<Item Name="VAR101" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR101"/>
+										<Item Name="VAR102" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR102"/>
+										<Item Name="VAR103" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR103"/>
+										<Item Name="VAR104" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR104"/>
+										<Item Name="VAR105" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR105"/>
+										<Item Name="VAR106" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR106"/>
+										<Item Name="VAR107" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR107"/>
+										<Item Name="VAR108" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR108"/>
+										<Item Name="VAR109" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR109"/>
+										<Item Name="VAR110" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR110"/>
+										<Item Name="VAR111" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR111"/>
+										<Item Name="VAR112" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR112"/>
+										<Item Name="VAR113" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR113"/>
+										<Item Name="VAR114" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR114"/>
+										<Item Name="VAR115" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR115"/>
+										<Item Name="VAR116" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR116"/>
+										<Item Name="VAR117" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR117"/>
+										<Item Name="VAR118" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR118"/>
+										<Item Name="VAR119" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR119"/>
+										<Item Name="VAR120" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR120"/>
+										<Item Name="VAR121" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR121"/>
+										<Item Name="VAR122" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR122"/>
+										<Item Name="VAR123" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR123"/>
+										<Item Name="VAR124" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR124"/>
+										<Item Name="VAR125" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR125"/>
+										<Item Name="VAR126" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR126"/>
+										<Item Name="VAR127" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR127"/>
+										<Item Name="VAR128" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR128"/>
+										<Item Name="VAR129" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR129"/>
+										<Item Name="VAR130" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR130"/>
+										<Item Name="VAR131" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR131"/>
+										<Item Name="VAR132" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR132"/>
+										<Item Name="VAR133" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR133"/>
+										<Item Name="VAR134" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR134"/>
+										<Item Name="VAR135" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR135"/>
+										<Item Name="VAR136" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR136"/>
+										<Item Name="VAR137" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR137"/>
+										<Item Name="VAR138" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR138"/>
+										<Item Name="VAR139" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR139"/>
+										<Item Name="VAR140" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR140"/>
+										<Item Name="VAR141" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR141"/>
+									</ColumnDefs>
+								</DataSource>
+							</Socket>
+						</Item>
+						<Item Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="JoinedDataSource" DisplayName="Присоединяемая таблица">
+							<Socket xsi:type="TBGTuneDataSourceSocket">
+								<Constraints/>
+								<DataSource SyncThroughColumns="true">
+									<ColumnDefs>
+										<Item Name="CLASS" DataType="dtInteger" DataKind="dkDiscrete" UsageType="utActive" InputColumnInfoName="CLASS"/>
+										<Item Name="VAR2" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR2"/>
+										<Item Name="VAR3" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR3"/>
+										<Item Name="VAR4" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR4"/>
+										<Item Name="VAR5" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR5"/>
+										<Item Name="VAR6" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR6"/>
+										<Item Name="VAR7" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR7"/>
+										<Item Name="VAR8" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR8"/>
+										<Item Name="VAR9" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR9"/>
+										<Item Name="VAR10" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR10"/>
+										<Item Name="VAR11" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR11"/>
+										<Item Name="VAR12" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR12"/>
+										<Item Name="VAR13" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR13"/>
+										<Item Name="VAR14" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR14"/>
+										<Item Name="VAR15" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR15"/>
+										<Item Name="VAR16" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR16"/>
+										<Item Name="VAR17" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR17"/>
+										<Item Name="VAR18" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR18"/>
+										<Item Name="VAR19" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR19"/>
+										<Item Name="VAR20" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR20"/>
+										<Item Name="VAR21" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR21"/>
+										<Item Name="VAR22" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR22"/>
+										<Item Name="VAR23" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR23"/>
+										<Item Name="VAR24" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR24"/>
+										<Item Name="VAR25" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR25"/>
+										<Item Name="VAR26" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR26"/>
+										<Item Name="VAR27" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR27"/>
+										<Item Name="VAR28" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR28"/>
+										<Item Name="VAR29" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR29"/>
+										<Item Name="VAR30" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR30"/>
+										<Item Name="VAR31" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR31"/>
+										<Item Name="VAR32" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR32"/>
+										<Item Name="VAR33" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR33"/>
+										<Item Name="VAR34" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR34"/>
+										<Item Name="VAR35" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR35"/>
+										<Item Name="VAR36" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR36"/>
+										<Item Name="VAR37" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR37"/>
+										<Item Name="VAR38" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR38"/>
+										<Item Name="VAR39" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR39"/>
+										<Item Name="VAR40" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR40"/>
+										<Item Name="VAR41" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR41"/>
+										<Item Name="VAR42" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR42"/>
+										<Item Name="VAR43" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR43"/>
+										<Item Name="VAR44" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR44"/>
+										<Item Name="VAR45" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR45"/>
+										<Item Name="VAR46" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR46"/>
+										<Item Name="VAR47" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR47"/>
+										<Item Name="VAR48" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR48"/>
+										<Item Name="VAR49" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR49"/>
+										<Item Name="VAR50" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR50"/>
+										<Item Name="VAR51" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR51"/>
+										<Item Name="VAR52" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR52"/>
+										<Item Name="VAR53" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR53"/>
+										<Item Name="VAR54" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR54"/>
+										<Item Name="VAR55" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR55"/>
+										<Item Name="VAR56" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR56"/>
+										<Item Name="VAR57" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR57"/>
+										<Item Name="VAR58" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR58"/>
+										<Item Name="VAR59" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR59"/>
+										<Item Name="VAR60" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR60"/>
+										<Item Name="VAR61" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR61"/>
+										<Item Name="VAR62" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR62"/>
+										<Item Name="VAR63" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR63"/>
+										<Item Name="VAR64" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR64"/>
+										<Item Name="VAR65" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR65"/>
+										<Item Name="VAR66" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR66"/>
+										<Item Name="VAR67" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR67"/>
+										<Item Name="VAR68" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR68"/>
+										<Item Name="VAR69" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR69"/>
+										<Item Name="VAR70" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR70"/>
+										<Item Name="VAR71" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR71"/>
+										<Item Name="VAR72" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR72"/>
+										<Item Name="VAR73" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR73"/>
+										<Item Name="VAR74" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR74"/>
+										<Item Name="VAR75" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR75"/>
+										<Item Name="VAR76" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR76"/>
+										<Item Name="VAR77" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR77"/>
+										<Item Name="VAR78" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR78"/>
+										<Item Name="VAR79" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR79"/>
+										<Item Name="VAR80" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR80"/>
+										<Item Name="VAR81" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR81"/>
+										<Item Name="VAR82" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR82"/>
+										<Item Name="VAR83" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR83"/>
+										<Item Name="VAR84" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR84"/>
+										<Item Name="VAR85" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR85"/>
+										<Item Name="VAR86" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR86"/>
+										<Item Name="VAR87" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR87"/>
+										<Item Name="VAR88" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR88"/>
+										<Item Name="VAR89" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR89"/>
+										<Item Name="VAR90" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR90"/>
+										<Item Name="VAR91" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR91"/>
+										<Item Name="VAR92" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR92"/>
+										<Item Name="VAR93" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR93"/>
+										<Item Name="VAR94" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR94"/>
+										<Item Name="VAR95" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR95"/>
+										<Item Name="VAR96" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR96"/>
+										<Item Name="VAR97" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR97"/>
+										<Item Name="VAR98" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR98"/>
+										<Item Name="VAR99" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR99"/>
+										<Item Name="VAR100" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR100"/>
+										<Item Name="VAR101" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR101"/>
+										<Item Name="VAR102" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR102"/>
+										<Item Name="VAR103" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR103"/>
+										<Item Name="VAR104" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR104"/>
+										<Item Name="VAR105" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR105"/>
+										<Item Name="VAR106" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR106"/>
+										<Item Name="VAR107" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR107"/>
+										<Item Name="VAR108" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR108"/>
+										<Item Name="VAR109" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR109"/>
+										<Item Name="VAR110" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR110"/>
+										<Item Name="VAR111" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR111"/>
+										<Item Name="VAR112" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR112"/>
+										<Item Name="VAR113" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR113"/>
+										<Item Name="VAR114" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR114"/>
+										<Item Name="VAR115" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR115"/>
+										<Item Name="VAR116" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR116"/>
+										<Item Name="VAR117" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR117"/>
+										<Item Name="VAR118" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR118"/>
+										<Item Name="VAR119" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR119"/>
+										<Item Name="VAR120" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR120"/>
+										<Item Name="VAR121" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR121"/>
+										<Item Name="VAR122" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR122"/>
+										<Item Name="VAR123" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR123"/>
+										<Item Name="VAR124" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR124"/>
+										<Item Name="VAR125" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR125"/>
+										<Item Name="VAR126" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR126"/>
+										<Item Name="VAR127" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR127"/>
+										<Item Name="VAR128" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR128"/>
+										<Item Name="VAR129" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR129"/>
+										<Item Name="VAR130" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR130"/>
+										<Item Name="VAR131" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR131"/>
+										<Item Name="VAR132" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR132"/>
+										<Item Name="VAR133" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR133"/>
+										<Item Name="VAR134" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR134"/>
+										<Item Name="VAR135" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR135"/>
+										<Item Name="VAR136" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR136"/>
+										<Item Name="VAR137" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR137"/>
+										<Item Name="VAR138" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR138"/>
+										<Item Name="VAR139" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR139"/>
+										<Item Name="VAR140" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR140"/>
+										<Item Name="VAR141" DataType="dtFloat" DataKind="dkContinuous" UsageType="utActive" InputColumnInfoName="VAR141"/>
+									</ColumnDefs>
+								</DataSource>
+							</Socket>
+						</Item>
+						<Item Guid="455b65c3-0587-3a9c-b47e-9b0d285bff3c" Name="ControlVariables" DisplayName="Управляющие переменные">
+							<Socket xsi:type="TBGTuneVariablesSocket" Virgin="true">
+								<Constraints/>
+								<Variables SyncThroughVariables="true">
+									<Elements/>
+								</Variables>
+							</Socket>
+						</Item>
+					</InputSockets>
+					<OutputSockets>
+						<Item Guid="4ba0e2c2-69ad-3a32-bbdc-75714efe7a51" Name="DataSource" DisplayName="Выходной набор данных">
+							<Socket xsi:type="TBGDerivedDataSourceOutputSocket">
+								<DataSource SyncThroughColumns="true">
+									<ColumnDefs/>
+								</DataSource>
+							</Socket>
+						</Item>
+					</OutputSockets>
+					<Engine xsi:type="TBGUnionDataEngine" LinksBackwardCompatibility="true" DisplayNamePrefix="Объединение">
+						<Links>
+							<Item Guid="d30c08d5-e873-48b4-b7bf-a74e0161ea8c">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="IsTestSet"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="IsTestSet"/>
+							</Item>
+							<Item Guid="ddf44d8a-a7aa-45c6-9fc2-9333a7d37998">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="CLASS"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="CLASS"/>
+							</Item>
+							<Item Guid="bdb62b10-4648-47da-a9f5-b7ef28b0bf94">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR2"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR2"/>
+							</Item>
+							<Item Guid="0adc5605-ea63-46f7-bcbc-0abab0cd3315">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR3"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR3"/>
+							</Item>
+							<Item Guid="d78ce77c-efe3-40da-80bd-3941ef4ec6ff">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR4"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR4"/>
+							</Item>
+							<Item Guid="03e2156c-2758-45ce-aaae-77f760e5c2b2">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR5"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR5"/>
+							</Item>
+							<Item Guid="eccd7d81-6ab5-4fd7-9f5c-13caefa66c98">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR6"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR6"/>
+							</Item>
+							<Item Guid="69d0df82-c1d3-4cd1-961a-4dd564454eb5">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR7"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR7"/>
+							</Item>
+							<Item Guid="4456455b-9fd0-47a5-9657-dae890f70415">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR8"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR8"/>
+							</Item>
+							<Item Guid="838f6023-67b9-45ac-a763-55878b1119d0">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR9"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR9"/>
+							</Item>
+							<Item Guid="8d4bda4b-be09-4386-b7b3-28356b9e0b44">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR10"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR10"/>
+							</Item>
+							<Item Guid="18b13e91-2ca3-4cd4-a7a2-c4af52a7d5c9">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR11"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR11"/>
+							</Item>
+							<Item Guid="09473ad0-10c1-490a-b22f-d4c45539d5e4">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR12"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR12"/>
+							</Item>
+							<Item Guid="d1937747-cd3e-448c-81bc-d7137a4f2d5f">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR13"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR13"/>
+							</Item>
+							<Item Guid="1009a7da-139c-44e9-ae38-962d07b2ee7b">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR14"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR14"/>
+							</Item>
+							<Item Guid="cb4f6d74-926b-4b9f-934f-d448d7650151">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR15"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR15"/>
+							</Item>
+							<Item Guid="a8427c2c-c683-4239-9ff5-5b6eb165c84a">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR16"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR16"/>
+							</Item>
+							<Item Guid="fb3823c7-105e-400a-a387-f5bfbd287a03">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR17"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR17"/>
+							</Item>
+							<Item Guid="4e2fb637-087c-4de6-947b-22379bc303d2">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR18"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR18"/>
+							</Item>
+							<Item Guid="f0768ad3-9ffe-4fb8-8044-16c8e7f56e94">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR19"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR19"/>
+							</Item>
+							<Item Guid="f1bd16bf-761a-4ef4-b83f-309872ef0f1e">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR20"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR20"/>
+							</Item>
+							<Item Guid="3ef23b83-a314-4880-bfc6-47d6fba96e65">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR21"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR21"/>
+							</Item>
+							<Item Guid="82f64333-7521-4e65-b609-e2a252491d92">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR22"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR22"/>
+							</Item>
+							<Item Guid="dfae8c06-8da3-45f9-9ad8-0ddbccb4876b">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR23"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR23"/>
+							</Item>
+							<Item Guid="1360b7d7-3167-42bd-82e6-908fcc696d61">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR24"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR24"/>
+							</Item>
+							<Item Guid="1b01b077-2b41-477b-8f0f-88c05b8803e6">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR25"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR25"/>
+							</Item>
+							<Item Guid="5cf3ce2d-4a9d-4749-b4df-d85e9ead1b28">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR26"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR26"/>
+							</Item>
+							<Item Guid="d3c410f1-a4a2-4592-972d-cd21a13b127f">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR27"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR27"/>
+							</Item>
+							<Item Guid="eaba8821-03a3-4ec4-8477-36f4cd2c41c1">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR28"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR28"/>
+							</Item>
+							<Item Guid="0f1098ca-24d3-4119-8ea5-f2d55234b14d">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR29"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR29"/>
+							</Item>
+							<Item Guid="a9d59e19-aaab-4ca3-8c93-b7fb4e906b48">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR30"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR30"/>
+							</Item>
+							<Item Guid="69de3846-643d-4fe0-896f-ba21f6713358">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR31"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR31"/>
+							</Item>
+							<Item Guid="c26cd43e-0e61-4c38-82ff-993c9fdb7d21">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR32"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR32"/>
+							</Item>
+							<Item Guid="8ba3f266-ec06-438e-88d6-cc59a68c1a6e">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR33"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR33"/>
+							</Item>
+							<Item Guid="2999ecc9-54ed-41c1-a18e-f1ff33e1703e">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR34"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR34"/>
+							</Item>
+							<Item Guid="c775c4b6-055f-4492-9381-aca9aeb71a64">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR35"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR35"/>
+							</Item>
+							<Item Guid="cbd06f5c-4c7e-4bae-8a6c-0e838ac82df6">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR36"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR36"/>
+							</Item>
+							<Item Guid="c713fdd3-9259-4e56-89c4-54e15849a47b">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR37"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR37"/>
+							</Item>
+							<Item Guid="bf5d45a9-5e70-4df6-a48c-16af3f6d2928">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR38"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR38"/>
+							</Item>
+							<Item Guid="0caff4ce-9e40-4fe3-8051-4101df301586">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR39"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR39"/>
+							</Item>
+							<Item Guid="ad60c1c6-84ae-4c58-8bf1-dbd85440d835">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR40"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR40"/>
+							</Item>
+							<Item Guid="b3bc02ee-b130-43f8-9ec7-7c02c8ead89c">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR41"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR41"/>
+							</Item>
+							<Item Guid="57455f99-d884-43c9-8d41-4c6db501f9bb">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR42"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR42"/>
+							</Item>
+							<Item Guid="fa32c87c-09f3-4d16-82ee-f13e61aaa595">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR43"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR43"/>
+							</Item>
+							<Item Guid="4feb6d13-26c1-4851-a600-e9acfcb9c996">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR44"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR44"/>
+							</Item>
+							<Item Guid="57697577-6ca6-4bf6-8ea1-0fbd61841e35">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR45"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR45"/>
+							</Item>
+							<Item Guid="a5b091fa-138f-4937-aae3-b59f8fea739b">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR46"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR46"/>
+							</Item>
+							<Item Guid="abe36779-8ca0-4915-9e40-b82733af4ef3">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR47"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR47"/>
+							</Item>
+							<Item Guid="3ce41b13-e199-46fd-ae24-6bfcd8e109ee">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR48"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR48"/>
+							</Item>
+							<Item Guid="46a2befa-aa8f-499a-891e-e4a5ecbeec0c">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR49"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR49"/>
+							</Item>
+							<Item Guid="9bca1450-4647-4f5e-832e-ac05771f8880">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR50"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR50"/>
+							</Item>
+							<Item Guid="f3747370-1c3c-4528-a3ee-853602f0ee1d">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR51"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR51"/>
+							</Item>
+							<Item Guid="18bb88ec-f315-4211-a32e-c28a1c8a5815">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR52"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR52"/>
+							</Item>
+							<Item Guid="94cde10b-29ba-4900-bcbb-a0d1554b6e52">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR53"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR53"/>
+							</Item>
+							<Item Guid="c1d3049e-94a4-4d3c-b6f1-1ce065a67d30">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR54"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR54"/>
+							</Item>
+							<Item Guid="175efdd6-047d-4e6d-a902-6695290c9d77">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR55"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR55"/>
+							</Item>
+							<Item Guid="e0a1d82d-069f-4c16-af5a-586a5a258785">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR56"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR56"/>
+							</Item>
+							<Item Guid="4c1c27a6-13f7-44e2-9856-817e990bbecc">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR57"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR57"/>
+							</Item>
+							<Item Guid="a330c514-5d89-40e7-8eff-f628752b779e">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR58"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR58"/>
+							</Item>
+							<Item Guid="51adac81-8c7b-4abe-b7c9-fa880ec203b3">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR59"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR59"/>
+							</Item>
+							<Item Guid="61225316-558f-47a3-b3ee-1a1d764c62c0">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR60"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR60"/>
+							</Item>
+							<Item Guid="c6d17cf6-8c30-4eb8-990a-173ddc76e0ee">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR61"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR61"/>
+							</Item>
+							<Item Guid="5f9c4f74-0208-4182-a459-59128881a688">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR62"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR62"/>
+							</Item>
+							<Item Guid="3084c654-393a-4ac7-b99d-c261dde5f303">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR63"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR63"/>
+							</Item>
+							<Item Guid="57d9b0e1-fba3-4d13-a879-7fc1ea6ff334">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR64"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR64"/>
+							</Item>
+							<Item Guid="5ca916ac-220d-40d6-8d70-06b0014aa54c">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR65"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR65"/>
+							</Item>
+							<Item Guid="227a6721-d3f1-4a4d-880e-c8c1c9ba7ae2">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR66"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR66"/>
+							</Item>
+							<Item Guid="df7c3542-eab2-4b1a-b03c-dd32383be777">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR67"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR67"/>
+							</Item>
+							<Item Guid="87983718-68d4-4648-9fe3-918733bf767b">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR68"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR68"/>
+							</Item>
+							<Item Guid="c40eb8d2-2a88-43b7-8aae-d77afe6e126d">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR69"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR69"/>
+							</Item>
+							<Item Guid="b7de1cea-f17f-4a5c-9dd7-b5e5b6eb1f5f">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR70"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR70"/>
+							</Item>
+							<Item Guid="e3505d5c-e82c-486d-b293-65c437392d1c">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR71"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR71"/>
+							</Item>
+							<Item Guid="077189bf-4a0e-4dff-a552-26f39efd024c">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR72"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR72"/>
+							</Item>
+							<Item Guid="3912dee5-bddf-4cbc-9619-6620689cb78a">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR73"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR73"/>
+							</Item>
+							<Item Guid="6ed5341e-69f7-4586-9a41-566c60e23f7d">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR74"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR74"/>
+							</Item>
+							<Item Guid="b41aae47-0762-493b-aebd-feeec34912f8">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR75"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR75"/>
+							</Item>
+							<Item Guid="5627091c-6aa2-4583-8f04-68c3b330d224">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR76"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR76"/>
+							</Item>
+							<Item Guid="bf4cb336-1b8c-4b56-9d4c-a251f6551145">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR77"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR77"/>
+							</Item>
+							<Item Guid="ed8ba93f-9701-42e4-8ba7-c914e801405d">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR78"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR78"/>
+							</Item>
+							<Item Guid="5a14a213-19dc-4903-943c-b9aa775c0bbe">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR79"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR79"/>
+							</Item>
+							<Item Guid="661ef340-47fa-4c23-b06c-73a941986273">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR80"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR80"/>
+							</Item>
+							<Item Guid="acdb5e31-60f6-4721-a54b-cbc46b3a7c84">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR81"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR81"/>
+							</Item>
+							<Item Guid="45c48cb9-b61d-4d8a-875d-0b8d76dff814">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR82"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR82"/>
+							</Item>
+							<Item Guid="9c8e4c6a-2bd2-4a1f-8b85-9c03a0002591">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR83"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR83"/>
+							</Item>
+							<Item Guid="8231b258-fee8-4c32-87c9-0c255eba1d6b">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR84"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR84"/>
+							</Item>
+							<Item Guid="44b09f57-caaa-49d9-a7c2-5bf344281262">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR85"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR85"/>
+							</Item>
+							<Item Guid="3edc44a6-6f59-4bcc-9be4-055ac5f85318">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR86"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR86"/>
+							</Item>
+							<Item Guid="c58d1250-75dd-48f5-90ad-0d359de9d4de">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR87"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR87"/>
+							</Item>
+							<Item Guid="9d788a5b-d16d-46a1-9799-c52864b70c27">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR88"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR88"/>
+							</Item>
+							<Item Guid="3e859108-8271-45b1-aab9-683539a71dfb">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR89"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR89"/>
+							</Item>
+							<Item Guid="a07feb64-abd1-47a3-bbca-bf28a7bcf836">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR90"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR90"/>
+							</Item>
+							<Item Guid="61d3a8eb-59c0-4406-8824-7cef08f72188">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR91"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR91"/>
+							</Item>
+							<Item Guid="cd6e536a-0784-4f7f-acb3-e2d21ed1853e">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR92"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR92"/>
+							</Item>
+							<Item Guid="64008c7b-2e56-4c16-9f00-ed5a59f20473">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR93"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR93"/>
+							</Item>
+							<Item Guid="eabfba1f-d9e3-4d12-bf38-c429057b8ff8">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR94"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR94"/>
+							</Item>
+							<Item Guid="c4f6a0e0-c3a6-4280-ab4c-d7a2726bfa0a">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR95"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR95"/>
+							</Item>
+							<Item Guid="27f55de0-4e52-4696-a5a3-06dbe565f39b">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR96"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR96"/>
+							</Item>
+							<Item Guid="f1ba91ef-07d6-461c-aab8-1ea1390ec99a">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR97"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR97"/>
+							</Item>
+							<Item Guid="00860086-dc26-4aaa-b3f3-863f4439ed31">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR98"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR98"/>
+							</Item>
+							<Item Guid="cd25cef8-2dfd-4394-a7aa-39a8e649beb9">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR99"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR99"/>
+							</Item>
+							<Item Guid="8022705f-e322-4d1a-a6b6-c5b09e4d7c0d">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR100"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR100"/>
+							</Item>
+							<Item Guid="dba7e956-0465-43d0-a220-22ba199fd08b">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR101"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR101"/>
+							</Item>
+							<Item Guid="e0f2d65c-bb01-4449-a6d6-ffd8b4008237">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR102"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR102"/>
+							</Item>
+							<Item Guid="20807cd0-a8b1-4e10-849e-f0370ef7d07b">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR103"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR103"/>
+							</Item>
+							<Item Guid="85d1cecb-879f-4587-a339-e1ea34943edd">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR104"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR104"/>
+							</Item>
+							<Item Guid="b09ee661-d08d-4b7d-b390-825bccf3d1c9">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR105"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR105"/>
+							</Item>
+							<Item Guid="db91c61e-74ed-4d13-b7e7-966e477a3a04">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR106"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR106"/>
+							</Item>
+							<Item Guid="7b2255fb-7a91-4149-8b3c-259511803590">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR107"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR107"/>
+							</Item>
+							<Item Guid="4ab0be14-f92b-41c4-b79d-9aa661a084b7">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR108"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR108"/>
+							</Item>
+							<Item Guid="c4dbdc62-e485-4dfb-95f5-ad1a387fd6a5">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR109"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR109"/>
+							</Item>
+							<Item Guid="c1511705-4a16-4d72-99b4-4eb525257072">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR110"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR110"/>
+							</Item>
+							<Item Guid="d7574df1-9545-4993-830a-fbbf6100f34b">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR111"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR111"/>
+							</Item>
+							<Item Guid="eb9b6232-19fd-48f8-b95a-5e0480ca9b1b">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR112"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR112"/>
+							</Item>
+							<Item Guid="c1a95051-77ed-4be1-b842-97c6b69217bc">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR113"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR113"/>
+							</Item>
+							<Item Guid="0df54b18-38bc-4ec2-a694-747f77eaa98c">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR114"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR114"/>
+							</Item>
+							<Item Guid="42eded02-e2b6-4bbd-bf5c-3e8430f8fd94">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR115"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR115"/>
+							</Item>
+							<Item Guid="9c3a1928-25bb-4efc-a712-b0a3a2805fe7">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR116"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR116"/>
+							</Item>
+							<Item Guid="c975fead-b339-490d-bba8-0f603bb0098a">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR117"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR117"/>
+							</Item>
+							<Item Guid="ccb6752f-b077-4dab-b7a9-88363a8945ca">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR118"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR118"/>
+							</Item>
+							<Item Guid="6c1e61c6-3a6f-43ab-91a3-d8e2308416e6">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR119"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR119"/>
+							</Item>
+							<Item Guid="9ba603eb-a43f-4c66-a8b4-f596ae346fb0">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR120"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR120"/>
+							</Item>
+							<Item Guid="4a08d4a9-1a95-4645-8a2c-0f3a6f445660">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR121"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR121"/>
+							</Item>
+							<Item Guid="050376ee-285a-47f2-8698-6c4b52abf753">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR122"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR122"/>
+							</Item>
+							<Item Guid="8cfd0883-ca26-4cd2-99e7-c595fe5ded04">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR123"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR123"/>
+							</Item>
+							<Item Guid="bc47fe02-be3f-4433-927f-edff288dee07">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR124"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR124"/>
+							</Item>
+							<Item Guid="66be3aea-a0d8-4179-ad0b-2b128309810c">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR125"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR125"/>
+							</Item>
+							<Item Guid="8cfd2b08-1f89-45c8-b911-d948dec91c79">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR126"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR126"/>
+							</Item>
+							<Item Guid="e4864caa-b0d6-4f9b-b8e2-d5d3211a6bf2">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR127"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR127"/>
+							</Item>
+							<Item Guid="fc3c9936-054e-40e9-944c-9bfbd955f907">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR128"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR128"/>
+							</Item>
+							<Item Guid="eed7e6b9-61c9-48d3-893a-91bd710f0cc7">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR129"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR129"/>
+							</Item>
+							<Item Guid="474eaaeb-92ae-4e78-a282-def4de17d75c">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR130"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR130"/>
+							</Item>
+							<Item Guid="e7170ebf-40c5-41fb-81fd-7ea7adfcbd52">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR131"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR131"/>
+							</Item>
+							<Item Guid="dcda609b-a96d-4bc4-b4ae-11cc398b82c8">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR132"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR132"/>
+							</Item>
+							<Item Guid="957735fc-6824-4051-86ae-4a533a9c2292">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR133"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR133"/>
+							</Item>
+							<Item Guid="4b397584-2964-43f4-88ca-fe878b7da9aa">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR134"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR134"/>
+							</Item>
+							<Item Guid="59d89f28-e5eb-4082-8a39-91b420d04352">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR135"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR135"/>
+							</Item>
+							<Item Guid="2b24ed44-8d30-43e1-be7a-54a00bab2995">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR136"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR136"/>
+							</Item>
+							<Item Guid="142b6334-b998-43dc-a6f6-4be07eaaad2a">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR137"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR137"/>
+							</Item>
+							<Item Guid="74edfe6c-2b88-44f3-ba80-ed6701b5228d">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR138"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR138"/>
+							</Item>
+							<Item Guid="1fe8cc6f-0d6e-4f61-acfa-21ea2331061d">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR139"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR139"/>
+							</Item>
+							<Item Guid="56b2a2b2-8003-4b3e-98c4-1378dbef91bf">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR140"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR140"/>
+							</Item>
+							<Item Guid="11ea7a27-1ad8-423b-b283-3b61457e7b27">
+								<Link Guid="e028600d-9dca-3604-89ce-cd2fdadb4c1c" Name="VAR141"/>
+								<Link Guid="54ae772d-7bcb-36bb-88ac-976dcae031bc" Name="VAR141"/>
+							</Item>
+						</Links>
+					</Engine>
+				</Component>
+				<Position Left="320" Top="320"/>
+			</Item>
+			<Item Guid="2b3157aa-435e-46c6-9c8c-23e51408cecf" DisplayName="OBJECT" VendorGuid="c7b69712-557f-4e51-bba5-db9cc2659e7a" Visibility="mvInternal" GenerateNodeTitle="false">
+				<InputPorts>
+					<Item Guid="9dc72a3f-56bf-3bfc-84ec-f979daf4da6b" Name="DataSource" DisplayName="Входной источник данных"/>
+					<Item Guid="d252e390-f72d-36c4-97fc-60d86186c3c6" Name="Variables" DisplayName="Входные переменные"/>
+				</InputPorts>
+				<OutputPorts>
+					<Item Guid="4ba0e2c2-69ad-3a32-bbdc-75714efe7a51" Name="DataSource" DisplayName="Выходной набор данных"/>
+				</OutputPorts>
+				<ServiceInputPorts>
+					<Item Guid="00bd0b43-e4b5-3ac1-b95a-ac1bee14f858" Name="SynchronizationInputPort" DisplayName="Порядок выполнения"/>
+					<Item Guid="455b65c3-0587-3a9c-b47e-9b0d285bff3c" Name="ControlVariables" DisplayName="Управляющие переменные"/>
+				</ServiceInputPorts>
+				<ServiceOutputPorts>
+					<Item Guid="ca080ff0-2342-32b0-b480-586f9747bace" Name="SynchronizationOutputPort" DisplayName="Порядок выполнения"/>
+					<Item Guid="e98be5ba-c627-3a55-af82-a399dd13c73b" Name="ComponentOutputPort" DisplayName="Компонент"/>
+					<Item Guid="58922a98-d1ea-36de-9099-3ce26fe160e2" Name="DependentNodeOutputPort" DisplayName="Зависимые узлы"/>
+				</ServiceOutputPorts>
+				<Component>
+					<InputSockets>
+						<Item Guid="9dc72a3f-56bf-3bfc-84ec-f979daf4da6b" Name="DataSource" DisplayName="Входной источник данных">
+							<Socket xsi:type="TBGTuneDataSourceSocket">
+								<Constraints/>
+								<DataSource SyncThroughColumns="true">
+									<ColumnDefs/>
+								</DataSource>
+							</Socket>
+						</Item>
+						<Item Guid="455b65c3-0587-3a9c-b47e-9b0d285bff3c" Name="ControlVariables" DisplayName="Управляющие переменные">
+							<Socket xsi:type="TBGTuneVariablesSocket" Virgin="true">
+								<Constraints/>
+								<Variables SyncThroughVariables="true">
+									<Elements/>
+								</Variables>
+							</Socket>
+						</Item>
+						<Item Guid="d252e390-f72d-36c4-97fc-60d86186c3c6" Name="Variables" DisplayName="Входные переменные">
+							<Socket xsi:type="TBGTuneVariablesSocket" Virgin="true">
+								<Constraints/>
+								<Variables SyncThroughVariables="true">
+									<Elements/>
+								</Variables>
+							</Socket>
+						</Item>
+					</InputSockets>
+					<OutputSockets>
+						<Item Guid="4ba0e2c2-69ad-3a32-bbdc-75714efe7a51" Name="DataSource" DisplayName="Выходной набор данных">
+							<Socket xsi:type="TBGDerivedDataSourceOutputSocket">
+								<DataSource SyncThroughColumns="true">
+									<ColumnDefs/>
+								</DataSource>
+							</Socket>
+						</Item>
+					</OutputSockets>
+					<Engine xsi:type="TBGCalcData">
+						<Expressions>
+							<Item Name="OBJECT" DataType="dtString" Expression="&quot;obj&quot;+str(RowNum()+1)"/>
+						</Expressions>
+					</Engine>
+				</Component>
+				<Position Left="488" Top="312"/>
+			</Item>
+			<Item Guid="61671885-e756-4aeb-b4f1-0967584a96ee" DisplayName="CLASS = 1" VendorGuid="a0e49d86-6fe3-43fc-8046-29d1ce92c03d" GenerateNodeTitle="false">
+				<InputPorts>
+					<Item Guid="9dc72a3f-56bf-3bfc-84ec-f979daf4da6b" Name="DataSource" DisplayName="Входной источник данных"/>
+				</InputPorts>
+				<OutputPorts>
+					<Item Guid="4ba0e2c2-69ad-3a32-bbdc-75714efe7a51" Name="DataSource" DisplayName="Соответствуют условию"/>
+					<Item Guid="99559aff-aff4-3e08-8f1e-a290790bba03" Name="DataSourceElse" DisplayName="Не соответствуют условию"/>
+				</OutputPorts>
+				<ServiceInputPorts>
+					<Item Guid="00bd0b43-e4b5-3ac1-b95a-ac1bee14f858" Name="SynchronizationInputPort" DisplayName="Порядок выполнения"/>
+					<Item Guid="455b65c3-0587-3a9c-b47e-9b0d285bff3c" Name="ControlVariables" DisplayName="Управляющие переменные"/>
+				</ServiceInputPorts>
+				<ServiceOutputPorts>
+					<Item Guid="ca080ff0-2342-32b0-b480-586f9747bace" Name="SynchronizationOutputPort" DisplayName="Порядок выполнения"/>
+					<Item Guid="e98be5ba-c627-3a55-af82-a399dd13c73b" Name="ComponentOutputPort" DisplayName="Компонент"/>
+					<Item Guid="58922a98-d1ea-36de-9099-3ce26fe160e2" Name="DependentNodeOutputPort" DisplayName="Зависимые узлы"/>
+				</ServiceOutputPorts>
+				<Component>
+					<InputSockets>
+						<Item Guid="9dc72a3f-56bf-3bfc-84ec-f979daf4da6b" Name="DataSource" DisplayName="Входной источник данных">
+							<Socket xsi:type="TBGTuneDataSourceSocket">
+								<Constraints/>
+								<DataSource SyncThroughColumns="true">
+									<ColumnDefs>
+										<Item Name="CLASS" DataType="dtInteger" DataKind="dkDiscrete" UsageType="utActive" InputColumnInfoName="CLASS"/>
+									</ColumnDefs>
+								</DataSource>
+							</Socket>
+						</Item>
+						<Item Guid="455b65c3-0587-3a9c-b47e-9b0d285bff3c" Name="ControlVariables" DisplayName="Управляющие переменные">
+							<Socket xsi:type="TBGTuneVariablesSocket" Virgin="true">
+								<Constraints/>
+								<Variables SyncThroughVariables="true">
+									<Elements/>
+								</Variables>
+							</Socket>
+						</Item>
+					</InputSockets>
+					<OutputSockets>
+						<Item Guid="4ba0e2c2-69ad-3a32-bbdc-75714efe7a51" Name="DataSource" DisplayName="Соответствуют условию">
+							<Socket xsi:type="TBGDerivedDataSourceOutputSocket">
+								<DataSource SyncThroughColumns="true">
+									<ColumnDefs/>
+								</DataSource>
+							</Socket>
+						</Item>
+						<Item Guid="99559aff-aff4-3e08-8f1e-a290790bba03" Name="DataSourceElse" DisplayName="Не соответствуют условию">
+							<Socket xsi:type="TBGDerivedDataSourceOutputSocket">
+								<DataSource SyncThroughColumns="true">
+									<ColumnDefs/>
+								</DataSource>
+							</Socket>
+						</Item>
+					</OutputSockets>
+					<Engine xsi:type="TBGFilterDataEngine">
+						<Filter UseGlobalCaseSensitive="false">
+							<Item Guid="19b974a6-47c0-4589-95aa-eff870f566f8" Name="CLASS" ConcatenationType="ctAnd" DataType="dtInteger" RelationType="frtEqual">
+								<CompareValue VarType="vrtInt64">1</CompareValue>
+							</Item>
+						</Filter>
+					</Engine>
+				</Component>
+				<Position Left="640" Top="312"/>
+			</Item>
+		</Nodes>
+		<Links>
+			<Item Guid="d0f71851-e9b0-4a14-8059-24b2976b47e1">
+				<SourcePort NodeGuid="8669e7c7-f285-486f-9731-1f92301ced06" PortGuid="4ba0e2c2-69ad-3a32-bbdc-75714efe7a51"/>
+				<TargetPort NodeGuid="2b3157aa-435e-46c6-9c8c-23e51408cecf" PortGuid="9dc72a3f-56bf-3bfc-84ec-f979daf4da6b"/>
+			</Item>
+			<Item Guid="68b9d7f6-9ab8-4964-8ee2-c63661924e15">
+				<SourcePort NodeGuid="d713e1dc-3a94-48d7-a7ee-e8fe5f6f2c20" PortGuid="58f7e6c3-511e-39d7-8853-036e0a1a7612"/>
+				<TargetPort NodeGuid="8669e7c7-f285-486f-9731-1f92301ced06" PortGuid="e028600d-9dca-3604-89ce-cd2fdadb4c1c"/>
+			</Item>
+			<Item Guid="9371b7d0-346e-4a7e-92c0-f409564ebebc">
+				<SourcePort NodeGuid="f526c35a-d747-43d4-a309-888fc7b4384a" PortGuid="58f7e6c3-511e-39d7-8853-036e0a1a7612"/>
+				<TargetPort NodeGuid="8669e7c7-f285-486f-9731-1f92301ced06" PortGuid="54ae772d-7bcb-36bb-88ac-976dcae031bc"/>
+			</Item>
+			<Item Guid="92459dee-8435-409b-a143-dbe419522dcc">
+				<SourcePort NodeGuid="2b3157aa-435e-46c6-9c8c-23e51408cecf" PortGuid="4ba0e2c2-69ad-3a32-bbdc-75714efe7a51"/>
+				<TargetPort NodeGuid="61671885-e756-4aeb-b4f1-0967584a96ee" PortGuid="9dc72a3f-56bf-3bfc-84ec-f979daf4da6b"/>
+			</Item>
+		</Links>
+		<ServiceNodes>
+			<Item Guid="6620f9de-e585-39c7-88a9-35255088ebb7" Name="VariablesNode" DisplayName="Переменные сценария" VendorGuid="af096bfc-0c02-4126-89f5-bc3a1b585321" OriginalVendorGuid="af096bfc-0c02-4126-89f5-bc3a1b585321" IsSealedVendor="true" GlobalNodeID="d588b44d-dd8e-4308-ac50-035b109e3419">
+				<InputPorts/>
+				<OutputPorts>
+					<Item Guid="b671426b-642b-3e7c-b9a9-9653573f3199" Name="Variables" DisplayName="Переменные"/>
+					<Item Guid="0c7eccb7-0e65-36e9-89f4-1b674aca3b25" Name="SystemVariables" DisplayName="Переменные системы"/>
+					<Item Guid="87f24987-bc26-330f-aa19-5a67687c90a6" Name="SessionVariables" DisplayName="Переменные сессии"/>
+					<Item Guid="cdece2e4-848d-331b-96e0-b52a51909547" Name="PackageVariables" DisplayName="Переменные пакета"/>
+					<Item Guid="8f72d2e6-ba56-3732-b12e-98badbeafe47" Name="UserVariables" DisplayName="Переменные пользователя"/>
+				</OutputPorts>
+				<ServiceInputPorts/>
+				<ServiceOutputPorts>
+					<Item Guid="ca080ff0-2342-32b0-b480-586f9747bace" Name="SynchronizationOutputPort" DisplayName="Порядок выполнения"/>
+					<Item Guid="e98be5ba-c627-3a55-af82-a399dd13c73b" Name="ComponentOutputPort" DisplayName="Компонент"/>
+					<Item Guid="58922a98-d1ea-36de-9099-3ce26fe160e2" Name="DependentNodeOutputPort" DisplayName="Зависимые узлы"/>
+				</ServiceOutputPorts>
+				<Component>
+					<OutputSockets>
+						<Item Guid="b671426b-642b-3e7c-b9a9-9653573f3199" Name="Variables" DisplayName="Переменные">
+							<Socket xsi:type="TBGModelVariablesOutputSocket"/>
+						</Item>
+						<Item Guid="0c7eccb7-0e65-36e9-89f4-1b674aca3b25" Name="SystemVariables" DisplayName="Переменные системы">
+							<Socket xsi:type="TBGModelVariablesOutputSocket"/>
+						</Item>
+						<Item Guid="87f24987-bc26-330f-aa19-5a67687c90a6" Name="SessionVariables" DisplayName="Переменные сессии">
+							<Socket xsi:type="TBGModelVariablesOutputSocket"/>
+						</Item>
+						<Item Guid="cdece2e4-848d-331b-96e0-b52a51909547" Name="PackageVariables" DisplayName="Переменные пакета">
+							<Socket xsi:type="TBGModelVariablesOutputSocket"/>
+						</Item>
+						<Item Guid="8f72d2e6-ba56-3732-b12e-98badbeafe47" Name="UserVariables" DisplayName="Переменные пользователя">
+							<Socket xsi:type="TBGVariablesOutputSocket">
+								<Variables>
+									<Elements/>
+								</Variables>
+							</Socket>
+						</Item>
+					</OutputSockets>
+					<Engine xsi:type="TBGModelVariablesComponentEngine"/>
+				</Component>
+			</Item>
+		</ServiceNodes>
+		<ServiceLinks/>
+		<Annotations>
+			<Item Guid="0b30add5-b3e8-44fc-9278-a43de0bd2b8c" StyleNum="6" Text="Набор данных для выполнения домашнего задания, содержит 141 столбец и 5000 записей.&#10;Из них 140 столбцов - показатели, описывающие деятельность сердечного ритма и один столбец - метка класса.&#10;Оригинальный датасет: https://www.kaggle.com/datasets/salsabilahmid/ecg50000&#10;&#10;Сценарий готовит три выборки: обучающую (train), валидационную (valid) и тестовую (test) в соотношении 70:15:15.&#10;В обучающей выборке присутствуют только &quot;чистые&quot; записи, то есть с нормальным сердечным ритмом.&#10;Для воспроизводимости результатов ставьте параметр Random seed = 42.">
+				<Position Left="80" Top="16" Width="816" Height="152"/>
+			</Item>
+			<Item Guid="b23d3fd2-5aa5-4a03-9025-68e62b487fc0" StyleNum="2" Text="&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;Обучающий и тестовый наборы. &#10;Класс &quot;2&quot; исключен.">
+				<Position Left="80" Top="200" Width="352" Height="352"/>
+			</Item>
+			<Item Guid="26ddcada-5705-4e6e-baf8-08bbf84415ca" StyleNum="3" Text="&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;Добавим идентификатор объекта (OBJECT) и отфильтруем только нормальные записи (CLASS = 1)">
+				<Position Left="456" Top="248" Width="264" Height="264"/>
+			</Item>
+			<Item Guid="1dbe665b-4719-4403-9720-5d39327ccea3" StyleNum="17" Text="&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;Добавьте здесь логику расчетов, согласно заданию">
+				<Position Left="736" Top="216" Width="512" Height="360"/>
+			</Item>
+			<Item Guid="5e9884df-8789-4707-861c-f9ebf8f3fff3" StyleNum="19" Text="Итоговый датасет с полями SAMPLE (Выборка) и&#10; IsTestSet (Тестовое множество)&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;Не забудьте настроить модификатор доступа у узла">
+				<Position Left="1264" Top="216" Width="216" Height="360"/>
+			</Item>
+		</Annotations>
+	</WorkFlow>
+	<ModelViews>
+		<Nodes>
+			<Item Guid="c608b1d3-b640-44cd-83a1-19852804576e" DisplayName="Статистика" VendorGuid="121165f9-07d1-4507-9ff4-d64f6333b4ca">
+				<InputPorts>
+					<Item Guid="9dc72a3f-56bf-3bfc-84ec-f979daf4da6b" Name="DataSource" DisplayName="Набор данных"/>
+				</InputPorts>
+				<OutputPorts/>
+				<ServiceInputPorts>
+					<Item Guid="00bd0b43-e4b5-3ac1-b95a-ac1bee14f858" Name="SynchronizationInputPort" DisplayName="Порядок выполнения"/>
+				</ServiceInputPorts>
+				<ServiceOutputPorts>
+					<Item Guid="ca080ff0-2342-32b0-b480-586f9747bace" Name="SynchronizationOutputPort" DisplayName="Порядок выполнения"/>
+					<Item Guid="e98be5ba-c627-3a55-af82-a399dd13c73b" Name="ComponentOutputPort" DisplayName="Компонент"/>
+					<Item Guid="58922a98-d1ea-36de-9099-3ce26fe160e2" Name="DependentNodeOutputPort" DisplayName="Зависимые узлы"/>
+				</ServiceOutputPorts>
+				<Component>
+					<InputSockets>
+						<Item Guid="9dc72a3f-56bf-3bfc-84ec-f979daf4da6b" Name="DataSource" DisplayName="Набор данных">
+							<Socket xsi:type="TBGTuneDataSourceSocket">
+								<Constraints/>
+								<DataSource SyncThroughColumns="true">
+									<ColumnDefs/>
+								</DataSource>
+							</Socket>
+						</Item>
+					</InputSockets>
+					<Engine xsi:type="TBGStatView" ShowHistogram="true">
+						<StatViewColumns>
+							<Item Name="CLASS" DataType="dtInteger">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR2" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR3" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR4" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR5" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR6" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR7" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR8" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR9" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR10" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR11" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR12" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR13" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR14" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR15" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR16" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR17" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR18" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR19" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR20" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR21" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR22" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR23" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR24" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR25" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR26" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR27" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR28" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR29" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR30" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR31" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR32" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR33" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR34" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR35" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR36" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR37" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR38" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR39" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR40" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR41" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR42" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR43" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR44" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR45" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR46" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR47" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR48" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR49" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR50" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR51" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR52" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR53" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR54" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR55" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR56" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR57" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR58" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR59" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR60" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR61" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR62" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR63" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR64" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR65" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR66" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR67" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR68" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR69" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR70" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR71" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR72" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR73" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR74" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR75" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR76" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR77" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR78" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR79" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR80" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR81" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR82" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR83" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR84" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR85" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR86" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR87" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR88" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR89" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR90" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR91" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR92" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR93" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR94" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR95" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR96" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR97" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR98" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR99" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR100" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR101" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR102" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR103" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR104" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR105" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR106" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR107" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR108" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR109" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR110" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR111" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR112" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR113" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR114" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR115" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR116" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR117" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR118" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR119" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR120" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR121" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR122" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR123" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR124" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR125" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR126" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR127" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR128" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR129" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR130" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR131" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR132" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR133" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR134" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR135" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR136" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR137" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR138" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR139" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR140" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR141" DataType="dtFloat" RoundMode="rmoNearestMath" NumberOfDecimals="3">
+								<ColumnConfig/>
+							</Item>
+						</StatViewColumns>
+						<StatIndicatorColumnConfig/>
+						<ColumnInfosConfig>
+							<Item ID="7">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="1">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="3">
+								<ColumnConfig/>
+							</Item>
+						</ColumnInfosConfig>
+						<StatIndicatorsConfig>
+							<Item ID="0">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="1">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="2">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="3">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="4">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="5">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="6">
+								<ColumnConfig Visible="false"/>
+							</Item>
+							<Item ID="7">
+								<ColumnConfig Visible="false"/>
+							</Item>
+							<Item ID="8">
+								<ColumnConfig Visible="false"/>
+							</Item>
+							<Item ID="9">
+								<ColumnConfig Visible="false"/>
+							</Item>
+							<Item ID="10">
+								<ColumnConfig Visible="false"/>
+							</Item>
+							<Item ID="11">
+								<ColumnConfig Visible="false"/>
+							</Item>
+							<Item ID="12">
+								<ColumnConfig Visible="false"/>
+							</Item>
+							<Item ID="13">
+								<ColumnConfig Visible="false"/>
+							</Item>
+							<Item ID="14">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="15">
+								<ColumnConfig Visible="false"/>
+							</Item>
+							<Item ID="16">
+								<ColumnConfig/>
+							</Item>
+						</StatIndicatorsConfig>
+						<HistogramColumnsConfig>
+							<Item ID="0">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="1">
+								<ColumnConfig Visible="false"/>
+							</Item>
+							<Item ID="2">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="3">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="4">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="5">
+								<ColumnConfig/>
+							</Item>
+						</HistogramColumnsConfig>
+					</Engine>
+				</Component>
+			</Item>
+			<Item Guid="d9f88bb2-2dce-4508-b7c8-da4cfdfe3e8a" DisplayName="Статистика" VendorGuid="121165f9-07d1-4507-9ff4-d64f6333b4ca">
+				<InputPorts>
+					<Item Guid="9dc72a3f-56bf-3bfc-84ec-f979daf4da6b" Name="DataSource" DisplayName="Набор данных"/>
+				</InputPorts>
+				<OutputPorts/>
+				<ServiceInputPorts>
+					<Item Guid="00bd0b43-e4b5-3ac1-b95a-ac1bee14f858" Name="SynchronizationInputPort" DisplayName="Порядок выполнения"/>
+				</ServiceInputPorts>
+				<ServiceOutputPorts>
+					<Item Guid="ca080ff0-2342-32b0-b480-586f9747bace" Name="SynchronizationOutputPort" DisplayName="Порядок выполнения"/>
+					<Item Guid="e98be5ba-c627-3a55-af82-a399dd13c73b" Name="ComponentOutputPort" DisplayName="Компонент"/>
+					<Item Guid="58922a98-d1ea-36de-9099-3ce26fe160e2" Name="DependentNodeOutputPort" DisplayName="Зависимые узлы"/>
+				</ServiceOutputPorts>
+				<Component>
+					<InputSockets>
+						<Item Guid="9dc72a3f-56bf-3bfc-84ec-f979daf4da6b" Name="DataSource" DisplayName="Набор данных">
+							<Socket xsi:type="TBGTuneDataSourceSocket">
+								<Constraints/>
+								<DataSource SyncThroughColumns="true">
+									<ColumnDefs/>
+								</DataSource>
+							</Socket>
+						</Item>
+					</InputSockets>
+					<Engine xsi:type="TBGStatView">
+						<StatViewColumns>
+							<Item Name="OBJECT" DataType="dtString">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="CLASS" DataType="dtInteger">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR2" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR3" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR4" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR5" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR6" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR7" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR8" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR9" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR10" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR11" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR12" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR13" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR14" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR15" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR16" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR17" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR18" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR19" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR20" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR21" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR22" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR23" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR24" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR25" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR26" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR27" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR28" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR29" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR30" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR31" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR32" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR33" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR34" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR35" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR36" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR37" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR38" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR39" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR40" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR41" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR42" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR43" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR44" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR45" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR46" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR47" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR48" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR49" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR50" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR51" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR52" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR53" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR54" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR55" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR56" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR57" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR58" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR59" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR60" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR61" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR62" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR63" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR64" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR65" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR66" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR67" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR68" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR69" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR70" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR71" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR72" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR73" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR74" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR75" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR76" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR77" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR78" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR79" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR80" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR81" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR82" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR83" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR84" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR85" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR86" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR87" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR88" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR89" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR90" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR91" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR92" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR93" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR94" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR95" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR96" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR97" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR98" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR99" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR100" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR101" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR102" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR103" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR104" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR105" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR106" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR107" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR108" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR109" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR110" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR111" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR112" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR113" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR114" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR115" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR116" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR117" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR118" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR119" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR120" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR121" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR122" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR123" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR124" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR125" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR126" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR127" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR128" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR129" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR130" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR131" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR132" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR133" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR134" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR135" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR136" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR137" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR138" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR139" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR140" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+							<Item Name="VAR141" DataType="dtFloat">
+								<ColumnConfig/>
+							</Item>
+						</StatViewColumns>
+						<StatIndicatorColumnConfig/>
+						<ColumnInfosConfig>
+							<Item ID="7">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="1">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="3">
+								<ColumnConfig/>
+							</Item>
+						</ColumnInfosConfig>
+						<StatIndicatorsConfig>
+							<Item ID="0">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="1">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="2">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="3">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="4">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="5">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="6">
+								<ColumnConfig Visible="false"/>
+							</Item>
+							<Item ID="7">
+								<ColumnConfig Visible="false"/>
+							</Item>
+							<Item ID="8">
+								<ColumnConfig Visible="false"/>
+							</Item>
+							<Item ID="9">
+								<ColumnConfig Visible="false"/>
+							</Item>
+							<Item ID="10">
+								<ColumnConfig Visible="false"/>
+							</Item>
+							<Item ID="11">
+								<ColumnConfig Visible="false"/>
+							</Item>
+							<Item ID="12">
+								<ColumnConfig Visible="false"/>
+							</Item>
+							<Item ID="13">
+								<ColumnConfig Visible="false"/>
+							</Item>
+							<Item ID="14">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="15">
+								<ColumnConfig Visible="false"/>
+							</Item>
+							<Item ID="16">
+								<ColumnConfig/>
+							</Item>
+						</StatIndicatorsConfig>
+						<HistogramColumnsConfig>
+							<Item ID="0">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="1">
+								<ColumnConfig Visible="false"/>
+							</Item>
+							<Item ID="2">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="3">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="4">
+								<ColumnConfig/>
+							</Item>
+							<Item ID="5">
+								<ColumnConfig/>
+							</Item>
+						</HistogramColumnsConfig>
+					</Engine>
+				</Component>
+			</Item>
+		</Nodes>
+		<Links>
+			<Item Guid="5647df7f-ed90-4f8d-aaa4-d353486ab931">
+				<SourcePort NodeGuid="d713e1dc-3a94-48d7-a7ee-e8fe5f6f2c20" PortGuid="58f7e6c3-511e-39d7-8853-036e0a1a7612"/>
+				<TargetPort NodeGuid="c608b1d3-b640-44cd-83a1-19852804576e" PortGuid="9dc72a3f-56bf-3bfc-84ec-f979daf4da6b"/>
+			</Item>
+			<Item Guid="a664a810-980b-478e-a189-2f631f9517a0">
+				<SourcePort NodeGuid="2b3157aa-435e-46c6-9c8c-23e51408cecf" PortGuid="4ba0e2c2-69ad-3a32-bbdc-75714efe7a51"/>
+				<TargetPort NodeGuid="d9f88bb2-2dce-4508-b7c8-da4cfdfe3e8a" PortGuid="9dc72a3f-56bf-3bfc-84ec-f979daf4da6b"/>
+			</Item>
+		</Links>
+	</ModelViews>
+</Unit>

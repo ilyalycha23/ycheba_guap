@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<PackageIndex>
+	<PackageInfo BinFile="\PackageInfo.bin" XMLFile="\PackageInfo.xml"/>
+	<References BinFile="\References.bin" XMLFile="\References.xml"/>
+	<Reports BinFile="\Reports.bin" XMLFile="\Reports.xml"/>
+	<Variables BinFile="\Variables.bin" XMLFile="\Variables.xml"/>
+	<Units>
+		<Item BasePath="\Unit_0">
+			<Info BinFile="\Unit_0\Info.bin" XMLFile="\Unit_0\Info.xml"/>
+			<Unit BinFile="\Unit_0\Unit.bin" XMLFile="\Unit_0\Unit.xml"/>
+		</Item>
+		<Item BasePath="\Unit_1">
+			<Info BinFile="\Unit_1\Info.bin" XMLFile="\Unit_1\Info.xml"/>
+			<Unit BinFile="\Unit_1\Unit.bin" XMLFile="\Unit_1\Unit.xml"/>
+		</Item>
+	</Units>
+</PackageIndex>

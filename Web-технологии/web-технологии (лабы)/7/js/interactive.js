@@ -1,7 +1,4 @@
-/**
- * Ч. 1: три способа объявления функции с одинаковым результатом;
- * вариант 9 ч. 2: кнопка «Мой Петербург».
- */
+// Ч. 1: три способа объявления функции с одинаковым результатом;
 
 function showSimpleResult() {
   alert('Function Declaration');
@@ -21,6 +18,7 @@ const favoritePlaces = [
   'Петропавловская крепость',
 ];
 
+// Перебор массива и для каждого вывод alert
 function showPetersburgPlaces() {
   favoritePlaces.forEach(function (place) {
     alert(place);

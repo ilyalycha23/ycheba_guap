@@ -9,31 +9,32 @@ const galleryImages = [
   { src: 'image/spb.jpg', title: 'Казанский собор' },
 ];
 
-let offset = 0;
+let offset = 0; // Сдвиг из трёх картинок по массиву
 
 function updateGallery() {
-  const maxOffset = galleryImages.length - 3;
-  const imgs = Array.from(document.querySelectorAll('.gallery-strip img'));
-  const caps = Array.from(document.querySelectorAll('.gallery-strip figcaption'));
+  const maxOffset = galleryImages.length - 3; // Последний допустимый offset (всего 8−3+1 позиций)
+  const imgs = Array.from(document.querySelectorAll('.gallery-strip img')); // NodeList → массив из трёх <img>
+  const caps = Array.from(document.querySelectorAll('.gallery-strip figcaption')); // Подписи к трём кадрам
   for (let i = 0; i < 3; i += 1) {
     const item = galleryImages[offset + i];
     imgs[i].src = item.src;
-    imgs[i].alt = item.title;
-    caps[i].textContent = item.title;
+    imgs[i].alt = item.title; 
+    caps[i].textContent = item.title; // Текст под картинкой
   }
   document.getElementById('gallery-counter').textContent =
-    'Позиция: ' + (offset + 1) + '–' + (offset + 3) + ' из ' + galleryImages.length;
+    'Позиция: ' + (offset + 1) + '–' + (offset + 3) + ' из ' + galleryImages.length; // Диапазон для пользователя
 }
 
 document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('btn-prev').addEventListener('click', function () {
-    const maxOffset = galleryImages.length - 3;
+    const maxOffset = galleryImages.length - 3; // Число позиций минус 1 в терминах сдвига
+    // Умен offset по кругу
     offset = (offset - 1 + (maxOffset + 1)) % (maxOffset + 1);
     updateGallery();
   });
   document.getElementById('btn-next').addEventListener('click', function () {
     const maxOffset = galleryImages.length - 3;
-    offset = (offset + 1) % (maxOffset + 1);
+    offset = (offset + 1) % (maxOffset + 1); // Следующая тройка по кругу
     updateGallery();
   });
   updateGallery();

@@ -1,7 +1,3 @@
-/**
- * Задание 2: один HTML-файл.
- * Контент подменяется по клику на пункты выпадающих списков.
- */
 const topics = {
   'html-semantics': {
     title: 'HTML: семантическая разметка',
@@ -47,13 +43,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.querySelectorAll('.pulldown-item').forEach(function (item) {
     item.addEventListener('click', function (e) {
-      e.preventDefault();
+      e.preventDefault(); // Отмена перехода по href у ссылки
       const key = item.dataset.topic;
-      const topic = topics[key];
+      const topic = topics[key]; // объект темы из словаря
       if (!topic) {
         return;
       }
-      titleEl.textContent = topic.title;
+      titleEl.textContent = topic.title; 
       textEl.textContent = topic.text;
     });
   });

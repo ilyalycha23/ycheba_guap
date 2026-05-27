@@ -1,7 +1,3 @@
-/**
- * Задание 1: три изображения, смена каждую 1 с;
- * ссылка ведёт на файл текущего кадра.
- */
 const slides = [
   { file: 'image/spb.jpg', title: 'Санкт-Петербург' },
   { file: 'image/msk.jpg', title: 'Москва' },
@@ -11,9 +7,9 @@ const slides = [
 let slideIndex = 0;
 
 function updateSlide() {
-  const s = slides[slideIndex];
+  const s = slides[slideIndex]; 
   const link = document.getElementById('slide-link');
-  const img = document.getElementById('slide-img');
+  const img = document.getElementById('slide-img'); 
   const cap = document.getElementById('slide-caption');
   link.href = s.file;
   img.src = s.file;
@@ -22,9 +18,10 @@ function updateSlide() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  updateSlide();
+  updateSlide(); // Отрисовать первый кадр
   setInterval(function () {
+    // Циклическое увеличение индекса
     slideIndex = (slideIndex + 1) % slides.length;
-    updateSlide();
-  }, 1000);
+    updateSlide(); // след слайд
+  }, 1000); // интервал 1 секунда
 });

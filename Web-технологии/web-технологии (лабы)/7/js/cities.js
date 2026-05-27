@@ -1,9 +1,10 @@
 const cityPhotos = {
-  krd: { src: 'image/krd.jpg', label: 'Краснодар' },
-  sbp: { src: 'image/spb.jpg', label: 'Санкт-Петербург' },
+  krd: { src: 'image/krd.jpg', label: 'Краснодар' }, 
+  sbp: { src: 'image/spb.jpg', label: 'Санкт-Петербург' }, 
   msk: { src: 'image/msk.jpg', label: 'Москва' },
 };
 
+// Находим на странице элемент для подставления фото
 const img = document.getElementById('city-photo');
 
 document.getElementById('btn-krd').onclick = function () {

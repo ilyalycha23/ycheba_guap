@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<PredefinedData xmlns="http://v8.1c.ru/8.3/xcf/predef" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogPredefinedItems" version="2.21">
+	<Item id="34f91858-18ab-465c-8dc0-eabb0d7d6a25">
+		<Name>Администратор</Name>
+		<Code>000000001</Code>
+		<Description>Администратор</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="d3f980ac-b687-4904-b7e2-837bdc2e188f">
+		<Name>Оператор</Name>
+		<Code>000000002</Code>
+		<Description>Оператор</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="4a342a12-650d-4b33-8f4a-8642b33cd4d8">
+		<Name>СистемныйАдминистратор</Name>
+		<Code>000000004</Code>
+		<Description>Системный администратор</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="d1a08b13-171d-4a54-a9ce-f32fc8ec235e">
+		<Name>Управляющий</Name>
+		<Code>000000003</Code>
+		<Description>Управляющий</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+</PredefinedData>

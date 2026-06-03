@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ConfigDumpInfo xmlns="http://v8.1c.ru/8.3/xcf/dumpinfo" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" format="Hierarchical" version="2.21">
+	<ConfigVersions>
+		<Metadata name="AccountingRegister.Проводки" id="8e3ef512-d126-4991-a1ce-52f8f4bc7c7d" configVersion="50b9fd2e094a6e4b8291c29c259321df00000000">
+			<Metadata name="AccountingRegister.Проводки.Resource.Сумма" id="83ee22f5-8e57-4f59-abfe-b7b6405e4dbb"/>
+		</Metadata>
+		<Metadata name="AccountingRegister.Проводки.RecordSetModule" id="8e3ef512-d126-4991-a1ce-52f8f4bc7c7d.6" configVersion="4ce012fb5cd42c4598b4f288cf41d65100000000"/>
+		<Metadata name="AccumulationRegister.ВыручкаПоБилетам" id="63c30eae-b703-4a0b-b5f4-3903faf2b57a" configVersion="e40fecf330a0324bb1e8e979406a159c00000000">
+			<Metadata name="AccumulationRegister.ВыручкаПоБилетам.Dimension.Кинозал" id="69623c48-7c11-4afb-8419-cd1b696d3299"/>
+			<Metadata name="AccumulationRegister.ВыручкаПоБилетам.Resource.КоличествоБилетов" id="829893bd-b05a-4cdf-a858-b4e1df0f6c51"/>
+			<Metadata name="AccumulationRegister.ВыручкаПоБилетам.Dimension.Клиент" id="a1b2c3d4-e5f6-4a5b-8c7d-9e0f1a2b3c4d"/>
+			<Metadata name="AccumulationRegister.ВыручкаПоБилетам.Resource.Сумма" id="c37cf5fb-4095-4f99-b857-3c1a4ec0bb5a"/>
+			<Metadata name="AccumulationRegister.ВыручкаПоБилетам.Dimension.ТипБилета" id="d7d41113-ed5e-4fb6-964f-ee749c34743c"/>
+		</Metadata>
+		<Metadata name="AccumulationRegister.ОстаткиТоваров" id="eeb20d36-2ef7-4385-86f2-2f0249ce145f" configVersion="ac058465343d414c8f107d98f4256d2500000000">
+			<Metadata name="AccumulationRegister.ОстаткиТоваров.Resource.Количество" id="4e5b5a1c-f641-463b-9e0e-277da7f94f3a"/>
+			<Metadata name="AccumulationRegister.ОстаткиТоваров.Dimension.Номенклатура" id="d3cf3037-26c0-43e5-ab83-6b308572f430"/>
+		</Metadata>
+		<Metadata name="AccumulationRegister.ОстаткиТоваров.RecordSetModule" id="eeb20d36-2ef7-4385-86f2-2f0249ce145f.1" configVersion="553499ffd2b7dc47aa4095761aafd6d200000000"/>
+		<Metadata name="BusinessProcess.ОбслуживаниеПосетителя" id="da7b99bd-2a58-4699-8c58-463ef444c1ae" configVersion="da53d4e6dffad1438fd6d9f41fba86cc00000000">
+			<Metadata name="BusinessProcess.ОбслуживаниеПосетителя.Attribute.ЗаказВБар" id="12345678-1234-1234-1234-123456789a15"/>
+			<Metadata name="BusinessProcess.ОбслуживаниеПосетителя.Attribute.Клиент" id="87c7b341-5aed-4d03-a55e-2455e412658f"/>
+			<Metadata name="BusinessProcess.ОбслуживаниеПосетителя.Attribute.Кинозал" id="d4bf39d3-c4ef-4b4b-adad-66ae23bb7416"/>
+		</Metadata>
+		<Metadata name="BusinessProcess.ОбслуживаниеПосетителя.Flowchart" id="da7b99bd-2a58-4699-8c58-463ef444c1ae.7" configVersion="1d8b36005fa3844ba1dc4b5bf97c5e7c00000000"/>
+		<Metadata name="BusinessProcess.ОбслуживаниеПосетителя.ObjectModule" id="da7b99bd-2a58-4699-8c58-463ef444c1ae.6" configVersion="ae427f5a789d26428b810bfd1ad43d3c00000000"/>
+		<Metadata name="Catalog.Должности" id="d38c5479-b022-474a-9624-5890cf26b52e" configVersion="d973e68cc0f14344aa72f50af89bd88400000000"/>
+		<Metadata name="Catalog.Должности.ObjectModule" id="d38c5479-b022-474a-9624-5890cf26b52e.0" configVersion="b0a6ad369698ba42b063fd81c0c6a47100000000"/>
+		<Metadata name="Catalog.Должности.Predefined" id="d38c5479-b022-474a-9624-5890cf26b52e.1c" configVersion="d01c6663a5fcd24892fa93c5dd8e7c6800000000"/>
+		<Metadata name="Catalog.Кинозалы" id="1723ddf8-548a-4d98-af8e-5f5a4725caa2" configVersion="d40b0ac4839b42469730e8f63c2bede800000000">
+			<Metadata name="Catalog.Кинозалы.Attribute.КлассЗала" id="34dfdb37-2ad8-46fe-b5c8-68ad9a328a7f"/>
+			<Metadata name="Catalog.Кинозалы.Attribute.СтоимостьЗакупки" id="a1b2c3d4-e5f6-4a5b-8c7d-9e0f1a2b3c4e"/>
+			<Metadata name="Catalog.Кинозалы.Attribute.Состояние" id="c9123456-1234-4321-abcd-123456789a11"/>
+			<Metadata name="Catalog.Кинозалы.Attribute.СебестоимостьЗала" id="c9123456-1234-4321-abcd-123456789abc"/>
+			<Metadata name="Catalog.Кинозалы.Attribute.ОписаниеЗала" id="e861a588-be2b-46b3-8918-6b5a1680ebe0"/>
+		</Metadata>
+		<Metadata name="Catalog.Кинозалы.ObjectModule" id="1723ddf8-548a-4d98-af8e-5f5a4725caa2.0" configVersion="4b3d96a1fbfa4146af58dd2decb2bdc900000000"/>
+		<Metadata name="Catalog.Клиенты" id="9a66fe37-af3f-4082-9e24-84b02a37c13d" configVersion="45a0dea2bb73434f85dadc9218d2f0d800000000">
+			<Metadata name="Catalog.Клиенты.Attribute.ФИО" id="5f1f1091-72fb-4ce8-8645-d598aeab2a78"/>
+			<Metadata name="Catalog.Клиенты.Attribute.Телефон" id="f2b6b47e-18b6-4d4b-8288-17cec46d91cd"/>
+		</Metadata>
+		<Metadata name="Catalog.Клиенты.Form.ФормаЭлемента" id="20000000-0000-0000-0000-000000000002" configVersion="0b2d6be55c0f9845a3bfe3a9a311fc9000000000"/>
+		<Metadata name="Catalog.Клиенты.Form.ФормаЭлемента.Form" id="20000000-0000-0000-0000-000000000002.0" configVersion="fc58a12115b30b46a142fe9a7e24be7700000000"/>
+		<Metadata name="Catalog.Клиенты.ObjectModule" id="9a66fe37-af3f-4082-9e24-84b02a37c13d.0" configVersion="fff2bd1cc7982d46b954c463e0ba3cab00000000"/>
+		<Metadata name="Catalog.Номенклатура" id="2834eef9-659b-5e09-b89f-6e6b5836dbb3" configVersion="a9925db024c34a4fb34a05dc51d112e700000000">
+			<Metadata name="Catalog.Номенклатура.Attribute.Тип" id="45efec48-3be9-57af-c6d9-79be0b439b8a"/>
+			<Metadata name="Catalog.Номенклатура.Attribute.Себестоимость" id="d0234567-2345-5432-bcde-234567890bcd"/>
+			<Metadata name="Catalog.Номенклатура.Attribute.Цена" id="f972b699-cf3c-57c4-9029-7c6b2791fcf1"/>
+		</Metadata>
+		<Metadata name="Catalog.Сотрудники" id="c9366d8c-559e-4603-8d6e-a88b155f378d" configVersion="a118e8bba8b4f94c972ff0c154e5ad6a00000000"/>
+		<Metadata name="Catalog.Сотрудники.ObjectModule" id="c9366d8c-559e-4603-8d6e-a88b155f378d.0" configVersion="fd0684870b8c534593ac279dddd1bf4a00000000"/>
+		<Metadata name="Catalog.ТипыБилетов" id="5f02754a-3e09-4167-9fca-acdc894a03b8" configVersion="ae7b1831e9574844867fa489c8475c2400000000">
+			<Metadata name="Catalog.ТипыБилетов.Attribute.КатегорияБилета" id="04f5e310-f071-415e-b788-e59f2d1de901"/>
+			<Metadata name="Catalog.ТипыБилетов.Attribute.Цена" id="469cf12f-fc54-40a6-9685-d161e3303428"/>
+		</Metadata>
+		<Metadata name="Catalog.ТипыБилетов.ObjectModule" id="5f02754a-3e09-4167-9fca-acdc894a03b8.0" configVersion="2c6dd5b80c54f445acb8257cb6721b6900000000"/>
+		<Metadata name="Catalog.Фильмы" id="ce15418a-3e44-4b1d-bc02-b9645209675d" configVersion="8508dbe676289141a099ca7d62a8268d00000000">
+			<Metadata name="Catalog.Фильмы.Attribute.Страна" id="05cea6a6-69a9-4c49-923f-a50c0ed1f5b9"/>
+			<Metadata name="Catalog.Фильмы.Attribute.Рейтинг" id="4948b6e4-061f-4216-9351-de9033fa26f7"/>
+			<Metadata name="Catalog.Фильмы.Attribute.Продолжительность" id="8562a44d-6df6-4bd5-afa1-7a059a4223ae"/>
+			<Metadata name="Catalog.Фильмы.Attribute.Жанр" id="f524bf96-7169-4106-9408-141fa849b826"/>
+		</Metadata>
+		<Metadata name="Catalog.Фильмы.ObjectModule" id="ce15418a-3e44-4b1d-bc02-b9645209675d.0" configVersion="9f86cfa1cc64184c840b4371dcaae39700000000"/>
+		<Metadata name="ChartOfAccounts.Управленческий" id="5cbe26a3-28b6-4135-befb-dc83a17bed9f" configVersion="d75c80a28d9322418377c09c1a9e850b00000000"/>
+		<Metadata name="ChartOfAccounts.Управленческий.ObjectModule" id="5cbe26a3-28b6-4135-befb-dc83a17bed9f.14" configVersion="db333de8e0189e44af8e50f2c6ed80c700000000"/>
+		<Metadata name="ChartOfAccounts.Управленческий.Predefined" id="5cbe26a3-28b6-4135-befb-dc83a17bed9f.9" configVersion="dda93fca62419a47926b48226a8cc85600000000"/>
+		<Metadata name="ChartOfCharacteristicTypes.ВидыСубконто" id="dc6d5f00-727a-4438-b30d-30a7bea4e1cc" configVersion="c0cb830296015749a2fd758b479f616500000000"/>
+		<Metadata name="ChartOfCharacteristicTypes.ВидыСубконто.ObjectModule" id="dc6d5f00-727a-4438-b30d-30a7bea4e1cc.15" configVersion="b5876a7df3558e44b677707c8a6e81fa00000000"/>
+		<Metadata name="ChartOfCharacteristicTypes.ВидыСубконто.Predefined" id="dc6d5f00-727a-4438-b30d-30a7bea4e1cc.7" configVersion="23925f09e7ed064693419c7c5bd5113700000000"/>
+		<Metadata name="Configuration.ПродажаБилетовКиноцентр" id="cf800209-a0e6-4f63-a872-0aae318ba4df" configVersion="29cd3f6a288e164aab9c2ab386cc12ad00000000"/>
+		<Metadata name="Configuration.ПродажаБилетовКиноцентр.ClientApplicationInterface" id="c35c1404-2e4c-4905-ad9a-3c38cdfd54aa.b" configVersion="55e4e2f8549f65499d168b571bb3678800000000"/>
+		<Metadata name="Configuration.ПродажаБилетовКиноцентр.HomePageWorkArea" id="c35c1404-2e4c-4905-ad9a-3c38cdfd54aa.8" configVersion="084c3970162a3046aadf48e271960d1200000000"/>
+		<Metadata name="Configuration.ПродажаБилетовКиноцентр.ManagedApplicationModule" id="c35c1404-2e4c-4905-ad9a-3c38cdfd54aa.6" configVersion="f419d77ebcf6aa4aa2fe57fd52dd1d3c00000000"/>
+		<Metadata name="Configuration.ПродажаБилетовКиноцентр.SessionModule" id="c35c1404-2e4c-4905-ad9a-3c38cdfd54aa.7" configVersion="b2c3d4e5f6789012345678901234567800000000"/>
+		<Metadata name="Document.ЗаказВБар" id="cf115ffc-e862-4cbe-8bbc-81b420b18164" configVersion="6195d8c4bbca204f86c954d09e1d72df00000000">
+			<Metadata name="Document.ЗаказВБар.Attribute.Номенклатура" id="091a877f-181e-48fc-99c0-b2fa50cc636c"/>
+			<Metadata name="Document.ЗаказВБар.Attribute.Кинозал" id="12345678-1234-1234-1234-123456789a13"/>
+			<Metadata name="Document.ЗаказВБар.Attribute.Завершен" id="12345678-1234-1234-1234-123456789a14"/>
+			<Metadata name="Document.ЗаказВБар.Attribute.Количество" id="3464ef21-6ad9-48e5-89a1-5eea2d597417"/>
+			<Metadata name="Document.ЗаказВБар.Attribute.Клиент" id="5c9d9a23-d701-4d00-a169-2c6eb133723d"/>
+			<Metadata name="Document.ЗаказВБар.Attribute.Цена" id="91ffc05f-62dc-4e33-ab3c-558468c63b1f"/>
+			<Metadata name="Document.ЗаказВБар.Attribute.Сумма" id="f0863ee3-ae8a-439d-997b-dbc875bf4397"/>
+		</Metadata>
+		<Metadata name="Document.ЗаказВБар.Form.ФормаДокумента" id="12345678-1234-1234-1234-123456789abc" configVersion="e0e0c0b675645d419ac5d815561ca74b00000000"/>
+		<Metadata name="Document.ЗаказВБар.Form.ФормаДокумента.Form" id="12345678-1234-1234-1234-123456789abc.0" configVersion="ed460cd70d7f0642a397df72df86b50900000000"/>
+		<Metadata name="Document.ЗаказВБар.ObjectModule" id="cf115ffc-e862-4cbe-8bbc-81b420b18164.0" configVersion="91de615996928341ba7ddfe2daf0c2b200000000"/>
+		<Metadata name="Document.ЗаявкаНаБроньБилетов" id="4c25c62a-4f0a-483a-a69d-40008f45883e" configVersion="1c636b0d5165c54f9d00a6d56a97249500000000">
+			<Metadata name="Document.ЗаявкаНаБроньБилетов.Attribute.НачалоСеанса" id="06e70c61-7202-4933-aae6-1b38f91e479c"/>
+			<Metadata name="Document.ЗаявкаНаБроньБилетов.Attribute.Сумма" id="2bcef7a6-c6b0-403b-ada2-b982b54515f2"/>
+			<Metadata name="Document.ЗаявкаНаБроньБилетов.Attribute.КоличествоБилетов" id="2e11741b-a8a4-4861-8fbf-a1d5c0c9e2c1"/>
+			<Metadata name="Document.ЗаявкаНаБроньБилетов.Attribute.Обработана" id="3bcef7a6-c6b0-403b-ada2-b982b54515f3"/>
+			<Metadata name="Document.ЗаявкаНаБроньБилетов.Attribute.Кинозал" id="4e9f1c03-14ec-41d0-87c9-e9b78abd384a"/>
+			<Metadata name="Document.ЗаявкаНаБроньБилетов.Attribute.ОкончаниеСеанса" id="65281078-b2d0-4d10-865f-ede47ae3bd01"/>
+			<Metadata name="Document.ЗаявкаНаБроньБилетов.Attribute.ТипБилета" id="7423c2b5-813f-40aa-861a-4babe680d65b"/>
+			<Metadata name="Document.ЗаявкаНаБроньБилетов.Attribute.Клиент" id="8869306e-b34d-4648-84aa-082f7e417920"/>
+			<Metadata name="Document.ЗаявкаНаБроньБилетов.Attribute.Фильм" id="c1387908-cb95-4288-b501-be6a55318f85"/>
+		</Metadata>
+		<Metadata name="Document.ЗаявкаНаБроньБилетов.Form.ФормаДокумента" id="59d14035-4ec3-4897-b785-85663eb92322" configVersion="0f2ba0fa2d8b0b42967b7ab91b30d3c600000000"/>
+		<Metadata name="Document.ЗаявкаНаБроньБилетов.Form.ФормаДокумента.Form" id="59d14035-4ec3-4897-b785-85663eb92322.0" configVersion="fc3d7e1f22ce5e4fb296025d44d22a4400000000"/>
+		<Metadata name="Document.ЗаявкаНаБроньБилетов.ObjectModule" id="4c25c62a-4f0a-483a-a69d-40008f45883e.0" configVersion="9d7a19c395fb124e9200c0e7136fa00d00000000"/>
+		<Metadata name="Document.Оплата" id="2aa0391f-ff7d-47e3-9d87-a668087bfdd4" configVersion="50cfecebaa32894cb398b11386c2889d00000000">
+			<Metadata name="Document.Оплата.Attribute.Сумма" id="36952d2a-9209-4bca-82ae-7fb2c8b6bd8b"/>
+			<Metadata name="Document.Оплата.Attribute.Клиент" id="e0cc4b46-18be-4bdf-89f5-6aa3bb099c1b"/>
+		</Metadata>
+		<Metadata name="Document.Оплата.ObjectModule" id="2aa0391f-ff7d-47e3-9d87-a668087bfdd4.0" configVersion="c40a2482cad7764a9f70855e4266d0e100000000"/>
+		<Metadata name="Document.ПоступлениеТоваров" id="49bad0f5-fb57-4098-bb7a-c8ebeb56e7dc" configVersion="e9949cf691ce1d438cb64dbb7c1def0c00000000">
+			<Metadata name="Document.ПоступлениеТоваров.TabularSection.Товары" id="21cabacb-6f1c-4d3d-998e-6e825592f80c"/>
+			<Metadata name="Document.ПоступлениеТоваров.TabularSection.Товары.Attribute.Цена" id="2854b3c6-e86e-4652-a325-13c3ad310cc9"/>
+			<Metadata name="Document.ПоступлениеТоваров.TabularSection.Товары.Attribute.Сумма" id="9949e633-12eb-4cac-a99a-3a50f389539d"/>
+			<Metadata name="Document.ПоступлениеТоваров.TabularSection.Товары.Attribute.Количество" id="aed9a36e-ec3e-43a1-a7b4-191210a23bc3"/>
+			<Metadata name="Document.ПоступлениеТоваров.TabularSection.Товары.Attribute.Номенклатура" id="c9001120-c5e3-426f-af0c-8ec8007b65c8"/>
+		</Metadata>
+		<Metadata name="Document.ПоступлениеТоваров.ObjectModule" id="49bad0f5-fb57-4098-bb7a-c8ebeb56e7dc.0" configVersion="aef79af27e01a047a2001d4fb3db2f2700000000"/>
+		<Metadata name="Document.ПродажаБилетов" id="0f221cc4-a01d-4a15-bb4a-1f13cf4d280d" configVersion="f51dd61fcd394047b276f5918715e2a800000000">
+			<Metadata name="Document.ПродажаБилетов.Attribute.Клиент" id="2127a8e8-15dd-4730-833b-fb16df49ebec"/>
+			<Metadata name="Document.ПродажаБилетов.Attribute.Фильм" id="217a44c0-a139-4e29-84e5-6a2d78e9a9d0"/>
+			<Metadata name="Document.ПродажаБилетов.Attribute.КоличествоБилетов" id="6b7ade73-fee2-433f-8f8d-17b6b9b46c01"/>
+			<Metadata name="Document.ПродажаБилетов.Attribute.ОкончаниеСеанса" id="7228a3a0-b022-4049-8218-193fa23e192e"/>
+			<Metadata name="Document.ПродажаБилетов.Attribute.Сумма" id="7bb89638-d99b-472c-b879-3b928f0ef311"/>
+			<Metadata name="Document.ПродажаБилетов.Attribute.ДокументОснование" id="8bb89638-d99b-472c-b879-3b928f0ef312"/>
+			<Metadata name="Document.ПродажаБилетов.Attribute.ТипБилета" id="967d27c1-4eab-409e-8002-dfe45b151037"/>
+			<Metadata name="Document.ПродажаБилетов.Attribute.Кинозал" id="b8fee762-8c53-4bb8-81bc-7a49055bd61f"/>
+			<Metadata name="Document.ПродажаБилетов.Attribute.Завершен" id="c9123456-1234-4321-abcd-123456789a12"/>
+			<Metadata name="Document.ПродажаБилетов.Attribute.НачалоСеанса" id="f2c44c05-1824-4c2e-9506-0e5a802b9acb"/>
+		</Metadata>
+		<Metadata name="Document.ПродажаБилетов.Form.ФормаДокумента" id="10000000-0000-0000-0000-000000000001" configVersion="41d75a992806c34f8f05ccd0636e4e7e00000000"/>
+		<Metadata name="Document.ПродажаБилетов.Form.ФормаДокумента.Form" id="10000000-0000-0000-0000-000000000001.0" configVersion="1fd62589deb5014680fac43f3c625fee00000000"/>
+		<Metadata name="Document.ПродажаБилетов.ObjectModule" id="0f221cc4-a01d-4a15-bb4a-1f13cf4d280d.0" configVersion="64c007d279be07408ff02bb2288db12d00000000"/>
+		<Metadata name="Document.ПродажаТоваров" id="9c1b8853-39dc-498c-a0e5-34bb71e85a4b" configVersion="695dde2e35691448a8b9f01b8c17e29200000000">
+			<Metadata name="Document.ПродажаТоваров.TabularSection.Товары.Attribute.Количество" id="2b1e8234-bbaf-4d2c-be1d-fd2c391135a4"/>
+			<Metadata name="Document.ПродажаТоваров.TabularSection.Товары.Attribute.Цена" id="330a133d-003b-4c2a-980f-c689dcb70c9d"/>
+			<Metadata name="Document.ПродажаТоваров.Attribute.Клиент" id="72a01ff2-d6d6-408f-82b2-90de78d7b204"/>
+			<Metadata name="Document.ПродажаТоваров.TabularSection.Товары.Attribute.Номенклатура" id="9e2b482c-325a-47a6-8831-cf828529e8be"/>
+			<Metadata name="Document.ПродажаТоваров.TabularSection.Товары" id="c699d11f-011c-4223-8321-ee3f9f67bf2a"/>
+			<Metadata name="Document.ПродажаТоваров.TabularSection.Товары.Attribute.Сумма" id="fc42ae69-e628-401f-930a-b1794d106d9a"/>
+		</Metadata>
+		<Metadata name="Document.ПродажаТоваров.ObjectModule" id="9c1b8853-39dc-498c-a0e5-34bb71e85a4b.0" configVersion="2f1440ed0f62ae4fa6ceb5af2005050500000000"/>
+		<Metadata name="Document.СписаниеТоваров" id="d2f9aa82-894c-4fe4-964f-3252fc6fea7f" configVersion="f0f161fdbc5e6e47927d78b62868a51600000000">
+			<Metadata name="Document.СписаниеТоваров.TabularSection.Товары.Attribute.Номенклатура" id="32955ca7-c8ec-46e7-803c-abdeacf26ade"/>
+			<Metadata name="Document.СписаниеТоваров.TabularSection.Товары.Attribute.Количество" id="b8ed795e-a447-4f63-bdb5-5834933df53d"/>
+			<Metadata name="Document.СписаниеТоваров.TabularSection.Товары" id="ee9010b3-7fa8-4f96-b20f-e944ef7170ba"/>
+		</Metadata>
+		<Metadata name="Document.СписаниеТоваров.ObjectModule" id="d2f9aa82-894c-4fe4-964f-3252fc6fea7f.0" configVersion="1940093a2d472342a70c19702636cf1300000000"/>
+		<Metadata name="Enum.СостоянияЗалов" id="4346e50a-5aea-49b5-974a-1a5aae25bef6" configVersion="3fd068c3481b114f91b2d0864e15f6bf00000000">
+			<Metadata name="Enum.СостоянияЗалов.EnumValue.Закрыт" id="6bb4f948-5330-4065-abe9-4c48b7220e3d"/>
+			<Metadata name="Enum.СостоянияЗалов.EnumValue.Работает" id="df55e0d3-ee85-49d4-8b47-161697b8a045"/>
+		</Metadata>
+		<Metadata name="Enum.СтатусыЗалов" id="e768aec5-9aca-4ae7-99c6-f4074330e1a5" configVersion="0a63a015a127f0488bb9898121d82ed200000000">
+			<Metadata name="Enum.СтатусыЗалов.EnumValue.Занят" id="4801722e-b4e2-45a9-a47f-c4fe8109e28f"/>
+			<Metadata name="Enum.СтатусыЗалов.EnumValue.Свободен" id="73e21ee8-fb4d-47ef-a061-ecb027e5f943"/>
+			<Metadata name="Enum.СтатусыЗалов.EnumValue.Забронирован" id="7718af40-8187-4211-ab34-4ddb30639ce0"/>
+			<Metadata name="Enum.СтатусыЗалов.EnumValue.Закрыт" id="a1b2c3d4-e5f6-4a5b-8c7d-9e0f1a2b3c4d"/>
+			<Metadata name="Enum.СтатусыЗалов.EnumValue.Обслуживание" id="e46632e4-335e-4f67-b905-f35de24d771a"/>
+		</Metadata>
+		<Metadata name="InformationRegister.АдресацияЗадач" id="fcc0c8af-246b-400b-a3e7-fa9599b666f7" configVersion="cdd0005d7315244e822620e80613bbe900000000">
+			<Metadata name="InformationRegister.АдресацияЗадач.Dimension.Должность" id="2668d83f-2a60-46b3-9eb5-a8d480b4c610"/>
+			<Metadata name="InformationRegister.АдресацияЗадач.Dimension.Сотрудник" id="a8f8f95c-7f79-4af4-b4f9-9bbaff5ab8a4"/>
+		</Metadata>
+		<Metadata name="InformationRegister.АдресацияЗадач.RecordSetModule" id="fcc0c8af-246b-400b-a3e7-fa9599b666f7.1" configVersion="34d793a5fc238f4395f758f46049969d00000000"/>
+		<Metadata name="InformationRegister.ИсторияСтатусовЗалов" id="72b6c113-9894-46f3-a982-9eda230e1caf" configVersion="1446bd7195bc4144b532f4a3e08c2c6f00000000">
+			<Metadata name="InformationRegister.ИсторияСтатусовЗалов.Resource.Статус" id="933ecc31-23dc-40fb-bd88-3cead34377f6"/>
+			<Metadata name="InformationRegister.ИсторияСтатусовЗалов.Dimension.Кинозал" id="bb6f56c9-10cb-4d9b-9074-fc0b5fa1bdb4"/>
+		</Metadata>
+		<Metadata name="Language.Русский" id="7b8a8ca8-47cc-4e1e-8366-1a0802aac6c4" configVersion="244fc169e97af244942a90529b08807700000000"/>
+		<Metadata name="Report.Бюджет" id="73851a17-6707-452f-a4a2-269c7a0a3820" configVersion="d3c448b42c6fc244921e239d3305028900000000"/>
+		<Metadata name="Report.Бюджет.ManagerModule" id="73851a17-6707-452f-a4a2-269c7a0a3820.2" configVersion="d01377789ec8f44ebbbb8cb75d82111d00000000"/>
+		<Metadata name="Report.Бюджет.ObjectModule" id="73851a17-6707-452f-a4a2-269c7a0a3820.0" configVersion="124b90d6195de44e8a59f33ae710141200000000"/>
+		<Metadata name="Report.Бюджет.Template.ОсновнаяСхемаКомпоновкиДанных" id="12345678-1234-1234-1234-123456789abd" configVersion="acb637319ccc6a499c994dc76b4de5f000000000"/>
+		<Metadata name="Report.Бюджет.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="12345678-1234-1234-1234-123456789abd.0" configVersion="dd08c30bc6664948b52ac83d6f718e4000000000"/>
+		<Metadata name="Report.ЗаполняемостьЗалов" id="76a4c52f-d676-4038-908e-fa1174d453ff" configVersion="1bd7cda7c9bad64595a34f1b8cd5cfc500000000"/>
+		<Metadata name="Report.ЗаполняемостьЗалов.Template.ОсновнаяСхемаКомпоновкиДанных" id="7c3b999d-16a7-47be-a5e2-7634dbab95ef" configVersion="f7d1154b9edbc3429aa04c17f900557200000000"/>
+		<Metadata name="Report.ЗаполняемостьЗалов.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="7c3b999d-16a7-47be-a5e2-7634dbab95ef.0" configVersion="34e42c5a74151842922b2dbdfeb53bea00000000"/>
+		<Metadata name="Report.Финансы" id="ef83cf64-903b-496b-a2ea-cedba8fea84e" configVersion="e2ff7f04de90c54ba958aee75391a33100000000"/>
+		<Metadata name="Report.Финансы.ManagerModule" id="ef83cf64-903b-496b-a2ea-cedba8fea84e.2" configVersion="191945fbfad55148a60be4f9a9fa5a1c00000000"/>
+		<Metadata name="Report.Финансы.ObjectModule" id="ef83cf64-903b-496b-a2ea-cedba8fea84e.0" configVersion="ca71580752b7e649bbbb3e0074b4972e00000000"/>
+		<Metadata name="Report.Финансы.Template.ОсновнаяСхемаКомпоновкиДанных" id="5e0df7aa-91e8-466d-ad02-3d5f4ad6111f" configVersion="f9689d400b4f9c46af609a822b8f658700000000"/>
+		<Metadata name="Report.Финансы.Template.ОсновнаяСхемаКомпоновкиДанных.Template" id="5e0df7aa-91e8-466d-ad02-3d5f4ad6111f.0" configVersion="356cee43fa625e42a94c572f4a4b440900000000"/>
+		<Metadata name="Role.Оператор" id="1623fcc4-3cf4-43c1-8290-e62aa54bef14" configVersion="d354bf2b739a2d43aa9a3e17b1d46e4900000000"/>
+		<Metadata name="Role.Оператор.Rights" id="1623fcc4-3cf4-43c1-8290-e62aa54bef14.0" configVersion="f4d5c60aa11d3d4fb01e6844d8363fa500000000"/>
+		<Metadata name="Role.ПолныеПрава" id="a5a49730-5e58-4d5d-b9f4-be37028e5d66" configVersion="68b6e7af189f124f836ef1804975555e00000000"/>
+		<Metadata name="Role.ПолныеПрава.Rights" id="a5a49730-5e58-4d5d-b9f4-be37028e5d66.0" configVersion="bd240b131f3bc1409de887fa72e9663c00000000"/>
+		<Metadata name="Subsystem.БарКинотеатра" id="a69c4201-87ca-4bbe-a262-8234f220bb17" configVersion="b1c2d3e4f5a6789012345678abcdef0100000000"/>
+		<Metadata name="Subsystem.БарКинотеатра.CommandInterface" id="a69c4201-87ca-4bbe-a262-8234f220bb17.1" configVersion="c2d3e4f5a6b7890123456789abcdef0200000000"/>
+		<Metadata name="Subsystem.Задачи" id="9fdd82a3-4014-432c-806b-50ff1a52d010" configVersion="d3e4f5a6b7c8901234567890abcdef0300000000"/>
+		<Metadata name="Subsystem.Задачи.CommandInterface" id="9fdd82a3-4014-432c-806b-50ff1a52d010.1" configVersion="e4f5a6b7c8d901234567890abcdef0400000000"/>
+		<Metadata name="Subsystem.НСИ" id="9b49de33-172c-4b4a-818b-3fc15a313f1d" configVersion="e7ee616486c46f48bd0d9a8d55c0c0ed00000000"/>
+		<Metadata name="Subsystem.НСИ.CommandInterface" id="9b49de33-172c-4b4a-818b-3fc15a313f1d.1" configVersion="498be835c044c942b3c9b270d828f7c600000000"/>
+		<Metadata name="Subsystem.Отчетность" id="279c807f-1e68-45be-b559-0465ec2e20df" configVersion="aee1094307236f43a21f5dcbaa152db600000000"/>
+		<Metadata name="Subsystem.ПродажаБилетов" id="968cb98b-1c25-445d-8c5c-d9a92f1c0993" configVersion="da409618a039f245ad4ae13dc1fca4ad00000000"/>
+		<Metadata name="Subsystem.Финансы" id="e4778d96-e5a8-4dd0-abe8-cecf7420ce98" configVersion="d4dc196f9c86b443bedfbd6ee87d29e600000000"/>
+		<Metadata name="Subsystem.Финансы.CommandInterface" id="e4778d96-e5a8-4dd0-abe8-cecf7420ce98.1" configVersion="5ef0d56f8f1d2946a26c743c1315420000000000"/>
+		<Metadata name="Task.ЗадачаИсполнителя" id="096f9962-e18f-4be2-a552-b092da794533" configVersion="e177ab19a639934e933d00abdd428c9d00000000">
+			<Metadata name="Task.ЗадачаИсполнителя.AddressingAttribute.Сотрудник" id="82c58c42-63cc-4588-979a-f22970e077b4"/>
+			<Metadata name="Task.ЗадачаИсполнителя.Attribute.Основание" id="d4bf39d3-c4ef-4b4b-adad-66ae23bb7417"/>
+			<Metadata name="Task.ЗадачаИсполнителя.AddressingAttribute.Должность" id="e8ea4842-0aac-4950-9e88-c478e78923f8"/>
+		</Metadata>
+		<Metadata name="Task.ЗадачаИсполнителя.ObjectModule" id="096f9962-e18f-4be2-a552-b092da794533.6" configVersion="ae2cdf7808be0b499393a345cfb38f9e00000000"/>
+	</ConfigVersions>
+</ConfigDumpInfo>

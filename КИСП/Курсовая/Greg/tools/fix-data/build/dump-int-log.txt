@@ -1,0 +1,5 @@
+﻿Выгрузка внешней обработки или отчета в XML.
+Входной бинарный файл: D:\ycheba_guap\КИСП\Курсовая\Greg\tools\fix-data\build\InternalFix.epf
+Каталог или корневой файл выгрузки: D:\ycheba_guap\КИСП\Курсовая\Greg\src\DataProcessors\ИсправлениеДанных.xml
+Формат: Иерархический
+Файл не обнаружен 'D:\ycheba_guap\КИСП\Курсовая\Greg\tools\fix-data\build\InternalFix.epf'. 2(0x00000002): Не удается найти указанный файл. 

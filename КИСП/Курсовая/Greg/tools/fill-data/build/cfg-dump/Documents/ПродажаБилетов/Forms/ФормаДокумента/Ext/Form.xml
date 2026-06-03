@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<ChildItems>
+			<Button name="ФормаСоздатьНаОсновании" id="102">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.СоздатьНаОснованииЗаказВБар</CommandName>
+				<ExtendedTooltip name="ФормаСоздатьНаОснованииРасширеннаяПодсказка" id="103"/>
+			</Button>
+			<Button name="ФормаЗавершитьСеанс" id="20">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.ЗавершитьСеанс</CommandName>
+				<ExtendedTooltip name="ФормаЗавершитьСеансРасширеннаяПодсказка" id="21"/>
+			</Button>
+		</ChildItems>
+	</AutoCommandBar>
+	<ChildItems>
+		<CheckBoxField name="" id="99">
+			<DataPath>Объект.Завершен</DataPath>
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Завершен</v8:content>
+				</v8:item>
+			</Title>
+			<ContextMenu name="ЗавершенКонтекстноеМеню" id="100"/>
+			<ExtendedTooltip name="ЗавершенРасширеннаяПодсказка" id="101"/>
+		</CheckBoxField>
+		<InputField name="Номер" id="1">
+			<DataPath>Объект.Number</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НомерКонтекстноеМеню" id="3"/>
+			<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="2"/>
+		</InputField>
+		<InputField name="Дата" id="4">
+			<DataPath>Объект.Date</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ДатаКонтекстноеМеню" id="6"/>
+			<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="5"/>
+		</InputField>
+		<InputField name="Клиент" id="7">
+			<DataPath>Объект.Клиент</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="КлиентКонтекстноеМеню" id="9"/>
+			<ExtendedTooltip name="КлиентРасширеннаяПодсказка" id="8"/>
+		</InputField>
+		<InputField name="Фильм" id="104">
+			<DataPath>Объект.Фильм</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ФильмКонтекстноеМеню" id="106"/>
+			<ExtendedTooltip name="ФильмРасширеннаяПодсказка" id="105"/>
+		</InputField>
+		<InputField name="Кинозал" id="10">
+			<DataPath>Объект.Кинозал</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="КинозалКонтекстноеМеню" id="12"/>
+			<ExtendedTooltip name="КинозалРасширеннаяПодсказка" id="11"/>
+		</InputField>
+		<InputField name="ТипБилета" id="13">
+			<DataPath>Объект.ТипБилета</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ТипБилетаКонтекстноеМеню" id="15"/>
+			<ExtendedTooltip name="ТипБилетаРасширеннаяПодсказка" id="14"/>
+		</InputField>
+		<InputField name="КоличествоБилетов" id="107">
+			<DataPath>Объект.КоличествоБилетов</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="КоличествоБилетовКонтекстноеМеню" id="109"/>
+			<ExtendedTooltip name="КоличествоБилетовРасширеннаяПодсказка" id="108"/>
+		</InputField>
+		<InputField name="НачалоСеанса" id="16">
+			<DataPath>Объект.НачалоСеанса</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НачалоСеансаКонтекстноеМеню" id="18"/>
+			<ExtendedTooltip name="НачалоСеансаРасширеннаяПодсказка" id="17"/>
+		</InputField>
+		<InputField name="ОкончаниеСеанса" id="19">
+			<DataPath>Объект.ОкончаниеСеанса</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ОкончаниеСеансаКонтекстноеМеню" id="21"/>
+			<ExtendedTooltip name="ОкончаниеСеансаРасширеннаяПодсказка" id="20"/>
+		</InputField>
+		<InputField name="Сумма" id="22">
+			<DataPath>Объект.Сумма</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="СуммаКонтекстноеМеню" id="24"/>
+			<ExtendedTooltip name="СуммаРасширеннаяПодсказка" id="23"/>
+		</InputField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ПродажаБилетов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+	<Commands>
+		<Command name="ЗавершитьСеанс" id="1">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Завершить сеанс</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Завершить сеанс и создать оплату</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ЗавершитьСеанс</Action>
+		</Command>
+		<Command name="СоздатьНаОснованииЗаказВБар" id="2">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать заказ в бар</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Создать заказ в бар на основании</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьНаОснованииЗаказВБар</Action>
+		</Command>
+	</Commands>
+</Form>

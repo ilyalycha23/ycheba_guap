@@ -1,0 +1,12 @@
+{
+  "type": "Catalog",
+  "name": "Фильмы",
+  "synonym": "Фильмы",
+  "descriptionLength": 150,
+  "attributes": [
+    "Жанр: String(50)",
+    "Продолжительность: Number(3,0) | nonneg",
+    "Рейтинг: String(10)",
+    "Страна: String(50)"
+  ]
+}

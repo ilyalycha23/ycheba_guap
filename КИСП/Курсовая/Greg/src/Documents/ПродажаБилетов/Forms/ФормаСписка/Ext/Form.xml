@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
+		<Autofill>true</Autofill>
+	</AutoCommandBar>
+	<ChildItems>
+		<Table name="Список" id="1">
+			<Representation>List</Representation>
+			<DefaultItem>true</DefaultItem>
+			<UseAlternationRowColor>true</UseAlternationRowColor>
+			<DataPath>Список</DataPath>
+			<RowPictureDataPath>Список.DefaultPicture</RowPictureDataPath>
+			<AutoRefresh>false</AutoRefresh>
+			<ChildItems>
+				<LabelField name="Дата" id="2">
+					<DataPath>Список.Date</DataPath>
+					<ContextMenu name="ДатаКонтекстноеМеню" id="3"/>
+					<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="4"/>
+				</LabelField>
+				<LabelField name="Номер" id="5">
+					<DataPath>Список.Number</DataPath>
+					<ContextMenu name="НомерКонтекстноеМеню" id="6"/>
+					<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="7"/>
+				</LabelField>
+				<LabelField name="Клиент" id="8">
+					<DataPath>Список.Клиент</DataPath>
+					<ContextMenu name="КлиентКонтекстноеМеню" id="9"/>
+					<ExtendedTooltip name="КлиентРасширеннаяПодсказка" id="10"/>
+				</LabelField>
+				<LabelField name="Кинозал" id="11">
+					<DataPath>Список.Кинозал</DataPath>
+					<ContextMenu name="КинозалКонтекстноеМеню" id="12"/>
+					<ExtendedTooltip name="КинозалРасширеннаяПодсказка" id="13"/>
+				</LabelField>
+				<LabelField name="Сумма" id="14">
+					<DataPath>Список.Сумма</DataPath>
+					<ContextMenu name="СуммаКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="СуммаРасширеннаяПодсказка" id="16"/>
+				</LabelField>
+			</ChildItems>
+			<ContextMenu name="СписокКонтекстноеМеню" id="17"/>
+			<AutoCommandBar name="СписокКоманднаяПанель" id="18">
+				<Autofill>true</Autofill>
+			</AutoCommandBar>
+			<ExtendedTooltip name="СписокРасширеннаяПодсказка" id="19"/>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Список" id="1">
+			<Type>
+				<v8:Type>cfg:DynamicList</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<Settings xsi:type="DynamicList">
+				<ManualQuery>false</ManualQuery>
+				<DynamicDataRead>true</DynamicDataRead>
+				<MainTable>Document.ПродажаБилетов</MainTable>
+				<GetInvisibleFieldPresentations>false</GetInvisibleFieldPresentations>
+			</Settings>
+		</Attribute>
+	</Attributes>
+</Form>

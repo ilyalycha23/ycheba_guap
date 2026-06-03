@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcssch="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:pal="http://v8.1c.ru/8.1/data/ui/colors/palette" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.21">
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<InputField name="Номер" id="1">
+			<DataPath>Объект.Number</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НомерКонтекстноеМеню" id="3"/>
+			<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="2"/>
+		</InputField>
+		<InputField name="Дата" id="4">
+			<DataPath>Объект.Date</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ДатаКонтекстноеМеню" id="6"/>
+			<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="5"/>
+		</InputField>
+		<InputField name="Клиент" id="7">
+			<DataPath>Объект.Клиент</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="КлиентКонтекстноеМеню" id="9"/>
+			<ExtendedTooltip name="КлиентРасширеннаяПодсказка" id="8"/>
+		</InputField>
+		<InputField name="Фильм" id="28">
+			<DataPath>Объект.Фильм</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ФильмКонтекстноеМеню" id="30"/>
+			<ExtendedTooltip name="ФильмРасширеннаяПодсказка" id="29"/>
+			<Events>
+				<Event name="OnChange">ФильмПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="Кинозал" id="10">
+			<DataPath>Объект.Кинозал</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="КинозалКонтекстноеМеню" id="12"/>
+			<ExtendedTooltip name="КинозалРасширеннаяПодсказка" id="11"/>
+		</InputField>
+		<InputField name="ТипБилета" id="13">
+			<DataPath>Объект.ТипБилета</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ТипБилетаКонтекстноеМеню" id="15"/>
+			<ExtendedTooltip name="ТипБилетаРасширеннаяПодсказка" id="14"/>
+			<Events>
+				<Event name="OnChange">ТипБилетаПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="КоличествоБилетов" id="31">
+			<DataPath>Объект.КоличествоБилетов</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="КоличествоБилетовКонтекстноеМеню" id="33"/>
+			<ExtendedTooltip name="КоличествоБилетовРасширеннаяПодсказка" id="32"/>
+			<Events>
+				<Event name="OnChange">КоличествоБилетовПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="НачалоСеанса" id="16">
+			<DataPath>Объект.НачалоСеанса</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НачалоСеансаКонтекстноеМеню" id="18"/>
+			<ExtendedTooltip name="НачалоСеансаРасширеннаяПодсказка" id="17"/>
+			<Events>
+				<Event name="OnChange">НачалоСеансаПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="ОкончаниеСеанса" id="19">
+			<DataPath>Объект.ОкончаниеСеанса</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ОкончаниеСеансаКонтекстноеМеню" id="21"/>
+			<ExtendedTooltip name="ОкончаниеСеансаРасширеннаяПодсказка" id="20"/>
+			<Events>
+				<Event name="OnChange">ОкончаниеСеансаПриИзменении</Event>
+			</Events>
+		</InputField>
+		<InputField name="Сумма" id="22">
+			<DataPath>Объект.Сумма</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="СуммаКонтекстноеМеню" id="24"/>
+			<ExtendedTooltip name="СуммаРасширеннаяПодсказка" id="23"/>
+		</InputField>
+		<CheckBoxField name="Обработана" id="25">
+			<DataPath>Объект.Обработана</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ОбработанаКонтекстноеМеню" id="26"/>
+			<ExtendedTooltip name="ОбработанаРасширеннаяПодсказка" id="27"/>
+		</CheckBoxField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.ЗаявкаНаБроньБилетов</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+</Form>

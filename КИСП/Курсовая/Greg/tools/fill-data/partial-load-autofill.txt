@@ -1,0 +1,5 @@
+Ext/ManagedApplicationModule.bsl
+CommonModules/ДемоДанныеКиноцентр
+CommonModules/ДемоДанныеКиноцентр/Ext/Module.bsl
+DataProcessors/ИнициализацияДемоДанных/Ext/ObjectModule.bsl
+DataProcessors/ИнициализацияДемоДанных/Ext/ManagerModule.bsl

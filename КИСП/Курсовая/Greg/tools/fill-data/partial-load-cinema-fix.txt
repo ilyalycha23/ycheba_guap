@@ -1,0 +1,12 @@
+DataProcessors/ИнициализацияДемоДанных/Ext/ObjectModule.bsl
+Reports/Бюджет/Templates/ОсновнаяСхемаКомпоновкиДанных/Ext/Template.xml
+Reports/Финансы/Templates/ОсновнаяСхемаКомпоновкиДанных/Ext/Template.xml
+Roles/ПолныеПрава.xml
+Roles/Оператор.xml
+BusinessProcesses/ОбслуживаниеПосетителя/Ext/Flowchart.xml
+BusinessProcesses/ОбслуживаниеПосетителя.xml
+Documents/ЗаявкаНаБроньБилетов/Forms/ФормаДокумента/Ext/Form/Module.bsl
+Documents/ПродажаБилетов/Forms/ФормаДокумента/Ext/Form.xml
+Documents/ЗаказВБар/Forms/ФормаДокумента/Ext/Form.xml
+Documents/ЗаказВБар/Forms/ФормаДокумента/Ext/Form/Module.bsl
+Documents/Оплата/Ext/ObjectModule.bsl

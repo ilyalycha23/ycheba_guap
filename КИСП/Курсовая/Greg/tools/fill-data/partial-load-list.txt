@@ -1,0 +1,8 @@
+DataProcessors/ИнициализацияДемоДанных.xml
+DataProcessors/ИнициализацияДемоДанных/Ext/ObjectModule.bsl
+DataProcessors/ИнициализацияДемоДанных/Ext/ManagerModule.bsl
+DataProcessors/ИнициализацияДемоДанных/Forms/Форма.xml
+DataProcessors/ИнициализацияДемоДанных/Forms/Форма/Ext/Form.xml
+DataProcessors/ИнициализацияДемоДанных/Forms/Форма/Ext/Form/Module.bsl
+Subsystems/НСИ.xml
+Configuration.xml

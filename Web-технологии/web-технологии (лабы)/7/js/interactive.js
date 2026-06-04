@@ -1,5 +1,3 @@
-// Ч. 1: три способа объявления функции с одинаковым результатом;
-
 function showSimpleResult() {
   alert('Function Declaration');
 }
@@ -18,7 +16,6 @@ const favoritePlaces = [
   'Петропавловская крепость',
 ];
 
-// Перебор массива и для каждого вывод alert
 function showPetersburgPlaces() {
   favoritePlaces.forEach(function (place) {
     alert(place);

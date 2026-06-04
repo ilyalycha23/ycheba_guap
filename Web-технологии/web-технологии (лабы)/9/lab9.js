@@ -1,10 +1,8 @@
 (function () {
   'use strict';
 
-  // Функция: анимация появления блока слева и «пульсация» отступов
   function runIntroAnimation() {
-    var $box = $('#anim-box'); // jQuery: находим элемент по id anim-box
-    //смещение влево и прозрачность
+    var $box = $('#anim-box'); // jQuery: находим элемент
     $box.css({
       marginLeft: -280,
       opacity: 0, // прозрачность

@@ -1,0 +1,5 @@
+report: LR scoring (prepared_movies_score.csv)
+rows: 459
+prob1_mean	0.9673
+prob1_p50	1.0000
+hits_pred_prob1_gt_0.5	444

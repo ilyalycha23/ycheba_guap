@@ -1,0 +1,5 @@
+tier	min_streams	max_streams	label
+platinum	500000000	999999999999	Top global
+gold	100000000	499999999	Major hit
+silver	10000000	99999999	Solid performer
+bronze	0	9999999	Emerging

@@ -1,0 +1,60 @@
+// Генерирует Prisma Client для серверного TypeScript-кода.
+generator client {
+  provider = "prisma-client-js"
+}
+
+// Подключает PostgreSQL через локальную переменную DATABASE_URL.
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Хранит зарегистрированного пользователя и его безопасные метаданные.
+model User {
+  id           String   @id @default(uuid()) @db.Uuid
+  name         String   @db.VarChar(80)
+  email        String   @unique @db.VarChar(254)
+  passwordHash String   @db.VarChar(255)
+  createdAt    DateTime @default(now()) @db.Timestamptz(3)
+  updatedAt    DateTime @updatedAt @db.Timestamptz(3)
+
+  // Связывает пользователя со строками отслеживания сигналов.
+  tracked TrackedSignal[]
+}
+
+// Хранит локальный сигнал, отображаемый в ленте, галерее и на карте.
+model NeighborSignal {
+  id        String   @id @default(uuid()) @db.Uuid
+  slug      String   @unique @db.VarChar(80)
+  title     String   @db.VarChar(160)
+  summary   String   @db.Text
+  category  String   @db.VarChar(40)
+  location  String   @db.VarChar(240)
+  image     String   @db.VarChar(240)
+  imageAlt  String   @db.VarChar(240)
+  latitude  Decimal  @db.Decimal(9, 6)
+  longitude Decimal  @db.Decimal(9, 6)
+  createdAt DateTime @default(now()) @db.Timestamptz(3)
+  updatedAt DateTime @updatedAt @db.Timestamptz(3)
+
+  // Связывает сигнал со всеми пользовательскими отслеживаниями.
+  tracked TrackedSignal[]
+}
+
+// Реализует явную связь многие-ко-многим между User и NeighborSignal.
+model TrackedSignal {
+  userId    String   @db.Uuid
+  signalId  String   @db.Uuid
+  createdAt DateTime @default(now()) @db.Timestamptz(3)
+
+  // Удаляем зависимую связь вместе с пользователем.
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  // Удаляем зависимую связь вместе с сигналом.
+  signal NeighborSignal @relation(fields: [signalId], references: [id], onDelete: Cascade)
+
+  // Запрещаем повтор одной пары пользователь–сигнал.
+  @@id([userId, signalId])
+  // Ускоряем обратный поиск связей по сигналу.
+  @@index([signalId])
+}

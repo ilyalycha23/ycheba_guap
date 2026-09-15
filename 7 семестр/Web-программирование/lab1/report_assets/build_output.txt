@@ -1,0 +1,27 @@
+﻿
+> signalboard@0.1.0 build
+> next build
+
+тЦ▓ Next.js 16.3.4 (Turbopack)
+тЬУ Running next.config.ts took 31ms
+
+  Creating an optimized production build ...
+тЬУ Compiled successfully in 341ms
+  Running TypeScript ...
+  Finished TypeScript in 1792ms ...
+  Collecting page data using 6 workers ...
+  Generating static pages using 6 workers (0/5) ...
+  Generating static pages using 6 workers (1/5) 
+  Generating static pages using 6 workers (2/5) 
+  Generating static pages using 6 workers (3/5) 
+тЬУ Generating static pages using 6 workers (5/5) in 803ms
+  Finalizing page optimization ...
+
+Route (app)
+тФМ тЧЛ /
+тФЬ тЧЛ /_not-found
+тФФ тЧЛ /about
+
+
+тЧЛ  (Static)  prerendered as static content
+

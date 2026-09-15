@@ -1,0 +1,106 @@
+/* Оформляет кнопку меню, затемнение и выезжающую панель навигации. */
+
+/* Закрепляем кнопку открытия меню поверх страницы. */
+.openButton {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 2000;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 1px solid #b9c0c8;
+  border-radius: 50%;
+  background: #ffffff;
+  font-size: 24px;
+  cursor: pointer;
+  pointer-events: auto;
+  touch-action: manipulation;
+  box-shadow: 0 4px 16px rgb(15 23 42 / 16%);
+}
+
+/* Скрываем кнопку открытия, пока панель уже на экране: иначе × стоит в тех же пикселях. */
+.openButton[aria-expanded="true"] {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Показываем заметный фокус при клавиатурной навигации. */
+.openButton:focus-visible,
+.panel a:focus-visible,
+.panel button:focus-visible {
+  outline: 4px solid #1d70a2;
+  outline-offset: 3px;
+}
+
+/* Перекрываем viewport затемнённым фоном. */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2200;
+  display: flex;
+  justify-content: flex-end;
+  background: rgb(15 23 42 / 55%);
+}
+
+/* Размещаем панель меню у правого края viewport. */
+.panel {
+  width: min(430px, 100%);
+  min-height: 100%;
+  margin-left: auto;
+  padding: 24px;
+  background: #ffffff;
+  box-shadow: -20px 0 50px rgb(0 0 0 / 25%);
+}
+
+.header,
+.authRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.header a {
+  color: #1f2933;
+  font-size: 24px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.header button {
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  font-size: 28px;
+}
+
+.list {
+  display: grid;
+  gap: 10px;
+  margin: 48px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list a {
+  display: block;
+  padding: 12px;
+  border-radius: 10px;
+  color: #1f2933;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.list a[aria-current="page"] {
+  background: #dbeafe;
+  color: #123b5d;
+  font-weight: 800;
+}
+
+.authRow {
+  padding-top: 20px;
+  border-top: 1px solid #c7d4e4;
+}

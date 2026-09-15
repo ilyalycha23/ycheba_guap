@@ -1,0 +1,31 @@
+/* Задаёт адаптивную высоту карты и оформление сообщений состояния. */
+
+.section {
+  margin-top: clamp(2rem, 6vw, 3rem);
+}
+
+/* Задаём явные размеры контейнера интерактивной карты. */
+.canvas {
+  width: 100%;
+  height: clamp(18rem, 58vh, 32rem);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: clamp(0.75rem, 2vw, 1rem);
+  background: #dbe3ea;
+}
+
+/* Выделяем сообщения о загрузке или ошибке карты. */
+.status {
+  padding: 0.75rem 0.9rem;
+  border-left: 0.25rem solid var(--accent);
+  background: #e9f2f8;
+  overflow-wrap: anywhere;
+}
+
+/* Меняем раскладку на соответствующей контрольной ширине. */
+@media (max-width: 30rem) {
+  .canvas {
+    height: min(65dvh, 24rem);
+    border-radius: 0.6rem;
+  }
+}

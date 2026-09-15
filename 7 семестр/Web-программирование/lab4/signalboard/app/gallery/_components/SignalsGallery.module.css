@@ -1,0 +1,79 @@
+/* Перестраивает галерею, резервирует место изображения и добавляет безопасный hover. */
+
+/* Создаём адаптивную сетку карточек. */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: clamp(0.9rem, 2.5vw, 1.5rem);
+  margin-top: clamp(1.25rem, 4vw, 2rem);
+}
+
+/* Оформляем интерактивную карточку объекта. */
+.card {
+  display: grid;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: clamp(0.75rem, 2vw, 1rem);
+  background: var(--surface);
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+/* Резервируем область изображения с постоянными пропорциями. */
+.imageWrap {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: #d9dde2;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.cardBody {
+  display: grid;
+  gap: 0.6rem;
+  padding: clamp(0.9rem, 3vw, 1.2rem);
+}
+
+.title,
+.summary {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.title {
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  font-weight: 800;
+}
+
+.summary {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.demoNote {
+  margin: 18px 0 32px;
+  color: var(--muted);
+}
+
+/* Включаем hover-эффект только для точного указателя. */
+@media (hover: hover) and (pointer: fine) {
+  .card:hover {
+    transform: translateY(-0.15rem);
+    box-shadow: 0 0.8rem 1.8rem rgb(15 23 42 / 14%);
+  }
+}
+
+/* Меняем раскладку на соответствующей контрольной ширине. */
+@media (min-width: 48rem) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  }
+}

@@ -1,0 +1,82 @@
+/* Адаптирует модальное окно к ширине, высоте и ориентации viewport. */
+
+/* Перекрываем viewport затемнённым фоном. */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: grid;
+  place-items: center;
+  padding: clamp(0.5rem, 3vw, 1.5rem);
+  background: rgb(15 23 42 / 72%);
+}
+
+/* Ограничиваем размеры окна и разрешаем прокрутку длинного содержимого. */
+.dialog {
+  position: relative;
+  width: min(47.5rem, 100%);
+  max-height: calc(100dvh - 1rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: clamp(1rem, 4vw, 1.75rem);
+  border-radius: clamp(0.75rem, 2vw, 1rem);
+  background: var(--surface);
+  box-shadow: 0 1.5rem 4.4rem rgb(0 0 0 / 35%);
+}
+
+.dialog h2 {
+  margin: 0 3rem 1rem 0;
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  overflow-wrap: anywhere;
+}
+
+.close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: #e8edf2;
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.actions > * {
+  min-height: 2.75rem;
+}
+
+/* Меняем раскладку на соответствующей контрольной ширине. */
+@media (max-width: 30rem) {
+  .actions {
+    display: grid;
+  }
+
+  .actions > * {
+    width: 100%;
+  }
+}
+
+/* Учитываем небольшую высоту экрана в альбомной ориентации. */
+@media (orientation: landscape) and (max-height: 32rem) {
+  .dialog {
+    max-height: calc(100dvh - 0.5rem);
+  }
+}

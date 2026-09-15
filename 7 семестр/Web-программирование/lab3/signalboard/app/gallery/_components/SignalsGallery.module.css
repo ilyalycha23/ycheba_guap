@@ -1,0 +1,60 @@
+/* Оформляет адаптивную сетку карточек и состояния галереи. */
+
+/* Создаём адаптивную сетку карточек. */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+
+/* Оформляем интерактивную карточку объекта. */
+.card {
+  display: grid;
+  gap: 10px;
+  overflow: hidden;
+  padding: 0 0 18px;
+  border: 1px solid #c7d4e4;
+  border-radius: 14px;
+  background: #ffffff;
+  color: inherit;
+  text-align: left;
+}
+
+/* Показываем заметный фокус при клавиатурной навигации. */
+.card:focus-visible {
+  outline: 4px solid #1d70a2;
+  outline-offset: 4px;
+}
+
+/* Резервируем область изображения с постоянными пропорциями. */
+.imageWrap {
+  position: relative;
+  display: block;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: #d9dde2;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.title,
+.summary {
+  padding: 0 16px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.summary {
+  line-height: 1.5;
+}
+
+.demoNote {
+  margin: 18px 0 32px;
+  color: #5b6470;
+}

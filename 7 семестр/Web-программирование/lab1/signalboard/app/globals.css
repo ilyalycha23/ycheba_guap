@@ -1,0 +1,79 @@
+/* Определяет базовое оформление страниц, карточек, ссылок и состояния фокуса. */
+
+/* Включаем предсказуемый расчёт размеров элементов. */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #f5f5f5;
+}
+
+/* Задаём базовые параметры страницы и типографики. */
+body {
+  margin: 0;
+  color: #202020;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Ограничиваем ширину основного содержимого и выравниваем его по центру. */
+main {
+  width: min(900px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0;
+}
+
+header,
+section {
+  margin-bottom: 32px;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: clamp(36px, 7vw, 64px);
+}
+
+h2 {
+  margin-bottom: 16px;
+}
+
+p,
+li {
+  line-height: 1.6;
+}
+
+.eyebrow {
+  margin-bottom: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Автоматически распределяем карточки по доступным колонкам. */
+.feature-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.feature-card {
+  padding: 20px;
+  border: 1px solid #d7d7d7;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.feature-card h3 {
+  margin-top: 0;
+}
+
+.main-link {
+  display: inline-block;
+  font-weight: 700;
+  color: #134f9c;
+}
+
+/* Показываем заметный фокус при клавиатурной навигации. */
+.main-link:focus-visible {
+  outline: 3px solid #134f9c;
+  outline-offset: 4px;
+}

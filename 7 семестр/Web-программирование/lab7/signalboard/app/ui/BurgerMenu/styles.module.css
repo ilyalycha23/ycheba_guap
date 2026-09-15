@@ -1,0 +1,116 @@
+/* Адаптирует кнопку и панель бургер-меню с учётом safe area. */
+
+/* Закрепляем кнопку открытия меню поверх страницы. */
+.openButton {
+  position: fixed;
+  top: max(0.75rem, env(safe-area-inset-top));
+  right: max(0.75rem, env(safe-area-inset-right));
+  z-index: 2000;
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  font-size: 1.5rem;
+  cursor: pointer;
+  pointer-events: auto;
+  touch-action: manipulation;
+  box-shadow: 0 4px 16px rgb(15 23 42 / 16%);
+}
+
+/* Скрываем кнопку открытия, пока панель уже на экране: иначе × стоит в тех же пикселях. */
+.openButton[aria-expanded="true"] {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* Перекрываем viewport затемнённым фоном. */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2200;
+  display: flex;
+  justify-content: flex-end;
+  background: rgb(15 23 42 / 55%);
+}
+
+/* Размещаем панель меню у правого края viewport. */
+.panel {
+  width: min(26rem, 100%);
+  height: 100dvh;
+  margin-left: auto;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: max(1rem, env(safe-area-inset-top))
+    max(1rem, env(safe-area-inset-right))
+    max(1rem, env(safe-area-inset-bottom))
+    1rem;
+  background: var(--surface);
+  box-shadow: -1.25rem 0 3.1rem rgb(0 0 0 / 25%);
+}
+
+.header,
+.authRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.header a {
+  color: var(--text);
+  font-size: 24px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.header button {
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  font-size: 28px;
+}
+
+.list {
+  display: grid;
+  gap: 0.6rem;
+  margin: clamp(2rem, 8vh, 3rem) 0;
+  padding: 0;
+  list-style: none;
+}
+
+.list a {
+  display: block;
+  min-height: 2.75rem;
+  padding: 0.75rem;
+  border-radius: 0.6rem;
+  color: inherit;
+  font-size: clamp(1.05rem, 4vw, 1.25rem);
+  text-decoration: none;
+}
+
+.list a[aria-current="page"] {
+  background: #dbeafe;
+  color: #123b5d;
+  font-weight: 800;
+}
+
+.authRow {
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+/* Меняем раскладку на соответствующей контрольной ширине. */
+@media (max-width: 30rem) {
+  .panel {
+    width: 100%;
+  }
+
+  .authRow {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}

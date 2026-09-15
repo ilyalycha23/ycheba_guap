@@ -1,0 +1,186 @@
+/* Задаёт дизайн-токены, базовую адаптивную страницу и режим уменьшенного движения. */
+
+/* Объявляем общие дизайн-токены приложения. */
+:root {
+  --page-max: 72rem;
+  --page-inline: clamp(1rem, 4vw, 3rem);
+  --surface: #ffffff;
+  --background: #eef3f8;
+  --text: #17212b;
+  --muted: #52606d;
+  --border: #c7d4e4;
+  --accent: #134f9c;
+  --focus: #005fcc;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light;
+  background: var(--background);
+}
+
+/* Задаём базовые параметры страницы и типографики. */
+body {
+  min-width: 20rem;
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Ограничиваем ширину основного содержимого и выравниваем его по центру. */
+main {
+  width: min(var(--page-max), 100%);
+  margin-inline: auto;
+  padding: clamp(4.5rem, 8vw, 6rem) var(--page-inline) 4rem;
+}
+
+h1 {
+  margin-block: 0 1rem;
+  font-size: clamp(1.9rem, 5vw, 3.25rem);
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: var(--accent);
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Показываем заметный фокус при клавиатурной навигации. */
+:focus-visible {
+  outline: 0.25rem solid var(--focus);
+  outline-offset: 0.2rem;
+}
+
+.eyebrow {
+  margin-bottom: 8px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lead {
+  max-width: 680px;
+  font-size: clamp(1.05rem, 2vw, 1.25rem);
+  line-height: 1.6;
+}
+
+.primary-link {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 12px 18px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.feature-list,
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: clamp(0.9rem, 2.5vw, 1.5rem);
+}
+
+.feature-card,
+.card {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.form-page {
+  max-width: 620px;
+}
+
+.auth-form {
+  display: grid;
+  gap: 10px;
+  margin: 24px 0;
+  padding: 24px;
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.auth-form input {
+  min-height: 44px;
+  padding: 8px 10px;
+  border: 1px solid #8d99a6;
+  border-radius: 8px;
+}
+
+.auth-form button {
+  min-height: 44px;
+  margin-top: 10px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.demo-warning {
+  padding: 12px 14px;
+  border-left: 4px solid #c67c00;
+  background: #fff4d6;
+}
+
+.form-error {
+  color: #9b1c1c;
+  font-weight: 700;
+}
+
+.profile-list {
+  display: grid;
+  grid-template-columns: minmax(4rem, 6.25rem) 1fr;
+  gap: 8px 16px;
+  max-width: 520px;
+}
+
+.profile-list dt {
+  font-weight: 700;
+}
+
+.profile-list dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* Уменьшаем необязательное движение по системной настройке пользователя. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

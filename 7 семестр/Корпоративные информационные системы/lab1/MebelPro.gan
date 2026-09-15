@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Разработка АИС МебельПро" company="ГУАП, гр. 4321" webLink="" view-date="2026-09-14" view-index="0" gantt-divider-location="420" resource-divider-location="350" version="3.3" locale="ru">
+<description>Планирование разработки АИС учёта заказов и производства корпусной мебели</description>
+<view id="gantt-chart"><field id="tpd3" name="Название" width="220" order="0"/>
+<field id="tpd4" name="Дата начала" width="90" order="1"/>
+<field id="tpd5" name="Дата окончания" width="90" order="2"/>
+<field id="tpd6" name="Длительность" width="70" order="3"/></view>
+<view id="resource-table"><field id="0" name="Имя" width="140" order="0"/>
+<field id="1" name="Роль" width="160" order="1"/></view>
+<calendars><day-types>
+<default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+<only-show-weekends value="false"/><overriden-day-types/>
+</day-types></calendars>
+<tasks empty-milestones="true">
+<taskproperties>
+<taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+<taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+<taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+<taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+<taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+<taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+<taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+<taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+<taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+<taskproperty id="tpd9" name="predecessors" type="default" valuetype="text"/>
+</taskproperties>
+  <task id="0" name="Разработка АИС «МебельПро»" color="#5b8fa8" meeting="false" start="2026-09-14" duration="56" complete="0" expand="true">
+    <task id="1" name="Постановка задачи" color="#8cb6ce" meeting="false" start="2026-09-14" duration="4" complete="0" expand="true"/>
+    <task id="2" name="Изучение предметной области" color="#8cb6ce" meeting="false" start="2026-09-18" duration="6" complete="0" expand="true">
+      <depend id="1" type="2" difference="0" hardness="Strong"/>
+    </task>
+    <task id="3" name="Написание технического задания" color="#8cb6ce" meeting="false" start="2026-09-28" duration="5" complete="0" expand="true">
+      <depend id="2" type="2" difference="0" hardness="Strong"/>
+    </task>
+    <task id="4" name="Проектирование" color="#5b8fa8" meeting="false" start="2026-10-05" duration="12" complete="0" expand="true">
+      <depend id="3" type="2" difference="0" hardness="Strong"/>
+      <task id="5" name="Проектирование модели данных" color="#7eb87e" meeting="false" start="2026-10-05" duration="6" complete="0" expand="true">
+        <depend id="3" type="2" difference="0" hardness="Strong"/>
+      </task>
+      <task id="6" name="Проектирование интерфейсов" color="#7eb87e" meeting="false" start="2026-10-05" duration="6" complete="0" expand="true">
+        <depend id="3" type="2" difference="0" hardness="Strong"/>
+      </task>
+      <task id="7" name="Проектирование модулей системы" color="#8cb6ce" meeting="false" start="2026-10-13" duration="5" complete="0" expand="true">
+        <depend id="5" type="2" difference="0" hardness="Strong"/>
+        <depend id="6" type="2" difference="0" hardness="Strong"/>
+      </task>
+      <task id="8" name="Веха: утверждение проектных решений" color="#c44" meeting="true" start="2026-10-20" duration="0" complete="0" expand="true">
+        <depend id="7" type="2" difference="0" hardness="Strong"/>
+      </task>
+    </task>
+    <task id="9" name="Разработка (кодирование)" color="#5b8fa8" meeting="false" start="2026-10-21" duration="15" complete="0" expand="true">
+      <depend id="8" type="2" difference="0" hardness="Strong"/>
+      <task id="10" name="Модуль учёта заказов" color="#e6b35c" meeting="false" start="2026-10-21" duration="10" complete="0" expand="true">
+        <depend id="8" type="2" difference="0" hardness="Strong"/>
+      </task>
+      <task id="11" name="Модуль склада" color="#e6b35c" meeting="false" start="2026-10-21" duration="10" complete="0" expand="true">
+        <depend id="8" type="2" difference="0" hardness="Strong"/>
+      </task>
+      <task id="12" name="Модуль производства" color="#e6b35c" meeting="false" start="2026-10-21" duration="10" complete="0" expand="true">
+        <depend id="8" type="2" difference="0" hardness="Strong"/>
+      </task>
+      <task id="13" name="Интеграция модулей" color="#8cb6ce" meeting="false" start="2026-11-04" duration="5" complete="0" expand="true">
+        <depend id="10" type="2" difference="0" hardness="Strong"/>
+        <depend id="11" type="2" difference="0" hardness="Strong"/>
+        <depend id="12" type="2" difference="0" hardness="Strong"/>
+      </task>
+    </task>
+    <task id="14" name="Тестирование" color="#8cb6ce" meeting="false" start="2026-11-11" duration="6" complete="0" expand="true">
+      <depend id="13" type="2" difference="0" hardness="Strong"/>
+    </task>
+    <task id="15" name="Доработка (отладка, корректировка)" color="#8cb6ce" meeting="false" start="2026-11-19" duration="5" complete="0" expand="true">
+      <depend id="14" type="2" difference="0" hardness="Strong"/>
+    </task>
+    <task id="16" name="Сдача проекта" color="#8cb6ce" meeting="false" start="2026-11-26" duration="2" complete="0" expand="true">
+      <depend id="15" type="2" difference="0" hardness="Strong"/>
+    </task>
+    <task id="17" name="Веха: проект сдан заказчику" color="#c44" meeting="true" start="2026-11-30" duration="0" complete="0" expand="true">
+      <depend id="16" type="2" difference="0" hardness="Strong"/>
+    </task>
+  </task>
+</tasks>
+<resources>
+<resource id="0" name="Иванов А.П." function="Default:1" contacts="ivanov@mebelpro.local" phone="911-100-00-01"/>
+<resource id="1" name="Петрова Е.С." function="Default:1" contacts="petrova@mebelpro.local" phone="911-100-00-02"/>
+<resource id="2" name="Сидоров М.И." function="Default:1" contacts="sidorov@mebelpro.local" phone="911-100-00-03"/>
+<resource id="3" name="Козлова Н.В." function="Default:1" contacts="kozlova@mebelpro.local" phone="911-100-00-04"/>
+<resource id="4" name="Смирнов Д.А." function="Default:1" contacts="smirnov@mebelpro.local" phone="911-100-00-05"/>
+<resource id="5" name="Волков И.К." function="Default:1" contacts="volkov@mebelpro.local" phone="911-100-00-06"/>
+<resource id="6" name="Новикова О.Л." function="Default:1" contacts="novikova@mebelpro.local" phone="911-100-00-07"/>
+<resource id="7" name="Морозов П.С." function="Default:1" contacts="morozov@mebelpro.local" phone="911-100-00-08"/>
+</resources>
+<allocations>
+<allocation task-id="1" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+<allocation task-id="2" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+<allocation task-id="3" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+<allocation task-id="3" resource-id="0" function="Default:1" responsible="false" load="100.0"/>
+<allocation task-id="5" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+<allocation task-id="6" resource-id="3" function="Default:1" responsible="true" load="100.0"/>
+<allocation task-id="7" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+<allocation task-id="7" resource-id="4" function="Default:1" responsible="false" load="100.0"/>
+<allocation task-id="10" resource-id="4" function="Default:1" responsible="true" load="100.0"/>
+<allocation task-id="11" resource-id="5" function="Default:1" responsible="true" load="100.0"/>
+<allocation task-id="12" resource-id="6" function="Default:1" responsible="true" load="100.0"/>
+<allocation task-id="13" resource-id="4" function="Default:1" responsible="true" load="100.0"/>
+<allocation task-id="13" resource-id="5" function="Default:1" responsible="false" load="100.0"/>
+<allocation task-id="13" resource-id="6" function="Default:1" responsible="false" load="100.0"/>
+<allocation task-id="14" resource-id="7" function="Default:1" responsible="true" load="100.0"/>
+<allocation task-id="15" resource-id="4" function="Default:1" responsible="true" load="100.0"/>
+<allocation task-id="15" resource-id="7" function="Default:1" responsible="false" load="100.0"/>
+<allocation task-id="16" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+<allocation task-id="16" resource-id="1" function="Default:1" responsible="false" load="100.0"/>
+</allocations>
+<vacations/>
+<roles roleset-name="Default"/>
+</project>

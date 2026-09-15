@@ -1,0 +1,14 @@
+﻿╤ЄЁєъЄєЁр яряюъ Єюьр ═ют√щ Єюь
+╤хЁшщэ√щ эюьхЁ Єюьр: 0000021E BA39:49B7
+D:\YCHEBA_GUAP\7 ╤┼╠┼╤╥╨\┬┼┴\LAB1\SIGNALBOARD\APP
+ж   favicon.ico
+ж   globals.css
+ж   layout.tsx
+ж   page.tsx
+ж   
++---about
+ж       page.tsx
+ж       
+L---ui
+        FeatureCard.tsx
+        

@@ -1,0 +1,56 @@
+/* Размещает модальное окно поверх страницы и ограничивает его видимой областью. */
+
+/* Перекрываем viewport затемнённым фоном. */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgb(15 23 42 / 72%);
+}
+
+/* Ограничиваем размеры окна и разрешаем прокрутку длинного содержимого. */
+.dialog {
+  position: relative;
+  width: min(760px, 100%);
+  max-height: calc(100dvh - 48px);
+  overflow-y: auto;
+  padding: 28px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 24px 70px rgb(0 0 0 / 35%);
+}
+
+.dialog h2 {
+  margin: 0 48px 18px 0;
+}
+
+.close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: #e8edf2;
+  font-size: 28px;
+  line-height: 1;
+}
+
+/* Показываем заметный фокус при клавиатурной навигации. */
+.close:focus-visible,
+.dialog a:focus-visible,
+.dialog button:focus-visible {
+  outline: 4px solid #1d70a2;
+  outline-offset: 3px;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}

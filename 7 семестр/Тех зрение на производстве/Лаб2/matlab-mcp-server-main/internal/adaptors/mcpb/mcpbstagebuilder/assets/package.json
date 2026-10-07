@@ -1,0 +1,12 @@
+{
+  "name": "matlab-mcp-server-build",
+  "private": true,
+  "description": "Build tooling for MATLAB MCP Server MCPB packaging",
+  "scripts": {
+    "mcpb-pack": "mcpb pack bundle",
+    "mcpb-validate": "mcpb validate bundle/manifest.json"
+  },
+  "devDependencies": {
+    "@anthropic-ai/mcpb": "2.1.2"
+  }
+}

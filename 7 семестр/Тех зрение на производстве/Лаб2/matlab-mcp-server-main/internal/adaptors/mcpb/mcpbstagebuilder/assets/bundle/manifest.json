@@ -1,0 +1,52 @@
+{
+  "manifest_version": "0.2",
+  "name": "matlab-mcp-server",
+  "display_name": "MATLAB",
+  "version": "REPLACED_AT_BUILD_TIME",
+  "description": "The official MATLAB MCP Server from MathWorks®.",
+  "long_description": "Run MATLAB® using AI applications with the official MATLAB MCP Server from MathWorks®. The MATLAB MCP Server allows your AI applications to:\n- Start and quit MATLAB.\n- Write and run MATLAB code.\n- Assess your MATLAB code for style and correctness.",
+  "icon": "icon.png",
+  "author": {
+    "name": "MathWorks",
+    "email": "genai-support@mathworks.com",
+    "url": "https://www.mathworks.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matlab/matlab-mcp-server"
+  },
+  "homepage": "https://www.mathworks.com",
+  "documentation": "https://github.com/matlab/matlab-mcp-server#readme",
+  "support": "https://github.com/matlab/matlab-mcp-server/issues",
+  "license": "See license at https://github.com/matlab/matlab-mcp-server/blob/main/LICENSE.md",
+  "keywords": ["matlab", "mathworks"],
+  "privacy_policies": ["https://github.com/matlab/matlab-mcp-server?tab=readme-ov-file#data-collection"],
+  "tools": [],
+  "server": {
+    "type": "binary",
+    "entry_point": "bin/launch-matlab-mcp.sh",
+    "mcp_config": {
+      "command": "${__dirname}/bin/launch-matlab-mcp.sh",
+      "args": ["--extension-files", "${user_config.ExtensionFiles}"],
+      "env": {
+        "__MATLAB_MCP_SERVER_MCPB_MATLAB_ROOT": "${user_config.PreferredLocalMATLABRoot}",
+        "__MATLAB_MCP_SERVER_MCPB_INITIAL_WD": "${user_config.PreferredMATLABStartingDirectory}",
+        "__MATLAB_MCP_SERVER_MCPB_LOG_DIR": "${user_config.BaseDir}",
+        "__MATLAB_MCP_SERVER_MCPB_INIT_ON_START": "${user_config.InitializeMATLABOnStartup}",
+        "__MATLAB_MCP_SERVER_MCPB_DISABLE_TELEM": "${user_config.DisableTelemetry}",
+        "__MATLAB_MCP_SERVER_MCPB_DISPLAY_MODE": "${user_config.MATLABDisplayMode}",
+        "__MATLAB_MCP_SERVER_MCPB_MATLAB_SESSION_MODE": "${user_config.MATLABSessionMode}",
+        "__MATLAB_MCP_SERVER_MCPB_LOG_LEVEL": "${user_config.LogLevel}"
+      },
+      "platform_overrides": {
+        "win32": {
+          "command": "${__dirname}/bin/launch-matlab-mcp.cmd"
+        }
+      }
+    }
+  },
+  "compatibility": {
+    "claude_desktop": ">=0.10.0",
+    "platforms": ["darwin", "win32", "linux"]
+  }
+}

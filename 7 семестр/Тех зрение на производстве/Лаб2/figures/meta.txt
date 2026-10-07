@@ -1,0 +1,6 @@
+MATLAB=24.1.0.2537033 (R2024a)
+Adaptor=mwdemoimaq
+Device=Color Device
+DefaultFormat=RGB_NTSC
+AVI=C:\temp\lab2\capture\log_6s.avi bytes=8144180
+t640_ms=0.186 t1280_ms=0.419

@@ -1,0 +1,27 @@
+app/
+  favicon.ico
+  globals.css
+  layout.tsx
+  page.tsx
+  about/
+    page.tsx
+  auth/
+    login/
+      page.tsx
+    register/
+      page.tsx
+  cabinet/
+    page.tsx
+  data/
+    signals.ts
+  providers/
+    DemoAuthProvider.tsx
+  signals/
+    page.tsx
+    [id]/
+      page.tsx
+  start/
+    page.tsx
+  ui/
+    AppNav.tsx
+    FeatureCard.tsx

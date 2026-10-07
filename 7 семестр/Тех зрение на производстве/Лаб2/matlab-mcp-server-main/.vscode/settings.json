@@ -1,0 +1,11 @@
+{
+    "gopls": {
+        "build.buildFlags": [
+            "-tags=wireinject"
+        ]
+    },
+    "go.testEnvFile": "${workspaceFolder}/.env",
+    "go.testEnvVars": {
+        "MATLAB_MCP_SERVER_BUILD_DIR": "${workspaceFolder}/.bin/"
+    }
+}

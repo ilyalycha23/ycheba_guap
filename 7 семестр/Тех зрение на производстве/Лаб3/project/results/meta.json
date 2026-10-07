@@ -1,0 +1,32 @@
+{
+  "object": "дефекты поверхности горячекатаной стали (датасет NEU-DET: scratches, patches, inclusion, crazing, pitted_surface, rolled-in_scale)",
+  "dataset": "NEU-DET (Kaggle / Northeastern University)",
+  "n_images": 30,
+  "classes_used": [
+    "scratches",
+    "patches",
+    "inclusion",
+    "crazing",
+    "pitted_surface",
+    "rolled-in_scale"
+  ],
+  "video": "neu_line.mp4",
+  "video_duration_s": 30,
+  "resolution": "1280x720",
+  "native_sample": "200x200",
+  "channels": 3,
+  "dtype": "uint8",
+  "fps": 25,
+  "note": "Рабочий кадр приведён к 1280×720 (как типичный видеопоток стенда); исходники NEU сохранены в data/raw без предобработки классов.",
+  "gray_mean": 103.7,
+  "gray_std": 11.19,
+  "clahe_mean": 105.05,
+  "clahe_std": 12.57,
+  "times_ms": {
+    "gaussian_5x5": 1.034,
+    "median_5x5": 6.797,
+    "bilateral_9_75": 36.284
+  },
+  "frames_saved": 50,
+  "pipeline_ms": 15.097
+}

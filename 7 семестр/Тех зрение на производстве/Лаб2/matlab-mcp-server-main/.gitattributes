@@ -1,0 +1,5 @@
+# Copyright 2025-2026 The MathWorks, Inc.
+# Auto detect text files and perform LF normalization
+* text=auto eol=lf
+*.png binary
+*.mltbx binary

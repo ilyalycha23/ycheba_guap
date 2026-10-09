@@ -1,0 +1,107 @@
+{
+    "version": "5.12.0.v202606180846",
+    "created": "2026-10-09 19:36",
+    "nodestats": {
+        "nodes": [
+            {
+                "id": "org.knime.base.node.io.filehandling.csv.reader.CSVTableReaderNodeFactory",
+                "nodename": "CSV Reader",
+                "nrexecs": 2,
+                "nrfails": 0,
+                "exectime": 142,
+                "nrcreated": 0,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.viz.property.color.ColorManager2NodeFactory",
+                "nodename": "Color Manager (deprecated)",
+                "nrexecs": 2,
+                "nrfails": 0,
+                "exectime": 2,
+                "nrcreated": 0,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.preproc.partition.PartitionNodeFactory",
+                "nodename": "Table Partitioner",
+                "nrexecs": 2,
+                "nrfails": 0,
+                "exectime": 9,
+                "nrcreated": 0,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.mine.regression.linear2.learner.LinReg2LearnerNodeFactory2",
+                "nodename": "Linear Regression Learner",
+                "nrexecs": 2,
+                "nrfails": 0,
+                "exectime": 136,
+                "nrcreated": 0,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.mine.regression.predict3.RegressionPredictorNodeFactory2",
+                "nodename": "Regression Predictor",
+                "nrexecs": 4,
+                "nrfails": 0,
+                "exectime": 71,
+                "nrcreated": 0,
+                "nrsettingsChanged": 2,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.views.node.scatterplot.ScatterPlotNodeFactory",
+                "nodename": "Scatter Plot",
+                "nrexecs": 4,
+                "nrfails": 0,
+                "exectime": 4,
+                "nrcreated": 0,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            },
+            {
+                "id": "org.knime.base.node.mine.scorer.numeric2.NumericScorer2NodeFactory",
+                "nodename": "Numeric Scorer",
+                "nrexecs": 4,
+                "nrfails": 0,
+                "exectime": 15,
+                "nrcreated": 0,
+                "nrsettingsChanged": 0,
+                "successor": "n/a",
+                "successornodename": "n/a"
+            }
+        ],
+        "metaNodes": {
+        },
+        "wrappedNodes": {
+        },
+        "createdVia": {
+        }
+    },
+    "uptime": 2006799,
+    "workflowsOpened": 4,
+    "remoteWorkflowsOpened": 0,
+    "workflowsCreated": 0,
+    "remoteWorkflowsCreated": 0,
+    "columnarStorageWorkflowsOpened": 0,
+    "workflowsImported": 0,
+    "workflowsExported": 0,
+    "webUIPerspectiveSwitches": 0,
+    "javaUIPerspectiveSwitches": 0,
+    "lastUsedPerspective": "none (classic)",
+    "launches": 1,
+    "lastApplicationID": "org.knime.product.KNIME_APPLICATION",
+    "timeSinceLastStart": 2006799,
+    "crashes": 0,
+    "properlyShutDown": true
+}

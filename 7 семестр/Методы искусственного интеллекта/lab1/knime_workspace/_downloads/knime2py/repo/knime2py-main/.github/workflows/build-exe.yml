@@ -1,0 +1,83 @@
+name: build-exe
+
+on:
+  workflow_call:
+    inputs:
+      tag_name:
+        description: "Tag to use for release (not used here, kept for symmetry)"
+        required: false
+        type: string
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  build-windows-exe:
+    runs-on: windows-2022
+    env:
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install build toolchain
+        shell: pwsh
+        run: |
+          python -m pip install --upgrade "pip>=24,<26" wheel setuptools
+          pip install -e .
+          pip install pyinstaller==6.* nuitka==2.* ordered-set zstandard
+
+      - name: Create entry script
+        shell: pwsh
+        run: |
+          @'
+          from knime2py.cli import main
+          if __name__ == "__main__":
+              main()
+          '@ | Out-File -Encoding UTF8 k2p_entry.py
+          Get-Content k2p_entry.py
+
+      - name: Build with PyInstaller
+        shell: pwsh
+        run: |
+          pyinstaller --onefile --name k2p-pyinstaller k2p_entry.py
+
+      - name: Build with Nuitka
+        shell: pwsh
+        run: |
+          python -m nuitka --onefile --assume-yes-for-downloads --output-filename=k2p-nuitka.exe k2p_entry.py
+
+      - name: Collect outputs
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force -Path dist-exe | Out-Null
+          Move-Item .\dist\k2p-pyinstaller.exe .\dist-exe\k2p-pyinstaller.exe
+          Move-Item .\k2p-nuitka.exe           .\dist-exe\k2p-nuitka.exe
+          Get-ChildItem .\dist-exe
+
+      - name: Smoke test executables (--version)
+        shell: pwsh
+        run: |
+          Set-StrictMode -Version Latest
+          $ErrorActionPreference = 'Stop'
+          $exes = Get-ChildItem -Path .\dist-exe\*.exe
+          if (-not $exes) { Write-Error "No executables found in dist-exe" }
+          foreach ($e in $exes) {
+            Write-Host "Testing $($e.FullName) --version"
+            $out = & $e.FullName --version 2>&1
+            Write-Host $out
+            if ($out -notmatch '^k2p\s+\d+\.\d+\.\d+') {
+              Write-Error "Unexpected --version output from $($e.Name): '$out'"
+            }
+          }
+
+      - name: Upload exe artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-exe
+          path: dist-exe/*
+          if-no-files-found: error

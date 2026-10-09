@@ -1,0 +1,18 @@
+2025-11-05 16:19:42,821 : DEBUG : ModalContext :  : DecTreePredictorNodeFactory : Building a Simple Classifier : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 16:19:42,823 : DEBUG : ModalContext :  : PartitionNodeFactory : Building a Simple Classifier : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 16:19:42,824 : DEBUG : ModalContext :  : ExtendedStatisticsNodeFactory : Building a Simple Classifier : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 16:19:42,825 : DEBUG : ModalContext :  : DecisionTreeLearnerNodeFactory3 : Building a Simple Classifier : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 16:19:42,826 : DEBUG : ModalContext :  : AccuracyScorer2NodeFactory : Building a Simple Classifier : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 16:19:42,828 : DEBUG : ModalContext :  : CSVTableReaderNodeFactory : Building a Simple Classifier : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 16:19:42,834 : DEBUG : ModalContext :  : Node : CSV Reader : 3:14 : Configure succeeded. (CSV Reader)
+2025-11-05 16:19:42,840 : DEBUG : ModalContext :  : Node : Statistics : 3:9 : Configure succeeded. (Statistics)
+2025-11-05 16:19:42,844 : DEBUG : ModalContext :  : Node : Table Partitioner : 3:5 : Configure succeeded. (Table Partitioner)
+2025-11-05 16:19:42,844 : DEBUG : ModalContext :  : Node : Decision Tree Learner : 3:10 : Configure succeeded. (Decision Tree Learner)
+2025-11-05 16:19:42,844 : DEBUG : ModalContext :  : Node : Decision Tree Predictor : 3:4 : Configure succeeded. (Decision Tree Predictor)
+2025-11-05 16:19:44,388 : DEBUG : main :  : Node : Scatter Plot : 3:15 : clean output ports.
+2025-11-05 16:19:44,388 : DEBUG : main :  : Node : Scorer : 3:12 : clean output ports.
+2025-11-05 16:19:44,388 : DEBUG : main :  : Node : Decision Tree Predictor : 3:4 : clean output ports.
+2025-11-05 16:19:44,388 : DEBUG : main :  : Node : Decision Tree Learner : 3:10 : clean output ports.
+2025-11-05 16:19:44,388 : DEBUG : main :  : Node : Table Partitioner : 3:5 : clean output ports.
+2025-11-05 16:19:44,388 : DEBUG : main :  : Node : Statistics : 3:9 : clean output ports.
+2025-11-05 16:19:44,388 : DEBUG : main :  : Node : CSV Reader : 3:14 : clean output ports.

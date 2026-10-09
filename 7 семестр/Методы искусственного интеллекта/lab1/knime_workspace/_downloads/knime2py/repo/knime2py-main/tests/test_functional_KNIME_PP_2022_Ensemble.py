@@ -1,0 +1,162 @@
+import csv
+import os
+import shutil
+import subprocess
+import sys
+from pathlib import Path
+
+from support import csv_compare
+
+RTOL = 0.03
+
+"""
+Test the end-to-end functionality of the ensemble scorer.
+
+Overview
+----------------------------
+This module generates a Python workbook from a KNIME project, executes the workbook, 
+and validates the output score CSV file.
+
+Runtime Behavior
+----------------------------
+Inputs:
+- The module reads input DataFrames from the specified KNIME project.
+
+Outputs:
+- The generated code writes results to `context[...]`, mapping output ports to 
+  corresponding DataFrame columns.
+
+Key algorithms or mappings:
+- The module implements logic to handle ensemble scoring, including potential 
+  mappings to sklearn or imbalanced-learn equivalents.
+
+Edge Cases
+----------------------------
+The code implements safeguards against empty or constant columns, NaNs, and class 
+imbalance, ensuring robust execution.
+
+Generated Code Dependencies
+----------------------------
+The generated code requires external libraries such as pandas, numpy, sklearn, 
+and imblearn. These dependencies are necessary for the generated code, not for 
+this module.
+
+Usage
+----------------------------
+This module is typically invoked by the knime2py emitter, which generates 
+workbooks from KNIME workflows. An example of expected context access is:
+```python
+context['output'] = some_dataframe
+```
+
+Node Identity
+----------------------------
+The module generates code based on `settings.xml` and may include KNIME factory 
+IDs such as FACTORY. Special flags like LOOP = "start" or "end" indicate the 
+beginning or end of a loop in the workflow.
+
+Configuration
+----------------------------
+The module uses a `@dataclass` for settings, which includes fields for 
+configuration parameters. The `parse_*` functions extract these values using 
+specified paths or fallbacks.
+
+Limitations
+----------------------------
+Certain options may not be supported or may only approximate KNIME behavior.
+
+References
+----------------------------
+For more information, refer to the KNIME documentation and search for relevant 
+terminology related to ensemble scoring.
+"""
+
+def test_end_to_end_ensemble_scorer():
+    """
+    Test the end-to-end functionality of the ensemble scorer by generating a Python workbook
+    from a KNIME project, executing the workbook, and validating the output score CSV file.
+
+    This function performs the following steps:
+    1. Prepares the output directory by cleaning it if it already exists.
+    2. Generates the Python workbook from the specified KNIME project.
+    3. Executes the generated workbook and checks for successful execution.
+    4. Validates the presence and contents of the output score CSV file.
+    """
+    # Paths
+    repo_root = Path(__file__).resolve().parents[1]
+    knime_proj = repo_root / "tests" / "data" / "KNIME_PP_2022_Ensemble"
+    out_dir = repo_root / "tests" / "data" / "!output"
+
+    # Fresh output dir
+    if out_dir.exists():
+        for p in out_dir.iterdir():
+            if p.is_dir():
+                shutil.rmtree(p)
+            else:
+                p.unlink()
+    else:
+        out_dir.mkdir(parents=True, exist_ok=True)
+
+    # 1) Generate Python workbook(s) only, no graphs
+    cmd = [
+        sys.executable, "-m", "knime2py",
+        str(knime_proj),
+        "--out", str(out_dir),
+        "--graph", "off",
+        "--workbook", "py",
+    ]
+    env = os.environ.copy()
+    env["PYTHONPATH"] = str(repo_root / "src") + (
+        os.pathsep + env["PYTHONPATH"] if env.get("PYTHONPATH") else ""
+    )
+    gen = subprocess.run(cmd, capture_output=True, text=True, cwd=str(repo_root), env=env)
+    assert gen.returncode == 0, f"CLI failed\nSTDOUT:\n{gen.stdout}\nSTDERR:\n{gen.stderr}"
+
+    # 2) Ensure the expected workbook script exists
+    expected_script = out_dir / "KNIME_PP_2022_Ensemble__g01_workbook.py"
+    if not expected_script.exists():
+        candidates = sorted(out_dir.glob("KNIME_PP_2022_Ensemble*workbook.py"))
+        assert candidates, (
+            "No generated workbook script found in output dir. "
+            f"Contents: {[p.name for p in out_dir.iterdir()]}"
+        )
+        expected_script = candidates[0]
+
+    # 3) Run the generated workbook.
+    run = subprocess.run(
+        [sys.executable, str(expected_script)],
+        cwd=str(out_dir),
+        capture_output=True,
+        text=True,
+    )
+    assert run.returncode == 0, f"Workbook execution failed\nSTDOUT:\n{run.stdout}\nSTDERR:\n{run.stderr}"
+
+    # 4) Validate Score.csv presence and its contents
+    score_csv = out_dir / "Score.csv"
+    assert score_csv.exists(), f"Score.csv not found in {out_dir}. Contents: {[p.name for p in out_dir.iterdir()]}"
+
+    with score_csv.open(newline="") as f:
+        reader = csv.reader(f)
+        rows = [[c.strip() for c in r] for r in reader if any(c.strip() for c in r)]
+
+    # Expected table:
+    # no,yes
+    # 465,183
+    # 243,712
+    assert len(rows) >= 3, f"Unexpected CSV shape: {rows}"
+    assert rows[0] == ["no", "yes"], f"Header mismatch: {rows[0]}"
+
+    expected_rows = [
+        ["465", "183"],
+        ["243", "712"],
+    ]
+
+    for idx, expected in enumerate(expected_rows, start=1):
+        assert len(rows) > idx, f"Missing row {idx} in Score.csv. Rows: {rows}"
+        got = rows[idx]
+        assert len(got) == len(expected), f"Row {idx} column count mismatch: got={got}, expected={expected}"
+        for col_idx, (ga, exp) in enumerate(zip(got, expected)):
+            assert csv_compare.cells_equal(ga, exp, rtol=RTOL), (
+                f"Value mismatch at row {idx}, col {col_idx}: got={ga!r}, exp={exp!r}, "
+                f"rtol={RTOL}"
+            )

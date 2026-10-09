@@ -1,0 +1,39 @@
+2025-11-05 16:19:38,939 : DEBUG : ModalContext :  : ExcelTableReaderNodeFactory : Combine Clean and Summarize Spreadsheet Data : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 16:19:38,941 : DEBUG : ModalContext :  : ExcelTableReaderNodeFactory : Combine Clean and Summarize Spreadsheet Data : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 16:19:38,942 : DEBUG : ModalContext :  : AppendedRowsNodeFactory : Combine Clean and Summarize Spreadsheet Data : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 16:19:38,942 : DEBUG : ModalContext :  : HiLiteHandler : Combine Clean and Summarize Spreadsheet Data : 3 : Adding hilite translator to handler 737c8e41-5b80-4bf0-84f2-366f6d62a273
+2025-11-05 16:19:38,942 : DEBUG : ModalContext :  : HiLiteHandler : Combine Clean and Summarize Spreadsheet Data : 3 : Adding hilite translator to handler 737c8e41-5b80-4bf0-84f2-366f6d62a273
+2025-11-05 16:19:38,944 : DEBUG : ModalContext :  : RowAggregatorNodeFactory : Combine Clean and Summarize Spreadsheet Data : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 16:19:38,945 : DEBUG : ModalContext :  : ExcelTableReaderNodeFactory : Combine Clean and Summarize Spreadsheet Data : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 16:19:38,947 : DEBUG : ModalContext :  : ColumnMergerNodeFactory : Combine Clean and Summarize Spreadsheet Data : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 16:19:38,949 : DEBUG : ModalContext :  : ValueLookupNodeFactory : Combine Clean and Summarize Spreadsheet Data : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 16:19:38,950 : DEBUG : ModalContext :  : StringToNumber2NodeFactory : Combine Clean and Summarize Spreadsheet Data : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 16:19:38,952 : DEBUG : ModalContext :  : DataColumnSpecFilterNodeFactory : Combine Clean and Summarize Spreadsheet Data : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 16:19:38,960 : DEBUG : ModalContext :  : Node : Excel Reader : 3:6 : Configure succeeded. (Excel Reader)
+2025-11-05 16:19:38,960 : DEBUG : ModalContext :  : Node : Excel Reader : 3:7 : Configure succeeded. (Excel Reader)
+2025-11-05 16:19:38,961 : DEBUG : ModalContext :  : Node : Excel Reader : 3:18 : Configure succeeded. (Excel Reader)
+2025-11-05 16:19:38,961 : DEBUG : ModalContext :  : Node : Column Filter : 3:27 : Configure succeeded. (Column Filter)
+2025-11-05 16:19:38,963 : DEBUG : ModalContext :  : Node : Column Merger : 3:21 : Configure succeeded. (Column Merger)
+2025-11-05 16:19:38,966 : DEBUG : ModalContext :  : Node : Concatenate : 3:8 : Configure succeeded. (Concatenate)
+2025-11-05 16:19:38,967 : DEBUG : ModalContext :  : Node : String to Number : 3:23 : Configure succeeded. (String to Number)
+2025-11-05 16:19:38,973 : DEBUG : ModalContext :  : Node : Bar Chart : 3:26 : Configure succeeded. (Bar Chart)
+2025-11-05 16:19:38,975 : DEBUG : ModalContext :  : Node : Value Lookup : 3:22 : Configure succeeded. (Value Lookup)
+2025-11-05 16:19:38,976 : DEBUG : ModalContext :  : HiLiteHandler : Row Aggregator : 3:12 : Removing hilite translator from handler 243be623-9af4-4943-99f4-b0f0f704cfba
+2025-11-05 16:19:38,976 : DEBUG : ModalContext :  : HiLiteHandler : Row Aggregator : 3:12 : Removing hilite translator from handler 032b5d49-4838-44ee-a7c5-c01acb65984f
+2025-11-05 16:19:38,976 : DEBUG : ModalContext :  : HiLiteHandler : Row Aggregator : 3:12 : Adding hilite translator to handler 243be623-9af4-4943-99f4-b0f0f704cfba
+2025-11-05 16:19:38,976 : DEBUG : ModalContext :  : HiLiteHandler : Row Aggregator : 3:12 : Adding hilite translator to handler 032b5d49-4838-44ee-a7c5-c01acb65984f
+2025-11-05 16:19:39,075 : DEBUG : ModalContext :  : Node : Row Aggregator : 3:12 : Configure succeeded. (Row Aggregator)
+2025-11-05 16:19:40,952 : DEBUG : main :  : Node : Row Aggregator : 3:12 : clean output ports.
+2025-11-05 16:19:40,952 : DEBUG : main :  : Node : Value Lookup : 3:22 : clean output ports.
+2025-11-05 16:19:40,952 : DEBUG : main :  : Node : Bar Chart : 3:26 : clean output ports.
+2025-11-05 16:19:40,952 : DEBUG : main :  : Node : String to Number : 3:23 : clean output ports.
+2025-11-05 16:19:40,953 : DEBUG : main :  : HiLiteHandler : Concatenate : 3:8 : Removing hilite translator from handler 737c8e41-5b80-4bf0-84f2-366f6d62a273
+2025-11-05 16:19:40,953 : DEBUG : main :  : HiLiteHandler : Concatenate : 3:8 : Removing hilite translator from handler 5ffe5d54-5f2f-4b8a-bb5d-f59ddeb7d920
+2025-11-05 16:19:40,953 : DEBUG : main :  : HiLiteHandler : Concatenate : 3:8 : Removing hilite translator from handler 737c8e41-5b80-4bf0-84f2-366f6d62a273
+2025-11-05 16:19:40,953 : DEBUG : main :  : HiLiteHandler : Concatenate : 3:8 : Removing hilite translator from handler 8c6f62a8-5c36-4342-ab34-d10688a4fc4e
+2025-11-05 16:19:40,953 : DEBUG : main :  : Node : Concatenate : 3:8 : clean output ports.
+2025-11-05 16:19:40,953 : DEBUG : main :  : Node : Column Merger : 3:21 : clean output ports.
+2025-11-05 16:19:40,953 : DEBUG : main :  : Node : Column Filter : 3:27 : clean output ports.
+2025-11-05 16:19:40,953 : DEBUG : main :  : Node : Excel Reader : 3:18 : clean output ports.
+2025-11-05 16:19:40,953 : DEBUG : main :  : Node : Excel Reader : 3:7 : clean output ports.
+2025-11-05 16:19:40,953 : DEBUG : main :  : Node : Excel Reader : 3:6 : clean output ports.

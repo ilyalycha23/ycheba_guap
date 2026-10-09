@@ -1,0 +1,27 @@
+# Mac finder stuff
+*.DS_Store
+
+# Eclipse production
+/.metadata
+.settings
+
+# UML diagrams
+*.ucls
+# Matlab autosave
+*.m~
+
+*.jar
+!**/lib/*.jar
+
+# build
+**/bin/
+**/target/
+**/build/
+**/.flattened-pom.xml
+
+.META-INF_MANIFEST.MF
+.polyglot..META-INF_MANIFEST.MF
+feature.xml.takari_issue_192
+polyglot..feature.xml.takari_issue_192
+category.xml.takari_issue_192
+.polyglot.category.xml.takari_issue_192

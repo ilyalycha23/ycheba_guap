@@ -1,0 +1,71 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "k2p: debug CLI",
+        "type": "debugpy",
+        "request": "launch",
+        "module": "knime2py.cli",
+        "args": [
+          "${workspaceFolder}/../../harbour/KNIME/ISU_Master_test",
+          "--out", "${workspaceFolder}/output",
+          "--workbook", "ipynb"
+        ],
+        "cwd": "${workspaceFolder}",
+        "env": { "PYTHONPATH": "${workspaceFolder}/src" },
+        "console": "integratedTerminal",
+        "justMyCode": true
+      },
+      {
+        "name": "pytest: debug all",
+        "type": "debugpy",
+        "request": "launch",
+        "module": "pytest",
+        "args": ["tests"],
+        "cwd": "${workspaceFolder}",
+        "console": "integratedTerminal",
+        "justMyCode": true,
+        "env": {
+          "PYTHONPATH": "${workspaceFolder}"
+        }
+      },
+      {
+        "name": "pytest: single test debug",
+        "type": "debugpy",
+        "request": "launch",
+        "module": "pytest",
+        "args": ["tests/test_nodes_normalizer.py::test_normalizer_matches_expected_output"],
+        "cwd": "${workspaceFolder}",
+        "console": "integratedTerminal",
+        "justMyCode": true,
+        "env": {
+          "PYTHONPATH": "${workspaceFolder}"
+        }
+      },
+      {
+        "name": "pytest: debug all (no cov)",
+        "type": "debugpy",
+        "request": "launch",
+        "module": "pytest",
+        "args": ["-q", "--no-cov", "-s", "tests"],
+        "cwd": "${workspaceFolder}",
+        "console": "integratedTerminal",
+        "justMyCode": true,
+        "env": {
+          "PYTHONPATH": "${workspaceFolder}",
+          "PYTEST_ADDOPTS": "" 
+        }
+      },
+      {
+        "name": "implemented: debug CLI",
+        "type": "debugpy",
+        "request": "launch",
+        "program": "${workspaceFolder}/src/knime2py/implemented_cli.py",
+        "args": [],
+        "cwd": "${workspaceFolder}",
+        "console": "integratedTerminal",
+        "justMyCode": true
+      }
+    ]
+  }
+  

@@ -1,0 +1,70 @@
+# ---- VCS / CI ----
+.git
+.github/
+.gitattributes
+.gitignore
+
+# ---- Python caches ----
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+
+# ---- Virtual envs / local env ----
+.venv/
+.venv-pex/
+.venv*/
+.conda/
+.env
+.env.*
+
+# ---- Builds / packaging artifacts ----
+build/
+dist/
+.wheels/
+*.egg-info/
+pip-wheel-metadata/
+*.whl
+*.pex
+*.log
+.generated
+
+# ---- Tests & coverage (not needed in runtime image) ----
+tests/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# ---- Docs & notebooks ----
+docs/
+.ipynb_checkpoints/
+*.ipynb
+
+# ---- Project outputs ----
+output/
+
+# ---- Editor / OS junk ----
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
+
+# ---- Local helper scripts (not needed in image) ----
+scripts/
+
+# ---- Local RAG index ----
+.rag_index
+.env 
+
+# ---- Keep these (do NOT ignore) ----
+!src/**
+!pyproject.toml
+!README.md
+!LICENSE
+!Dockerfile

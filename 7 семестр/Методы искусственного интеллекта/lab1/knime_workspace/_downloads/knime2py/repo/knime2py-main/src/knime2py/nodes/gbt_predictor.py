@@ -1,0 +1,380 @@
+#!/usr/bin/env python3
+
+"""Gradient Boosted Trees (Classification) Predictor.
+
+Overview
+----------------------------
+This module generates Python code to score an input table using a
+GradientBoostingClassifier produced by the GBT Learner. It consumes a
+model bundle (or bare estimator), writes a prediction column, and
+optionally appends class probabilities and a confidence column. The
+scored table is output to the node's context.
+
+Runtime Behavior
+----------------------------
+Inputs:
+- Reads a model bundle and input data from the context using keys
+  derived from input ports.
+
+Outputs:
+- Writes the scored DataFrame to `context[...]` with the predicted
+  values and optional probabilities and confidence scores. The output
+  is mapped to the specified output ports.
+
+Key algorithms or mappings:
+- The module handles the normalization of features and predictions,
+  including fallback mechanisms for missing features and handling of
+  class probabilities.
+
+Edge Cases
+----------------------------
+The code implements safeguards against missing feature columns,
+constant columns, and NaN values. It also includes logic for class
+imbalance and provides fallback paths for feature selection.
+
+Generated Code Dependencies
+----------------------------
+The generated code requires the following external libraries:
+- pandas
+These dependencies are required by the generated code, not by this
+module.
+
+Usage
+----------------------------
+This module is typically invoked by the knime2py emitter as part of
+the code generation process for KNIME nodes. An example of expected
+context access is:
+```python
+context['model_key'] = model_obj
+context['data_key'] = df
+```
+
+Node Identity
+----------------------------
+KNIME factory id:
+- FACTORY = "org.knime.base.node.mine.treeensemble2.node.gradientboosting.predictor.classification.GradientBoostingClassificationPredictorNodeFactory3"
+
+Configuration
+----------------------------
+The module uses the `PredictorSettings` dataclass for configuration,
+which includes important fields such as:
+- `has_custom_name`: Indicates if a custom prediction column name is used (default: False).
+- `custom_name`: The custom name for the prediction column (default: None).
+- `include_probs`: Whether to include class probabilities (default: True).
+- `include_confidence`: Whether to include prediction confidence (default: True).
+- `prob_suffix`: Suffix for probability column names (default: "_GB").
+- `append_model_count`: Whether to append the number of models used (default: False).
+- `use_soft_voting`: Indicates if soft voting is used (default: False).
+
+The `parse_predictor_settings` function extracts these values from
+the `settings.xml` file using XPath queries and provides fallbacks
+for missing entries.
+
+Limitations
+----------------------------
+The module does not support certain options available in KNIME, such
+as soft voting for sklearn's GradientBoostingClassifier, which is
+not applicable.
+
+References
+----------------------------
+For more information, refer to the KNIME documentation and the
+following URL: 
+https://hub.knime.com/knime/extensions/org.knime.features.ensembles/latest/
+org.knime.base.node.mine.treeensemble2.node.gradientboosting.predictor.classification.
+GradientBoostingClassificationPredictorNodeFactory3
+"""
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+from pathlib import Path
+from typing import List, Optional, Tuple
+
+from lxml import etree as ET
+from ..xml_utils import XML_PARSER
+from .node_utils import (
+    first,
+    first_el,
+    normalize_in_ports,
+    collect_module_imports,
+    split_out_imports,
+)
+
+# KNIME factory
+FACTORY = "org.knime.base.node.mine.treeensemble2.node.gradientboosting.predictor.classification.GradientBoostingClassificationPredictorNodeFactory3"
+
+# ---------------------------------------------------------------------
+# settings.xml → PredictorSettings
+# ---------------------------------------------------------------------
+
+@dataclass
+class PredictorSettings:
+    has_custom_name: bool = False
+    custom_name: Optional[str] = None
+    include_probs: bool = True                 # appendClassConfidences
+    include_confidence: bool = True            # appendPredictionConfidence
+    prob_suffix: str = "_GB"
+    append_model_count: bool = False           # appendModelCount
+    use_soft_voting: bool = False              # not applicable to sklearn GBT (informational)
+
+
+def _bool(s: Optional[str], default: bool) -> bool:
+    """
+    Convert a string to a boolean value.
+
+    Args:
+        s (Optional[str]): The string to convert.
+        default (bool): The default value to return if s is None.
+
+    Returns:
+        bool: The converted boolean value.
+    """
+    if s is None:
+        return default
+    return str(s).strip().lower() in {"1", "true", "yes", "y"}
+
+
+def parse_predictor_settings(node_dir: Optional[Path]) -> PredictorSettings:
+    """
+    Parse the predictor settings from the settings.xml file.
+
+    Args:
+        node_dir (Optional[Path]): The directory containing the settings.xml file.
+
+    Returns:
+        PredictorSettings: An instance of PredictorSettings with the parsed values.
+    """
+    if not node_dir:
+        return PredictorSettings()
+    settings_path = node_dir / "settings.xml"
+    if not settings_path.exists():
+        return PredictorSettings()
+
+    root = ET.parse(str(settings_path), parser=XML_PARSER).getroot()
+    model_el = first_el(root, ".//*[local-name()='config' and @key='model']")
+    if model_el is None:
+        return PredictorSettings()
+
+    has_custom = _bool(first(model_el, ".//*[local-name()='entry' and @key='changePredictionColumnName']/@value"), False)
+    custom_name = first(model_el, ".//*[local-name()='entry' and @key='predictionColumnName']/@value")
+
+    include_probs = _bool(first(model_el, ".//*[local-name()='entry' and @key='appendClassConfidences']/@value"), True)
+    include_confidence = _bool(first(model_el, ".//*[local-name()='entry' and @key='appendPredictionConfidence']/@value"), True)
+    append_model_count = _bool(first(model_el, ".//*[local-name()='entry' and @key='appendModelCount']/@value"), False)
+    prob_suffix = first(model_el, ".//*[local-name()='entry' and @key='suffixForClassProbabilities']/@value") or "_GB"
+    use_soft_voting = _bool(first(model_el, ".//*[local-name()='entry' and @key='useSoftVoting']/@value"), False)
+
+    return PredictorSettings(
+        has_custom_name=has_custom,
+        custom_name=(custom_name or None),
+        include_probs=include_probs,
+        include_confidence=include_confidence,
+        prob_suffix=prob_suffix,
+        append_model_count=append_model_count,
+        use_soft_voting=use_soft_voting,
+    )
+
+
+# ---------------------------------------------------------------------
+# Code generators
+# ---------------------------------------------------------------------
+
+def generate_imports():
+    """
+    Generate the necessary import statements for the generated code.
+
+    Returns:
+        List[str]: A list of import statements.
+    """
+    # Only pandas needed; estimator comes from the Learner bundle
+    return ["import pandas as pd"]
+
+
+HUB_URL = (
+    "https://hub.knime.com/knime/extensions/org.knime.features.ensembles/latest/"
+    "org.knime.base.node.mine.treeensemble2.node.gradientboosting.predictor.classification."
+    "GradientBoostingClassificationPredictorNodeFactory3"
+)
+
+
+def _emit_predict_code(cfg: PredictorSettings) -> List[str]:
+    """
+    Generate the prediction code based on the provided configuration.
+
+    Args:
+        cfg (PredictorSettings): The configuration settings for the predictor.
+
+    Returns:
+        List[str]: A list of code lines for making predictions.
+    """
+    lines: List[str] = []
+    lines.append("model_obj = context[model_key]")
+    lines.append("df = context[data_key]")
+    lines.append("out_df = df.copy()")
+    lines.append("")
+    lines.append("# Normalize to a dict-like bundle with expected keys")
+    lines.append("if isinstance(model_obj, dict):")
+    lines.append("    bundle = model_obj")
+    lines.append("else:")
+    lines.append("    bundle = {'estimator': model_obj}")
+    lines.append("")
+    lines.append("est = bundle.get('estimator') or bundle.get('model')")
+    lines.append("feat = bundle.get('features') or getattr(est, 'feature_names_in_', None)")
+    lines.append("tgt  = bundle.get('target') or bundle.get('y_col') or bundle.get('target_name')")
+    lines.append("classes = list(bundle.get('classes') or getattr(est, 'classes_', []))")
+    lines.append("")
+    lines.append("# Normalize features to a plain list")
+    lines.append("if isinstance(feat, (list, tuple)):")
+    lines.append("    feat_list = list(feat)")
+    lines.append("elif getattr(feat, 'tolist', None):")
+    lines.append("    feat_list = list(feat.tolist())")
+    lines.append("elif feat is None:")
+    lines.append("    feat_list = []")
+    lines.append("else:")
+    lines.append("    try:")
+    lines.append("        feat_list = list(feat)")
+    lines.append("    except Exception:")
+    lines.append("        feat_list = []")
+    lines.append("")
+    lines.append("# Feature fallback if none provided by bundle/estimator")
+    lines.append("if not feat_list:")
+    lines.append("    if tgt and tgt in out_df.columns:")
+    lines.append("        feat_list = [c for c in out_df.columns if c != tgt]")
+    lines.append("    else:")
+    lines.append("        feat_list = list(out_df.columns)")
+    lines.append("")
+    lines.append("missing = [c for c in feat_list if c not in out_df.columns]")
+    lines.append("if missing:")
+    lines.append("    raise KeyError(f'Missing feature columns in data: {missing}')")
+    lines.append("X = out_df[feat_list]")
+    lines.append("")
+    # Prediction column name
+    if cfg.has_custom_name:
+        lines.append(f"pred_col = {repr(cfg.custom_name)}")
+    else:
+        lines.append("pred_col = f'Prediction ({tgt or \"target\"})'")
+    lines.append("pred = est.predict(X)")
+    lines.append("out_df[pred_col] = pd.Series(pred, index=out_df.index).astype('object')")
+    lines.append("")
+    # Probabilities (optional)
+    if cfg.include_probs:
+        lines.append("# Class probability columns (if supported by estimator)")
+        lines.append("proba = None")
+        lines.append("if hasattr(est, 'predict_proba'):")
+        lines.append("    proba = est.predict_proba(X)")
+        lines.append("    if not classes and getattr(proba, 'shape', (0, 0))[1] == 2:")
+        lines.append("        classes = ['class0', 'class1']")
+        lines.append(f"    _suf = {repr(cfg.prob_suffix)}")
+        lines.append("    for j, cls in enumerate(classes):")
+        lines.append("        cname = f\"P ({tgt}={cls}){_suf}\"")
+        lines.append("        out_df[cname] = proba[:, j]")
+    else:
+        lines.append("proba = None  # probabilities disabled by settings")
+    lines.append("")
+    # Confidence (optional)
+    if cfg.include_confidence:
+        lines.append("# Prediction confidence (max class probability) when probabilities are available")
+        lines.append("if proba is not None:")
+        lines.append("    conf = proba.max(axis=1)")
+        lines.append("    out_df[f\"{pred_col} (confidence)\"] = conf")
+    # Append model count (optional)
+    if cfg.append_model_count:
+        lines.append("# Append the number of boosted estimators (constant per row)")
+        lines.append("n_models = getattr(est, 'n_estimators_', getattr(est, 'n_estimators', None))")
+        lines.append("if n_models is not None:")
+        lines.append("    out_df[f\"{pred_col} (models)\"] = n_models")
+    # Informational note
+    if cfg.use_soft_voting:
+        lines.append("# KNIME 'useSoftVoting' is not applicable to sklearn GradientBoostingClassifier (ignored).")
+    return lines
+
+
+def generate_py_body(
+    node_id: str,
+    node_dir: Optional[str],
+    in_ports: List[tuple[str, str]],   # Port 1 = model bundle, Port 2 = data
+    out_ports: Optional[List[str]] = None,
+) -> List[str]:
+    """
+    Generate the Python code body for the node.
+
+    Args:
+        node_id (str): The ID of the node.
+        node_dir (Optional[str]): The directory of the node.
+        in_ports (List[object]): The input ports for the node.
+        out_ports (Optional[List[str]]): The output ports for the node.
+
+    Returns:
+        List[str]: A list of code lines for the node's functionality.
+    """
+    ndir = Path(node_dir) if node_dir else None
+    cfg = parse_predictor_settings(ndir)
+
+    # Ensure (model_key, data_key)
+    pairs = normalize_in_ports(in_ports)
+    model_src, model_in = pairs[0] if pairs else ("UNKNOWN", "1")
+    data_src, data_in = (pairs[1] if len(pairs) > 1 else ("UNKNOWN", "2"))
+
+    lines: List[str] = []
+    lines.append(f"# {HUB_URL}")
+    lines.append(f"model_key = '{model_src}:{model_in}'")
+    lines.append(f"data_key = '{data_src}:{data_in}'")
+
+    lines.extend(_emit_predict_code(cfg))
+
+    # Single output: predicted table
+    ports = out_ports or ["1"]
+    for p in sorted({(p or '1') for p in ports}):
+        lines.append(f"context['{node_id}:{p}'] = out_df")
+
+    return lines
+
+
+
+def get_name() -> str:
+    """Return name of the node in KNIME workflow."""
+    return "Gradient Boosted Trees Predictor"
+
+
+def handle(ntype, nid, npath, incoming, outgoing):
+    """
+    Handle the node processing and return the necessary imports and body lines.
+
+    Args:
+        ntype: The type of the node.
+        nid: The ID of the node.
+        npath: The path of the node.
+        incoming: The incoming connections to the node.
+        outgoing: The outgoing connections from the node.
+
+    Returns:
+        Tuple[List[str], List[str]]: A tuple containing the imports and body lines.
+    """
+    explicit_imports = collect_module_imports(generate_imports)
+
+    # Determine upstream context keys for our input ports
+    model_pair: Optional[Tuple[str, str]] = None
+    data_pair: Optional[Tuple[str, str]] = None
+    for src_id, e in (incoming or []):
+        src_port = str(getattr(e, "source_port", "") or "1")
+        tgt_port = str(getattr(e, "target_port", "") or "")
+        if tgt_port == "1":
+            model_pair = (str(src_id), src_port)
+        elif tgt_port == "2":
+            data_pair = (str(src_id), src_port)
+
+    norm_in: List[Tuple[str, str]] = []
+    if model_pair:
+        norm_in.append(model_pair)
+    if data_pair:
+        norm_in.append(data_pair)
+    if not norm_in:
+        norm_in = [(str(src), str(getattr(e, "source_port", "") or "1")) for src, e in (incoming or [])]
+
+    out_ports = [str(getattr(e, "source_port", "") or "1") for _, e in (outgoing or [])] or ["1"]
+
+    node_lines = generate_py_body(nid, npath, norm_in, out_ports)
+    found_imports, body = split_out_imports(node_lines)
+    imports = sorted(set(explicit_imports) | set(found_imports))
+    return imports, body

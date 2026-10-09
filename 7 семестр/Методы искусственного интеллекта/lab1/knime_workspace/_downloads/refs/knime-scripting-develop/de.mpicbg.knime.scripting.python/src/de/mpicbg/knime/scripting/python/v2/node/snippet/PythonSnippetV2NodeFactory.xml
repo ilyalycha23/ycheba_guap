@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE knimeNode PUBLIC "-//UNIKN//DTD KNIME Node 2.0//EN" "http://www.knime.org/Node.dtd">
+<knimeNode icon="../../python-logo-generic.png" type="Manipulator">
+
+    <name>Python Snippet</name>
+
+    <shortDescription>
+        Executes Python code.
+    </shortDescription>
+
+    <fullDescription>
+    
+    	<!-- Goes for all Python nodes -->
+    	
+        <intro>
+            <p>
+            The node executes Python code. There are two ways to
+            configure which code will be executed:
+
+            <ol>
+            	<li>Select (Templates Tab; double-click or "Use this template") and configure a Python template from the template repository.</li>
+            	<li>Write you own Python code (Script Editor Tab)</li>
+            </ol>
+            </p>
+            <p>The Python installation which is used for execution can be set in the Preferences under <b>KNIME > Community Scripting > Python Scripting</b>. The settings allow to switch between a Python2 and Python3 installation. They further provide to set template resources (URLs or file locations) for either plot and snippet respectively.</p>
+            <p>Further, the node can be executed in an <b>'Open External'</b> mode (checkbox at the Script Editor Tab) which then would push the KNIME data to Python for troubleshooting or prototyping (either as a Jupyter notebook or via command line).</p>
+            <p>For detailed information check out the <a href="https://github.com/knime-mpicbg/knime-scripting/wiki/Python-Integration"> Wiki Page </a></p>
+        </intro>
+        
+        <!-- Goes for all Python nodes which provide templates -->
+        
+        <tab name="Templates">
+        <option name="Templates/Refresh">Loads again the template file(s).
+        </option>
+        <option name="Templates/Gallery">Generate a temporary webpage shown in a browser which gives an overview about
+            all available templates.
+        </option>
+        <option name="Templates/Description,Source">Description explains what this snippet does. Source displays the RGG
+            script.
+        </option><option name="Templates/Use this template">Click to load the GUI (or double-click onto the template)
+        </option>
+        </tab>
+
+		<!-- Goes for all Python nodes which allows scripting -->
+		
+		<tab name="Script Editor">
+        <option name="Open external">If checked, Python will be opened externally, either as Jupyter notebook or via command line.
+        </option>
+        <option name="Scipt Editor/Unlink from Template">Gives access to the Python script after adaptation by the GUI.
+        </option>
+        <option name="Scipt Editor/Edit Template">Gives access to the RGG script to adapt the GUI of a template.
+        </option>
+        </tab>
+        
+        
+    </fullDescription>
+
+	<!-- To be adapted for each node -->
+    <ports>
+        <inPort index="0" name="Data table (kIn)">
+        	A data table<br/>
+        	Provided as pandas data frame named <b>kIn</b> in Python.
+        </inPort>
+        <outPort index="0" name="Data table (pyOut) returned from Python">
+        	The data table that the Python snippet returns.<br/>
+        	Expected as pandas data frame named <b>pyOut</b> in Python
+        </outPort>
+    </ports>
+
+</knimeNode>

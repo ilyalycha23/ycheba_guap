@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE knimeNode PUBLIC "-//UNIKN//DTD KNIME Node 2.0//EN" "http://www.knime.org/Node.dtd">
+<knimeNode icon="../icons/matlabicon.gif" type="Sink">
+    <name>Open in Matlab</name>
+
+    <shortDescription>
+        Opens Matlab session with data table from KNIME.
+    </shortDescription>
+
+    <fullDescription>
+        <intro>
+            <p>
+                This node opens a local Matlab session and pushes the data table from Knime into Matlab for rapid prototyping.
+                Starting from the Matlab variable containing the KNIME data, a script can be developed and tested, 
+                before putting it into a Matlab snippet node.
+            </p>
+            <p>
+                The input data table is converted into a Matlab type variable (dataset, table, container.Map or structure), and made
+                available in the Matlab workspace as a variable named <i>kIn</i>. There is also a variable <i>columnMapping</i>, 
+                that is a structure allowing to associate the KNIME column names with the Matlab variable names 
+                (not needed if the dataset or table type is used).<br/>
+            </p>
+            <p>
+                <b>This node needs a Matlab installation on the local machine!</b><br/>
+                If Matlab is not running, the node launches an instance of the Matlab desktop.
+                It is recommended to let KNIME launch Matlab. The node can detect open Matlab instances, 
+                but this is not foolproof. The working directory of Matlab will be changed to the location 
+                where KNIME stores the m-file to load the data in the workspace (manually
+                you'll have to change directory into the temp-dir of the JVM that runs KNIME).
+            </p>
+            <p>
+                <b>Conventions:</b>
+                <ul>
+                    <li>
+                        Snippet input variable name: kIn
+                    </li>
+                    <li>
+                        Snippet output variable name: mOut
+                    </li>
+                    <li>
+                        Supported Matlab types: dataset, table, struct or container.Map
+                    </li>
+                    <li>
+                        While the script input type is defined by the preferences,
+                        the output type will be inferred from the output variable
+                    </li>
+                    <li>
+                        The column names for dataset and table Matlab data types are taken from the object
+                        properties (VariableDescriptions/VarDesription). For the other types, they will
+                        be the same as the input as long as the header does not change.
+                    </li>
+                    <li>
+                        Templates repositories are controlled via the preferences
+                        (Menu > KNIME > Preferences > KNIME > Matlab Scripting).
+                    </li>
+                </ul>
+            </p>
+            <p>
+                <b>Further reading:</b><br/>
+                Further documentation can be found on the
+                <a href="https://github.com/knime-mpicbg/knime-scripting/wiki">wiki</a>.<br/>
+                To understand how to use flow variables in the script, please consult
+                <a href="https://github.com/knime-mpicbg/knime-scripting/wiki/RGG-XML#Flow_variables">RGG XML</a>.
+            </p>
+        </intro>
+    </fullDescription>
+
+    <ports>
+        <inPort index="0" name="Data table">A data table pushed to Matlab</inPort>
+    </ports>
+
+</knimeNode>

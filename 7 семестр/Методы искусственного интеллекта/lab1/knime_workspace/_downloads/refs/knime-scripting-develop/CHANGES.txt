@@ -1,0 +1,189 @@
+======================================================================================================
+2023-07-05
+VERSION		v5.1.0
+
+Release for KNIME 5.1.0 due to dependency to major version change
+
+======================================================================================================
+2023-01-24
+VERSION		v4.3.0
+
+INTERNAL
+
+* update to Java17
+* replace xstream library with a new version due to failing dependency check
+* fix class loading issues for RGG
+
+SCRIPTING
+* R nodes will not end up with failed transfer for tables with a single column of unsupported data type. Instead an empty table will be transfered
+* #109: KNIME Analytics Platform prompts for proxy user and password on startup
+
+CHANGES BEFORE v4.3.0
+
+* Python nodes version 2 with a lot of changes anf features
+
+======================================================================================================
+2019-06-20
+VERSION		v4.0.0
+
+Release for KNIME 4.0.0 due to dependency to major version change
+
+======================================================================================================
+2019-02-13
+VERSION		v3.3.0
+
+ENHANCEMENTS / FEATURES
+
+* Template files will be cached locally to allow offline usage
+
+ISSUES
+
+* Nodes using R will use Rserve library 1.8-6 to avoid communication problems with R 3.5+
+
+
+======================================================================================================
+2018-11-27 (develop only)
+VERSION		v3.2.0
+
+ISSUES
+
+* Nodes using R will use Rserve library 1.8-6 to avoid communication problems with R 3.5+
+
+======================================================================================================
+2018-07-18
+VERSION		v3.1.1
+
+ISSUES
+
+* externalize libraries to avoid conflicts
+* #95: Matlab Snippet: Output argument not assigned during call to ...
+* #91: Cannot import data to matlab
+* #84: Adding templates in the preferences fails silently when rgg syntax error
+* #82: update to java 8 
+* #81: Support the Matlab type table in snippets 
+* #63: Matlab jmi ClassLoader problem 
+* #64: Groovy scripts wont compile due to broken import statements 
+
+======================================================================================================
+2016-02-12
+VERSION		v3.1.0
+
+INTERNAL
+
+* R integration restructured and transfer from/to R improved
+
+ENHANCEMENTS / FEATURES
+
+R nodes now can
+- transfer data in chunks (for big tables)
+- transfer KNIME color/size/shape model
+- transfer rowIDs
+- directly 'open external'
+- transfer domain values
+- transfer flow variables
+- handles empty tables correctly
+- supports double, int, long, boolean and string and ommits other column types
+
+ISSUES
+
+* fixes #67: Rserve process hangs under Windows after R-Plot node failure
+* fixes #35: RGG line break bug after Edit Template
+* fix: OpenInPython does not work under Windows (no window opens after execution)
+* Use new Rserve version 1.7 #42 
+* Include Open in R funcionality into R plot node and R snippet node #4 
+* Generic plot node should get image outport #66 
+* Stop support of old R variable names #54 
+* transfer R workspace with generic nodes #47 
+* Support domain values from KNIME as levels in R #43 
+* row ids should be used as row names in R-data.frame #9 
+
+NEW NODES
+
+* Generic R nodes (new versions)
+	R port now acts as workspace transfer
+
+
+======================================================================================================
+2015-05-28
+VERSION		v2.0.4
+
+ISSUES
+
+Scripting
+* fixes #59: template configuration dialog has too much empty space
+
+Matlab
+* fixes NullPointer-Exception when executing a matlab node.
+* Simplifying the Matlab controller (only to work on the local machine)
+
+R
+* undo row names support as pushing row names like this suffers from an RServe-bug
+* closes issue #42: Use new Rserve version 1.7
+* changed R icons and fixed node types in xml and added icon for splash screen
+
+======================================================================================================
+2015-02-18
+VERSION		v2.0.2
+
+ISSUES
+
+scripting
+* closes #49: remove output tab from snippet node (main changes in AbstractTableScriptingNodeModel)
+
+Python
+* part of #55: integer columns are transfered as float to allow missing values
+* some changes for better NaN/missing value handling with python snippet node (not yet finished)
+* fixes #56: Python plot fails under windows
+
+R
+* fixes #53: check if plot was generated and give error message
+* fixes #50: fix R port of generic nodes, return structure of objects transfered via RPort
+* fixes #7: RPlot - Null Pointer Exception if plot node contains a nonvalid output path
+* closes #10: Plot Overwrite - Warning instead of Error
+* fixes #5: Generic OpenInR - pushes rOut instead of kIn
+* R-scripting - improve error message if plot file path is invalid (was: reporting Null-Pointer exception)
+* enables R-nodes to push row-names for table inputs
+
+======================================================================================================
+2014-11-13
+VERSION		v2.0.1
+
+ISSUES
+
+scripting
+* Python, Matlab, Groovy: fix default links to templates
+* #36: Rgg fails to replace more than one domain placeholders
+
+python
+* #38: Python nodes fail with python 2.6 since pandas integration
+
+R
+* #37: Bug in Fix column names (columns with special characters like ' )
+
+
+======================================================================================================
+2014-09-30
+VERSION		v2.0.0
+
+INTERNAL
+
+* restructured file/folder structure
+* simplified deployment
+* Converting python and matlab server from maven to eclipse projects
+
+ISSUES
+
+scripting
+* fixes #28: 'edit templates' is read only in KNIME 2.10
+* fixes bug: failed to load script template settings doe to relocated class ScriptTemplate
+
+python
+* Allow multi-line CSVs and (optionally) use pandas
+* Enable transfer of all cell types to python as long as they are compatible to StringCell
+
+R
+* "append columns" default set to "false" to quick fix error message of expected table specs
+* add new preference "use evaluate package"
+* fix default links to templates
+* fix R-plot default script
+* improve reporting of error-messages and warnings (TODO: create console view)

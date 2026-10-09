@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+
+
+    <extension point="org.knime.workbench.repository.nodes">
+        <node
+              category-path="/community/python"
+              deprecated="true"
+              factory-class="de.mpicbg.knime.scripting.python.snippet.PythonSnippetNodeFactory"
+              id="de.mpicbg.knime.scripting.python.PythonSnippetNodeFactory"/>
+
+        <node
+              category-path="/community/python"
+              deprecated="true"
+              factory-class="de.mpicbg.knime.scripting.python.open.OpenInPythonFactory"
+              id="de.mpicbg.knime.scripting.python.OpenInPythonFactory"/>
+
+        <node
+              category-path="/community/python"
+              deprecated="true"
+              factory-class="de.mpicbg.knime.scripting.python.plots.PythonPlotNodeFactory"
+              id="de.mpicbg.knime.scripting.python.plots.PythonPlotNodeFactory"/>
+        <node
+              category-path="/community/python"
+              deprecated="false"
+              factory-class="de.mpicbg.knime.scripting.python.v2.node.snippet.PythonSnippetV2NodeFactory">
+        </node>
+        <node
+              category-path="/community/python"
+              deprecated="false"
+              factory-class="de.mpicbg.knime.scripting.python.v2.node.snippet22.PythonSnippet22V2NodeFactory">
+        </node>
+        <node
+              category-path="/community/python"
+              deprecated="false"
+              factory-class="de.mpicbg.knime.scripting.python.v2.node.plot.PythonPlotV2NodeFactory">
+        </node>
+        <node
+              category-path="/community/python"
+              deprecated="false"
+              factory-class="de.mpicbg.knime.scripting.python.v2.node.openinpython.OpenInPythonV2NodeFactory"
+              hidden="false">
+        </node>
+        <node
+              category-path="/community/python"
+              deprecated="false"
+              factory-class="de.mpicbg.knime.scripting.python.v2.node.source.PythonSourceV2NodeFactory"
+              hidden="false">
+        </node>
+    </extension>
+
+    <extension point="org.knime.workbench.repository.categories">
+        <!--<category level-id="scripting" name="Scripting" path="/"/>-->
+        <category icon="resources/pythonicon.png" level-id="python" name="Python Scripting" path="/community"/>
+    </extension>
+
+
+    <extension point="org.eclipse.core.runtime.preferences">
+        <initializer class="de.mpicbg.knime.scripting.python.prefs.PythonPreferenceInitializer"/>
+    </extension>
+
+    <extension point="org.eclipse.ui.preferencePages">
+        <page category="de.mpicbg.knime.scripting.core.prefs.ScriptingPreferencePage"
+              class="de.mpicbg.knime.scripting.python.prefs.PythonPreferencePage"
+              id="de.mpicbg.knime.scripting.python.prefs.PythonPreferencePage"
+              name="Python Scripting">
+        </page>
+        <page
+              category="de.mpicbg.knime.scripting.python.prefs.PythonPreferencePage"
+              class="de.mpicbg.knime.scripting.python.prefs.PythonPreferencePageDeprecated"
+              id="de.mpicbg.knime.scripting.python.prefs.PythonPreferencePageDeprecated"
+              name="Python Scripting (deprecated)">
+        </page>
+    </extension>
+
+
+    <extension point="org.knime.product.splashExtension">
+        <splashExtension
+                icon="resources/pythonicon.png"
+                id="Python"
+                tooltip="An integration of Python into Knime">
+        </splashExtension>
+    </extension>
+
+
+</plugin>

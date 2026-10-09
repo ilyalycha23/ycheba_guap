@@ -1,0 +1,830 @@
+2023-07-12 09:13:27,773 : WARN  : ModalContext :  : Node : Excel Reader : 12:149 : The node configuration changed and the table spec will be recalculated during execution.
+2023-07-12 09:17:07,895 : WARN  : ModalContext :  : Node : Excel Reader : 4:149 : The node configuration changed and the table spec will be recalculated during execution.
+2023-07-12 09:17:07,896 : WARN  : ModalContext :  : Node : Excel Reader : 4:149 : The node configuration changed and the table spec will be recalculated during execution.
+2025-11-05 15:27:44,040 : DEBUG : ModalContext :  : ClusterNodeFactory2 : Basic Customer Segmentation Use Case : 4 : Factory is already initialized. Nothing to do.
+2025-11-05 15:27:44,040 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 4 : Adding hilite translator to handler 573ce190-849f-4271-8b60-31882c70939a
+2025-11-05 15:27:44,042 : DEBUG : ModalContext :  : NormalizerPMMLNodeFactory2 : Basic Customer Segmentation Use Case : 4 : Factory is already initialized. Nothing to do.
+2025-11-05 15:27:44,043 : DEBUG : ModalContext :  : NormalizerPMMLDeNodeFactory : Basic Customer Segmentation Use Case : 4 : Factory is already initialized. Nothing to do.
+2025-11-05 15:27:44,045 : DEBUG : ModalContext :  : NormalizerPMMLDeNodeFactory : Basic Customer Segmentation Use Case : 4 : Factory is already initialized. Nothing to do.
+2025-11-05 15:27:44,046 : DEBUG : ModalContext :  : NumberToString2NodeFactory : Basic Customer Segmentation Use Case : 4 : Factory is already initialized. Nothing to do.
+2025-11-05 15:27:44,047 : DEBUG : ModalContext :  : CSVTableReaderNodeFactory : Basic Customer Segmentation Use Case : 4 : Factory is already initialized. Nothing to do.
+2025-11-05 15:27:44,049 : DEBUG : ModalContext :  : ExcelTableReaderNodeFactory : Basic Customer Segmentation Use Case : 4 : Factory is already initialized. Nothing to do.
+2025-11-05 15:27:44,052 : DEBUG : ModalContext :  : Joiner3NodeFactory : Basic Customer Segmentation Use Case : 4 : Factory is already initialized. Nothing to do.
+2025-11-05 15:27:44,052 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 4 : Adding hilite translator to handler ed9fbf17-8cf7-4701-8827-cd9b3aa12964
+2025-11-05 15:27:44,052 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 4 : Adding hilite translator to handler 605d37ca-a5ed-49ee-9f84-d63d17139742
+2025-11-05 15:27:44,052 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 4 : Adding hilite translator to handler 5880c73c-e274-428a-bb0c-57369900e095
+2025-11-05 15:27:44,052 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 4 : Adding hilite translator to handler ed9fbf17-8cf7-4701-8827-cd9b3aa12964
+2025-11-05 15:27:44,052 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 4 : Adding hilite translator to handler 605d37ca-a5ed-49ee-9f84-d63d17139742
+2025-11-05 15:27:44,052 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 4 : Adding hilite translator to handler becb064a-5b08-4154-9a9e-1a09eb35bff9
+2025-11-05 15:27:44,057 : DEBUG : ModalContext :  : Node : CSV Reader : 4:148 : Configure succeeded. (CSV Reader)
+2025-11-05 15:27:44,058 : DEBUG : ModalContext :  : Node : Excel Reader : 4:149 : Configure succeeded. (Excel Reader)
+2025-11-05 15:27:44,065 : DEBUG : ModalContext :  : Node : Joiner : 4:150 : Configure succeeded. (Joiner)
+2025-11-05 15:27:44,066 : DEBUG : ModalContext :  : Node : Number to String : 4:144 : Configure succeeded. (Number to String)
+2025-11-05 15:27:44,067 : DEBUG : ModalContext :  : Node : Normalizer (PMML) : 4:139 : Configure succeeded. (Normalizer (PMML))
+2025-11-05 15:27:44,068 : DEBUG : ModalContext :  : Node : k-Means (deprecated) : 4:138 : Configure succeeded. (k-Means (deprecated))
+2025-11-05 15:27:44,068 : DEBUG : ModalContext :  : Node : Denormalizer (PMML) : 4:141 : Configure succeeded. (Denormalizer (PMML))
+2025-11-05 15:27:44,068 : DEBUG : ModalContext :  : Node : Denormalizer (PMML) : 4:140 : Configure succeeded. (Denormalizer (PMML))
+2025-11-05 15:27:56,115 : DEBUG : comm-pool-thread-4 :  : ExecutionContext : Normalizer (PMML) : 4:139 : No file store handler set on "Normalizer (PMML)" (possibly running in 3rd party executor)
+2025-11-05 15:27:56,116 : DEBUG : comm-pool-thread-4 :  : DataValueImageRendererRegistry : Normalizer (PMML) : 4:139 : New batch of to-be-rendered images started for table with id 'spec_4_139'.
+2025-11-05 15:27:58,758 : DEBUG : comm-pool-thread-4 :  : ExecutionContext : Number to String : 4:144 : No file store handler set on "Number to String" (possibly running in 3rd party executor)
+2025-11-05 15:27:58,759 : DEBUG : comm-pool-thread-4 :  : DataValueImageRendererRegistry : Number to String : 4:144 : New batch of to-be-rendered images started for table with id 'spec_4_144'.
+2025-11-05 15:28:02,552 : DEBUG : comm-pool-thread-5 :  : ExecutionContext : Joiner : 4:150 : No file store handler set on "Joiner" (possibly running in 3rd party executor)
+2025-11-05 15:28:02,552 : DEBUG : comm-pool-thread-5 :  : DataValueImageRendererRegistry : Joiner : 4:150 : New batch of to-be-rendered images started for table with id 'spec_4_150'.
+2025-11-05 15:28:06,179 : DEBUG : comm-pool-thread-5 :  : ExecutionContext : Excel Reader : 4:149 : No file store handler set on "Excel Reader" (possibly running in 3rd party executor)
+2025-11-05 15:28:06,180 : DEBUG : comm-pool-thread-5 :  : DataValueImageRendererRegistry : Excel Reader : 4:149 : New batch of to-be-rendered images started for table with id 'spec_4_149'.
+2025-11-05 15:28:07,095 : DEBUG : comm-pool-thread-5 :  : ExecutionContext : CSV Reader : 4:148 : No file store handler set on "CSV Reader" (possibly running in 3rd party executor)
+2025-11-05 15:28:07,095 : DEBUG : comm-pool-thread-5 :  : DataValueImageRendererRegistry : CSV Reader : 4:148 : New batch of to-be-rendered images started for table with id 'spec_4_148'.
+2025-11-05 15:28:11,958 : DEBUG : comm-pool-thread-5 :  : ExecutionContext : k-Means (deprecated) : 4:138 : No file store handler set on "k-Means (deprecated)" (possibly running in 3rd party executor)
+2025-11-05 15:28:11,959 : DEBUG : comm-pool-thread-5 :  : DataValueImageRendererRegistry : k-Means (deprecated) : 4:138 : New batch of to-be-rendered images started for table with id 'spec_4_138'.
+2025-11-05 15:28:12,888 : DEBUG : main :  : VariableTypeRegistry : k-Means (deprecated) : 4:138 : The following variable types could all correspond to the config 'ExclList': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 15:28:25,171 : DEBUG : main :  : Node : Denormalizer (PMML) : 4:140 : clean output ports.
+2025-11-05 15:28:25,171 : DEBUG : main :  : Node : Denormalizer (PMML) : 4:141 : clean output ports.
+2025-11-05 15:28:25,171 : DEBUG : main :  : Node : k-Means (deprecated) : 4:138 : clean output ports.
+2025-11-05 15:28:25,172 : DEBUG : main :  : Node : Normalizer (PMML) : 4:139 : clean output ports.
+2025-11-05 15:28:25,172 : DEBUG : main :  : Node : Number to String : 4:144 : clean output ports.
+2025-11-05 15:28:25,172 : DEBUG : main :  : Node : Joiner : 4:150 : clean output ports.
+2025-11-05 15:28:25,172 : DEBUG : main :  : Node : Excel Reader : 4:149 : clean output ports.
+2025-11-05 15:28:25,172 : DEBUG : main :  : Node : CSV Reader : 4:148 : clean output ports.
+2025-11-05 15:44:27,184 : ERROR : ModalContext :  : NodeDescriptionParser : Basic Customer Segmentation Use Case : 3 : CODING PROBLEM	No node description file found for org.knime.base.node.mine.cluster.kmeans.ClusterNodeFactory2
+2025-11-05 15:44:27,184 : DEBUG : ModalContext :  : ClusterNodeFactory2 : Basic Customer Segmentation Use Case : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 15:44:27,184 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 3 : Adding hilite translator to handler bb18b4a2-3913-42e0-8b79-dbc4a5d5b169
+2025-11-05 15:44:27,188 : DEBUG : ModalContext :  : NormalizerPMMLNodeFactory2 : Basic Customer Segmentation Use Case : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 15:44:27,192 : DEBUG : ModalContext :  : NormalizerPMMLDeNodeFactory : Basic Customer Segmentation Use Case : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 15:44:27,194 : DEBUG : ModalContext :  : NormalizerPMMLDeNodeFactory : Basic Customer Segmentation Use Case : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 15:44:27,196 : DEBUG : ModalContext :  : NumberToString2NodeFactory : Basic Customer Segmentation Use Case : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 15:44:27,199 : DEBUG : ModalContext :  : CSVTableReaderNodeFactory : Basic Customer Segmentation Use Case : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 15:44:27,584 : DEBUG : ModalContext :  : ExcelTableReaderNodeFactory : Basic Customer Segmentation Use Case : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 15:44:27,604 : DEBUG : ModalContext :  : Joiner3NodeFactory : Basic Customer Segmentation Use Case : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 15:44:27,606 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 3 : Adding hilite translator to handler e8abf4c7-dd19-4452-ab22-b41d6d568849
+2025-11-05 15:44:27,606 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 3 : Adding hilite translator to handler 11e91aa5-bde8-4907-a826-72e21e4fad7c
+2025-11-05 15:44:27,606 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 3 : Adding hilite translator to handler efa6c41c-8458-416d-8f47-58cdbd8f3b14
+2025-11-05 15:44:27,606 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 3 : Adding hilite translator to handler e8abf4c7-dd19-4452-ab22-b41d6d568849
+2025-11-05 15:44:27,606 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 3 : Adding hilite translator to handler 11e91aa5-bde8-4907-a826-72e21e4fad7c
+2025-11-05 15:44:27,606 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 3 : Adding hilite translator to handler b9b7c084-26a2-4bae-85e2-73d6e6c6e2ce
+2025-11-05 15:44:27,639 : DEBUG : ModalContext :  : Node : CSV Reader : 3:148 : Configure succeeded. (CSV Reader)
+2025-11-05 15:44:27,641 : DEBUG : ModalContext :  : Node : Excel Reader : 3:149 : Configure succeeded. (Excel Reader)
+2025-11-05 15:44:27,677 : DEBUG : ModalContext :  : Node : Joiner : 3:150 : Configure succeeded. (Joiner)
+2025-11-05 15:44:27,680 : DEBUG : ModalContext :  : Node : Number to String : 3:144 : Configure succeeded. (Number to String)
+2025-11-05 15:44:27,681 : DEBUG : ModalContext :  : Node : Normalizer (PMML) : 3:139 : Configure succeeded. (Normalizer (PMML))
+2025-11-05 15:44:27,683 : DEBUG : ModalContext :  : Node : ClusterNodeFactory2 : 3:138 : Configure succeeded. (ClusterNodeFactory2)
+2025-11-05 15:44:27,683 : DEBUG : ModalContext :  : Node : Denormalizer (PMML) : 3:141 : Configure succeeded. (Denormalizer (PMML))
+2025-11-05 15:44:27,684 : DEBUG : ModalContext :  : Node : Denormalizer (PMML) : 3:140 : Configure succeeded. (Denormalizer (PMML))
+2025-11-05 15:44:43,590 : DEBUG : main :  : Node : Denormalizer (PMML) : 3:140 : clean output ports.
+2025-11-05 15:44:43,590 : DEBUG : main :  : Node : Denormalizer (PMML) : 3:141 : clean output ports.
+2025-11-05 15:44:43,590 : DEBUG : main :  : Node : ClusterNodeFactory2 : 3:138 : clean output ports.
+2025-11-05 15:44:43,590 : DEBUG : main :  : Node : Normalizer (PMML) : 3:139 : clean output ports.
+2025-11-05 15:44:43,590 : DEBUG : main :  : Node : Number to String : 3:144 : clean output ports.
+2025-11-05 15:44:43,591 : DEBUG : main :  : Node : Joiner : 3:150 : clean output ports.
+2025-11-05 15:44:43,591 : DEBUG : main :  : Node : Excel Reader : 3:149 : clean output ports.
+2025-11-05 15:44:43,591 : DEBUG : main :  : Node : CSV Reader : 3:148 : clean output ports.
+2025-11-05 16:19:49,623 : DEBUG : ModalContext :  : ClusterNodeFactory2 : Basic Customer Segmentation Use Case : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 16:19:49,623 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 3 : Adding hilite translator to handler d2939b61-c15f-470a-896b-e513ecc4e611
+2025-11-05 16:19:49,625 : DEBUG : ModalContext :  : NormalizerPMMLNodeFactory2 : Basic Customer Segmentation Use Case : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 16:19:49,627 : DEBUG : ModalContext :  : NormalizerPMMLDeNodeFactory : Basic Customer Segmentation Use Case : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 16:19:49,627 : DEBUG : ModalContext :  : NormalizerPMMLDeNodeFactory : Basic Customer Segmentation Use Case : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 16:19:49,627 : DEBUG : ModalContext :  : NumberToString2NodeFactory : Basic Customer Segmentation Use Case : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 16:19:49,628 : DEBUG : ModalContext :  : CSVTableReaderNodeFactory : Basic Customer Segmentation Use Case : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 16:19:49,630 : DEBUG : ModalContext :  : ExcelTableReaderNodeFactory : Basic Customer Segmentation Use Case : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 16:19:49,631 : DEBUG : ModalContext :  : Joiner3NodeFactory : Basic Customer Segmentation Use Case : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 16:19:49,631 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 3 : Adding hilite translator to handler be490d8a-8560-4a56-a128-978642b15836
+2025-11-05 16:19:49,631 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 3 : Adding hilite translator to handler 50dbfa65-dbc4-4b19-991a-d104c41f5556
+2025-11-05 16:19:49,631 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 3 : Adding hilite translator to handler 2e2b3a5d-5d8a-4374-af98-644d787b10b4
+2025-11-05 16:19:49,631 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 3 : Adding hilite translator to handler be490d8a-8560-4a56-a128-978642b15836
+2025-11-05 16:19:49,631 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 3 : Adding hilite translator to handler 50dbfa65-dbc4-4b19-991a-d104c41f5556
+2025-11-05 16:19:49,631 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 3 : Adding hilite translator to handler a236172b-ece8-45cb-be1f-39448a6872d8
+2025-11-05 16:19:49,633 : DEBUG : ModalContext :  : Node : CSV Reader : 3:148 : Configure succeeded. (CSV Reader)
+2025-11-05 16:19:49,634 : DEBUG : ModalContext :  : Node : Excel Reader : 3:149 : Configure succeeded. (Excel Reader)
+2025-11-05 16:19:49,650 : DEBUG : ModalContext :  : Node : Joiner : 3:150 : Configure succeeded. (Joiner)
+2025-11-05 16:19:49,651 : DEBUG : ModalContext :  : Node : Number to String : 3:144 : Configure succeeded. (Number to String)
+2025-11-05 16:19:49,652 : DEBUG : ModalContext :  : Node : Normalizer (PMML) : 3:139 : Configure succeeded. (Normalizer (PMML))
+2025-11-05 16:19:49,653 : DEBUG : ModalContext :  : Node : k-Means (deprecated) : 3:138 : Configure succeeded. (k-Means (deprecated))
+2025-11-05 16:19:49,653 : DEBUG : ModalContext :  : Node : Denormalizer (PMML) : 3:141 : Configure succeeded. (Denormalizer (PMML))
+2025-11-05 16:19:49,653 : DEBUG : ModalContext :  : Node : Denormalizer (PMML) : 3:140 : Configure succeeded. (Denormalizer (PMML))
+2025-11-05 16:19:58,772 : DEBUG : comm-pool-thread-2 :  : ClusterNodeFactory3 : Basic Customer Segmentation Use Case : 3 : Factory is already initialized. Nothing to do.
+2025-11-05 16:19:58,772 : DEBUG : comm-pool-thread-2 :  : HiLiteHandler : Basic Customer Segmentation Use Case : 3 : Adding hilite translator to handler f07f985f-7cc9-4309-b55b-a576c9bade89
+2025-11-05 16:19:58,773 : DEBUG : comm-pool-thread-2 :  : WorkflowManager : Basic Customer Segmentation Use Case : 3 : Added new node 3:151
+2025-11-05 16:19:58,773 : DEBUG : comm-pool-thread-2 :  : NodeContainer : Basic Customer Segmentation Use Case : 3 : Setting dirty flag on Basic Customer Segmentation Use Case 3
+2025-11-05 16:19:58,775 : DEBUG : comm-pool-thread-2 :  : HiLiteHandler : Basic Customer Segmentation Use Case : 3 : Adding hilite translator to handler ca738bd5-3943-458d-8e45-e335af132610
+2025-11-05 16:19:58,775 : DEBUG : comm-pool-thread-2 :  : Node : k-Means : 3:151 : Configure succeeded. (k-Means)
+2025-11-05 16:19:58,775 : DEBUG : comm-pool-thread-2 :  : NodeContainer : Basic Customer Segmentation Use Case : 3 : k-Means 3:151 has new state: CONFIGURED
+2025-11-05 16:19:58,775 : DEBUG : comm-pool-thread-2 :  : WorkflowManager : Basic Customer Segmentation Use Case : 3 : Added new connection from node 3:139(1) to node 3:151(1)
+2025-11-05 16:19:58,827 : DEBUG : comm-pool-thread-4 :  : ExecutionContext : k-Means : 3:151 : No file store handler set on "k-Means" (possibly running in 3rd party executor)
+2025-11-05 16:19:58,828 : DEBUG : comm-pool-thread-4 :  : DataValueImageRendererRegistry : k-Means : 3:151 : New batch of to-be-rendered images started for table with id 'spec_3_151'.
+2025-11-05 16:20:00,454 : DEBUG : comm-pool-thread-4 :  : ExecutionContext : k-Means (deprecated) : 3:138 : No file store handler set on "k-Means (deprecated)" (possibly running in 3rd party executor)
+2025-11-05 16:20:00,455 : DEBUG : comm-pool-thread-4 :  : DataValueImageRendererRegistry : k-Means (deprecated) : 3:138 : New batch of to-be-rendered images started for table with id 'spec_3_138'.
+2025-11-05 16:20:02,067 : DEBUG : main :  : VariableTypeRegistry : k-Means (deprecated) : 3:138 : The following variable types could all correspond to the config 'ExclList': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:20:07,668 : DEBUG : AWT-EventQueue-0 :  : VariableTypeRegistry : k-Means (deprecated) : 3:138 : The following variable types could all correspond to the config 'ExclList': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:20:09,852 : DEBUG : AWT-EventQueue-0 :  : VariableTypeRegistry : k-Means (deprecated) : 3:138 : The following variable types could all correspond to the config 'ExclList': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:20:09,860 : DEBUG : AWT-EventQueue-0 :  : VariableTypeRegistry : k-Means (deprecated) : 3:138 : The following variable types could all correspond to the config 'ExclList': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:20:13,970 : DEBUG : comm-pool-thread-4 :  : ExecutionContext : k-Means : 3:151 : No file store handler set on "k-Means" (possibly running in 3rd party executor)
+2025-11-05 16:20:13,971 : DEBUG : comm-pool-thread-4 :  : DataValueImageRendererRegistry : k-Means : 3:151 : New batch of to-be-rendered images started for table with id 'spec_3_151'.
+2025-11-05 16:20:22,773 : DEBUG : comm-pool-thread-2 :  : Node : k-Means : 3:151 : reset
+2025-11-05 16:20:22,773 : DEBUG : comm-pool-thread-2 :  : Node : k-Means : 3:151 : clean output ports.
+2025-11-05 16:20:22,773 : DEBUG : comm-pool-thread-2 :  : SelectionEventBus : k-Means : 3:151 : Selection event emitter removed for node 3:151. Num emitters: 0
+2025-11-05 16:20:22,773 : DEBUG : comm-pool-thread-2 :  : DataValueImageRendererRegistry : k-Means : 3:151 : Cached image data cleared for table with id 'spec_3_151'. There is still image data cached for 0 tables
+2025-11-05 16:20:22,773 : DEBUG : comm-pool-thread-2 :  : SelectionEventBus : k-Means : 3:151 : Selection event emitter removed for node 3:151. Num emitters: 0
+2025-11-05 16:20:22,773 : DEBUG : comm-pool-thread-2 :  : NodeContainer : k-Means : 3:151 : k-Means 3:151 has new state: IDLE
+2025-11-05 16:20:22,774 : DEBUG : comm-pool-thread-2 :  : VariableTypeRegistry : k-Means : 3:151 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:20:22,774 : DEBUG : comm-pool-thread-2 :  : VariableTypeRegistry : k-Means : 3:151 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:20:22,775 : DEBUG : comm-pool-thread-2 :  : Node : k-Means : 3:151 : Configure succeeded. (k-Means)
+2025-11-05 16:20:22,775 : DEBUG : comm-pool-thread-2 :  : NodeContainer : k-Means : 3:151 : k-Means 3:151 has new state: CONFIGURED
+2025-11-05 16:20:22,782 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : WorkflowManager : CSV Reader : 3:148 : CSV Reader 3:148 doBeforePreExecution
+2025-11-05 16:20:22,783 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : NodeContainer : CSV Reader : 3:148 : CSV Reader 3:148 has new state: PREEXECUTE
+2025-11-05 16:20:22,783 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : WorkflowManager : Excel Reader : 3:149 : Excel Reader 3:149 doBeforePreExecution
+2025-11-05 16:20:22,783 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : NodeContainer : Excel Reader : 3:149 : Excel Reader 3:149 has new state: PREEXECUTE
+2025-11-05 16:20:22,783 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : WorkflowDataRepository : CSV Reader : 3:148 : Adding handler 7b559341-06d5-490f-9923-545550a63a01 (CSV Reader 3:148: <no directory>) - 2 in total
+2025-11-05 16:20:22,783 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : WorkflowDataRepository : Excel Reader : 3:149 : Adding handler 3514b5ef-84df-40ea-bd77-1985f6a4afca (Excel Reader 3:149: <no directory>) - 2 in total
+2025-11-05 16:20:22,783 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : WorkflowManager : CSV Reader : 3:148 : CSV Reader 3:148 doBeforeExecution
+2025-11-05 16:20:22,783 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : NodeContainer : CSV Reader : 3:148 : CSV Reader 3:148 has new state: EXECUTING
+2025-11-05 16:20:22,783 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : WorkflowManager : Excel Reader : 3:149 : Excel Reader 3:149 doBeforeExecution
+2025-11-05 16:20:22,783 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : NodeContainer : Excel Reader : 3:149 : Excel Reader 3:149 has new state: EXECUTING
+2025-11-05 16:20:22,783 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : LocalNodeExecutionJob : CSV Reader : 3:148 : CSV Reader 3:148 Start execute
+2025-11-05 16:20:22,783 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : LocalNodeExecutionJob : Excel Reader : 3:149 : Excel Reader 3:149 Start execute
+2025-11-05 16:20:22,933 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : ExecutionContext : CSV Reader : 3:148 : Using Table Backend "BufferedTableBackend".
+2025-11-05 16:20:22,948 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : BufferSettings : CSV Reader : 3:148 : Using table format org.knime.core.data.container.DefaultTableStoreFormat
+2025-11-05 16:20:22,989 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : ExecutionContext : CSV Reader : 3:148 : Using Table Backend "BufferedTableBackend".
+2025-11-05 16:20:22,992 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : ExecutionContext : CSV Reader : 3:148 : Using Table Backend "BufferedTableBackend".
+2025-11-05 16:20:22,997 : INFO  : KNIME-Worker-12-CSV Reader 3:148 :  : LocalNodeExecutionJob : CSV Reader : 3:148 : CSV Reader 3:148 End execute (0 secs)
+2025-11-05 16:20:22,998 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : WorkflowManager : CSV Reader : 3:148 : CSV Reader 3:148 doBeforePostExecution
+2025-11-05 16:20:22,998 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : NodeContainer : CSV Reader : 3:148 : CSV Reader 3:148 has new state: POSTEXECUTE
+2025-11-05 16:20:22,999 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : WorkflowManager : CSV Reader : 3:148 : CSV Reader 3:148 doAfterExecute - success
+2025-11-05 16:20:22,999 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : NodeContainer : CSV Reader : 3:148 : CSV Reader 3:148 has new state: EXECUTED
+2025-11-05 16:20:23,000 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : Node : Joiner : 3:150 : Configure succeeded. (Joiner)
+2025-11-05 16:20:23,001 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : Node : Number to String : 3:144 : Configure succeeded. (Number to String)
+2025-11-05 16:20:23,001 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : Node : Normalizer (PMML) : 3:139 : Configure succeeded. (Normalizer (PMML))
+2025-11-05 16:20:23,002 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : Node : k-Means (deprecated) : 3:138 : Configure succeeded. (k-Means (deprecated))
+2025-11-05 16:20:23,002 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : Node : Denormalizer (PMML) : 3:141 : Configure succeeded. (Denormalizer (PMML))
+2025-11-05 16:20:23,002 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : Node : Denormalizer (PMML) : 3:140 : Configure succeeded. (Denormalizer (PMML))
+2025-11-05 16:20:23,003 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : VariableTypeRegistry : k-Means : 3:151 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:20:23,003 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : VariableTypeRegistry : k-Means : 3:151 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:20:23,004 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : Node : k-Means : 3:151 : Configure succeeded. (k-Means)
+2025-11-05 16:20:23,011 : DEBUG : KNIME-BackgroundTableWriter-1 :  : Buffer : CSV Reader : 3:148 : Buffer file (/tmp/knime_Basic Customer _17666/knime_container_20251105_15214369517806418587.bin.snappy) is 0.072MB in size
+2025-11-05 16:20:23,042 : DEBUG : comm-pool-thread-2 :  : VariableTypeRegistry : k-Means : 3:151 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:20:23,042 : DEBUG : comm-pool-thread-2 :  : VariableTypeRegistry : k-Means : 3:151 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:20:23,116 : DEBUG : KNIME-Excel-Parser-0 :  : ExcelParserRunnable : Excel Reader : 3:149 : Excel sheet parsing started
+2025-11-05 16:20:23,212 : DEBUG : KNIME-Excel-Parser-0 :  : ExcelParserRunnable : Excel Reader : 3:149 : Excel sheet parsing finished successfully
+2025-11-05 16:20:23,212 : DEBUG : KNIME-Excel-Parser-0 :  : ExcelParserRunnable : Excel Reader : 3:149 : Closing Excel sheet parser resources
+2025-11-05 16:20:23,214 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : ExecutionContext : Excel Reader : 3:149 : Using Table Backend "BufferedTableBackend".
+2025-11-05 16:20:23,276 : DEBUG : KNIME-Excel-Parser-0 :  : ExcelParserRunnable : Excel Reader : 3:149 : Excel sheet parsing started
+2025-11-05 16:20:23,277 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : BufferSettings : Excel Reader : 3:149 : Using table format org.knime.core.data.container.DefaultTableStoreFormat
+2025-11-05 16:20:23,333 : DEBUG : KNIME-Excel-Parser-0 :  : ExcelParserRunnable : Excel Reader : 3:149 : Excel sheet parsing finished successfully
+2025-11-05 16:20:23,333 : DEBUG : KNIME-Excel-Parser-0 :  : ExcelParserRunnable : Excel Reader : 3:149 : Closing Excel sheet parser resources
+2025-11-05 16:20:23,337 : INFO  : KNIME-Worker-13-Excel Reader 3:149 :  : LocalNodeExecutionJob : Excel Reader : 3:149 : Excel Reader 3:149 End execute (0 secs)
+2025-11-05 16:20:23,337 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : WorkflowManager : Excel Reader : 3:149 : Excel Reader 3:149 doBeforePostExecution
+2025-11-05 16:20:23,337 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : NodeContainer : Excel Reader : 3:149 : Excel Reader 3:149 has new state: POSTEXECUTE
+2025-11-05 16:20:23,337 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : WorkflowManager : Excel Reader : 3:149 : Excel Reader 3:149 doAfterExecute - success
+2025-11-05 16:20:23,338 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : NodeContainer : Excel Reader : 3:149 : Excel Reader 3:149 has new state: EXECUTED
+2025-11-05 16:20:23,339 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : Node : Joiner : 3:150 : Configure succeeded. (Joiner)
+2025-11-05 16:20:23,339 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : NodeContainer : Excel Reader : 3:149 : Joiner 3:150 has new state: CONFIGURED_QUEUED
+2025-11-05 16:20:23,340 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : Node : Number to String : 3:144 : Configure succeeded. (Number to String)
+2025-11-05 16:20:23,341 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : Node : Normalizer (PMML) : 3:139 : Configure succeeded. (Normalizer (PMML))
+2025-11-05 16:20:23,343 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : WorkflowManager : Joiner : 3:150 : Joiner 3:150 doBeforePreExecution
+2025-11-05 16:20:23,343 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : NodeContainer : Joiner : 3:150 : Joiner 3:150 has new state: PREEXECUTE
+2025-11-05 16:20:23,343 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : WorkflowDataRepository : Joiner : 3:150 : Adding handler 65746d18-0e38-404d-af45-9ece4dccc0fd (Joiner 3:150: <no directory>) - 3 in total
+2025-11-05 16:20:23,343 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : WorkflowManager : Joiner : 3:150 : Joiner 3:150 doBeforeExecution
+2025-11-05 16:20:23,343 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : NodeContainer : Joiner : 3:150 : Joiner 3:150 has new state: EXECUTING
+2025-11-05 16:20:23,343 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : LocalNodeExecutionJob : Joiner : 3:150 : Joiner 3:150 Start execute
+2025-11-05 16:20:23,354 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : ExecutionContext : Joiner : 3:150 : Using Table Backend "BufferedTableBackend".
+2025-11-05 16:20:23,361 : DEBUG : KNIME-BackgroundTableWriter-1 :  : Buffer : Excel Reader : 3:149 : Buffer file (/tmp/knime_Basic Customer _17666/knime_container_20251105_6490998497057564099.bin.snappy) is 0.212MB in size
+2025-11-05 16:20:23,382 : DEBUG : comm-pool-thread-2 :  : VariableTypeRegistry : k-Means : 3:151 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:20:23,382 : DEBUG : comm-pool-thread-2 :  : VariableTypeRegistry : k-Means : 3:151 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:20:23,397 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : BufferSettings : Joiner : 3:150 : Using table format org.knime.core.data.container.DefaultTableStoreFormat
+2025-11-05 16:20:23,416 : INFO  : KNIME-Worker-14-Joiner 3:150 :  : LocalNodeExecutionJob : Joiner : 3:150 : Joiner 3:150 End execute (0 secs)
+2025-11-05 16:20:23,416 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : WorkflowManager : Joiner : 3:150 : Joiner 3:150 doBeforePostExecution
+2025-11-05 16:20:23,416 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : NodeContainer : Joiner : 3:150 : Joiner 3:150 has new state: POSTEXECUTE
+2025-11-05 16:20:23,416 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : WorkflowManager : Joiner : 3:150 : Joiner 3:150 doAfterExecute - success
+2025-11-05 16:20:23,417 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : NodeContainer : Joiner : 3:150 : Joiner 3:150 has new state: EXECUTED
+2025-11-05 16:20:23,418 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : Node : Number to String : 3:144 : Configure succeeded. (Number to String)
+2025-11-05 16:20:23,419 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : NodeContainer : Joiner : 3:150 : Number to String 3:144 has new state: CONFIGURED_QUEUED
+2025-11-05 16:20:23,420 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : WorkflowManager : Number to String : 3:144 : Number to String 3:144 doBeforePreExecution
+2025-11-05 16:20:23,420 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : NodeContainer : Number to String : 3:144 : Number to String 3:144 has new state: PREEXECUTE
+2025-11-05 16:20:23,420 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : WorkflowDataRepository : Number to String : 3:144 : Adding handler c1c7f553-406d-4cde-aba4-4b774b8f6cc6 (Number to String 3:144: <no directory>) - 4 in total
+2025-11-05 16:20:23,420 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : WorkflowManager : Number to String : 3:144 : Number to String 3:144 doBeforeExecution
+2025-11-05 16:20:23,420 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : NodeContainer : Number to String : 3:144 : Number to String 3:144 has new state: EXECUTING
+2025-11-05 16:20:23,420 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : LocalNodeExecutionJob : Number to String : 3:144 : Number to String 3:144 Start execute
+2025-11-05 16:20:23,421 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : ExecutionContext : Number to String : 3:144 : Using Table Backend "BufferedTableBackend".
+2025-11-05 16:20:23,423 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : ExecutionContext : Number to String : 3:144 : Using Table Backend "BufferedTableBackend".
+2025-11-05 16:20:23,424 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : BufferSettings : Number to String : 3:144 : Using table format org.knime.core.data.container.DefaultTableStoreFormat
+2025-11-05 16:20:23,433 : DEBUG : KNIME-BackgroundTableWriter-1 :  : Buffer : Joiner : 3:150 : Buffer file (/tmp/knime_Basic Customer _17666/knime_container_20251105_6088301139947535481.bin.snappy) is 0.266MB in size
+2025-11-05 16:20:23,438 : INFO  : KNIME-Worker-15-Number to String 3:144 :  : LocalNodeExecutionJob : Number to String : 3:144 : Number to String 3:144 End execute (0 secs)
+2025-11-05 16:20:23,439 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : WorkflowManager : Number to String : 3:144 : Number to String 3:144 doBeforePostExecution
+2025-11-05 16:20:23,439 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : NodeContainer : Number to String : 3:144 : Number to String 3:144 has new state: POSTEXECUTE
+2025-11-05 16:20:23,439 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : WorkflowManager : Number to String : 3:144 : Number to String 3:144 doAfterExecute - success
+2025-11-05 16:20:23,439 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : NodeContainer : Number to String : 3:144 : Number to String 3:144 has new state: EXECUTED
+2025-11-05 16:20:23,439 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : Node : Normalizer (PMML) : 3:139 : Configure succeeded. (Normalizer (PMML))
+2025-11-05 16:20:23,440 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : NodeContainer : Number to String : 3:144 : Normalizer (PMML) 3:139 has new state: CONFIGURED_QUEUED
+2025-11-05 16:20:23,441 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : Node : k-Means (deprecated) : 3:138 : Configure succeeded. (k-Means (deprecated))
+2025-11-05 16:20:23,441 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : Node : Denormalizer (PMML) : 3:141 : Configure succeeded. (Denormalizer (PMML))
+2025-11-05 16:20:23,441 : DEBUG : KNIME-BackgroundTableWriter-1 :  : Buffer : Number to String : 3:144 : Buffer file (/tmp/knime_Basic Customer _17666/knime_container_20251105_10199433027903834215.bin.snappy) is 0.007MB in size
+2025-11-05 16:20:23,441 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : Node : Denormalizer (PMML) : 3:140 : Configure succeeded. (Denormalizer (PMML))
+2025-11-05 16:20:23,442 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : VariableTypeRegistry : k-Means : 3:151 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:20:23,442 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : VariableTypeRegistry : k-Means : 3:151 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:20:23,443 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : Node : k-Means : 3:151 : Configure succeeded. (k-Means)
+2025-11-05 16:20:23,443 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : WorkflowManager : Normalizer (PMML) : 3:139 : Normalizer (PMML) 3:139 doBeforePreExecution
+2025-11-05 16:20:23,443 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : NodeContainer : Normalizer (PMML) : 3:139 : Normalizer (PMML) 3:139 has new state: PREEXECUTE
+2025-11-05 16:20:23,444 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : WorkflowDataRepository : Normalizer (PMML) : 3:139 : Adding handler 1a1709b3-ff93-4767-9ca7-82ee29eb57d2 (Normalizer (PMML) 3:139: <no directory>) - 5 in total
+2025-11-05 16:20:23,444 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : WorkflowManager : Normalizer (PMML) : 3:139 : Normalizer (PMML) 3:139 doBeforeExecution
+2025-11-05 16:20:23,444 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : NodeContainer : Normalizer (PMML) : 3:139 : Normalizer (PMML) 3:139 has new state: EXECUTING
+2025-11-05 16:20:23,444 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : LocalNodeExecutionJob : Normalizer (PMML) : 3:139 : Normalizer (PMML) 3:139 Start execute
+2025-11-05 16:20:23,528 : DEBUG : comm-pool-thread-2 :  : VariableTypeRegistry : k-Means : 3:151 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:20:23,528 : DEBUG : comm-pool-thread-2 :  : VariableTypeRegistry : k-Means : 3:151 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:20:23,536 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : ExecutionContext : Normalizer (PMML) : 3:139 : Using Table Backend "BufferedTableBackend".
+2025-11-05 16:20:23,539 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : BufferSettings : Normalizer (PMML) : 3:139 : Using table format org.knime.core.data.container.DefaultTableStoreFormat
+2025-11-05 16:20:23,561 : DEBUG : KNIME-BackgroundTableWriter-1 :  : Buffer : Normalizer (PMML) : 3:139 : Buffer file (/tmp/knime_Basic Customer _17666/knime_container_20251105_823118333752011243.bin.snappy) is 0.392MB in size
+2025-11-05 16:20:23,577 : INFO  : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : LocalNodeExecutionJob : Normalizer (PMML) : 3:139 : Normalizer (PMML) 3:139 End execute (0 secs)
+2025-11-05 16:20:23,578 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : WorkflowManager : Normalizer (PMML) : 3:139 : Normalizer (PMML) 3:139 doBeforePostExecution
+2025-11-05 16:20:23,578 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : NodeContainer : Normalizer (PMML) : 3:139 : Normalizer (PMML) 3:139 has new state: POSTEXECUTE
+2025-11-05 16:20:23,578 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : WorkflowManager : Normalizer (PMML) : 3:139 : Normalizer (PMML) 3:139 doAfterExecute - success
+2025-11-05 16:20:23,578 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : NodeContainer : Normalizer (PMML) : 3:139 : Normalizer (PMML) 3:139 has new state: EXECUTED
+2025-11-05 16:20:23,578 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : HiLiteHandler : Normalizer (PMML) : 3:139 : Removing hilite translator from handler ca738bd5-3943-458d-8e45-e335af132610
+2025-11-05 16:20:23,578 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : HiLiteHandler : Normalizer (PMML) : 3:139 : Adding hilite translator to handler be490d8a-8560-4a56-a128-978642b15836
+2025-11-05 16:20:23,578 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : Node : k-Means (deprecated) : 3:138 : Configure succeeded. (k-Means (deprecated))
+2025-11-05 16:20:23,579 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : Node : Denormalizer (PMML) : 3:141 : Configure succeeded. (Denormalizer (PMML))
+2025-11-05 16:20:23,579 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : Node : Denormalizer (PMML) : 3:140 : Configure succeeded. (Denormalizer (PMML))
+2025-11-05 16:20:23,579 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : HiLiteHandler : Normalizer (PMML) : 3:139 : Removing hilite translator from handler ca738bd5-3943-458d-8e45-e335af132610
+2025-11-05 16:20:23,579 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : HiLiteHandler : Normalizer (PMML) : 3:139 : Adding hilite translator to handler be490d8a-8560-4a56-a128-978642b15836
+2025-11-05 16:20:23,579 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : VariableTypeRegistry : k-Means : 3:151 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:20:23,579 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : VariableTypeRegistry : k-Means : 3:151 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:20:23,581 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : Node : k-Means : 3:151 : Configure succeeded. (k-Means)
+2025-11-05 16:20:23,581 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : NodeContainer : Normalizer (PMML) : 3:139 : k-Means 3:151 has new state: CONFIGURED_QUEUED
+2025-11-05 16:20:23,581 : DEBUG : KNIME-Worker-17-k-Means 3:151 :  : WorkflowManager : k-Means : 3:151 : k-Means 3:151 doBeforePreExecution
+2025-11-05 16:20:23,581 : DEBUG : KNIME-Worker-17-k-Means 3:151 :  : NodeContainer : k-Means : 3:151 : k-Means 3:151 has new state: PREEXECUTE
+2025-11-05 16:20:23,582 : DEBUG : KNIME-Worker-17-k-Means 3:151 :  : WorkflowDataRepository : k-Means : 3:151 : Adding handler 2f6c32fa-f80d-4699-95e5-9e4aa1a5e7fd (k-Means 3:151: <no directory>) - 6 in total
+2025-11-05 16:20:23,582 : DEBUG : KNIME-Worker-17-k-Means 3:151 :  : WorkflowManager : k-Means : 3:151 : k-Means 3:151 doBeforeExecution
+2025-11-05 16:20:23,582 : DEBUG : KNIME-Worker-17-k-Means 3:151 :  : NodeContainer : k-Means : 3:151 : k-Means 3:151 has new state: EXECUTING
+2025-11-05 16:20:23,582 : DEBUG : KNIME-Worker-17-k-Means 3:151 :  : LocalNodeExecutionJob : k-Means : 3:151 : k-Means 3:151 Start execute
+2025-11-05 16:20:23,622 : DEBUG : comm-pool-thread-2 :  : VariableTypeRegistry : k-Means : 3:151 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:20:23,622 : DEBUG : comm-pool-thread-2 :  : VariableTypeRegistry : k-Means : 3:151 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:20:23,769 : DEBUG : KNIME-Worker-17-k-Means 3:151 :  : ExecutionContext : k-Means : 3:151 : Using Table Backend "BufferedTableBackend".
+2025-11-05 16:20:23,769 : DEBUG : KNIME-Worker-17-k-Means 3:151 :  : BufferSettings : k-Means : 3:151 : Using table format org.knime.core.data.container.DefaultTableStoreFormat
+2025-11-05 16:20:23,790 : DEBUG : KNIME-BackgroundTableWriter-1 :  : Buffer : k-Means : 3:151 : Buffer file (/tmp/knime_Basic Customer _17666/knime_container_20251105_4172493724120274610.bin.snappy) is 0.4MB in size
+2025-11-05 16:20:23,799 : DEBUG : KNIME-Worker-17-k-Means 3:151 :  : ExecutionContext : k-Means : 3:151 : Using Table Backend "BufferedTableBackend".
+2025-11-05 16:20:23,800 : DEBUG : KNIME-Worker-17-k-Means 3:151 :  : BufferSettings : k-Means : 3:151 : Using table format org.knime.core.data.container.DefaultTableStoreFormat
+2025-11-05 16:20:23,800 : INFO  : KNIME-Worker-17-k-Means 3:151 :  : LocalNodeExecutionJob : k-Means : 3:151 : k-Means 3:151 End execute (0 secs)
+2025-11-05 16:20:23,800 : DEBUG : KNIME-Worker-17-k-Means 3:151 :  : WorkflowManager : k-Means : 3:151 : k-Means 3:151 doBeforePostExecution
+2025-11-05 16:20:23,801 : DEBUG : KNIME-Worker-17-k-Means 3:151 :  : NodeContainer : k-Means : 3:151 : k-Means 3:151 has new state: POSTEXECUTE
+2025-11-05 16:20:23,801 : DEBUG : KNIME-Worker-17-k-Means 3:151 :  : WorkflowManager : k-Means : 3:151 : k-Means 3:151 doAfterExecute - success
+2025-11-05 16:20:23,801 : DEBUG : KNIME-Worker-17-k-Means 3:151 :  : NodeContainer : k-Means : 3:151 : k-Means 3:151 has new state: EXECUTED
+2025-11-05 16:20:23,801 : DEBUG : KNIME-Worker-17-k-Means 3:151 :  : NodeContainer : k-Means : 3:151 : Basic Customer Segmentation Use Case 3 has new state: CONFIGURED
+2025-11-05 16:20:23,853 : DEBUG : comm-pool-thread-2 :  : DataValueImageRendererRegistry : k-Means : 3:151 : New batch of to-be-rendered images started for table with id 'table_3_151_11'.
+2025-11-05 16:20:27,604 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:140 : reset
+2025-11-05 16:20:27,604 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:140 : clean output ports.
+2025-11-05 16:20:27,605 : DEBUG : comm-pool-thread-6 :  : NodeContainer : Basic Customer Segmentation Use Case : 3 : Setting dirty flag on Denormalizer (PMML) 3:140
+2025-11-05 16:20:27,605 : DEBUG : comm-pool-thread-6 :  : NodeContainer : Basic Customer Segmentation Use Case : 3 : Denormalizer (PMML) 3:140 has new state: IDLE
+2025-11-05 16:20:27,605 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:140 : Configure succeeded. (Denormalizer (PMML))
+2025-11-05 16:20:27,605 : DEBUG : comm-pool-thread-6 :  : NodeContainer : Basic Customer Segmentation Use Case : 3 : Denormalizer (PMML) 3:140 has new state: CONFIGURED
+2025-11-05 16:20:27,605 : DEBUG : comm-pool-thread-6 :  : WorkflowManager : Basic Customer Segmentation Use Case : 3 : Added new connection from node 3:151(1) to node 3:140(2)
+2025-11-05 16:20:30,690 : DEBUG : comm-pool-thread-2 :  : Node : Denormalizer (PMML) : 3:141 : reset
+2025-11-05 16:20:30,691 : DEBUG : comm-pool-thread-2 :  : Node : Denormalizer (PMML) : 3:141 : clean output ports.
+2025-11-05 16:20:30,691 : DEBUG : comm-pool-thread-2 :  : NodeContainer : Basic Customer Segmentation Use Case : 3 : Setting dirty flag on Denormalizer (PMML) 3:141
+2025-11-05 16:20:30,691 : DEBUG : comm-pool-thread-2 :  : NodeContainer : Basic Customer Segmentation Use Case : 3 : Denormalizer (PMML) 3:141 has new state: IDLE
+2025-11-05 16:20:30,691 : DEBUG : comm-pool-thread-2 :  : Node : Denormalizer (PMML) : 3:141 : Configure succeeded. (Denormalizer (PMML))
+2025-11-05 16:20:30,691 : DEBUG : comm-pool-thread-2 :  : NodeContainer : Basic Customer Segmentation Use Case : 3 : Denormalizer (PMML) 3:141 has new state: CONFIGURED
+2025-11-05 16:20:30,691 : DEBUG : comm-pool-thread-2 :  : WorkflowManager : Basic Customer Segmentation Use Case : 3 : Added new connection from node 3:151(2) to node 3:141(2)
+2025-11-05 16:20:32,638 : DEBUG : comm-pool-thread-2 :  : ExecutionContext : k-Means (deprecated) : 3:138 : No file store handler set on "k-Means (deprecated)" (possibly running in 3rd party executor)
+2025-11-05 16:20:32,639 : DEBUG : comm-pool-thread-2 :  : DataValueImageRendererRegistry : k-Means (deprecated) : 3:138 : New batch of to-be-rendered images started for table with id 'spec_3_138'.
+2025-11-05 16:20:33,692 : DEBUG : comm-pool-thread-6 :  : Node : k-Means (deprecated) : 3:138 : reset
+2025-11-05 16:20:33,692 : DEBUG : comm-pool-thread-6 :  : Node : k-Means (deprecated) : 3:138 : clean output ports.
+2025-11-05 16:20:33,692 : DEBUG : comm-pool-thread-6 :  : NodeContainer : Basic Customer Segmentation Use Case : 3 : Setting dirty flag on k-Means (deprecated) 3:138
+2025-11-05 16:20:33,692 : DEBUG : comm-pool-thread-6 :  : SelectionEventBus : Basic Customer Segmentation Use Case : 3 : Selection event emitter removed for node 3:138. Num emitters: 1
+2025-11-05 16:20:33,692 : DEBUG : comm-pool-thread-6 :  : SelectionEventBus : Basic Customer Segmentation Use Case : 3 : Selection event emitter removed for node 3:138. Num emitters: 1
+2025-11-05 16:20:33,692 : DEBUG : comm-pool-thread-6 :  : NodeContainer : Basic Customer Segmentation Use Case : 3 : k-Means (deprecated) 3:138 has new state: IDLE
+2025-11-05 16:20:33,693 : DEBUG : comm-pool-thread-6 :  : Node : k-Means (deprecated) : 3:138 : clean output ports.
+2025-11-05 16:20:37,667 : DEBUG : comm-pool-thread-6 :  : VariableTypeRegistry : k-Means : 3:151 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:20:37,667 : DEBUG : comm-pool-thread-6 :  : VariableTypeRegistry : k-Means : 3:151 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:20:37,684 : DEBUG : comm-pool-thread-2 :  : DataValueImageRendererRegistry : k-Means : 3:151 : New batch of to-be-rendered images started for table with id 'table_3_151_11'.
+2025-11-05 16:20:45,661 : DEBUG : ModalContext :  : FileSingleNodeContainerPersistor : Normalizer (PMML) : 3:139 : Replaced node directory "/home/magnus/runtime-KNIME/knime-workspace/Example Workflows/Customer Intelligence/Customer Segmentation/Basic Customer Segmentation Use Case/Normalizer _PMML_ (#139)"
+2025-11-05 16:20:45,675 : DEBUG : ModalContext :  : FileSingleNodeContainerPersistor : Denormalizer (PMML) : 3:140 : Replaced node directory "/home/magnus/runtime-KNIME/knime-workspace/Example Workflows/Customer Intelligence/Customer Segmentation/Basic Customer Segmentation Use Case/Denormalizer _PMML_ (#140)"
+2025-11-05 16:20:45,675 : DEBUG : ModalContext :  : FileSingleNodeContainerPersistor : Denormalizer (PMML) : 3:141 : Replaced node directory "/home/magnus/runtime-KNIME/knime-workspace/Example Workflows/Customer Intelligence/Customer Segmentation/Basic Customer Segmentation Use Case/Denormalizer _PMML_ (#141)"
+2025-11-05 16:20:45,676 : DEBUG : ModalContext :  : FileSingleNodeContainerPersistor : Number to String : 3:144 : Replaced node directory "/home/magnus/runtime-KNIME/knime-workspace/Example Workflows/Customer Intelligence/Customer Segmentation/Basic Customer Segmentation Use Case/Number To String (#144)"
+2025-11-05 16:20:45,678 : DEBUG : ModalContext :  : FileSingleNodeContainerPersistor : CSV Reader : 3:148 : Replaced node directory "/home/magnus/runtime-KNIME/knime-workspace/Example Workflows/Customer Intelligence/Customer Segmentation/Basic Customer Segmentation Use Case/CSV Reader (#148)"
+2025-11-05 16:20:45,683 : DEBUG : ModalContext :  : FileSingleNodeContainerPersistor : Excel Reader : 3:149 : Replaced node directory "/home/magnus/runtime-KNIME/knime-workspace/Example Workflows/Customer Intelligence/Customer Segmentation/Basic Customer Segmentation Use Case/Excel Reader (#149)"
+2025-11-05 16:20:45,686 : DEBUG : ModalContext :  : FileSingleNodeContainerPersistor : Joiner : 3:150 : Replaced node directory "/home/magnus/runtime-KNIME/knime-workspace/Example Workflows/Customer Intelligence/Customer Segmentation/Basic Customer Segmentation Use Case/Joiner (#150)"
+2025-11-05 16:20:45,690 : DEBUG : ModalContext :  : FileSingleNodeContainerPersistor : k-Means : 3:151 : Created node directory "/home/magnus/runtime-KNIME/knime-workspace/Example Workflows/Customer Intelligence/Customer Segmentation/Basic Customer Segmentation Use Case/k_Means (#151)"
+2025-11-05 16:20:45,693 : DEBUG : ModalContext :  : BufferSettings : k-Means : 3:151 : Using table format org.knime.core.data.container.DefaultTableStoreFormat
+2025-11-05 16:20:48,502 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : WorkflowManager : Denormalizer (PMML) : 3:140 : Denormalizer (PMML) 3:140 doBeforePreExecution
+2025-11-05 16:20:48,502 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : NodeContainer : Denormalizer (PMML) : 3:140 : Denormalizer (PMML) 3:140 has new state: PREEXECUTE
+2025-11-05 16:20:48,502 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : WorkflowDataRepository : Denormalizer (PMML) : 3:140 : Adding handler dbe8a133-d0d8-4b90-a840-d4bdbd5eb6c6 (Denormalizer (PMML) 3:140: <no directory>) - 7 in total
+2025-11-05 16:20:48,502 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : WorkflowManager : Denormalizer (PMML) : 3:140 : Denormalizer (PMML) 3:140 doBeforeExecution
+2025-11-05 16:20:48,502 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : NodeContainer : Denormalizer (PMML) : 3:140 : Denormalizer (PMML) 3:140 has new state: EXECUTING
+2025-11-05 16:20:48,502 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : LocalNodeExecutionJob : Denormalizer (PMML) : 3:140 : Denormalizer (PMML) 3:140 Start execute
+2025-11-05 16:20:48,508 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : ExecutionContext : Denormalizer (PMML) : 3:140 : Using Table Backend "BufferedTableBackend".
+2025-11-05 16:20:48,509 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : BufferSettings : Denormalizer (PMML) : 3:140 : Using table format org.knime.core.data.container.DefaultTableStoreFormat
+2025-11-05 16:20:48,516 : INFO  : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : LocalNodeExecutionJob : Denormalizer (PMML) : 3:140 : Denormalizer (PMML) 3:140 End execute (0 secs)
+2025-11-05 16:20:48,516 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : WorkflowManager : Denormalizer (PMML) : 3:140 : Denormalizer (PMML) 3:140 doBeforePostExecution
+2025-11-05 16:20:48,516 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : NodeContainer : Denormalizer (PMML) : 3:140 : Denormalizer (PMML) 3:140 has new state: POSTEXECUTE
+2025-11-05 16:20:48,517 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : WorkflowManager : Denormalizer (PMML) : 3:140 : Denormalizer (PMML) 3:140 doAfterExecute - success
+2025-11-05 16:20:48,517 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : NodeContainer : Denormalizer (PMML) : 3:140 : Denormalizer (PMML) 3:140 has new state: EXECUTED
+2025-11-05 16:20:48,517 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : NodeContainer : Denormalizer (PMML) : 3:140 : Basic Customer Segmentation Use Case 3 has new state: CONFIGURED
+2025-11-05 16:20:48,526 : DEBUG : KNIME-BackgroundTableWriter-1 :  : Buffer : Denormalizer (PMML) : 3:140 : Buffer file (/tmp/knime_Basic Customer _17666/knime_container_20251105_9680781393452724421.bin.snappy) is 0.325MB in size
+2025-11-05 16:20:50,249 : DEBUG : comm-pool-thread-6 :  : DataValueImageRendererRegistry : Denormalizer (PMML) : 3:140 : New batch of to-be-rendered images started for table with id 'table_3_140_14'.
+2025-11-05 16:20:55,788 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : WorkflowManager : Denormalizer (PMML) : 3:141 : Denormalizer (PMML) 3:141 doBeforePreExecution
+2025-11-05 16:20:55,788 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : NodeContainer : Denormalizer (PMML) : 3:141 : Denormalizer (PMML) 3:141 has new state: PREEXECUTE
+2025-11-05 16:20:55,789 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : WorkflowDataRepository : Denormalizer (PMML) : 3:141 : Adding handler 04bd9b9b-a030-4fe2-a0e1-108a94fc19f9 (Denormalizer (PMML) 3:141: <no directory>) - 8 in total
+2025-11-05 16:20:55,789 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : WorkflowManager : Denormalizer (PMML) : 3:141 : Denormalizer (PMML) 3:141 doBeforeExecution
+2025-11-05 16:20:55,789 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : NodeContainer : Denormalizer (PMML) : 3:141 : Denormalizer (PMML) 3:141 has new state: EXECUTING
+2025-11-05 16:20:55,789 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : LocalNodeExecutionJob : Denormalizer (PMML) : 3:141 : Denormalizer (PMML) 3:141 Start execute
+2025-11-05 16:20:55,793 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : ExecutionContext : Denormalizer (PMML) : 3:141 : Using Table Backend "BufferedTableBackend".
+2025-11-05 16:20:55,793 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : BufferSettings : Denormalizer (PMML) : 3:141 : Using table format org.knime.core.data.container.DefaultTableStoreFormat
+2025-11-05 16:20:55,793 : INFO  : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : LocalNodeExecutionJob : Denormalizer (PMML) : 3:141 : Denormalizer (PMML) 3:141 End execute (0 secs)
+2025-11-05 16:20:55,793 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : WorkflowManager : Denormalizer (PMML) : 3:141 : Denormalizer (PMML) 3:141 doBeforePostExecution
+2025-11-05 16:20:55,793 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : NodeContainer : Denormalizer (PMML) : 3:141 : Denormalizer (PMML) 3:141 has new state: POSTEXECUTE
+2025-11-05 16:20:55,793 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : WorkflowManager : Denormalizer (PMML) : 3:141 : Denormalizer (PMML) 3:141 doAfterExecute - success
+2025-11-05 16:20:55,793 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : NodeContainer : Denormalizer (PMML) : 3:141 : Denormalizer (PMML) 3:141 has new state: EXECUTED
+2025-11-05 16:20:55,794 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : NodeContainer : Denormalizer (PMML) : 3:141 : Basic Customer Segmentation Use Case 3 has new state: EXECUTED
+2025-11-05 16:21:02,013 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:141 : reset
+2025-11-05 16:21:02,013 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:141 : clean output ports.
+2025-11-05 16:21:02,015 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:140 : reset
+2025-11-05 16:21:02,015 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:140 : clean output ports.
+2025-11-05 16:21:02,018 : DEBUG : comm-pool-thread-6 :  : Node : k-Means : 3:151 : reset
+2025-11-05 16:21:02,018 : DEBUG : comm-pool-thread-6 :  : Node : k-Means : 3:151 : clean output ports.
+2025-11-05 16:21:02,018 : DEBUG : comm-pool-thread-6 :  : Node : Normalizer (PMML) : 3:139 : reset
+2025-11-05 16:21:02,018 : DEBUG : comm-pool-thread-6 :  : Node : Normalizer (PMML) : 3:139 : clean output ports.
+2025-11-05 16:21:02,018 : DEBUG : comm-pool-thread-6 :  : Node : Number to String : 3:144 : reset
+2025-11-05 16:21:02,019 : DEBUG : comm-pool-thread-6 :  : Node : Number to String : 3:144 : clean output ports.
+2025-11-05 16:21:02,019 : DEBUG : comm-pool-thread-6 :  : Node : Joiner : 3:150 : reset
+2025-11-05 16:21:02,019 : DEBUG : comm-pool-thread-6 :  : Node : Joiner : 3:150 : clean output ports.
+2025-11-05 16:21:02,019 : DEBUG : comm-pool-thread-6 :  : Node : Excel Reader : 3:149 : reset
+2025-11-05 16:21:02,019 : DEBUG : comm-pool-thread-6 :  : Node : Excel Reader : 3:149 : clean output ports.
+2025-11-05 16:21:02,020 : DEBUG : comm-pool-thread-6 :  : Node : Excel Reader : 3:149 : Configure succeeded. (Excel Reader)
+2025-11-05 16:21:02,020 : DEBUG : comm-pool-thread-6 :  : Node : Joiner : 3:150 : Configure succeeded. (Joiner)
+2025-11-05 16:21:02,021 : DEBUG : comm-pool-thread-6 :  : Node : Number to String : 3:144 : Configure succeeded. (Number to String)
+2025-11-05 16:21:02,021 : DEBUG : comm-pool-thread-6 :  : Node : Normalizer (PMML) : 3:139 : Configure succeeded. (Normalizer (PMML))
+2025-11-05 16:21:02,021 : DEBUG : comm-pool-thread-6 :  : VariableTypeRegistry : k-Means : 3:151 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:21:02,021 : DEBUG : comm-pool-thread-6 :  : VariableTypeRegistry : k-Means : 3:151 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:21:02,022 : DEBUG : comm-pool-thread-6 :  : Node : k-Means : 3:151 : Configure succeeded. (k-Means)
+2025-11-05 16:21:02,022 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:140 : Configure succeeded. (Denormalizer (PMML))
+2025-11-05 16:21:02,023 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:141 : Configure succeeded. (Denormalizer (PMML))
+2025-11-05 16:21:02,023 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:141 : reset
+2025-11-05 16:21:02,023 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:141 : clean output ports.
+2025-11-05 16:21:02,023 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:140 : reset
+2025-11-05 16:21:02,023 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:140 : clean output ports.
+2025-11-05 16:21:02,023 : DEBUG : comm-pool-thread-6 :  : Node : k-Means : 3:151 : reset
+2025-11-05 16:21:02,023 : DEBUG : comm-pool-thread-6 :  : Node : k-Means : 3:151 : clean output ports.
+2025-11-05 16:21:02,024 : DEBUG : comm-pool-thread-6 :  : Node : Normalizer (PMML) : 3:139 : reset
+2025-11-05 16:21:02,024 : DEBUG : comm-pool-thread-6 :  : Node : Normalizer (PMML) : 3:139 : clean output ports.
+2025-11-05 16:21:02,024 : DEBUG : comm-pool-thread-6 :  : Node : Number to String : 3:144 : reset
+2025-11-05 16:21:02,024 : DEBUG : comm-pool-thread-6 :  : Node : Number to String : 3:144 : clean output ports.
+2025-11-05 16:21:02,024 : DEBUG : comm-pool-thread-6 :  : Node : Joiner : 3:150 : reset
+2025-11-05 16:21:02,024 : DEBUG : comm-pool-thread-6 :  : Node : Joiner : 3:150 : clean output ports.
+2025-11-05 16:21:02,024 : DEBUG : comm-pool-thread-6 :  : Node : CSV Reader : 3:148 : reset
+2025-11-05 16:21:02,024 : DEBUG : comm-pool-thread-6 :  : Node : CSV Reader : 3:148 : clean output ports.
+2025-11-05 16:21:02,024 : DEBUG : comm-pool-thread-6 :  : BufferedContainerTable : CSV Reader : 3:148 : Failed to remove container table with id 4 from global table repository.
+2025-11-05 16:21:02,024 : DEBUG : comm-pool-thread-6 :  : BufferedContainerTable : CSV Reader : 3:148 : Failed to remove container table with id 4 from global table repository.
+2025-11-05 16:21:02,024 : DEBUG : comm-pool-thread-6 :  : Node : CSV Reader : 3:148 : Configure succeeded. (CSV Reader)
+2025-11-05 16:21:02,025 : DEBUG : comm-pool-thread-6 :  : Node : Joiner : 3:150 : Configure succeeded. (Joiner)
+2025-11-05 16:21:02,025 : DEBUG : comm-pool-thread-6 :  : Node : Number to String : 3:144 : Configure succeeded. (Number to String)
+2025-11-05 16:21:02,025 : DEBUG : comm-pool-thread-6 :  : Node : Normalizer (PMML) : 3:139 : Configure succeeded. (Normalizer (PMML))
+2025-11-05 16:21:02,026 : DEBUG : comm-pool-thread-6 :  : VariableTypeRegistry : k-Means : 3:151 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:21:02,026 : DEBUG : comm-pool-thread-6 :  : VariableTypeRegistry : k-Means : 3:151 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-05 16:21:02,026 : DEBUG : comm-pool-thread-6 :  : Node : k-Means : 3:151 : Configure succeeded. (k-Means)
+2025-11-05 16:21:02,026 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:140 : Configure succeeded. (Denormalizer (PMML))
+2025-11-05 16:21:02,027 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:141 : Configure succeeded. (Denormalizer (PMML))
+2025-11-05 16:21:04,189 : DEBUG : ModalContext :  : FileSingleNodeContainerPersistor : Normalizer (PMML) : 3:139 : Replaced node directory "/home/magnus/runtime-KNIME/knime-workspace/Example Workflows/Customer Intelligence/Customer Segmentation/Basic Customer Segmentation Use Case/Normalizer _PMML_ (#139)"
+2025-11-05 16:21:04,189 : DEBUG : ModalContext :  : FileSingleNodeContainerPersistor : Denormalizer (PMML) : 3:140 : Replaced node directory "/home/magnus/runtime-KNIME/knime-workspace/Example Workflows/Customer Intelligence/Customer Segmentation/Basic Customer Segmentation Use Case/Denormalizer _PMML_ (#140)"
+2025-11-05 16:21:04,190 : DEBUG : ModalContext :  : FileSingleNodeContainerPersistor : Denormalizer (PMML) : 3:141 : Replaced node directory "/home/magnus/runtime-KNIME/knime-workspace/Example Workflows/Customer Intelligence/Customer Segmentation/Basic Customer Segmentation Use Case/Denormalizer _PMML_ (#141)"
+2025-11-05 16:21:04,190 : DEBUG : ModalContext :  : FileSingleNodeContainerPersistor : Number to String : 3:144 : Replaced node directory "/home/magnus/runtime-KNIME/knime-workspace/Example Workflows/Customer Intelligence/Customer Segmentation/Basic Customer Segmentation Use Case/Number To String (#144)"
+2025-11-05 16:21:04,191 : DEBUG : ModalContext :  : FileSingleNodeContainerPersistor : CSV Reader : 3:148 : Replaced node directory "/home/magnus/runtime-KNIME/knime-workspace/Example Workflows/Customer Intelligence/Customer Segmentation/Basic Customer Segmentation Use Case/CSV Reader (#148)"
+2025-11-05 16:21:04,191 : DEBUG : ModalContext :  : FileSingleNodeContainerPersistor : Excel Reader : 3:149 : Replaced node directory "/home/magnus/runtime-KNIME/knime-workspace/Example Workflows/Customer Intelligence/Customer Segmentation/Basic Customer Segmentation Use Case/Excel Reader (#149)"
+2025-11-05 16:21:04,192 : DEBUG : ModalContext :  : FileSingleNodeContainerPersistor : Joiner : 3:150 : Replaced node directory "/home/magnus/runtime-KNIME/knime-workspace/Example Workflows/Customer Intelligence/Customer Segmentation/Basic Customer Segmentation Use Case/Joiner (#150)"
+2025-11-05 16:21:04,193 : DEBUG : ModalContext :  : FileSingleNodeContainerPersistor : k-Means : 3:151 : Replaced node directory "/home/magnus/runtime-KNIME/knime-workspace/Example Workflows/Customer Intelligence/Customer Segmentation/Basic Customer Segmentation Use Case/k_Means (#151)"
+2025-11-05 16:21:06,439 : DEBUG : main :  : Node : Denormalizer (PMML) : 3:141 : clean output ports.
+2025-11-05 16:21:06,439 : DEBUG : main :  : Node : Denormalizer (PMML) : 3:140 : clean output ports.
+2025-11-05 16:21:06,439 : DEBUG : main :  : Node : k-Means : 3:151 : clean output ports.
+2025-11-05 16:21:06,439 : DEBUG : main :  : Node : Normalizer (PMML) : 3:139 : clean output ports.
+2025-11-05 16:21:06,439 : DEBUG : main :  : Node : Number to String : 3:144 : clean output ports.
+2025-11-05 16:21:06,439 : DEBUG : main :  : Node : Joiner : 3:150 : clean output ports.
+2025-11-05 16:21:06,439 : DEBUG : main :  : Node : Excel Reader : 3:149 : clean output ports.
+2025-11-05 16:21:06,439 : DEBUG : main :  : Node : CSV Reader : 3:148 : clean output ports.
+2025-11-10 11:50:02,169 : DEBUG : ModalContext :  : NormalizerPMMLNodeFactory2 : Basic Customer Segmentation Use Case : 3 : Factory is already initialized. Nothing to do.
+2025-11-10 11:50:02,169 : DEBUG : ModalContext :  : NormalizerPMMLDeNodeFactory : Basic Customer Segmentation Use Case : 3 : Factory is already initialized. Nothing to do.
+2025-11-10 11:50:02,170 : DEBUG : ModalContext :  : NormalizerPMMLDeNodeFactory : Basic Customer Segmentation Use Case : 3 : Factory is already initialized. Nothing to do.
+2025-11-10 11:50:02,171 : DEBUG : ModalContext :  : NumberToString2NodeFactory : Basic Customer Segmentation Use Case : 3 : Factory is already initialized. Nothing to do.
+2025-11-10 11:50:02,172 : DEBUG : ModalContext :  : CSVTableReaderNodeFactory : Basic Customer Segmentation Use Case : 3 : Factory is already initialized. Nothing to do.
+2025-11-10 11:50:02,175 : DEBUG : ModalContext :  : ExcelTableReaderNodeFactory : Basic Customer Segmentation Use Case : 3 : Factory is already initialized. Nothing to do.
+2025-11-10 11:50:02,179 : DEBUG : ModalContext :  : Joiner3NodeFactory : Basic Customer Segmentation Use Case : 3 : Factory is already initialized. Nothing to do.
+2025-11-10 11:50:02,179 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 3 : Adding hilite translator to handler 5ff0e294-04be-48f6-87c8-9295992305c4
+2025-11-10 11:50:02,179 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 3 : Adding hilite translator to handler 338ae50b-0bd8-4ec0-9c3c-a0c1cfe0aecc
+2025-11-10 11:50:02,179 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 3 : Adding hilite translator to handler 3bb65170-3d85-4daf-8c85-7f6705ef24e1
+2025-11-10 11:50:02,179 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 3 : Adding hilite translator to handler 5ff0e294-04be-48f6-87c8-9295992305c4
+2025-11-10 11:50:02,179 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 3 : Adding hilite translator to handler 338ae50b-0bd8-4ec0-9c3c-a0c1cfe0aecc
+2025-11-10 11:50:02,179 : DEBUG : ModalContext :  : HiLiteHandler : Basic Customer Segmentation Use Case : 3 : Adding hilite translator to handler c1854f7a-fb11-4938-bf14-67d1512c71db
+2025-11-10 11:50:02,189 : DEBUG : ModalContext :  : FileWorkflowPersistor : Basic Customer Segmentation Use Case : 3 : Unable to load node with ID suffix 151 into workflow, skipping it: Node "k-Means" not available (provided by "KNIME AG, Zurich, Switzerland"; plugin "org.knime.base" is installed)
+org.knime.core.node.workflow.WorkflowPersistor$NodeFactoryUnknownException: Node "k-Means" not available (provided by "KNIME AG, Zurich, Switzerland"; plugin "org.knime.base" is installed)
+	at org.knime.core.node.workflow.FileNativeNodeContainerPersistor.preLoadNodeContainer(FileNativeNodeContainerPersistor.java:189)
+	at org.knime.core.node.workflow.FileWorkflowPersistor.loadNodeContainer(FileWorkflowPersistor.java:1043)
+	at org.knime.core.node.workflow.WorkflowManager.postLoad(WorkflowManager.java:9181)
+	at org.knime.core.node.workflow.WorkflowManager.loadContent(WorkflowManager.java:9083)
+	at org.knime.core.node.workflow.WorkflowManager.load(WorkflowManager.java:8947)
+	at org.knime.core.node.workflow.WorkflowManager.load(WorkflowManager.java:8868)
+	at org.knime.core.node.workflow.WorkflowManager.load(WorkflowManager.java:8841)
+	at org.knime.core.node.workflow.WorkflowManager.loadProject(WorkflowManager.java:8678)
+	at org.knime.workbench.editor2.LoadWorkflowRunnable.run(LoadWorkflowRunnable.java:200)
+	at org.knime.ui.java.util.DesktopAPUtil.loadWorkflowManager(DesktopAPUtil.java:171)
+	at org.knime.ui.java.util.CreateProject.lambda$1(CreateProject.java:156)
+	at org.knime.ui.java.util.DesktopAPUtil.lambda$10(DesktopAPUtil.java:438)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+Caused by: org.knime.core.node.InvalidSettingsException: Unknown factory class "org.knime.base.node.mine.cluster.kmeans.ClusterNodeFactory3" -- not registered via extension point
+	at org.knime.core.node.workflow.FileNativeNodeContainerPersistor.loadNodeFactory(FileNativeNodeContainerPersistor.java:364)
+	at org.knime.core.node.workflow.FileNativeNodeContainerPersistor.preLoadNodeContainer(FileNativeNodeContainerPersistor.java:186)
+	... 12 more
+2025-11-10 11:50:02,199 : DEBUG : ModalContext :  : Node : CSV Reader : 3:148 : Configure succeeded. (CSV Reader)
+2025-11-10 11:50:02,200 : DEBUG : ModalContext :  : Node : Excel Reader : 3:149 : Configure succeeded. (Excel Reader)
+2025-11-10 11:50:02,210 : DEBUG : ModalContext :  : Node : Joiner : 3:150 : Configure succeeded. (Joiner)
+2025-11-10 11:50:02,212 : DEBUG : ModalContext :  : Node : Number to String : 3:144 : Configure succeeded. (Number to String)
+2025-11-10 11:50:02,213 : DEBUG : ModalContext :  : Node : Normalizer (PMML) : 3:139 : Configure succeeded. (Normalizer (PMML))
+2025-11-10 11:50:02,213 : WARN  : ModalContext :  : FileNodePersistor : MISSING k-Means : 3:151 : Unable to load port content for node "MISSING k-Means": Invalid outport index in settings: 3
+org.knime.core.node.InvalidSettingsException: Invalid outport index in settings: 3
+	at org.knime.core.node.FileNodePersistor.loadPorts(FileNodePersistor.java:325)
+	at org.knime.core.node.FileNodePersistor.load(FileNodePersistor.java:996)
+	at org.knime.core.node.workflow.FileNativeNodeContainerPersistor.loadNCAndModelSettings(FileNativeNodeContainerPersistor.java:281)
+	at org.knime.core.node.workflow.FileSingleNodeContainerPersistor.loadNodeContainer(FileSingleNodeContainerPersistor.java:265)
+	at org.knime.core.node.workflow.WorkflowManager.postLoad(WorkflowManager.java:9181)
+	at org.knime.core.node.workflow.WorkflowManager.loadContent(WorkflowManager.java:9083)
+	at org.knime.core.node.workflow.WorkflowManager.postLoad(WorkflowManager.java:9197)
+	at org.knime.core.node.workflow.WorkflowManager.loadContent(WorkflowManager.java:9083)
+	at org.knime.core.node.workflow.WorkflowManager.load(WorkflowManager.java:8947)
+	at org.knime.core.node.workflow.WorkflowManager.load(WorkflowManager.java:8868)
+	at org.knime.core.node.workflow.WorkflowManager.load(WorkflowManager.java:8841)
+	at org.knime.core.node.workflow.WorkflowManager.loadProject(WorkflowManager.java:8678)
+	at org.knime.workbench.editor2.LoadWorkflowRunnable.run(LoadWorkflowRunnable.java:200)
+	at org.knime.ui.java.util.DesktopAPUtil.loadWorkflowManager(DesktopAPUtil.java:171)
+	at org.knime.ui.java.util.CreateProject.lambda$1(CreateProject.java:156)
+	at org.knime.ui.java.util.DesktopAPUtil.lambda$10(DesktopAPUtil.java:438)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+2025-11-10 11:50:02,214 : DEBUG : ModalContext :  : Node : MISSING k-Means : 3:151 : reset
+2025-11-10 11:50:02,214 : DEBUG : ModalContext :  : Node : MISSING k-Means : 3:151 : clean output ports.
+2025-11-10 11:50:02,214 : DEBUG : ModalContext :  : VariableTypeRegistry : MISSING k-Means : 3:151 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:02,214 : DEBUG : ModalContext :  : VariableTypeRegistry : MISSING k-Means : 3:151 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:02,215 : WARN  : ModalContext :  : Node : MISSING k-Means : 3:151 : Node can't be executed - Node "k-Means" not available (provided by "KNIME AG, Zurich, Switzerland"; plugin "org.knime.base" is installed)
+2025-11-10 11:50:02,215 : DEBUG : ModalContext :  : Node : MISSING k-Means : 3:151 : Node can't be executed - Node "k-Means" not available (provided by "KNIME AG, Zurich, Switzerland"; plugin "org.knime.base" is installed)
+org.knime.core.node.InvalidSettingsException: Node can't be executed - Node "k-Means" not available (provided by "KNIME AG, Zurich, Switzerland"; plugin "org.knime.base" is installed)
+	at org.knime.core.node.missing.MissingNodeModel.configure(MissingNodeModel.java:111)
+	at org.knime.core.node.NodeModel.configureModel(NodeModel.java:1146)
+	at org.knime.core.node.Node.invokeNodeModelConfigure(Node.java:2109)
+	at org.knime.core.node.Node.configure(Node.java:2052)
+	at org.knime.core.node.workflow.NativeNodeContainer.performConfigure(NativeNodeContainer.java:589)
+	at org.knime.core.node.workflow.SingleNodeContainer.callNodeConfigure(SingleNodeContainer.java:315)
+	at org.knime.core.node.workflow.SingleNodeContainer.configure(SingleNodeContainer.java:200)
+	at org.knime.core.node.workflow.WorkflowManager.configureSingleNodeContainer(WorkflowManager.java:7010)
+	at org.knime.core.node.workflow.WorkflowManager.postLoad(WorkflowManager.java:9256)
+	at org.knime.core.node.workflow.WorkflowManager.loadContent(WorkflowManager.java:9083)
+	at org.knime.core.node.workflow.WorkflowManager.postLoad(WorkflowManager.java:9197)
+	at org.knime.core.node.workflow.WorkflowManager.loadContent(WorkflowManager.java:9083)
+	at org.knime.core.node.workflow.WorkflowManager.load(WorkflowManager.java:8947)
+	at org.knime.core.node.workflow.WorkflowManager.load(WorkflowManager.java:8868)
+	at org.knime.core.node.workflow.WorkflowManager.load(WorkflowManager.java:8841)
+	at org.knime.core.node.workflow.WorkflowManager.loadProject(WorkflowManager.java:8678)
+	at org.knime.workbench.editor2.LoadWorkflowRunnable.run(LoadWorkflowRunnable.java:200)
+	at org.knime.ui.java.util.DesktopAPUtil.loadWorkflowManager(DesktopAPUtil.java:171)
+	at org.knime.ui.java.util.CreateProject.lambda$1(CreateProject.java:156)
+	at org.knime.ui.java.util.DesktopAPUtil.lambda$10(DesktopAPUtil.java:438)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+2025-11-10 11:50:02,216 : DEBUG : ModalContext :  : Node : Denormalizer (PMML) : 3:141 : reset
+2025-11-10 11:50:02,216 : DEBUG : ModalContext :  : Node : Denormalizer (PMML) : 3:141 : clean output ports.
+2025-11-10 11:50:02,217 : DEBUG : ModalContext :  : Node : Denormalizer (PMML) : 3:140 : reset
+2025-11-10 11:50:02,217 : DEBUG : ModalContext :  : Node : Denormalizer (PMML) : 3:140 : clean output ports.
+2025-11-10 11:50:11,813 : DEBUG : comm-pool-thread-6 :  : HiLiteHandler : Basic Customer Segmentation Use Case : 3 : Adding hilite translator to handler f8ee9459-6615-4116-90de-d749937aeec7
+2025-11-10 11:50:11,814 : DEBUG : comm-pool-thread-6 :  : WorkflowManager : Basic Customer Segmentation Use Case : 3 : Added new node 3:152
+2025-11-10 11:50:11,816 : DEBUG : comm-pool-thread-6 :  : HiLiteHandler : Basic Customer Segmentation Use Case : 3 : Adding hilite translator to handler 6c2e627d-3fe3-481d-a34b-b10a61e1fb07
+2025-11-10 11:50:11,817 : DEBUG : comm-pool-thread-6 :  : Node : k-Means : 3:152 : Configure succeeded. (k-Means)
+2025-11-10 11:50:11,817 : DEBUG : comm-pool-thread-6 :  : NodeContainer : Basic Customer Segmentation Use Case : 3 : k-Means 3:152 has new state: CONFIGURED
+2025-11-10 11:50:11,817 : DEBUG : comm-pool-thread-6 :  : WorkflowManager : Basic Customer Segmentation Use Case : 3 : Added new connection from node 3:139(1) to node 3:152(1)
+2025-11-10 11:50:11,873 : DEBUG : comm-pool-thread-8 :  : ExecutionContext : k-Means : 3:152 : No file store handler set on "k-Means" (possibly running in 3rd party executor)
+2025-11-10 11:50:11,873 : DEBUG : comm-pool-thread-8 :  : DataValueImageRendererRegistry : k-Means : 3:152 : New batch of to-be-rendered images started for table with id 'spec_3_152'.
+2025-11-10 11:50:14,353 : DEBUG : main :  : VariableTypeRegistry : MISSING k-Means : 3:151 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:14,353 : DEBUG : main :  : VariableTypeRegistry : MISSING k-Means : 3:151 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:16,871 : DEBUG : main :  : DesktopAPI : MISSING k-Means : 3:151 : Desktop API function successfully called: setUserProfilePart
+2025-11-10 11:50:21,193 : DEBUG : comm-pool-thread-6 :  : ExecutionContext : k-Means : 3:152 : No file store handler set on "k-Means" (possibly running in 3rd party executor)
+2025-11-10 11:50:21,194 : DEBUG : comm-pool-thread-6 :  : DataValueImageRendererRegistry : k-Means : 3:152 : New batch of to-be-rendered images started for table with id 'spec_3_152'.
+2025-11-10 11:50:32,576 : DEBUG : comm-pool-thread-8 :  : Node : k-Means : 3:152 : reset
+2025-11-10 11:50:32,576 : DEBUG : comm-pool-thread-8 :  : Node : k-Means : 3:152 : clean output ports.
+2025-11-10 11:50:32,576 : DEBUG : comm-pool-thread-8 :  : SelectionEventBus : k-Means : 3:152 : Selection event emitter removed for node 3:152. Num emitters: 0
+2025-11-10 11:50:32,576 : DEBUG : comm-pool-thread-8 :  : DataValueImageRendererRegistry : k-Means : 3:152 : Cached image data cleared for table with id 'spec_3_152'. There is still image data cached for 0 tables
+2025-11-10 11:50:32,576 : DEBUG : comm-pool-thread-8 :  : SelectionEventBus : k-Means : 3:152 : Selection event emitter removed for node 3:152. Num emitters: 0
+2025-11-10 11:50:32,576 : DEBUG : comm-pool-thread-8 :  : NodeContainer : k-Means : 3:152 : k-Means 3:152 has new state: IDLE
+2025-11-10 11:50:32,577 : DEBUG : comm-pool-thread-8 :  : VariableTypeRegistry : k-Means : 3:152 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:32,577 : DEBUG : comm-pool-thread-8 :  : VariableTypeRegistry : k-Means : 3:152 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:32,578 : DEBUG : comm-pool-thread-8 :  : Node : k-Means : 3:152 : Configure succeeded. (k-Means)
+2025-11-10 11:50:32,578 : DEBUG : comm-pool-thread-8 :  : NodeContainer : k-Means : 3:152 : k-Means 3:152 has new state: CONFIGURED
+2025-11-10 11:50:32,584 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : WorkflowManager : CSV Reader : 3:148 : CSV Reader 3:148 doBeforePreExecution
+2025-11-10 11:50:32,584 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : NodeContainer : CSV Reader : 3:148 : CSV Reader 3:148 has new state: PREEXECUTE
+2025-11-10 11:50:32,584 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : WorkflowManager : Excel Reader : 3:149 : Excel Reader 3:149 doBeforePreExecution
+2025-11-10 11:50:32,584 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : NodeContainer : Excel Reader : 3:149 : Excel Reader 3:149 has new state: PREEXECUTE
+2025-11-10 11:50:32,584 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : WorkflowDataRepository : Excel Reader : 3:149 : Adding handler d699b058-8f8a-43df-90ec-21b8596154a6 (Excel Reader 3:149: <no directory>) - 2 in total
+2025-11-10 11:50:32,584 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : WorkflowDataRepository : CSV Reader : 3:148 : Adding handler fee38079-677a-421c-9eda-be6af657604b (CSV Reader 3:148: <no directory>) - 2 in total
+2025-11-10 11:50:32,584 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : WorkflowManager : Excel Reader : 3:149 : Excel Reader 3:149 doBeforeExecution
+2025-11-10 11:50:32,585 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : NodeContainer : Excel Reader : 3:149 : Excel Reader 3:149 has new state: EXECUTING
+2025-11-10 11:50:32,585 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : WorkflowManager : CSV Reader : 3:148 : CSV Reader 3:148 doBeforeExecution
+2025-11-10 11:50:32,585 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : NodeContainer : CSV Reader : 3:148 : CSV Reader 3:148 has new state: EXECUTING
+2025-11-10 11:50:32,585 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : LocalNodeExecutionJob : Excel Reader : 3:149 : Excel Reader 3:149 Start execute
+2025-11-10 11:50:32,585 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : LocalNodeExecutionJob : CSV Reader : 3:148 : CSV Reader 3:148 Start execute
+2025-11-10 11:50:32,749 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : ExecutionContext : CSV Reader : 3:148 : Using Table Backend "BufferedTableBackend".
+2025-11-10 11:50:32,751 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : BufferSettings : CSV Reader : 3:148 : Using table format org.knime.core.data.container.DefaultTableStoreFormat
+2025-11-10 11:50:32,779 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : ExecutionContext : CSV Reader : 3:148 : Using Table Backend "BufferedTableBackend".
+2025-11-10 11:50:32,784 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : ExecutionContext : CSV Reader : 3:148 : Using Table Backend "BufferedTableBackend".
+2025-11-10 11:50:32,789 : INFO  : KNIME-Worker-12-CSV Reader 3:148 :  : LocalNodeExecutionJob : CSV Reader : 3:148 : CSV Reader 3:148 End execute (0 secs)
+2025-11-10 11:50:32,790 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : WorkflowManager : CSV Reader : 3:148 : CSV Reader 3:148 doBeforePostExecution
+2025-11-10 11:50:32,790 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : NodeContainer : CSV Reader : 3:148 : CSV Reader 3:148 has new state: POSTEXECUTE
+2025-11-10 11:50:32,792 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : WorkflowManager : CSV Reader : 3:148 : CSV Reader 3:148 doAfterExecute - success
+2025-11-10 11:50:32,792 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : NodeContainer : CSV Reader : 3:148 : CSV Reader 3:148 has new state: EXECUTED
+2025-11-10 11:50:32,793 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : Node : Joiner : 3:150 : Configure succeeded. (Joiner)
+2025-11-10 11:50:32,794 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : Node : Number to String : 3:144 : Configure succeeded. (Number to String)
+2025-11-10 11:50:32,795 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : Node : Normalizer (PMML) : 3:139 : Configure succeeded. (Normalizer (PMML))
+2025-11-10 11:50:32,795 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : VariableTypeRegistry : MISSING k-Means : 3:151 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:32,795 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : VariableTypeRegistry : MISSING k-Means : 3:151 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:32,796 : WARN  : KNIME-Worker-12-CSV Reader 3:148 :  : Node : MISSING k-Means : 3:151 : Node can't be executed - Node "k-Means" not available (provided by "KNIME AG, Zurich, Switzerland"; plugin "org.knime.base" is installed)
+2025-11-10 11:50:32,796 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : Node : MISSING k-Means : 3:151 : Node can't be executed - Node "k-Means" not available (provided by "KNIME AG, Zurich, Switzerland"; plugin "org.knime.base" is installed)
+org.knime.core.node.InvalidSettingsException: Node can't be executed - Node "k-Means" not available (provided by "KNIME AG, Zurich, Switzerland"; plugin "org.knime.base" is installed)
+	at org.knime.core.node.missing.MissingNodeModel.configure(MissingNodeModel.java:111)
+	at org.knime.core.node.NodeModel.configureModel(NodeModel.java:1146)
+	at org.knime.core.node.Node.invokeNodeModelConfigure(Node.java:2109)
+	at org.knime.core.node.Node.configure(Node.java:2052)
+	at org.knime.core.node.workflow.NativeNodeContainer.performConfigure(NativeNodeContainer.java:589)
+	at org.knime.core.node.workflow.SingleNodeContainer.callNodeConfigure(SingleNodeContainer.java:315)
+	at org.knime.core.node.workflow.SingleNodeContainer.configure(SingleNodeContainer.java:200)
+	at org.knime.core.node.workflow.WorkflowManager.configureSingleNodeContainer(WorkflowManager.java:7010)
+	at org.knime.core.node.workflow.WorkflowManager.configureNodeAndPortSuccessors(WorkflowManager.java:7191)
+	at org.knime.core.node.workflow.WorkflowManager.configureNodeAndPortSuccessors(WorkflowManager.java:7129)
+	at org.knime.core.node.workflow.WorkflowManager.doAfterExecution(WorkflowManager.java:3890)
+	at org.knime.core.node.workflow.NodeContainer.notifyParentExecuteFinished(NodeContainer.java:689)
+	at org.knime.core.node.workflow.NodeExecutionJob$AfterRunRunnable.run(NodeExecutionJob.java:385)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at org.knime.core.util.ThreadPool.runInvisible(ThreadPool.java:688)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:223)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2025-11-10 11:50:32,796 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : VariableTypeRegistry : k-Means : 3:152 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:32,796 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : VariableTypeRegistry : k-Means : 3:152 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:32,798 : DEBUG : KNIME-Worker-12-CSV Reader 3:148 :  : Node : k-Means : 3:152 : Configure succeeded. (k-Means)
+2025-11-10 11:50:32,805 : DEBUG : KNIME-BackgroundTableWriter-1 :  : Buffer : CSV Reader : 3:148 : Buffer file (/tmp/knime_Basic Customer _14195/knime_container_20251110_18363754328579528023.bin.snappy) is 0.072MB in size
+2025-11-10 11:50:32,886 : DEBUG : KNIME-Excel-Parser-0 :  : ExcelParserRunnable : Excel Reader : 3:149 : Excel sheet parsing started
+2025-11-10 11:50:32,889 : DEBUG : comm-pool-thread-8 :  : VariableTypeRegistry : k-Means : 3:152 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:32,889 : DEBUG : comm-pool-thread-8 :  : VariableTypeRegistry : k-Means : 3:152 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:33,000 : DEBUG : KNIME-Excel-Parser-0 :  : ExcelParserRunnable : Excel Reader : 3:149 : Excel sheet parsing finished successfully
+2025-11-10 11:50:33,000 : DEBUG : KNIME-Excel-Parser-0 :  : ExcelParserRunnable : Excel Reader : 3:149 : Closing Excel sheet parser resources
+2025-11-10 11:50:33,005 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : ExecutionContext : Excel Reader : 3:149 : Using Table Backend "BufferedTableBackend".
+2025-11-10 11:50:33,079 : DEBUG : KNIME-Excel-Parser-0 :  : ExcelParserRunnable : Excel Reader : 3:149 : Excel sheet parsing started
+2025-11-10 11:50:33,080 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : BufferSettings : Excel Reader : 3:149 : Using table format org.knime.core.data.container.DefaultTableStoreFormat
+2025-11-10 11:50:33,118 : DEBUG : KNIME-Excel-Parser-0 :  : ExcelParserRunnable : Excel Reader : 3:149 : Excel sheet parsing finished successfully
+2025-11-10 11:50:33,118 : DEBUG : KNIME-Excel-Parser-0 :  : ExcelParserRunnable : Excel Reader : 3:149 : Closing Excel sheet parser resources
+2025-11-10 11:50:33,118 : INFO  : KNIME-Worker-13-Excel Reader 3:149 :  : LocalNodeExecutionJob : Excel Reader : 3:149 : Excel Reader 3:149 End execute (0 secs)
+2025-11-10 11:50:33,119 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : WorkflowManager : Excel Reader : 3:149 : Excel Reader 3:149 doBeforePostExecution
+2025-11-10 11:50:33,119 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : NodeContainer : Excel Reader : 3:149 : Excel Reader 3:149 has new state: POSTEXECUTE
+2025-11-10 11:50:33,119 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : WorkflowManager : Excel Reader : 3:149 : Excel Reader 3:149 doAfterExecute - success
+2025-11-10 11:50:33,119 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : NodeContainer : Excel Reader : 3:149 : Excel Reader 3:149 has new state: EXECUTED
+2025-11-10 11:50:33,120 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : Node : Joiner : 3:150 : Configure succeeded. (Joiner)
+2025-11-10 11:50:33,120 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : NodeContainer : Excel Reader : 3:149 : Joiner 3:150 has new state: CONFIGURED_QUEUED
+2025-11-10 11:50:33,121 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : Node : Number to String : 3:144 : Configure succeeded. (Number to String)
+2025-11-10 11:50:33,121 : DEBUG : KNIME-Worker-13-Excel Reader 3:149 :  : Node : Normalizer (PMML) : 3:139 : Configure succeeded. (Normalizer (PMML))
+2025-11-10 11:50:33,122 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : WorkflowManager : Joiner : 3:150 : Joiner 3:150 doBeforePreExecution
+2025-11-10 11:50:33,122 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : NodeContainer : Joiner : 3:150 : Joiner 3:150 has new state: PREEXECUTE
+2025-11-10 11:50:33,122 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : WorkflowDataRepository : Joiner : 3:150 : Adding handler 2264f1be-b1a1-4d30-9c32-bd2c93389c68 (Joiner 3:150: <no directory>) - 3 in total
+2025-11-10 11:50:33,122 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : WorkflowManager : Joiner : 3:150 : Joiner 3:150 doBeforeExecution
+2025-11-10 11:50:33,122 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : NodeContainer : Joiner : 3:150 : Joiner 3:150 has new state: EXECUTING
+2025-11-10 11:50:33,122 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : LocalNodeExecutionJob : Joiner : 3:150 : Joiner 3:150 Start execute
+2025-11-10 11:50:33,128 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : ExecutionContext : Joiner : 3:150 : Using Table Backend "BufferedTableBackend".
+2025-11-10 11:50:33,134 : DEBUG : KNIME-BackgroundTableWriter-1 :  : Buffer : Excel Reader : 3:149 : Buffer file (/tmp/knime_Basic Customer _14195/knime_container_20251110_9232861558249934901.bin.snappy) is 0.212MB in size
+2025-11-10 11:50:33,141 : DEBUG : comm-pool-thread-8 :  : VariableTypeRegistry : k-Means : 3:152 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:33,141 : DEBUG : comm-pool-thread-8 :  : VariableTypeRegistry : k-Means : 3:152 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:33,155 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : BufferSettings : Joiner : 3:150 : Using table format org.knime.core.data.container.DefaultTableStoreFormat
+2025-11-10 11:50:33,168 : INFO  : KNIME-Worker-14-Joiner 3:150 :  : LocalNodeExecutionJob : Joiner : 3:150 : Joiner 3:150 End execute (0 secs)
+2025-11-10 11:50:33,168 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : WorkflowManager : Joiner : 3:150 : Joiner 3:150 doBeforePostExecution
+2025-11-10 11:50:33,168 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : NodeContainer : Joiner : 3:150 : Joiner 3:150 has new state: POSTEXECUTE
+2025-11-10 11:50:33,168 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : WorkflowManager : Joiner : 3:150 : Joiner 3:150 doAfterExecute - success
+2025-11-10 11:50:33,168 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : NodeContainer : Joiner : 3:150 : Joiner 3:150 has new state: EXECUTED
+2025-11-10 11:50:33,169 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : Node : Number to String : 3:144 : Configure succeeded. (Number to String)
+2025-11-10 11:50:33,169 : DEBUG : KNIME-Worker-14-Joiner 3:150 :  : NodeContainer : Joiner : 3:150 : Number to String 3:144 has new state: CONFIGURED_QUEUED
+2025-11-10 11:50:33,170 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : WorkflowManager : Number to String : 3:144 : Number to String 3:144 doBeforePreExecution
+2025-11-10 11:50:33,170 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : NodeContainer : Number to String : 3:144 : Number to String 3:144 has new state: PREEXECUTE
+2025-11-10 11:50:33,170 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : WorkflowDataRepository : Number to String : 3:144 : Adding handler e1980bbb-78ce-470f-847b-c12d7097e9f0 (Number to String 3:144: <no directory>) - 4 in total
+2025-11-10 11:50:33,170 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : WorkflowManager : Number to String : 3:144 : Number to String 3:144 doBeforeExecution
+2025-11-10 11:50:33,170 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : NodeContainer : Number to String : 3:144 : Number to String 3:144 has new state: EXECUTING
+2025-11-10 11:50:33,170 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : LocalNodeExecutionJob : Number to String : 3:144 : Number to String 3:144 Start execute
+2025-11-10 11:50:33,171 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : ExecutionContext : Number to String : 3:144 : Using Table Backend "BufferedTableBackend".
+2025-11-10 11:50:33,173 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : ExecutionContext : Number to String : 3:144 : Using Table Backend "BufferedTableBackend".
+2025-11-10 11:50:33,179 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : BufferSettings : Number to String : 3:144 : Using table format org.knime.core.data.container.DefaultTableStoreFormat
+2025-11-10 11:50:33,179 : DEBUG : KNIME-BackgroundTableWriter-1 :  : Buffer : Joiner : 3:150 : Buffer file (/tmp/knime_Basic Customer _14195/knime_container_20251110_7394803901417210651.bin.snappy) is 0.266MB in size
+2025-11-10 11:50:33,186 : INFO  : KNIME-Worker-15-Number to String 3:144 :  : LocalNodeExecutionJob : Number to String : 3:144 : Number to String 3:144 End execute (0 secs)
+2025-11-10 11:50:33,186 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : WorkflowManager : Number to String : 3:144 : Number to String 3:144 doBeforePostExecution
+2025-11-10 11:50:33,186 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : NodeContainer : Number to String : 3:144 : Number to String 3:144 has new state: POSTEXECUTE
+2025-11-10 11:50:33,186 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : WorkflowManager : Number to String : 3:144 : Number to String 3:144 doAfterExecute - success
+2025-11-10 11:50:33,187 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : NodeContainer : Number to String : 3:144 : Number to String 3:144 has new state: EXECUTED
+2025-11-10 11:50:33,187 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : Node : Normalizer (PMML) : 3:139 : Configure succeeded. (Normalizer (PMML))
+2025-11-10 11:50:33,187 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : NodeContainer : Number to String : 3:144 : Normalizer (PMML) 3:139 has new state: CONFIGURED_QUEUED
+2025-11-10 11:50:33,188 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : VariableTypeRegistry : MISSING k-Means : 3:151 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:33,188 : DEBUG : KNIME-BackgroundTableWriter-1 :  : Buffer : Number to String : 3:144 : Buffer file (/tmp/knime_Basic Customer _14195/knime_container_20251110_2814535182153238055.bin.snappy) is 0.007MB in size
+2025-11-10 11:50:33,188 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : VariableTypeRegistry : MISSING k-Means : 3:151 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:33,188 : WARN  : KNIME-Worker-15-Number to String 3:144 :  : Node : MISSING k-Means : 3:151 : Node can't be executed - Node "k-Means" not available (provided by "KNIME AG, Zurich, Switzerland"; plugin "org.knime.base" is installed)
+2025-11-10 11:50:33,188 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : Node : MISSING k-Means : 3:151 : Node can't be executed - Node "k-Means" not available (provided by "KNIME AG, Zurich, Switzerland"; plugin "org.knime.base" is installed)
+org.knime.core.node.InvalidSettingsException: Node can't be executed - Node "k-Means" not available (provided by "KNIME AG, Zurich, Switzerland"; plugin "org.knime.base" is installed)
+	at org.knime.core.node.missing.MissingNodeModel.configure(MissingNodeModel.java:111)
+	at org.knime.core.node.NodeModel.configureModel(NodeModel.java:1146)
+	at org.knime.core.node.Node.invokeNodeModelConfigure(Node.java:2109)
+	at org.knime.core.node.Node.configure(Node.java:2052)
+	at org.knime.core.node.workflow.NativeNodeContainer.performConfigure(NativeNodeContainer.java:589)
+	at org.knime.core.node.workflow.SingleNodeContainer.callNodeConfigure(SingleNodeContainer.java:315)
+	at org.knime.core.node.workflow.SingleNodeContainer.configure(SingleNodeContainer.java:200)
+	at org.knime.core.node.workflow.WorkflowManager.configureSingleNodeContainer(WorkflowManager.java:7010)
+	at org.knime.core.node.workflow.WorkflowManager.configureNodeAndPortSuccessors(WorkflowManager.java:7191)
+	at org.knime.core.node.workflow.WorkflowManager.configureNodeAndPortSuccessors(WorkflowManager.java:7129)
+	at org.knime.core.node.workflow.WorkflowManager.doAfterExecution(WorkflowManager.java:3890)
+	at org.knime.core.node.workflow.NodeContainer.notifyParentExecuteFinished(NodeContainer.java:689)
+	at org.knime.core.node.workflow.NodeExecutionJob$AfterRunRunnable.run(NodeExecutionJob.java:385)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at org.knime.core.util.ThreadPool.runInvisible(ThreadPool.java:688)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:223)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2025-11-10 11:50:33,188 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : VariableTypeRegistry : k-Means : 3:152 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:33,188 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : VariableTypeRegistry : k-Means : 3:152 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:33,190 : DEBUG : KNIME-Worker-15-Number to String 3:144 :  : Node : k-Means : 3:152 : Configure succeeded. (k-Means)
+2025-11-10 11:50:33,191 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : WorkflowManager : Normalizer (PMML) : 3:139 : Normalizer (PMML) 3:139 doBeforePreExecution
+2025-11-10 11:50:33,191 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : NodeContainer : Normalizer (PMML) : 3:139 : Normalizer (PMML) 3:139 has new state: PREEXECUTE
+2025-11-10 11:50:33,191 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : WorkflowDataRepository : Normalizer (PMML) : 3:139 : Adding handler 616bbf54-a430-43cf-988a-6f4d375bb9e4 (Normalizer (PMML) 3:139: <no directory>) - 5 in total
+2025-11-10 11:50:33,191 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : WorkflowManager : Normalizer (PMML) : 3:139 : Normalizer (PMML) 3:139 doBeforeExecution
+2025-11-10 11:50:33,191 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : NodeContainer : Normalizer (PMML) : 3:139 : Normalizer (PMML) 3:139 has new state: EXECUTING
+2025-11-10 11:50:33,191 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : LocalNodeExecutionJob : Normalizer (PMML) : 3:139 : Normalizer (PMML) 3:139 Start execute
+2025-11-10 11:50:33,249 : DEBUG : comm-pool-thread-8 :  : VariableTypeRegistry : k-Means : 3:152 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:33,249 : DEBUG : comm-pool-thread-8 :  : VariableTypeRegistry : k-Means : 3:152 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:33,254 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : ExecutionContext : Normalizer (PMML) : 3:139 : Using Table Backend "BufferedTableBackend".
+2025-11-10 11:50:33,257 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : BufferSettings : Normalizer (PMML) : 3:139 : Using table format org.knime.core.data.container.DefaultTableStoreFormat
+2025-11-10 11:50:33,284 : DEBUG : KNIME-BackgroundTableWriter-1 :  : Buffer : Normalizer (PMML) : 3:139 : Buffer file (/tmp/knime_Basic Customer _14195/knime_container_20251110_7001494203843048381.bin.snappy) is 0.392MB in size
+2025-11-10 11:50:33,311 : INFO  : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : LocalNodeExecutionJob : Normalizer (PMML) : 3:139 : Normalizer (PMML) 3:139 End execute (0 secs)
+2025-11-10 11:50:33,311 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : WorkflowManager : Normalizer (PMML) : 3:139 : Normalizer (PMML) 3:139 doBeforePostExecution
+2025-11-10 11:50:33,311 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : NodeContainer : Normalizer (PMML) : 3:139 : Normalizer (PMML) 3:139 has new state: POSTEXECUTE
+2025-11-10 11:50:33,311 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : WorkflowManager : Normalizer (PMML) : 3:139 : Normalizer (PMML) 3:139 doAfterExecute - success
+2025-11-10 11:50:33,311 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : NodeContainer : Normalizer (PMML) : 3:139 : Normalizer (PMML) 3:139 has new state: EXECUTED
+2025-11-10 11:50:33,312 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : VariableTypeRegistry : MISSING k-Means : 3:151 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:33,312 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : VariableTypeRegistry : MISSING k-Means : 3:151 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:33,312 : WARN  : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : Node : MISSING k-Means : 3:151 : Node can't be executed - Node "k-Means" not available (provided by "KNIME AG, Zurich, Switzerland"; plugin "org.knime.base" is installed)
+2025-11-10 11:50:33,312 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : Node : MISSING k-Means : 3:151 : Node can't be executed - Node "k-Means" not available (provided by "KNIME AG, Zurich, Switzerland"; plugin "org.knime.base" is installed)
+org.knime.core.node.InvalidSettingsException: Node can't be executed - Node "k-Means" not available (provided by "KNIME AG, Zurich, Switzerland"; plugin "org.knime.base" is installed)
+	at org.knime.core.node.missing.MissingNodeModel.configure(MissingNodeModel.java:111)
+	at org.knime.core.node.NodeModel.configureModel(NodeModel.java:1146)
+	at org.knime.core.node.Node.invokeNodeModelConfigure(Node.java:2109)
+	at org.knime.core.node.Node.configure(Node.java:2052)
+	at org.knime.core.node.workflow.NativeNodeContainer.performConfigure(NativeNodeContainer.java:589)
+	at org.knime.core.node.workflow.SingleNodeContainer.callNodeConfigure(SingleNodeContainer.java:315)
+	at org.knime.core.node.workflow.SingleNodeContainer.configure(SingleNodeContainer.java:200)
+	at org.knime.core.node.workflow.WorkflowManager.configureSingleNodeContainer(WorkflowManager.java:7010)
+	at org.knime.core.node.workflow.WorkflowManager.configureNodeAndPortSuccessors(WorkflowManager.java:7191)
+	at org.knime.core.node.workflow.WorkflowManager.configureNodeAndPortSuccessors(WorkflowManager.java:7129)
+	at org.knime.core.node.workflow.WorkflowManager.doAfterExecution(WorkflowManager.java:3890)
+	at org.knime.core.node.workflow.NodeContainer.notifyParentExecuteFinished(NodeContainer.java:689)
+	at org.knime.core.node.workflow.NodeExecutionJob$AfterRunRunnable.run(NodeExecutionJob.java:385)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at org.knime.core.util.ThreadPool.runInvisible(ThreadPool.java:688)
+	at org.knime.core.node.workflow.NodeExecutionJob.internalRun(NodeExecutionJob.java:223)
+	at org.knime.core.node.workflow.NodeExecutionJob.run(NodeExecutionJob.java:120)
+	at org.knime.core.util.ThreadUtils$RunnableWithContextImpl.runWithContext(ThreadUtils.java:369)
+	at org.knime.core.util.ThreadUtils$RunnableWithContext.run(ThreadUtils.java:223)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at org.knime.core.util.ThreadPool$MyFuture.run(ThreadPool.java:143)
+	at org.knime.core.util.ThreadPool$Worker.run(ThreadPool.java:277)
+2025-11-10 11:50:33,312 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : HiLiteHandler : Normalizer (PMML) : 3:139 : Removing hilite translator from handler 6c2e627d-3fe3-481d-a34b-b10a61e1fb07
+2025-11-10 11:50:33,312 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : HiLiteHandler : Normalizer (PMML) : 3:139 : Adding hilite translator to handler 5ff0e294-04be-48f6-87c8-9295992305c4
+2025-11-10 11:50:33,313 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : VariableTypeRegistry : k-Means : 3:152 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:33,313 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : VariableTypeRegistry : k-Means : 3:152 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:33,314 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : Node : k-Means : 3:152 : Configure succeeded. (k-Means)
+2025-11-10 11:50:33,314 : DEBUG : KNIME-Worker-16-Normalizer (PMML) 3:139 :  : NodeContainer : Normalizer (PMML) : 3:139 : k-Means 3:152 has new state: CONFIGURED_QUEUED
+2025-11-10 11:50:33,315 : DEBUG : KNIME-Worker-17-k-Means 3:152 :  : WorkflowManager : k-Means : 3:152 : k-Means 3:152 doBeforePreExecution
+2025-11-10 11:50:33,315 : DEBUG : KNIME-Worker-17-k-Means 3:152 :  : NodeContainer : k-Means : 3:152 : k-Means 3:152 has new state: PREEXECUTE
+2025-11-10 11:50:33,315 : DEBUG : KNIME-Worker-17-k-Means 3:152 :  : WorkflowDataRepository : k-Means : 3:152 : Adding handler 0c658bb1-99f5-4f56-a1f0-be80fc0dc1fb (k-Means 3:152: <no directory>) - 6 in total
+2025-11-10 11:50:33,315 : DEBUG : KNIME-Worker-17-k-Means 3:152 :  : WorkflowManager : k-Means : 3:152 : k-Means 3:152 doBeforeExecution
+2025-11-10 11:50:33,315 : DEBUG : KNIME-Worker-17-k-Means 3:152 :  : NodeContainer : k-Means : 3:152 : k-Means 3:152 has new state: EXECUTING
+2025-11-10 11:50:33,315 : DEBUG : KNIME-Worker-17-k-Means 3:152 :  : LocalNodeExecutionJob : k-Means : 3:152 : k-Means 3:152 Start execute
+2025-11-10 11:50:33,350 : DEBUG : comm-pool-thread-8 :  : VariableTypeRegistry : k-Means : 3:152 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:33,350 : DEBUG : comm-pool-thread-8 :  : VariableTypeRegistry : k-Means : 3:152 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:33,543 : DEBUG : KNIME-Worker-17-k-Means 3:152 :  : ExecutionContext : k-Means : 3:152 : Using Table Backend "BufferedTableBackend".
+2025-11-10 11:50:33,544 : DEBUG : KNIME-Worker-17-k-Means 3:152 :  : BufferSettings : k-Means : 3:152 : Using table format org.knime.core.data.container.DefaultTableStoreFormat
+2025-11-10 11:50:33,568 : DEBUG : KNIME-BackgroundTableWriter-1 :  : Buffer : k-Means : 3:152 : Buffer file (/tmp/knime_Basic Customer _14195/knime_container_20251110_3021209327918777364.bin.snappy) is 0.403MB in size
+2025-11-10 11:50:33,577 : DEBUG : KNIME-Worker-17-k-Means 3:152 :  : ExecutionContext : k-Means : 3:152 : Using Table Backend "BufferedTableBackend".
+2025-11-10 11:50:33,578 : DEBUG : KNIME-Worker-17-k-Means 3:152 :  : BufferSettings : k-Means : 3:152 : Using table format org.knime.core.data.container.DefaultTableStoreFormat
+2025-11-10 11:50:33,579 : INFO  : KNIME-Worker-17-k-Means 3:152 :  : LocalNodeExecutionJob : k-Means : 3:152 : k-Means 3:152 End execute (0 secs)
+2025-11-10 11:50:33,579 : DEBUG : KNIME-Worker-17-k-Means 3:152 :  : WorkflowManager : k-Means : 3:152 : k-Means 3:152 doBeforePostExecution
+2025-11-10 11:50:33,579 : DEBUG : KNIME-Worker-17-k-Means 3:152 :  : NodeContainer : k-Means : 3:152 : k-Means 3:152 has new state: POSTEXECUTE
+2025-11-10 11:50:33,579 : DEBUG : KNIME-Worker-17-k-Means 3:152 :  : WorkflowManager : k-Means : 3:152 : k-Means 3:152 doAfterExecute - success
+2025-11-10 11:50:33,579 : DEBUG : KNIME-Worker-17-k-Means 3:152 :  : NodeContainer : k-Means : 3:152 : k-Means 3:152 has new state: EXECUTED
+2025-11-10 11:50:33,579 : DEBUG : KNIME-Worker-17-k-Means 3:152 :  : NodeContainer : k-Means : 3:152 : Basic Customer Segmentation Use Case 3 has new state: IDLE
+2025-11-10 11:50:33,657 : DEBUG : comm-pool-thread-8 :  : DataValueImageRendererRegistry : k-Means : 3:152 : New batch of to-be-rendered images started for table with id 'table_3_152_10'.
+2025-11-10 11:50:35,736 : DEBUG : main :  : VariableTypeRegistry : MISSING k-Means : 3:151 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:35,737 : DEBUG : main :  : VariableTypeRegistry : MISSING k-Means : 3:151 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:56,895 : DEBUG : comm-pool-thread-6 :  : VariableTypeRegistry : k-Means : 3:152 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:56,896 : DEBUG : comm-pool-thread-6 :  : VariableTypeRegistry : k-Means : 3:152 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:50:56,912 : DEBUG : comm-pool-thread-6 :  : DataValueImageRendererRegistry : k-Means : 3:152 : New batch of to-be-rendered images started for table with id 'table_3_152_10'.
+2025-11-10 11:51:15,664 : DEBUG : comm-pool-thread-8 :  : Node : Denormalizer (PMML) : 3:140 : Configure succeeded. (Denormalizer (PMML))
+2025-11-10 11:51:15,664 : DEBUG : comm-pool-thread-8 :  : NodeContainer : Basic Customer Segmentation Use Case : 3 : Denormalizer (PMML) 3:140 has new state: CONFIGURED
+2025-11-10 11:51:15,664 : DEBUG : comm-pool-thread-8 :  : WorkflowManager : Basic Customer Segmentation Use Case : 3 : Added new connection from node 3:152(1) to node 3:140(2)
+2025-11-10 11:51:19,905 : DEBUG : comm-pool-thread-8 :  : Node : Denormalizer (PMML) : 3:141 : Configure succeeded. (Denormalizer (PMML))
+2025-11-10 11:51:19,905 : DEBUG : comm-pool-thread-8 :  : NodeContainer : Basic Customer Segmentation Use Case : 3 : Denormalizer (PMML) 3:141 has new state: CONFIGURED
+2025-11-10 11:51:19,905 : DEBUG : comm-pool-thread-8 :  : WorkflowManager : Basic Customer Segmentation Use Case : 3 : Added new connection from node 3:152(2) to node 3:141(2)
+2025-11-10 11:51:22,254 : DEBUG : comm-pool-thread-8 :  : Node : MISSING k-Means : 3:151 : clean output ports.
+2025-11-10 11:51:22,254 : DEBUG : comm-pool-thread-8 :  : NodeContainer : Basic Customer Segmentation Use Case : 3 : Basic Customer Segmentation Use Case 3 has new state: CONFIGURED
+2025-11-10 11:51:26,907 : DEBUG : comm-pool-thread-8 :  : VariableTypeRegistry : k-Means : 3:152 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:51:26,907 : DEBUG : comm-pool-thread-8 :  : VariableTypeRegistry : k-Means : 3:152 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:51:26,925 : DEBUG : comm-pool-thread-8 :  : DataValueImageRendererRegistry : k-Means : 3:152 : New batch of to-be-rendered images started for table with id 'table_3_152_10'.
+2025-11-10 11:51:29,318 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : WorkflowManager : Denormalizer (PMML) : 3:140 : Denormalizer (PMML) 3:140 doBeforePreExecution
+2025-11-10 11:51:29,318 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : NodeContainer : Denormalizer (PMML) : 3:140 : Denormalizer (PMML) 3:140 has new state: PREEXECUTE
+2025-11-10 11:51:29,318 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : WorkflowDataRepository : Denormalizer (PMML) : 3:140 : Adding handler f308fb7e-eb4d-4db1-8a47-8347b03d0391 (Denormalizer (PMML) 3:140: <no directory>) - 7 in total
+2025-11-10 11:51:29,318 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : WorkflowManager : Denormalizer (PMML) : 3:140 : Denormalizer (PMML) 3:140 doBeforeExecution
+2025-11-10 11:51:29,318 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : NodeContainer : Denormalizer (PMML) : 3:140 : Denormalizer (PMML) 3:140 has new state: EXECUTING
+2025-11-10 11:51:29,318 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : LocalNodeExecutionJob : Denormalizer (PMML) : 3:140 : Denormalizer (PMML) 3:140 Start execute
+2025-11-10 11:51:29,337 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : ExecutionContext : Denormalizer (PMML) : 3:140 : Using Table Backend "BufferedTableBackend".
+2025-11-10 11:51:29,338 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : BufferSettings : Denormalizer (PMML) : 3:140 : Using table format org.knime.core.data.container.DefaultTableStoreFormat
+2025-11-10 11:51:29,345 : INFO  : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : LocalNodeExecutionJob : Denormalizer (PMML) : 3:140 : Denormalizer (PMML) 3:140 End execute (0 secs)
+2025-11-10 11:51:29,345 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : WorkflowManager : Denormalizer (PMML) : 3:140 : Denormalizer (PMML) 3:140 doBeforePostExecution
+2025-11-10 11:51:29,345 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : NodeContainer : Denormalizer (PMML) : 3:140 : Denormalizer (PMML) 3:140 has new state: POSTEXECUTE
+2025-11-10 11:51:29,345 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : WorkflowManager : Denormalizer (PMML) : 3:140 : Denormalizer (PMML) 3:140 doAfterExecute - success
+2025-11-10 11:51:29,346 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : NodeContainer : Denormalizer (PMML) : 3:140 : Denormalizer (PMML) 3:140 has new state: EXECUTED
+2025-11-10 11:51:29,346 : DEBUG : KNIME-Worker-18-Denormalizer (PMML) 3:140 :  : NodeContainer : Denormalizer (PMML) : 3:140 : Basic Customer Segmentation Use Case 3 has new state: CONFIGURED
+2025-11-10 11:51:29,354 : DEBUG : KNIME-BackgroundTableWriter-1 :  : Buffer : Denormalizer (PMML) : 3:140 : Buffer file (/tmp/knime_Basic Customer _14195/knime_container_20251110_8831279219922603495.bin.snappy) is 0.328MB in size
+2025-11-10 11:51:31,048 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : WorkflowManager : Denormalizer (PMML) : 3:141 : Denormalizer (PMML) 3:141 doBeforePreExecution
+2025-11-10 11:51:31,048 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : NodeContainer : Denormalizer (PMML) : 3:141 : Denormalizer (PMML) 3:141 has new state: PREEXECUTE
+2025-11-10 11:51:31,048 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : WorkflowDataRepository : Denormalizer (PMML) : 3:141 : Adding handler 5d9b0759-e5cb-4dbb-be06-cb57898f13f0 (Denormalizer (PMML) 3:141: <no directory>) - 8 in total
+2025-11-10 11:51:31,048 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : WorkflowManager : Denormalizer (PMML) : 3:141 : Denormalizer (PMML) 3:141 doBeforeExecution
+2025-11-10 11:51:31,048 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : NodeContainer : Denormalizer (PMML) : 3:141 : Denormalizer (PMML) 3:141 has new state: EXECUTING
+2025-11-10 11:51:31,048 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : LocalNodeExecutionJob : Denormalizer (PMML) : 3:141 : Denormalizer (PMML) 3:141 Start execute
+2025-11-10 11:51:31,054 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : ExecutionContext : Denormalizer (PMML) : 3:141 : Using Table Backend "BufferedTableBackend".
+2025-11-10 11:51:31,054 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : BufferSettings : Denormalizer (PMML) : 3:141 : Using table format org.knime.core.data.container.DefaultTableStoreFormat
+2025-11-10 11:51:31,055 : INFO  : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : LocalNodeExecutionJob : Denormalizer (PMML) : 3:141 : Denormalizer (PMML) 3:141 End execute (0 secs)
+2025-11-10 11:51:31,055 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : WorkflowManager : Denormalizer (PMML) : 3:141 : Denormalizer (PMML) 3:141 doBeforePostExecution
+2025-11-10 11:51:31,055 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : NodeContainer : Denormalizer (PMML) : 3:141 : Denormalizer (PMML) 3:141 has new state: POSTEXECUTE
+2025-11-10 11:51:31,055 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : WorkflowManager : Denormalizer (PMML) : 3:141 : Denormalizer (PMML) 3:141 doAfterExecute - success
+2025-11-10 11:51:31,055 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : NodeContainer : Denormalizer (PMML) : 3:141 : Denormalizer (PMML) 3:141 has new state: EXECUTED
+2025-11-10 11:51:31,055 : DEBUG : KNIME-Worker-19-Denormalizer (PMML) 3:141 :  : NodeContainer : Denormalizer (PMML) : 3:141 : Basic Customer Segmentation Use Case 3 has new state: EXECUTED
+2025-11-10 11:51:34,792 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:141 : reset
+2025-11-10 11:51:34,792 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:141 : clean output ports.
+2025-11-10 11:51:34,793 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:140 : reset
+2025-11-10 11:51:34,793 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:140 : clean output ports.
+2025-11-10 11:51:34,796 : DEBUG : comm-pool-thread-6 :  : Node : k-Means : 3:152 : reset
+2025-11-10 11:51:34,796 : DEBUG : comm-pool-thread-6 :  : Node : k-Means : 3:152 : clean output ports.
+2025-11-10 11:51:34,796 : DEBUG : comm-pool-thread-6 :  : Node : Normalizer (PMML) : 3:139 : reset
+2025-11-10 11:51:34,796 : DEBUG : comm-pool-thread-6 :  : Node : Normalizer (PMML) : 3:139 : clean output ports.
+2025-11-10 11:51:34,796 : DEBUG : comm-pool-thread-6 :  : Node : Number to String : 3:144 : reset
+2025-11-10 11:51:34,796 : DEBUG : comm-pool-thread-6 :  : Node : Number to String : 3:144 : clean output ports.
+2025-11-10 11:51:34,796 : DEBUG : comm-pool-thread-6 :  : Node : Joiner : 3:150 : reset
+2025-11-10 11:51:34,797 : DEBUG : comm-pool-thread-6 :  : Node : Joiner : 3:150 : clean output ports.
+2025-11-10 11:51:34,797 : DEBUG : comm-pool-thread-6 :  : Node : Excel Reader : 3:149 : reset
+2025-11-10 11:51:34,797 : DEBUG : comm-pool-thread-6 :  : Node : Excel Reader : 3:149 : clean output ports.
+2025-11-10 11:51:34,797 : DEBUG : comm-pool-thread-6 :  : Node : Excel Reader : 3:149 : Configure succeeded. (Excel Reader)
+2025-11-10 11:51:34,798 : DEBUG : comm-pool-thread-6 :  : Node : Joiner : 3:150 : Configure succeeded. (Joiner)
+2025-11-10 11:51:34,798 : DEBUG : comm-pool-thread-6 :  : Node : Number to String : 3:144 : Configure succeeded. (Number to String)
+2025-11-10 11:51:34,798 : DEBUG : comm-pool-thread-6 :  : Node : Normalizer (PMML) : 3:139 : Configure succeeded. (Normalizer (PMML))
+2025-11-10 11:51:34,798 : DEBUG : comm-pool-thread-6 :  : VariableTypeRegistry : k-Means : 3:152 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:51:34,798 : DEBUG : comm-pool-thread-6 :  : VariableTypeRegistry : k-Means : 3:152 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:51:34,799 : DEBUG : comm-pool-thread-6 :  : Node : k-Means : 3:152 : Configure succeeded. (k-Means)
+2025-11-10 11:51:34,799 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:140 : Configure succeeded. (Denormalizer (PMML))
+2025-11-10 11:51:34,799 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:141 : Configure succeeded. (Denormalizer (PMML))
+2025-11-10 11:51:34,800 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:141 : reset
+2025-11-10 11:51:34,800 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:141 : clean output ports.
+2025-11-10 11:51:34,800 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:140 : reset
+2025-11-10 11:51:34,800 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:140 : clean output ports.
+2025-11-10 11:51:34,800 : DEBUG : comm-pool-thread-6 :  : Node : k-Means : 3:152 : reset
+2025-11-10 11:51:34,800 : DEBUG : comm-pool-thread-6 :  : Node : k-Means : 3:152 : clean output ports.
+2025-11-10 11:51:34,800 : DEBUG : comm-pool-thread-6 :  : Node : Normalizer (PMML) : 3:139 : reset
+2025-11-10 11:51:34,800 : DEBUG : comm-pool-thread-6 :  : Node : Normalizer (PMML) : 3:139 : clean output ports.
+2025-11-10 11:51:34,800 : DEBUG : comm-pool-thread-6 :  : Node : Number to String : 3:144 : reset
+2025-11-10 11:51:34,800 : DEBUG : comm-pool-thread-6 :  : Node : Number to String : 3:144 : clean output ports.
+2025-11-10 11:51:34,801 : DEBUG : comm-pool-thread-6 :  : Node : Joiner : 3:150 : reset
+2025-11-10 11:51:34,801 : DEBUG : comm-pool-thread-6 :  : Node : Joiner : 3:150 : clean output ports.
+2025-11-10 11:51:34,801 : DEBUG : comm-pool-thread-6 :  : Node : CSV Reader : 3:148 : reset
+2025-11-10 11:51:34,801 : DEBUG : comm-pool-thread-6 :  : Node : CSV Reader : 3:148 : clean output ports.
+2025-11-10 11:51:34,801 : DEBUG : comm-pool-thread-6 :  : BufferedContainerTable : CSV Reader : 3:148 : Failed to remove container table with id 3 from global table repository.
+2025-11-10 11:51:34,801 : DEBUG : comm-pool-thread-6 :  : BufferedContainerTable : CSV Reader : 3:148 : Failed to remove container table with id 3 from global table repository.
+2025-11-10 11:51:34,801 : DEBUG : comm-pool-thread-6 :  : Node : CSV Reader : 3:148 : Configure succeeded. (CSV Reader)
+2025-11-10 11:51:34,801 : DEBUG : comm-pool-thread-6 :  : Node : Joiner : 3:150 : Configure succeeded. (Joiner)
+2025-11-10 11:51:34,802 : DEBUG : comm-pool-thread-6 :  : Node : Number to String : 3:144 : Configure succeeded. (Number to String)
+2025-11-10 11:51:34,802 : DEBUG : comm-pool-thread-6 :  : Node : Normalizer (PMML) : 3:139 : Configure succeeded. (Normalizer (PMML))
+2025-11-10 11:51:34,802 : DEBUG : comm-pool-thread-6 :  : VariableTypeRegistry : k-Means : 3:152 : The following variable types could all correspond to the config 'manuallyDeselected': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:51:34,802 : DEBUG : comm-pool-thread-6 :  : VariableTypeRegistry : k-Means : 3:152 : The following variable types could all correspond to the config 'selectedTypes': [STRINGARRAY, BOOLEANARRAY, INTARRAY, LONGARRAY, DOUBLEARRAY]. Taking the first.
+2025-11-10 11:51:34,803 : DEBUG : comm-pool-thread-6 :  : Node : k-Means : 3:152 : Configure succeeded. (k-Means)
+2025-11-10 11:51:34,803 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:140 : Configure succeeded. (Denormalizer (PMML))
+2025-11-10 11:51:34,803 : DEBUG : comm-pool-thread-6 :  : Node : Denormalizer (PMML) : 3:141 : Configure succeeded. (Denormalizer (PMML))
+2025-11-10 11:51:42,721 : DEBUG : ModalContext :  : FileSingleNodeContainerPersistor : Normalizer (PMML) : 3:139 : Replaced node directory "/home/magnus/runtime-KNIME/knime-workspace/Example Workflows/Customer Intelligence/Customer Segmentation/Basic Customer Segmentation Use Case/Normalizer _PMML_ (#139)"
+2025-11-10 11:51:42,722 : DEBUG : ModalContext :  : FileSingleNodeContainerPersistor : Denormalizer (PMML) : 3:140 : Replaced node directory "/home/magnus/runtime-KNIME/knime-workspace/Example Workflows/Customer Intelligence/Customer Segmentation/Basic Customer Segmentation Use Case/Denormalizer _PMML_ (#140)"
+2025-11-10 11:51:42,722 : DEBUG : ModalContext :  : FileSingleNodeContainerPersistor : Denormalizer (PMML) : 3:141 : Replaced node directory "/home/magnus/runtime-KNIME/knime-workspace/Example Workflows/Customer Intelligence/Customer Segmentation/Basic Customer Segmentation Use Case/Denormalizer _PMML_ (#141)"
+2025-11-10 11:51:42,723 : DEBUG : ModalContext :  : FileSingleNodeContainerPersistor : Number to String : 3:144 : Replaced node directory "/home/magnus/runtime-KNIME/knime-workspace/Example Workflows/Customer Intelligence/Customer Segmentation/Basic Customer Segmentation Use Case/Number To String (#144)"
+2025-11-10 11:51:42,723 : DEBUG : ModalContext :  : FileSingleNodeContainerPersistor : CSV Reader : 3:148 : Replaced node directory "/home/magnus/runtime-KNIME/knime-workspace/Example Workflows/Customer Intelligence/Customer Segmentation/Basic Customer Segmentation Use Case/CSV Reader (#148)"
+2025-11-10 11:51:42,724 : DEBUG : ModalContext :  : FileSingleNodeContainerPersistor : Excel Reader : 3:149 : Replaced node directory "/home/magnus/runtime-KNIME/knime-workspace/Example Workflows/Customer Intelligence/Customer Segmentation/Basic Customer Segmentation Use Case/Excel Reader (#149)"
+2025-11-10 11:51:42,725 : DEBUG : ModalContext :  : FileSingleNodeContainerPersistor : Joiner : 3:150 : Replaced node directory "/home/magnus/runtime-KNIME/knime-workspace/Example Workflows/Customer Intelligence/Customer Segmentation/Basic Customer Segmentation Use Case/Joiner (#150)"
+2025-11-10 11:51:42,726 : DEBUG : ModalContext :  : FileSingleNodeContainerPersistor : k-Means : 3:152 : Created node directory "/home/magnus/runtime-KNIME/knime-workspace/Example Workflows/Customer Intelligence/Customer Segmentation/Basic Customer Segmentation Use Case/k_Means (#152)"
+2025-11-10 11:51:44,448 : DEBUG : main :  : Node : Denormalizer (PMML) : 3:141 : clean output ports.
+2025-11-10 11:51:44,448 : DEBUG : main :  : Node : Denormalizer (PMML) : 3:140 : clean output ports.
+2025-11-10 11:51:44,448 : DEBUG : main :  : Node : k-Means : 3:152 : clean output ports.
+2025-11-10 11:51:44,448 : DEBUG : main :  : Node : Normalizer (PMML) : 3:139 : clean output ports.
+2025-11-10 11:51:44,448 : DEBUG : main :  : Node : Number to String : 3:144 : clean output ports.
+2025-11-10 11:51:44,448 : DEBUG : main :  : Node : Joiner : 3:150 : clean output ports.
+2025-11-10 11:51:44,448 : DEBUG : main :  : Node : Excel Reader : 3:149 : clean output ports.
+2025-11-10 11:51:44,448 : DEBUG : main :  : Node : CSV Reader : 3:148 : clean output ports.

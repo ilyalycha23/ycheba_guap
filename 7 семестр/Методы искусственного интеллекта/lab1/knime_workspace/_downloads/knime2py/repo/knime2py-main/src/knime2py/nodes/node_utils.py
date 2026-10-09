@@ -1,0 +1,565 @@
+#!/usr/bin/env python3
+"""
+Module for XML-based utilities in the knime2py generator.
+
+Overview
+----------------------------
+This module provides various utility functions for parsing XML configurations
+used in the knime2py generator pipeline. It focuses on extracting values,
+normalizing inputs, and handling KNIME-specific data structures.
+
+Runtime Behavior
+----------------------------
+Inputs:
+- The module reads XML configurations, extracting DataFrame-related settings
+  and context keys.
+
+Outputs:
+- The module writes context assignments to `context[...]` for each output port,
+  mapping node IDs to DataFrames.
+
+Key algorithms or mappings:
+- The module includes functions for normalizing delimiters, characters, and
+  paths, as well as extracting CSV-related settings.
+
+Edge Cases & Safeguards
+----------------------------
+The code handles various edge cases, such as:
+- Empty or constant columns.
+- NaN values in the input data.
+- Class imbalance scenarios.
+- Fallback paths for resolving file locations.
+
+Generated Code Dependencies
+----------------------------
+The generated code requires external libraries such as pandas, numpy, lxml,
+and others. These dependencies are necessary for the generated code, not
+for this utility module.
+
+Usage
+----------------------------
+This module is typically invoked by the emitter functions that generate
+Python code from KNIME nodes. An example of expected context access is:
+```python
+context['node_id:1'] = df
+```
+
+Node Identity
+----------------------------
+This module generates code based on `settings.xml` configurations. It
+supports various KNIME factory IDs and special flags, such as:
+- FACTORY: Identifies the node type.
+- LOOP: Indicates the start or end of a loop.
+
+Configuration
+----------------------------
+The module uses a `@dataclass` for settings, which includes fields for
+various configuration options. The `parse_*` functions extract these values
+using XPath queries and provide fallbacks where necessary.
+
+Limitations / Not implemented
+----------------------------
+Certain options may not be fully supported or may approximate KNIME behavior
+due to differences in the underlying systems.
+
+References
+----------------------------
+For more information, refer to the KNIME documentation and search for
+relevant terminology related to the KNIME ecosystem.
+"""
+
+from __future__ import annotations
+
+import html
+import re
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Iterable, List, Optional, Union, Callable, Tuple, cast
+from lxml import etree as ET
+
+# ----------------------------
+# Generic XML helpers
+# ----------------------------
+
+def first(root: ET._Element, xpath: str) -> Optional[str]:
+    """Return the first string value for xpath, stripped, or None.
+
+    If the xpath returns an element, prefer its @value, else its .text.
+    If it returns a scalar (string/number), cast to str and strip.
+    """
+    vals = root.xpath(xpath)
+    if not vals:
+        return None
+    v = vals[0]
+    # Element -> prefer @value then .text
+    if isinstance(v, ET._Element):
+        if v.get("value") is not None:
+            return (v.get("value") or "").strip()
+        return (v.text or "").strip()
+    # Scalar / attribute string / number
+    return (str(v) if v is not None else "").strip()
+
+def first_el(root: ET._Element, xpath: str) -> Optional[ET._Element]:
+    """Return the first Element for xpath, or None (ignores non-Elements)."""
+    vals = root.xpath(xpath)
+    for v in vals:
+        if isinstance(v, ET._Element):
+            return v
+    return None
+
+def all_values(root: ET._Element, xpath: str) -> List[str]:
+    """Return all values for xpath as stripped strings."""
+    return [(v or "").strip() for v in root.xpath(xpath)]
+
+# ----------------------------
+# Regex-based entry iteration
+# ----------------------------
+
+_ENTRY_XPATH = ".//*[local-name()='entry']"
+
+def iter_entries(root: ET._Element):
+    """Yield (key, value) pairs for all KNIME <entry key="..." value="..."/> nodes."""
+    for ent in root.xpath(_ENTRY_XPATH):
+        k = (ent.get("key") or "").strip()
+        v = ent.get("value")
+        yield k, (v or "").strip() if v is not None else None
+
+
+@dataclass
+class Rule:
+    kind: str
+    col: Optional[str]
+    op: Optional[str]
+    value: Optional[str]
+    outcome: str
+
+
+_RULE_COMMENT = re.compile(r"^\s*//")
+_RULE_TRUE = re.compile(r'^\s*TRUE\s*=>\s*(?P<out>".*?"|\S+)\s*$', re.I)
+_RULE_COMPARE = re.compile(
+    r'^\s*\$(?P<col>[^$]+)\$\s*'
+    r'(?P<op>>=|<=|==|=|!=|>|<)\s*'
+    r'(?P<val>".*?"|\S+)\s*=>\s*(?P<out>".*?"|\S+)\s*$',
+    re.I,
+)
+_RULE_LIKE = re.compile(
+    r'^\s*\$(?P<col>[^$]+)\$\s+LIKE\s+"(?P<pat>.*)"\s*=>\s*(?P<out>".*?"|\S+)\s*$',
+    re.I,
+)
+
+
+def strip_rule_quotes(s: str) -> str:
+    """Remove surrounding quotes from a KNIME rule token when present."""
+    return s[1:-1] if (len(s) >= 2 and s[0] == s[-1] and s[0] in "'\"") else s
+
+
+def parse_knime_rule(line: str) -> Optional[Rule]:
+    """Parse the simple KNIME Rule Engine subset shared by rule nodes."""
+    s = html.unescape(line or "").strip()
+    if not s or _RULE_COMMENT.match(s):
+        return None
+    m = _RULE_TRUE.match(s)
+    if m:
+        return Rule(kind="true", col=None, op=None, value=None, outcome=strip_rule_quotes(m.group("out")))
+    m = _RULE_COMPARE.match(s)
+    if m:
+        return Rule(
+            kind="compare",
+            col=m.group("col").strip(),
+            op=m.group("op"),
+            value=strip_rule_quotes(m.group("val").strip()),
+            outcome=strip_rule_quotes(m.group("out")),
+        )
+    m = _RULE_LIKE.match(s)
+    if m:
+        return Rule(
+            kind="like",
+            col=m.group("col").strip(),
+            op=None,
+            value=m.group("pat"),
+            outcome=strip_rule_quotes(m.group("out")),
+        )
+    return None
+
+
+def parse_knime_rules_from_config(rules_cfg: Optional[ET._Element]) -> List[Rule]:
+    """Parse numbered entries from a KNIME <config key='rules'> block."""
+    if rules_cfg is None:
+        return []
+    numbered: List[tuple[int, str]] = []
+    for k, v in iter_entries(rules_cfg):
+        if k.isdigit() and v is not None:
+            numbered.append((int(k), v))
+    rules: List[Rule] = []
+    for _, raw in sorted(numbered, key=lambda item: item[0]):
+        rule = parse_knime_rule(raw)
+        if rule:
+            rules.append(rule)
+    return rules
+
+
+def rule_literal_py(val: str) -> str:
+    """Convert a KNIME rule literal token to generated Python source."""
+    s = str(val).strip()
+    if re.fullmatch(r"[+-]?\d+", s):
+        return s
+    if re.fullmatch(r"[+-]?(\d+\.\d*|\.\d+|\d+)([eE][+-]?\d+)?", s):
+        return s
+    return repr(s)
+
+
+def rule_wildcard_to_regex(pat: str) -> str:
+    """Convert KNIME Rule Engine LIKE wildcard syntax to a regex."""
+    esc = re.escape(pat)
+    return "^" + esc.replace(r"\*", ".*") + "$"
+
+def _first_value_re(root: ET._Element, pattern: str, flags=re.I) -> Optional[str]:
+    """Return the first value whose key matches the given regex pattern."""
+    rx = re.compile(pattern, flags)
+    for k, v in iter_entries(root):
+        if rx.search(k):
+            return v
+    return None
+
+def _first_value_re_excluding(root: ET._Element, include_pat: str, exclude_pat: str, flags=re.I) -> Optional[str]:
+    """Return the first value whose key matches the include pattern but not the exclude pattern."""
+    inc = re.compile(include_pat, flags)
+    exc = re.compile(exclude_pat, flags)
+    for k, v in iter_entries(root):
+        if inc.search(k) and not exc.search(k):
+            return v
+    return None
+
+def _first_value_all_tokens(root: ET._Element, tokens: List[str]) -> Optional[str]:
+    """Return first value whose key contains ALL tokens (case-insensitive)."""
+    toks = [t.lower() for t in tokens]
+    for k, v in iter_entries(root):
+        lk = k.lower()
+        if all(t in lk for t in toks):
+            return v
+    return None
+
+# ----------------------------
+# Normalizers
+# ----------------------------
+
+def normalize_delim(raw: Optional[str]) -> Optional[str]:
+    """Normalize delimiter strings to their corresponding character representation."""
+    if raw is None:
+        return None
+    v = raw.strip()
+    if len(v) == 1:
+        return v
+    up = v.upper()
+    if up in {"TAB", "\\T", "CTRL-I"}:
+        return "\t"
+    if up in {"COMMA"}:
+        return ","
+    if up in {"SEMICOLON", "SEMI", "SC"}:
+        return ";"
+    if up in {"SPACE"}:
+        return " "
+    if up in {"PIPE"}:
+        return "|"
+    if v == "\\t":
+        return "\t"
+    return v or None
+
+def normalize_char(raw: Optional[str]) -> Optional[str]:
+    """Normalize character strings to their corresponding single character representation."""
+    if not raw:
+        return None
+    v = raw.strip()
+    if v.upper() in {"", "NONE", "NULL"}:
+        return None
+    if v == "&quot;":
+        return '"'
+    if v == "&apos;":
+        return "'"
+    return v[:1] if len(v) >= 1 else None
+
+def looks_like_path(s: str) -> bool:
+    """Check if the given string looks like a file path."""
+    if not s:
+        return False
+    low = s.lower()
+    if low.startswith(("file:", "s3:", "hdfs:", "abfss:", "http://", "https://")):
+        return True
+    if s.endswith(".csv"):
+        return True
+    if "/" in s or "\\" in s:
+        return True
+    return False
+
+def bool_from_value(v: Optional[str]) -> Optional[bool]:
+    """Convert a string value to a boolean."""
+    if v is None:
+        return None
+    t = v.strip().lower()
+    if t in {"true", "1", "yes", "y"}:
+        return True
+    if t in {"false", "0", "no", "n"}:
+        return False
+    return None
+
+# ----------------------------
+# Port helpers / context helpers
+# ----------------------------
+
+def normalize_in_ports(in_ports: List[tuple[str, str]]) -> List[Tuple[str, str]]:
+    """
+    Accepts items like ('1393','1') or '1393:1' (or just '1393') and
+    returns a normalized list of (src_id, port) as strings.
+    """
+    norm: List[Tuple[str, str]] = []
+    for item in in_ports or []:
+        if isinstance(item, tuple) and len(item) == 2:
+            src, port = str(item[0]), str(item[1] or "1")
+            norm.append((src, port))
+        else:
+            s = str(item)
+            if ":" in s:
+                src, port = s.split(":", 1)
+                norm.append((src, port or "1"))
+            elif s:
+                norm.append((s, "1"))
+    if not norm:
+        norm.append(("UNKNOWN", "1"))
+    return norm
+
+def context_assignment_lines(node_id: str, out_ports: List[str]) -> List[str]:
+    """
+    For reader-like nodes that produce a dataframe named `df`,
+    publish it under context keys '<node_id>:<port>'.
+    """
+    ports = sorted({(p or "1") for p in (out_ports or [])}) or ["1"]
+    return [f"context['{node_id}:{p}'] = df" for p in ports]
+
+# ----------------------------
+# CSV extractors (regex-driven)
+# ----------------------------
+
+def extract_csv_path(root: ET._Element) -> Optional[str]:
+    """
+    Prefer keys that *sound* like file paths; fall back to any entry value that looks like a path.
+    Avoid false-positives like node_file='settings.xml' via looks_like_path().
+    """
+    # Prefer specific-ish keys first
+    for pat in (r"\bpath\b", r"\burl\b", r"\bfile\b", r"location"):
+        v = _first_value_re(root, pat)
+        if v and looks_like_path(v):
+            return v
+    # Fallback: any entry value that looks like a CSV/path
+    for _k, v in iter_entries(root):
+        if v and looks_like_path(v):
+            return v
+    return None
+
+def extract_csv_sep(root: ET._Element) -> Optional[str]:
+    """Extract the CSV separator from the XML configuration."""
+    raw = _first_value_re(root, r"(delim|separator|column[_-]?delimiter)\b")
+    return normalize_delim(raw)
+
+def extract_csv_quotechar(root: ET._Element) -> Optional[str]:
+    """Extract the quote character used in the CSV configuration."""
+    raw = _first_value_re_excluding(root, r"\bquote(_?char)?\b", r"escape")
+    if raw is None:
+        # looser fallback: any 'quote' key that isn't an escape
+        for k, v in iter_entries(root):
+            if "quote" in k.lower() and "escape" not in k.lower():
+                raw = v
+                break
+    return normalize_char(raw)
+
+def extract_csv_escapechar(root: ET._Element) -> Optional[str]:
+    """Extract the escape character used in the CSV configuration."""
+    raw = _first_value_re(root, r"escape")
+    return normalize_char(raw)
+
+def extract_csv_encoding(root: ET._Element) -> Optional[str]:
+    """Extract the character encoding from the CSV configuration."""
+    return (
+        _first_value_re(root, r"\bcharacter_set\b")
+        or _first_value_re(root, r"\bcharset\b")
+        or _first_value_re(root, r"encoding")
+    )
+
+def extract_csv_header_reader(root: ET._Element) -> Optional[bool]:
+    """
+    Reader: look for 'column header', 'hasheader', or plain 'header', but avoid writer-only
+    keys like 'write_header'.
+    """
+    for k, v in iter_entries(root):
+        lk = k.lower()
+        if "header" not in lk:
+            continue
+        if "write" in lk:
+            continue
+        if "column" in lk or "hasheader" in lk or lk == "header":
+            return bool_from_value(v)
+    return None
+
+def extract_csv_header_writer(root: ET._Element) -> Optional[bool]:
+    """
+    Writer: prefer explicit 'writeColumnHeader'/'write_header'; otherwise any key whose
+    name contains both 'write' and 'header'.
+    """
+    v = (
+        _first_value_re(root, r"\bwriteColumnHeader\b")
+        or _first_value_re(root, r"\bwrite_header\b")
+        or _first_value_all_tokens(root, ["write", "header"])
+    )
+    return bool_from_value(v) if v is not None else None
+
+def extract_csv_na_rep(root: ET._Element) -> Optional[str]:
+    """
+    Writer NA representation:
+      - modern: key='missing_value_pattern' (may be empty string '')
+      - older: key contains both 'missing' and 'representation'
+    Keep empty string '' as a real value; return None only if not set.
+    """
+    v = _first_value_re(root, r"^missing_value_pattern$")
+    if v is None:
+        v = _first_value_all_tokens(root, ["missing", "representation"])
+    return v
+
+def extract_csv_include_index(root: ET._Element) -> Optional[bool]:
+    """Extract whether to include the index in the CSV output."""
+    raw = _first_value_re(root, r"include[_-]?index")
+    return bool_from_value(raw)
+
+# ----------------------------
+# Data type extractors
+# ----------------------------
+
+def extract_table_spec_types(root: ET._Element) -> dict:
+    """
+    Return {column_name: java_class} from table_spec_config_Internals.
+    Looks under .../individual_specs/*/<config key='0'..> blocks.
+    """
+    out = {}
+    for cfg in root.xpath(
+        ".//*[local-name()='config' and @key='table_spec_config_Internals']"
+        "/*[local-name()='config' and @key='individual_specs']"
+        "/*[local-name()='config']"  # per file block
+        "/*[local-name()='config' and re:test(@key, '^[0-9]+$')]",
+        namespaces={'re': "http://exslt.org/regular-expressions"}
+    ):
+        name = first(cfg, ".//*[local-name()='entry' and @key='name']/@value")
+        jcls = first(cfg, ".//*[local-name()='config' and @key='type']"
+                          "/*[local-name()='entry' and @key='class']/@value")
+        if name:
+            out[name] = jcls or ""
+    return out
+
+
+def java_to_pandas_dtype(java_class: str) -> Optional[str]:
+    """
+    Map KNIME java types to pandas nullable dtypes.
+    """
+    j = (java_class or "").lower()
+    if "integer" in j or "long" in j or "intcell" in j:
+        return "Int64"
+    if "double" in j or "float" in j:
+        return "Float64"
+    if "boolean" in j:
+        return "boolean"
+    if "string" in j:
+        return "string"
+    # leave unknowns to inference
+    return None
+
+# ----------------------------
+# Import utils
+# ----------------------------
+
+def _coerce_iterable(obj: object | None) -> List[str]:
+    """Best-effort conversion to a list of strings."""
+    if obj is None:
+        return []
+    if isinstance(obj, str):
+        return [obj]
+    if isinstance(obj, Iterable):
+        return [str(item) for item in obj]
+    return []
+
+
+def collect_module_imports(mod_or_func: Optional[Union[object, Callable[[], Iterable[str]]]]) -> List[str]:
+    """
+    Return a sorted list of unique import lines from either:
+      - a module object that defines generate_imports()
+      - a callable (e.g. the generate_imports function itself)
+    """
+    imports = set()
+    try:
+        if mod_or_func is None:
+            return []
+        # If they passed the function directly
+        if callable(mod_or_func):
+            result = mod_or_func()
+            items = _coerce_iterable(result)
+        else:
+            gi = getattr(mod_or_func, "generate_imports", None)
+            if callable(gi):
+                result = gi()
+                items = _coerce_iterable(result)
+            else:
+                items = []
+        for line in items:
+            s = (line or "").strip()
+            if s:
+                imports.add(s)
+    except Exception:
+        # don’t let import gathering crash codegen
+        return []
+    return sorted(imports)
+
+
+def split_out_imports(lines: List[str]) -> tuple[List[str], List[str]]:
+    """
+    Return (found_imports, body_without_imports).
+    Any line that begins with 'import ' or 'from ' (ignoring leading spaces) is treated as an import.
+    """
+    found: List[str] = []
+    body: List[str] = []
+    for ln in lines or []:
+        s = ln.lstrip()
+        if s.startswith("import ") or s.startswith("from "):
+            found.append(s.strip())
+        else:
+            body.append(ln)
+    return found, body
+
+def resolve_reader_path(root: ET._Element, node_dir: Path) -> Optional[str]:
+    """
+    Resolve the path from settings.xml. Supports:
+      - LOCAL: absolute path is used as-is
+      - RELATIVE + knime.workflow: path is relative to the workflow directory
+    """
+    path_cfg = first_el(root, ".//*[local-name()='config' and @key='path']")
+    if path_cfg is None:
+        return None
+
+    raw_path = first(path_cfg, ".//*[local-name()='entry' and @key='path']/@value")
+    fs_type  = first(path_cfg, ".//*[local-name()='entry' and @key='file_system_type']/@value")
+    spec     = first(path_cfg, ".//*[local-name()='entry' and @key='file_system_specifier']/@value")
+
+    if not raw_path:
+        return None
+
+    node_has_settings = (node_dir / "settings.xml").exists()
+    workflow_dir = node_dir.parent if node_has_settings else node_dir
+
+    try:
+        p = Path(raw_path)
+        if (fs_type or "").upper() == "LOCAL" or p.is_absolute():
+            return str(p.expanduser().resolve())
+
+        if (fs_type or "").upper() == "RELATIVE" and (spec or "").lower() == "knime.workflow":
+            return str((workflow_dir / raw_path).expanduser().resolve())
+
+        # Fallback: treat as relative to workflow_dir
+        return str((workflow_dir / raw_path).expanduser().resolve())
+    except Exception:
+        # Last-ditch: just return the raw string
+        return raw_path

@@ -1,0 +1,281 @@
+#!/usr/bin/env python3
+
+"""
+CSV Reader module for reading CSV files into pandas DataFrames.
+
+Overview
+----------------------------
+This module emits code that reads a CSV file into a pandas DataFrame using options parsed 
+from settings.xml. It resolves LOCAL/RELATIVE paths and maps KNIME options to 
+pandas.read_csv.
+
+Runtime Behavior
+----------------------------
+Inputs:
+- The generated code reads a single CSV file specified in the settings.
+
+Outputs:
+- The DataFrame is published to the provided context output ports, with the mapping 
+  determined by the node's configuration.
+
+Key algorithms or mappings:
+- The module handles various CSV reading options such as separator, quote character, 
+  escape character, and header presence. It also includes post-processing for data types 
+  based on the KNIME table specification.
+
+Edge Cases & Safeguards
+----------------------------
+The code implements robust handling for missing values, treating empty strings and spaces 
+as NA. It also includes safeguards for type coercion, ensuring that columns are only 
+converted if they exist in the DataFrame.
+
+Generated Code Dependencies
+----------------------------
+The generated code requires the following external libraries: pandas, lxml. These 
+dependencies are necessary for the generated code, not for this module itself.
+
+Usage
+----------------------------
+This module is typically invoked by the knime2py emitter as part of the code generation 
+pipeline for KNIME nodes. An example of expected context access is:
+```
+context['output_port_1'] = df
+```
+
+Node Identity
+----------------------------
+The KNIME factory ID for this module is defined by the FACTORY constant:
+- FACTORY = "org.knime.base.node.io.filehandling.csv.reader.CSVTableReaderNodeFactory"
+
+Configuration
+----------------------------
+The settings are encapsulated in the `CSVReaderSettings` dataclass, which includes the 
+following important fields:
+- path: The path to the CSV file (default: None).
+- sep: The delimiter used in the CSV file (default: None).
+- quotechar: The character used for quoting (default: None).
+- escapechar: The character used for escaping (default: None).
+- header: Indicates if the CSV has a header (default: None).
+- encoding: The file encoding (default: None).
+- pandas_dtypes: A mapping of column names to pandas data types (default: empty dict).
+
+The `parse_csv_reader_settings` function extracts these values from the settings.xml file, 
+handling both absolute LOCAL paths and RELATIVE paths anchored at the workflow directory.
+
+Limitations / Not implemented
+----------------------------
+Currently, the module does not support certain CSV options that may be available in KNIME, 
+and approximations may occur in behavior compared to the KNIME CSV reader.
+
+References
+----------------------------
+For more information, refer to the KNIME documentation and the following URL:
+https://hub.knime.com/knime/extensions/org.knime.features.base/latest/
+org.knime.base.node.io.filehandling.csv.reader.CSVTableReaderNodeFactory
+"""
+
+from __future__ import annotations
+
+from dataclasses import dataclass, field
+from pathlib import Path
+from typing import List, Optional, Dict, Any
+from lxml import etree as ET
+from ..xml_utils import XML_PARSER
+from .node_utils import *
+
+FACTORY = "org.knime.base.node.io.filehandling.csv.reader.CSVTableReaderNodeFactory"
+
+def _build_pandas_dtype_map(root: ET._Element) -> dict:
+    """
+    Build a mapping of column names to pandas data types based on the provided XML root element.
+
+    Args:
+        root (ET._Element): The root element of the parsed XML settings.
+
+    Returns:
+        dict: A dictionary mapping column names to pandas data types.
+    """
+    spec = extract_table_spec_types(root)
+    d = {}
+    for col, jcls in (spec or {}).items():
+        pdtype = java_to_pandas_dtype(jcls)
+        if pdtype:
+            d[col] = pdtype
+    return d
+
+@dataclass
+class CSVReaderSettings:
+    path: Optional[str] = None
+    sep: Optional[str] = None
+    quotechar: Optional[str] = None
+    escapechar: Optional[str] = None
+    header: Optional[bool] = None
+    encoding: Optional[str] = None
+    pandas_dtypes: dict = field(default_factory=dict)
+
+
+# ----------------------------
+# Settings.xml → CSVReaderSettings
+# ----------------------------
+
+def parse_csv_reader_settings(node_dir: Path) -> CSVReaderSettings:
+    """
+    Read <node_dir>/settings.xml and extract CSV path and common options.
+
+    Handles absolute LOCAL paths and RELATIVE paths anchored at the workflow directory.
+
+    Args:
+        node_dir (Path): The directory containing the settings.xml file.
+
+    Returns:
+        CSVReaderSettings: An instance of CSVReaderSettings populated with the extracted values.
+    """
+    settings = node_dir / "settings.xml"
+    if not settings.exists():
+        return CSVReaderSettings()
+
+    root = ET.parse(str(settings), parser=XML_PARSER).getroot()
+
+    # Resolve path properly (LOCAL vs RELATIVE knime.workflow)
+    file_path = resolve_reader_path(root, node_dir)
+
+    # Extractors
+    sep = extract_csv_sep(root) or ","
+    quotechar = extract_csv_quotechar(root) or '"'
+    escapechar = extract_csv_escapechar(root)
+    header = extract_csv_header_reader(root)
+    if header is None:
+        header = True
+    enc = extract_csv_encoding(root) or "utf-8"
+    pandas_dtypes = _build_pandas_dtype_map(root)
+
+    return CSVReaderSettings(
+        path=file_path,
+        sep=sep,
+        quotechar=quotechar,
+        escapechar=escapechar,
+        header=header,
+        encoding=enc,
+        pandas_dtypes=pandas_dtypes,
+    )
+
+
+
+# ----------------------------
+# Code generators
+# ----------------------------
+
+def generate_imports():
+    """
+    Generate a list of import statements required for the CSV Reader.
+
+    Returns:
+        List[str]: A list of import statements.
+    """
+    return ["from pathlib import Path", "import pandas as pd"]
+
+
+def generate_py_body(node_id: str, node_dir: Optional[str], out_ports: List[str]) -> List[str]:
+    """
+    Emit body lines for a CSV Reader node that reads a CSV into `df`
+    and publishes it to the provided context out_ports.
+
+    Args:
+        node_id (str): The ID of the node.
+        node_dir (Optional[str]): The directory of the node.
+        out_ports (List[str]): The output ports to publish the DataFrame to.
+
+    Returns:
+        List[str]: A list of lines representing the body of the Python code.
+    """
+    ndir = Path(node_dir) if node_dir else None
+    settings = parse_csv_reader_settings(ndir) if ndir else CSVReaderSettings()
+
+    lines: List[str] = []
+    lines.append("# https://hub.knime.com/knime/extensions/org.knime.features.base/latest/"
+                 "org.knime.base.node.io.filehandling.csv.reader.CSVTableReaderNodeFactory")
+
+    # Path
+    if settings.path:
+        lines.append(f"csv_path = Path(r\"{settings.path}\")")
+    else:
+        lines.append("# WARNING: CSV path not found in settings.xml. Please set manually:")
+        lines.append("csv_path = Path('path/to/input.csv')")
+
+    # ---- Build read_csv kwargs ----
+    # sep / quote / encoding
+    sep_arg    = repr(settings.sep if settings.sep is not None else ",")
+    quote_arg  = repr(settings.quotechar if settings.quotechar is not None else '"')
+    enc_arg    = repr(settings.encoding if settings.encoding else "utf-8")
+
+    # header: pandas expects 0 (row index) when file has a header, else None
+    header_has = True if settings.header is None else bool(settings.header)
+    header_arg = "0" if header_has else "None"
+
+    # escapechar: omit when it equals quotechar to avoid C-engine EOF-in-string errors
+    esc_kw = ""
+    if settings.escapechar is not None:
+        if settings.quotechar is not None and settings.escapechar == settings.quotechar:
+            lines.append("# Note: escapechar equals quotechar; omitting escapechar and relying on double-quoted escapes.")
+            # Optional: if you still see quoting errors, uncomment to force python engine:
+            # engine_kw = ", engine='python'"
+            # but we keep engine default to preserve performance/compat
+        else:
+            esc_kw = f", escapechar={repr(settings.escapechar)}"
+
+    # Always treat blanks as NA; keep pandas defaults; trim spaces after delimiters
+    na_kw = ", na_values=['', ' '], keep_default_na=True, skipinitialspace=True"
+
+    # Read WITHOUT dtype=... (we’ll coerce below)
+    lines.append(
+        f"df = pd.read_csv(csv_path, sep={sep_arg}, quotechar={quote_arg}, header={header_arg}, "
+        f"encoding={enc_arg}{esc_kw}{na_kw})"
+    )
+
+    # Post-parse dtype coercion (mirrors KNIME table spec intent, but robust to stray spaces)
+    lines.append("_pd_dtypes = " + repr(settings.pandas_dtypes or {}))
+    lines.append("for _col, _dt in _pd_dtypes.items():")
+    lines.append("    if _col not in df.columns:")
+    lines.append("        continue")
+    lines.append("    try:")
+    lines.append("        if _dt in ('Int64', 'Float64'):")
+    lines.append("            df[_col] = pd.to_numeric(df[_col], errors='coerce').astype(_dt)")
+    lines.append("        else:")
+    lines.append("            df[_col] = df[_col].astype(_dt)")
+    lines.append("    except Exception:  # leave column as-is on failure")
+    lines.append("        pass")
+
+    # Publish to context
+    for line in context_assignment_lines(node_id, out_ports):
+        lines.append(line)
+
+    return lines
+
+
+
+def get_name() -> str:
+    """Return name of the node in KNIME workflow."""
+    return "CSV Reader"
+
+
+def handle(ntype, nid, npath, incoming, outgoing):
+    """
+    Handle the processing of a node, generating the necessary imports and body lines.
+
+    Args:
+        ntype: The type of the node.
+        nid: The ID of the node.
+        npath: The path of the node.
+        incoming: Incoming connections to the node.
+        outgoing: Outgoing connections from the node.
+
+    Returns:
+        tuple: A tuple containing the list of imports and the body lines.
+    """
+    out_ports = [str(getattr(e, "source_port", "") or "1") for _, e in outgoing]
+    node_lines = generate_py_body(nid, npath, out_ports)
+
+    found, body = split_out_imports(node_lines)
+    explicit = collect_module_imports(generate_imports)
+    imports = sorted(set(found).union(explicit))
+    return imports, body

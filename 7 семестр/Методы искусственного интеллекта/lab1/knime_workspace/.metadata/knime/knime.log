@@ -428,3 +428,995 @@ java.lang.IllegalArgumentException: System clipboard does not contain KNIME work
 2026-10-09 22:54:37,518 : INFO  : KNIME-Worker-69-Scatter Plot 3:7 :  : LocalNodeExecutionJob : Scatter Plot : 3:7 : Scatter Plot 3:7 End execute (0 secs)
 2026-10-09 22:54:37,520 : INFO  : KNIME-Worker-71-Numeric Scorer 3:6 :  : LocalNodeExecutionJob : Numeric Scorer : 3:6 : Numeric Scorer 3:6 End execute (0 secs)
 2026-10-09 23:09:58,480 : INFO  : KNIME shutdown hooks - org.knime.core.util.FileUtil$$Lambda/0x0000023d11487ae8 :  : FileUtil :  :  : Deleting 10 temporary files.
+2026-10-10 04:31:24,189 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-10-10 04:31:24,190 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-10-10 04:31:24,190 : INFO  : main :  : NodeLogger :  :  : # Welcome to KNIME Analytics Platform v5.12.0.v202606180846 (Build June 15, 2026)       #
+2026-10-10 04:31:24,190 : INFO  : main :  : NodeLogger :  :  : # Based on Eclipse, http://www.eclipse.org                                              #
+2026-10-10 04:31:24,190 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-10-10 04:31:24,190 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-10-10 04:31:24,190 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-10-10 04:31:24,190 : INFO  : main :  : NodeLogger :  :  : # Copyright by KNIME AG, Zurich, Switzerland and others.                                #
+2026-10-10 04:31:24,190 : INFO  : main :  : NodeLogger :  :  : # Website: http://www.knime.com                                                         #
+2026-10-10 04:31:24,190 : INFO  : main :  : NodeLogger :  :  : # E-mail: contact@knime.com                                                             #
+2026-10-10 04:31:24,190 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-10-10 04:31:24,190 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-10-10 04:31:24,190 : INFO  : main :  : NodeLogger :  :  : # For more details see the KNIME log file:                                              #
+2026-10-10 04:31:24,190 : INFO  : main :  : NodeLogger :  :  : # D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\knime.log
+2026-10-10 04:31:24,190 : INFO  : main :  : NodeLogger :  :  : #---------------------------------------------------------------------------------------#
+2026-10-10 04:31:24,241 : INFO  : main :  : NodeLogger :  :  : # logging date=сб окт. 10 04:31:24 MSK 2026
+2026-10-10 04:31:24,241 : INFO  : main :  : NodeLogger :  :  : # java.version=21.0.9
+2026-10-10 04:31:24,242 : INFO  : main :  : NodeLogger :  :  : # java.vm.version=21.0.9+10-LTS
+2026-10-10 04:31:24,242 : INFO  : main :  : NodeLogger :  :  : # java.vendor=Eclipse Adoptium
+2026-10-10 04:31:24,242 : INFO  : main :  : NodeLogger :  :  : # os.name=Windows 11
+2026-10-10 04:31:24,242 : INFO  : main :  : NodeLogger :  :  : # os.arch=amd64
+2026-10-10 04:31:24,242 : INFO  : main :  : NodeLogger :  :  : # number of CPUs=12
+2026-10-10 04:31:24,242 : INFO  : main :  : NodeLogger :  :  : # assertions=off
+2026-10-10 04:31:24,262 : INFO  : main :  : NodeLogger :  :  : # host=ILYALYCHA
+2026-10-10 04:31:24,303 : INFO  : main :  : NodeLogger :  :  : # username=ilyal
+2026-10-10 04:31:24,304 : INFO  : main :  : NodeLogger :  :  : # max mem=16312MB
+2026-10-10 04:31:24,315 : INFO  : main :  : NodeLogger :  :  : # application=org.knime.product.KNIME_APPLICATION
+2026-10-10 04:31:24,348 : INFO  : main :  : NodeLogger :  :  : # KNID=11-3dbea7a4c5783ee2-01-20725c6c0dcbae89
+2026-10-10 04:31:24,348 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-10-10 04:31:21,380 : INFO  : main :  : RegisterBouncyCastleProvider :  :  : Added BouncyCastleProvider to Java Security providers
+2026-10-10 04:31:43,084 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_string2date-formats.txt' does not exist.
+2026-10-10 04:31:43,370 : INFO  : Node Repository Initializer :  : MovingAggregationNodeFactory :  :  : Modern dialog for Moving Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-10-10 04:31:44,255 : INFO  : main :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_database_drivers.txt' does not exist.
+2026-10-10 04:31:44,255 : INFO  : main :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_database_urls.txt' does not exist.
+2026-10-10 04:31:53,521 : INFO  : main :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_org.knime.kerberos.name.txt' does not exist.
+2026-10-10 04:31:54,574 : INFO  : main :  : KNIMECorePlugin :  :  : Setting console view log level to WARN
+2026-10-10 04:32:03,636 : INFO  : Worker-1: Workflow Coach loader :  : GroupByNodeFactory :  :  : Modern dialog for GroupBy node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-10-10 04:32:03,901 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_createFileNameHistoryKey.txt' does not exist.
+2026-10-10 04:32:04,453 : INFO  : Worker-1: Workflow Coach loader :  : Pivot2NodeFactory :  :  : Modern dialog for Pivot node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-10-10 04:32:04,871 : INFO  : Worker-1: Workflow Coach loader :  : ColumnAggregatorNodeFactory :  :  : Modern dialog for Column Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-10-10 04:32:05,883 : INFO  : Worker-1: Workflow Coach loader :  : ProcessWatchdog :  :  : KNIME Process Watchdog memory limit not configured
+2026-10-10 04:32:05,883 : INFO  : Worker-1: Workflow Coach loader :  : ProcessWatchdog :  :  : External process memory watchdog is disabled, because the memory limit is set to -1
+2026-10-10 04:32:07,499 : INFO  : Worker-1: Workflow Coach loader :  : NodeRecommendationManager :  :  : Loading node recommendations from <org.knime.core.ui.workflowcoach.data.PrefsTripleProvider>
+2026-10-10 04:32:07,500 : INFO  : Worker-1: Workflow Coach loader :  : NodeRecommendationManager :  :  : Loading node recommendations from <org.knime.workbench.workflowcoach.data.CommunityTripleProvider>
+2026-10-10 04:32:07,500 : INFO  : Worker-1: Workflow Coach loader :  : NodeRecommendationManager :  :  : Loading node recommendations from <org.knime.workbench.workflowcoach.local.data.WorkspaceTripleProvider>
+2026-10-10 04:32:10,948 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-10-10 04:32:10,982 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-10-10 04:32:10,996 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-10-10 04:32:10,998 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-10-10 04:32:10,999 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-10-10 04:32:11,000 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-10-10 04:32:11,096 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=mssqlserver, name=Microsoft SQL Server, description=null)
+2026-10-10 04:32:11,097 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=mssqlserver, name=Microsoft SQL Server, description=null)
+2026-10-10 04:32:11,107 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=mssqlserver, name=Microsoft SQL Server, description=null)
+2026-10-10 04:32:58,732 : INFO  : ModalContext :  : LoadWorkflowRunnable :  :  : Canceled workflow load due to incompatible version
+org.knime.core.node.workflow.UnsupportedWorkflowVersionException: Unable to load workflow, it was created with a future version of KNIME (5.12.0.v202606261225). You are running 5.12.0.v202606180846.
+	at org.knime.core.node.workflow.WorkflowLoadHelper.createTemplateLoadPersistor(WorkflowLoadHelper.java:383)
+	at org.knime.core.node.workflow.WorkflowLoadHelper.createLoadPersistor(WorkflowLoadHelper.java:306)
+	at org.knime.core.node.workflow.WorkflowManager.createLoadPersistor(WorkflowManager.java:8826)
+	at org.knime.core.node.workflow.WorkflowManager.load(WorkflowManager.java:8866)
+	at org.knime.core.node.workflow.WorkflowManager.loadProject(WorkflowManager.java:8704)
+	at org.knime.workbench.editor2.LoadWorkflowRunnable.run(LoadWorkflowRunnable.java:200)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:123)
+2026-10-10 04:32:58,782 : ERROR : main :  : runtime :  :  : Unable to create part
+org.eclipse.ui.PartInitException: Canceled workflow load due to incompatible version
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:352)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:977)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:939)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:139)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:386)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:312)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:203)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:90)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:59)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:42)
+	at org.eclipse.ui.internal.WorkbenchContributionFactory.create(WorkbenchContributionFactory.java:46)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:134)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:991)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:658)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:762)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:727)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:711)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.lambda$0(PartServiceImpl.java:105)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.lambda$0(UIEventHandler.java:38)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:183)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:133)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4870)
+	at org.eclipse.e4.ui.workbench.swt.DisplayUISynchronize.syncExec(DisplayUISynchronize.java:34)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.handleEvent(UIEventHandler.java:38)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:206)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:201)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:132)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:73)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:48)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:60)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElementGen(ElementContainerImpl.java:168)
+	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElement(ElementContainerImpl.java:187)
+	at org.eclipse.e4.ui.internal.workbench.ModelServiceImpl.showElementInWindow(ModelServiceImpl.java:661)
+	at org.eclipse.e4.ui.internal.workbench.ModelServiceImpl.bringToTop(ModelServiceImpl.java:625)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.delegateBringToTop(PartServiceImpl.java:796)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.bringToTop(PartServiceImpl.java:401)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.showPart(PartServiceImpl.java:1271)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor(WorkbenchPage.java:3228)
+	at org.eclipse.ui.internal.WorkbenchPage.lambda$11(WorkbenchPage.java:3118)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3116)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3086)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3069)
+	at org.knime.workbench.explorer.view.actions.OpenWorkflowAction.openEditor(OpenWorkflowAction.java:131)
+	at org.knime.workbench.explorer.view.ExplorerView.openSelected(ExplorerView.java:413)
+	at org.knime.workbench.explorer.view.ExplorerView$3$1.run(ExplorerView.java:467)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:132)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4111)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3727)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.knime.product.rcp.KNIMEApplication.start(KNIMEApplication.java:212)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+Caused by: org.eclipse.core.runtime.OperationCanceledException: Canceled workflow load due to incompatible version
+	at org.knime.workbench.editor2.WorkflowEditor.setInput(WorkflowEditor.java:1462)
+	at org.knime.workbench.editor2.WorkflowEditor.init(WorkflowEditor.java:534)
+	at org.eclipse.ui.internal.EditorReference.initialize(EditorReference.java:353)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:346)
+	... 77 more
+2026-10-10 04:32:58,792 : ERROR : main :  : runtime :  :  : Cannot invoke "org.knime.core.ui.node.workflow.WorkflowManagerUI.getNodeContainers()" because "this.m_manager" is null
+java.lang.NullPointerException: Cannot invoke "org.knime.core.ui.node.workflow.WorkflowManagerUI.getNodeContainers()" because "this.m_manager" is null
+	at org.knime.workbench.editor2.WorkflowEditor.getSubEditors(WorkflowEditor.java:601)
+	at org.knime.workbench.editor2.WorkflowEditor.dispose(WorkflowEditor.java:712)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.handlePartInitException(CompatibilityPart.java:316)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:352)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:977)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:939)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:139)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:386)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:312)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:203)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:90)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:59)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:42)
+	at org.eclipse.ui.internal.WorkbenchContributionFactory.create(WorkbenchContributionFactory.java:46)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:134)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:991)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:658)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:762)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:727)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:711)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.lambda$0(PartServiceImpl.java:105)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.lambda$0(UIEventHandler.java:38)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:183)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:133)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4870)
+	at org.eclipse.e4.ui.workbench.swt.DisplayUISynchronize.syncExec(DisplayUISynchronize.java:34)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.handleEvent(UIEventHandler.java:38)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:206)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:201)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:132)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:73)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:48)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:60)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElementGen(ElementContainerImpl.java:168)
+	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElement(ElementContainerImpl.java:187)
+	at org.eclipse.e4.ui.internal.workbench.ModelServiceImpl.showElementInWindow(ModelServiceImpl.java:661)
+	at org.eclipse.e4.ui.internal.workbench.ModelServiceImpl.bringToTop(ModelServiceImpl.java:625)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.delegateBringToTop(PartServiceImpl.java:796)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.bringToTop(PartServiceImpl.java:401)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.showPart(PartServiceImpl.java:1271)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor(WorkbenchPage.java:3228)
+	at org.eclipse.ui.internal.WorkbenchPage.lambda$11(WorkbenchPage.java:3118)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3116)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3086)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:3069)
+	at org.knime.workbench.explorer.view.actions.OpenWorkflowAction.openEditor(OpenWorkflowAction.java:131)
+	at org.knime.workbench.explorer.view.ExplorerView.openSelected(ExplorerView.java:413)
+	at org.knime.workbench.explorer.view.ExplorerView$3$1.run(ExplorerView.java:467)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:132)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4111)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3727)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.knime.product.rcp.KNIMEApplication.start(KNIMEApplication.java:212)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+2026-10-10 04:35:46,902 : WARN  : ModalContext :  : Node : CSV Reader : 3:1 : Please specify a file
+2026-10-10 04:35:48,835 : ERROR : main :  : NodeMigrationRuleRegistry :  :  : Plug-in org.knime.database.nodes was unable to load class org.knime.database.node.utility.tablecreator3.DBTableCreate3NodeMigrationRule.
+org.eclipse.core.runtime.CoreException: Plug-in org.knime.database.nodes was unable to load class org.knime.database.node.utility.tablecreator3.DBTableCreate3NodeMigrationRule.
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:245)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:228)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:1034)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:286)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:65)
+	at org.knime.workflow.migration.NodeMigrationRuleRegistry.<init>(NodeMigrationRuleRegistry.java:107)
+	at org.knime.workflow.migration.NodeMigrationRuleRegistry.<clinit>(NodeMigrationRuleRegistry.java:76)
+	at org.knime.workflow.migration.WorkflowMigrationManager.hasMatchingRule(WorkflowMigrationManager.java:793)
+	at org.knime.workflow.migration.MigrationWorkflowEditorEventListener.workflowLoaded(MigrationWorkflowEditorEventListener.java:102)
+	at org.knime.workbench.editor2.LoadWorkflowRunnable.lambda$6(LoadWorkflowRunnable.java:243)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:132)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4111)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3727)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.knime.product.rcp.KNIMEApplication.start(KNIMEApplication.java:212)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+Caused by: java.lang.ClassNotFoundException: org.knime.database.node.utility.tablecreator3.DBTableCreate3NodeMigrationRule cannot be found by org.knime.database.nodes_5.12.0.v202606171318
+	at org.eclipse.osgi.internal.loader.BundleLoader.generateException(BundleLoader.java:567)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass0(BundleLoader.java:562)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:438)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:195)
+	at java.base/java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:652)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:226)
+	... 31 more
+2026-10-10 04:37:21,924 : ERROR : main :  : LoadWarningsUtil : CSV Reader : 3:1 : Loading the saved settings failed. Falling back to default settings.
+First error: Config for key "advanced_settings" not found.
+org.knime.core.node.InvalidSettingsException: Config for key "advanced_settings" not found.
+	at org.knime.core.node.config.Config.getConfig(Config.java:516)
+	at org.knime.core.node.NodeSettings.getNodeSettings(NodeSettings.java:141)
+	at org.knime.core.node.NodeSettings.getNodeSettings(NodeSettings.java:1)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.knime.core.webui.node.dialog.internal.NodeAndVariableSettingsProxy.lambda$2(NodeAndVariableSettingsProxy.java:112)
+	at jdk.proxy7/jdk.proxy7.$Proxy116.getNodeSettings(Unknown Source)
+	at org.knime.base.node.io.filehandling.csv.reader.CSVMultiTableReadConfigSerializer.loadInModel(CSVMultiTableReadConfigSerializer.java:363)
+	at org.knime.base.node.io.filehandling.csv.reader.CSVTableReaderMigration.load(CSVTableReaderMigration.java:78)
+	at org.knime.core.webui.node.dialog.defaultdialog.persistence.impl.SettingsLoaderFactory.lambda$13(SettingsLoaderFactory.java:244)
+	at org.knime.core.webui.node.dialog.defaultdialog.persistence.impl.SettingsLoaderFactory.loadSettings(SettingsLoaderFactory.java:110)
+	at org.knime.core.webui.node.dialog.defaultdialog.NodeParametersUtil.loadSettings(NodeParametersUtil.java:228)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.NodeSettingsToDefaultNodeSettings.fromNodeSettingsToDefaultNodeSettings(NodeSettingsToDefaultNodeSettings.java:130)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.NodeSettingsToDefaultNodeSettings.fromNodeSettingsToDefaultNodeSettingsOrDefault(NodeSettingsToDefaultNodeSettings.java:136)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.NodeSettingsToDefaultNodeSettings$GetSettings.getDefaultNodeSettingsUnchecked(NodeSettingsToDefaultNodeSettings.java:154)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.NodeSettingsToDefaultNodeSettings.allNodeSettingsToDefaultNodeSettings(NodeSettingsToDefaultNodeSettings.java:123)
+	at org.knime.core.webui.node.dialog.defaultdialog.util.NodeSettingsToDefaultNodeSettings.nodeSettingsToDefaultNodeSettingsOrDefault(NodeSettingsToDefaultNodeSettings.java:113)
+	at org.knime.core.webui.node.dialog.defaultdialog.DefaultNodeSettingsService.fromNodeSettings(DefaultNodeSettingsService.java:141)
+	at org.knime.core.webui.node.dialog.NodeContainerNodeDialogAdapter$NodeDialogDataServiceAdapter.getInitialData(NodeContainerNodeDialogAdapter.java:149)
+	at org.knime.core.webui.data.InitialDataService.getInitialData(InitialDataService.java:116)
+	at org.knime.core.webui.node.DataServiceManager.callInitialDataService(DataServiceManager.java:130)
+	at org.knime.gateway.api.entity.UIExtensionEnt.<init>(UIExtensionEnt.java:124)
+	at org.knime.gateway.api.entity.UIExtensionEnt.<init>(UIExtensionEnt.java:92)
+	at org.knime.gateway.api.entity.NodeDialogEnt.<init>(NodeDialogEnt.java:79)
+	at java.base/java.util.Optional.map(Unknown Source)
+	at org.knime.js.cef.pagebuilder.PageBuilderUtil$UIExtensionEnts.lambda$0(PageBuilderUtil.java:158)
+	at org.knime.core.webui.data.DataServiceDependencies.runWithDependencies(DataServiceDependencies.java:159)
+	at org.knime.js.cef.pagebuilder.PageBuilderUtil$UIExtensionEnts.<init>(PageBuilderUtil.java:157)
+	at org.knime.js.cef.pagebuilder.PageBuilderUtil.initializePageBuilderForView(PageBuilderUtil.java:106)
+	at org.knime.js.cef.nodeview.CEFNodeView.lambda$7(CEFNodeView.java:461)
+	at org.knime.js.cef.nodeview.CEFNodeView$4.completed(CEFNodeView.java:475)
+	at com.equo.chromium.swt.internal.Chromium.lambda$10(Chromium.java:912)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:132)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4111)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3727)
+	at org.knime.js.cef.nodeview.CEFNodeView.blockUntilDisposed(CEFNodeView.java:524)
+	at org.knime.js.cef.nodeview.CEFNodeView.callOpenView(CEFNodeView.java:394)
+	at org.knime.core.node.AbstractNodeView.openView(AbstractNodeView.java:197)
+	at org.knime.core.node.Node.invokeOpenView(Node.java:2850)
+	at org.knime.workbench.editor2.actions.OpenNodeViewAction.openNodeView(OpenNodeViewAction.java:147)
+	at org.knime.workbench.editor2.editparts.NodeContainerEditPart.openNodeDialog(NodeContainerEditPart.java:867)
+	at org.knime.workbench.editor2.editparts.NodeContainerEditPart.openNodeDialog(NodeContainerEditPart.java:853)
+	at org.knime.workbench.editor2.editparts.NodeContainerEditPart.openDialog(NodeContainerEditPart.java:842)
+	at org.knime.workbench.editor2.editparts.NodeContainerEditPart.performRequest(NodeContainerEditPart.java:404)
+	at org.eclipse.gef.tools.SelectEditPartTracker.performOpen(SelectEditPartTracker.java:207)
+	at org.eclipse.gef.tools.SelectEditPartTracker.handleDoubleClick(SelectEditPartTracker.java:149)
+	at org.knime.workbench.editor2.WorkflowSelectionDragEditPartsTracker.handleDoubleClick(WorkflowSelectionDragEditPartsTracker.java:127)
+	at org.eclipse.gef.tools.AbstractTool.mouseDoubleClick(AbstractTool.java:1078)
+	at org.eclipse.gef.tools.SelectionTool.mouseDoubleClick(SelectionTool.java:550)
+	at org.eclipse.gef.EditDomain.mouseDoubleClick(EditDomain.java:223)
+	at org.eclipse.gef.ui.parts.DomainEventDispatcher.dispatchMouseDoubleClicked(DomainEventDispatcher.java:329)
+	at org.eclipse.draw2d.LightweightSystem$EventHandler.mouseDoubleClick(LightweightSystem.java:562)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:234)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4338)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1214)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4136)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3724)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.knime.product.rcp.KNIMEApplication.start(KNIMEApplication.java:212)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+2026-10-10 04:44:12,273 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-10-10 04:44:12,275 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-10-10 04:44:12,275 : INFO  : main :  : NodeLogger :  :  : # Welcome to KNIME Analytics Platform v5.12.0.v202606180846 (Build June 15, 2026)       #
+2026-10-10 04:44:12,275 : INFO  : main :  : NodeLogger :  :  : # Based on Eclipse, http://www.eclipse.org                                              #
+2026-10-10 04:44:12,275 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-10-10 04:44:12,275 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-10-10 04:44:12,275 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-10-10 04:44:12,275 : INFO  : main :  : NodeLogger :  :  : # Copyright by KNIME AG, Zurich, Switzerland and others.                                #
+2026-10-10 04:44:12,275 : INFO  : main :  : NodeLogger :  :  : # Website: http://www.knime.com                                                         #
+2026-10-10 04:44:12,275 : INFO  : main :  : NodeLogger :  :  : # E-mail: contact@knime.com                                                             #
+2026-10-10 04:44:12,275 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-10-10 04:44:12,275 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-10-10 04:44:12,275 : INFO  : main :  : NodeLogger :  :  : # For more details see the KNIME log file:                                              #
+2026-10-10 04:44:12,275 : INFO  : main :  : NodeLogger :  :  : # D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\knime.log
+2026-10-10 04:44:12,276 : INFO  : main :  : NodeLogger :  :  : #---------------------------------------------------------------------------------------#
+2026-10-10 04:44:12,295 : INFO  : main :  : NodeLogger :  :  : # logging date=сб окт. 10 04:44:12 MSK 2026
+2026-10-10 04:44:12,295 : INFO  : main :  : NodeLogger :  :  : # java.version=21.0.9
+2026-10-10 04:44:12,295 : INFO  : main :  : NodeLogger :  :  : # java.vm.version=21.0.9+10-LTS
+2026-10-10 04:44:12,295 : INFO  : main :  : NodeLogger :  :  : # java.vendor=Eclipse Adoptium
+2026-10-10 04:44:12,295 : INFO  : main :  : NodeLogger :  :  : # os.name=Windows 11
+2026-10-10 04:44:12,295 : INFO  : main :  : NodeLogger :  :  : # os.arch=amd64
+2026-10-10 04:44:12,295 : INFO  : main :  : NodeLogger :  :  : # number of CPUs=12
+2026-10-10 04:44:12,295 : INFO  : main :  : NodeLogger :  :  : # assertions=off
+2026-10-10 04:44:12,302 : INFO  : main :  : NodeLogger :  :  : # host=ILYALYCHA
+2026-10-10 04:44:12,304 : INFO  : main :  : NodeLogger :  :  : # username=ilyal
+2026-10-10 04:44:12,305 : INFO  : main :  : NodeLogger :  :  : # max mem=16312MB
+2026-10-10 04:44:12,306 : INFO  : main :  : NodeLogger :  :  : # application=org.knime.product.KNIME_APPLICATION
+2026-10-10 04:44:12,310 : INFO  : main :  : NodeLogger :  :  : # KNID=11-3dbea7a4c5783ee2-01-20725c6c0dcbae89
+2026-10-10 04:44:12,310 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-10-10 04:44:11,806 : INFO  : main :  : RegisterBouncyCastleProvider :  :  : Added BouncyCastleProvider to Java Security providers
+2026-10-10 04:44:15,059 : INFO  : main :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_database_drivers.txt' does not exist.
+2026-10-10 04:44:15,059 : INFO  : main :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_database_urls.txt' does not exist.
+2026-10-10 04:44:16,726 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_string2date-formats.txt' does not exist.
+2026-10-10 04:44:16,804 : INFO  : Node Repository Initializer :  : MovingAggregationNodeFactory :  :  : Modern dialog for Moving Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-10-10 04:44:18,022 : INFO  : main :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_org.knime.kerberos.name.txt' does not exist.
+2026-10-10 04:44:18,948 : INFO  : main :  : KNIMECorePlugin :  :  : Setting console view log level to WARN
+2026-10-10 04:44:19,516 : INFO  : Worker-0: Workflow Coach loader :  : GroupByNodeFactory :  :  : Modern dialog for GroupBy node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-10-10 04:44:20,417 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_createFileNameHistoryKey.txt' does not exist.
+2026-10-10 04:44:20,902 : INFO  : Worker-0: Workflow Coach loader :  : ColumnAggregatorNodeFactory :  :  : Modern dialog for Column Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-10-10 04:44:21,088 : INFO  : Worker-0: Workflow Coach loader :  : Pivot2NodeFactory :  :  : Modern dialog for Pivot node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-10-10 04:44:21,483 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-10-10 04:44:21,518 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-10-10 04:44:21,519 : INFO  : Worker-0: Workflow Coach loader :  : ProcessWatchdog :  :  : KNIME Process Watchdog memory limit not configured
+2026-10-10 04:44:21,519 : INFO  : Worker-0: Workflow Coach loader :  : ProcessWatchdog :  :  : External process memory watchdog is disabled, because the memory limit is set to -1
+2026-10-10 04:44:21,533 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-10-10 04:44:21,535 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-10-10 04:44:21,536 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-10-10 04:44:21,540 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-10-10 04:44:21,686 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=mssqlserver, name=Microsoft SQL Server, description=null)
+2026-10-10 04:44:21,686 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=mssqlserver, name=Microsoft SQL Server, description=null)
+2026-10-10 04:44:21,702 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=mssqlserver, name=Microsoft SQL Server, description=null)
+2026-10-10 04:44:21,912 : INFO  : Worker-0: Workflow Coach loader :  : NodeRecommendationManager :  :  : Loading node recommendations from <org.knime.core.ui.workflowcoach.data.PrefsTripleProvider>
+2026-10-10 04:44:21,912 : INFO  : Worker-0: Workflow Coach loader :  : NodeRecommendationManager :  :  : Loading node recommendations from <org.knime.workbench.workflowcoach.data.CommunityTripleProvider>
+2026-10-10 04:44:21,912 : INFO  : Worker-0: Workflow Coach loader :  : NodeRecommendationManager :  :  : Loading node recommendations from <org.knime.workbench.workflowcoach.local.data.WorkspaceTripleProvider>
+2026-10-10 04:45:29,913 : ERROR : ModalContext :  : LoadWorkflowRunnable :  :  : Errors during load: Status: DataLoadError: Lab2_KNN 3 loaded with error during data load
+2026-10-10 04:45:29,914 : ERROR : ModalContext :  : LoadWorkflowRunnable :  :  :   Status: DataLoadError: Lab2_KNN 3
+2026-10-10 04:45:29,914 : ERROR : ModalContext :  : LoadWorkflowRunnable :  :  :     Status: Error: Unable to load node with ID suffix 1 into workflow, skipping it: Unable to parse xml: line=1: Content is not allowed in prolog.
+2026-10-10 04:45:29,914 : ERROR : ModalContext :  : LoadWorkflowRunnable :  :  : xml: URI=java.io.BufferedInputStream@3b701aa4
+2026-10-10 04:45:29,914 : ERROR : ModalContext :  : LoadWorkflowRunnable :  :  : dtd: URI=null
+2026-10-10 04:45:29,914 : ERROR : ModalContext :  : LoadWorkflowRunnable :  :  :     Status: DataLoadError: Scatter Plot 3:6
+2026-10-10 04:45:29,914 : ERROR : ModalContext :  : LoadWorkflowRunnable :  :  :       Status: DataLoadError: Unable to load internally held tables for node "Scatter Plot": Cannot read directory D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\Lab2_KNN\Scatter Plot (#6)\internalTables\object_0
+2026-10-10 04:45:34,259 : ERROR : main :  : NodeMigrationRuleRegistry :  :  : Plug-in org.knime.database.nodes was unable to load class org.knime.database.node.utility.tablecreator3.DBTableCreate3NodeMigrationRule.
+org.eclipse.core.runtime.CoreException: Plug-in org.knime.database.nodes was unable to load class org.knime.database.node.utility.tablecreator3.DBTableCreate3NodeMigrationRule.
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:245)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:228)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:1034)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:286)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:65)
+	at org.knime.workflow.migration.NodeMigrationRuleRegistry.<init>(NodeMigrationRuleRegistry.java:107)
+	at org.knime.workflow.migration.NodeMigrationRuleRegistry.<clinit>(NodeMigrationRuleRegistry.java:76)
+	at org.knime.workflow.migration.WorkflowMigrationManager.hasMatchingRule(WorkflowMigrationManager.java:793)
+	at org.knime.workflow.migration.MigrationWorkflowEditorEventListener.workflowLoaded(MigrationWorkflowEditorEventListener.java:102)
+	at org.knime.workbench.editor2.LoadWorkflowRunnable.lambda$6(LoadWorkflowRunnable.java:243)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:132)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4111)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3727)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.knime.product.rcp.KNIMEApplication.start(KNIMEApplication.java:212)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+Caused by: java.lang.ClassNotFoundException: org.knime.database.node.utility.tablecreator3.DBTableCreate3NodeMigrationRule cannot be found by org.knime.database.nodes_5.12.0.v202606171318
+	at org.eclipse.osgi.internal.loader.BundleLoader.generateException(BundleLoader.java:567)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass0(BundleLoader.java:562)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:438)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:195)
+	at java.base/java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:652)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:226)
+	... 31 more
+2026-10-10 04:47:10,089 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-10-10 04:47:10,091 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-10-10 04:47:10,091 : INFO  : main :  : NodeLogger :  :  : # Welcome to KNIME Analytics Platform v5.12.0.v202606180846 (Build June 15, 2026)       #
+2026-10-10 04:47:10,091 : INFO  : main :  : NodeLogger :  :  : # Based on Eclipse, http://www.eclipse.org                                              #
+2026-10-10 04:47:10,091 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-10-10 04:47:10,091 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-10-10 04:47:10,091 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-10-10 04:47:10,091 : INFO  : main :  : NodeLogger :  :  : # Copyright by KNIME AG, Zurich, Switzerland and others.                                #
+2026-10-10 04:47:10,091 : INFO  : main :  : NodeLogger :  :  : # Website: http://www.knime.com                                                         #
+2026-10-10 04:47:10,091 : INFO  : main :  : NodeLogger :  :  : # E-mail: contact@knime.com                                                             #
+2026-10-10 04:47:10,091 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-10-10 04:47:10,092 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-10-10 04:47:10,092 : INFO  : main :  : NodeLogger :  :  : # For more details see the KNIME log file:                                              #
+2026-10-10 04:47:10,092 : INFO  : main :  : NodeLogger :  :  : # D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\knime.log
+2026-10-10 04:47:10,092 : INFO  : main :  : NodeLogger :  :  : #---------------------------------------------------------------------------------------#
+2026-10-10 04:47:10,109 : INFO  : main :  : NodeLogger :  :  : # logging date=сб окт. 10 04:47:10 MSK 2026
+2026-10-10 04:47:10,109 : INFO  : main :  : NodeLogger :  :  : # java.version=21.0.9
+2026-10-10 04:47:10,109 : INFO  : main :  : NodeLogger :  :  : # java.vm.version=21.0.9+10-LTS
+2026-10-10 04:47:10,109 : INFO  : main :  : NodeLogger :  :  : # java.vendor=Eclipse Adoptium
+2026-10-10 04:47:10,109 : INFO  : main :  : NodeLogger :  :  : # os.name=Windows 11
+2026-10-10 04:47:10,109 : INFO  : main :  : NodeLogger :  :  : # os.arch=amd64
+2026-10-10 04:47:10,109 : INFO  : main :  : NodeLogger :  :  : # number of CPUs=12
+2026-10-10 04:47:10,109 : INFO  : main :  : NodeLogger :  :  : # assertions=off
+2026-10-10 04:47:10,116 : INFO  : main :  : NodeLogger :  :  : # host=ILYALYCHA
+2026-10-10 04:47:10,118 : INFO  : main :  : NodeLogger :  :  : # username=ilyal
+2026-10-10 04:47:10,118 : INFO  : main :  : NodeLogger :  :  : # max mem=16312MB
+2026-10-10 04:47:10,119 : INFO  : main :  : NodeLogger :  :  : # application=org.knime.product.KNIME_APPLICATION
+2026-10-10 04:47:10,125 : INFO  : main :  : NodeLogger :  :  : # KNID=11-3dbea7a4c5783ee2-01-20725c6c0dcbae89
+2026-10-10 04:47:10,125 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-10-10 04:47:09,547 : INFO  : main :  : RegisterBouncyCastleProvider :  :  : Added BouncyCastleProvider to Java Security providers
+2026-10-10 04:47:12,950 : INFO  : main :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_database_drivers.txt' does not exist.
+2026-10-10 04:47:12,950 : INFO  : main :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_database_urls.txt' does not exist.
+2026-10-10 04:47:14,710 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_string2date-formats.txt' does not exist.
+2026-10-10 04:47:14,784 : INFO  : Node Repository Initializer :  : MovingAggregationNodeFactory :  :  : Modern dialog for Moving Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-10-10 04:47:15,896 : INFO  : main :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_org.knime.kerberos.name.txt' does not exist.
+2026-10-10 04:47:16,799 : INFO  : main :  : KNIMECorePlugin :  :  : Setting console view log level to WARN
+2026-10-10 04:47:17,437 : INFO  : Worker-0: Workflow Coach loader :  : GroupByNodeFactory :  :  : Modern dialog for GroupBy node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-10-10 04:47:18,229 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_createFileNameHistoryKey.txt' does not exist.
+2026-10-10 04:47:18,683 : INFO  : Worker-0: Workflow Coach loader :  : ColumnAggregatorNodeFactory :  :  : Modern dialog for Column Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-10-10 04:47:18,856 : INFO  : Worker-0: Workflow Coach loader :  : Pivot2NodeFactory :  :  : Modern dialog for Pivot node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-10-10 04:47:19,226 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-10-10 04:47:19,257 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-10-10 04:47:19,270 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-10-10 04:47:19,270 : INFO  : Worker-0: Workflow Coach loader :  : ProcessWatchdog :  :  : KNIME Process Watchdog memory limit not configured
+2026-10-10 04:47:19,271 : INFO  : Worker-0: Workflow Coach loader :  : ProcessWatchdog :  :  : External process memory watchdog is disabled, because the memory limit is set to -1
+2026-10-10 04:47:19,273 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-10-10 04:47:19,273 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-10-10 04:47:19,275 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-10-10 04:47:19,398 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=mssqlserver, name=Microsoft SQL Server, description=null)
+2026-10-10 04:47:19,398 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=mssqlserver, name=Microsoft SQL Server, description=null)
+2026-10-10 04:47:19,411 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=mssqlserver, name=Microsoft SQL Server, description=null)
+2026-10-10 04:47:19,607 : INFO  : Worker-0: Workflow Coach loader :  : NodeRecommendationManager :  :  : Loading node recommendations from <org.knime.core.ui.workflowcoach.data.PrefsTripleProvider>
+2026-10-10 04:47:19,607 : INFO  : Worker-0: Workflow Coach loader :  : NodeRecommendationManager :  :  : Loading node recommendations from <org.knime.workbench.workflowcoach.data.CommunityTripleProvider>
+2026-10-10 04:47:19,607 : INFO  : Worker-0: Workflow Coach loader :  : NodeRecommendationManager :  :  : Loading node recommendations from <org.knime.workbench.workflowcoach.local.data.WorkspaceTripleProvider>
+2026-10-10 04:49:22,231 : WARN  : ModalContext :  : Node : CSV Reader : 3:1 : DataSpec generated by configure does not match spec after execution.
+2026-10-10 04:49:23,197 : ERROR : main :  : NodeMigrationRuleRegistry :  :  : Plug-in org.knime.database.nodes was unable to load class org.knime.database.node.utility.tablecreator3.DBTableCreate3NodeMigrationRule.
+org.eclipse.core.runtime.CoreException: Plug-in org.knime.database.nodes was unable to load class org.knime.database.node.utility.tablecreator3.DBTableCreate3NodeMigrationRule.
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:245)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:228)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:1034)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:286)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:65)
+	at org.knime.workflow.migration.NodeMigrationRuleRegistry.<init>(NodeMigrationRuleRegistry.java:107)
+	at org.knime.workflow.migration.NodeMigrationRuleRegistry.<clinit>(NodeMigrationRuleRegistry.java:76)
+	at org.knime.workflow.migration.WorkflowMigrationManager.hasMatchingRule(WorkflowMigrationManager.java:793)
+	at org.knime.workflow.migration.MigrationWorkflowEditorEventListener.workflowLoaded(MigrationWorkflowEditorEventListener.java:102)
+	at org.knime.workbench.editor2.LoadWorkflowRunnable.lambda$6(LoadWorkflowRunnable.java:243)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:132)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4111)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3727)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.knime.product.rcp.KNIMEApplication.start(KNIMEApplication.java:212)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+Caused by: java.lang.ClassNotFoundException: org.knime.database.node.utility.tablecreator3.DBTableCreate3NodeMigrationRule cannot be found by org.knime.database.nodes_5.12.0.v202606171318
+	at org.eclipse.osgi.internal.loader.BundleLoader.generateException(BundleLoader.java:567)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass0(BundleLoader.java:562)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:438)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:195)
+	at java.base/java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:652)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:226)
+	... 31 more
+2026-10-10 04:53:20,663 : ERROR : ModalContext :  : LoadWorkflowRunnable :  :  : Errors during load: Status: Error: Lab2_KNN 4 loaded with errors
+2026-10-10 04:53:20,663 : ERROR : ModalContext :  : LoadWorkflowRunnable :  :  :   Status: Error: Lab2_KNN 4
+2026-10-10 04:53:20,663 : ERROR : ModalContext :  : LoadWorkflowRunnable :  :  :     Status: Error: Unable to load node with ID suffix 1 into workflow, skipping it: Unable to parse xml: line=674: The markup in the document following the root element must be well-formed.
+2026-10-10 04:53:20,663 : ERROR : ModalContext :  : LoadWorkflowRunnable :  :  : xml: URI=java.io.BufferedInputStream@823be4d
+2026-10-10 04:53:20,663 : ERROR : ModalContext :  : LoadWorkflowRunnable :  :  : dtd: URI=null
+2026-10-10 04:55:18,372 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-10-10 04:55:18,374 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-10-10 04:55:18,374 : INFO  : main :  : NodeLogger :  :  : # Welcome to KNIME Analytics Platform v5.12.0.v202606180846 (Build June 15, 2026)       #
+2026-10-10 04:55:18,374 : INFO  : main :  : NodeLogger :  :  : # Based on Eclipse, http://www.eclipse.org                                              #
+2026-10-10 04:55:18,374 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-10-10 04:55:18,374 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-10-10 04:55:18,374 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-10-10 04:55:18,374 : INFO  : main :  : NodeLogger :  :  : # Copyright by KNIME AG, Zurich, Switzerland and others.                                #
+2026-10-10 04:55:18,374 : INFO  : main :  : NodeLogger :  :  : # Website: http://www.knime.com                                                         #
+2026-10-10 04:55:18,375 : INFO  : main :  : NodeLogger :  :  : # E-mail: contact@knime.com                                                             #
+2026-10-10 04:55:18,375 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-10-10 04:55:18,375 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-10-10 04:55:18,375 : INFO  : main :  : NodeLogger :  :  : # For more details see the KNIME log file:                                              #
+2026-10-10 04:55:18,375 : INFO  : main :  : NodeLogger :  :  : # D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\knime.log
+2026-10-10 04:55:18,375 : INFO  : main :  : NodeLogger :  :  : #---------------------------------------------------------------------------------------#
+2026-10-10 04:55:18,395 : INFO  : main :  : NodeLogger :  :  : # logging date=сб окт. 10 04:55:18 MSK 2026
+2026-10-10 04:55:18,395 : INFO  : main :  : NodeLogger :  :  : # java.version=21.0.9
+2026-10-10 04:55:18,395 : INFO  : main :  : NodeLogger :  :  : # java.vm.version=21.0.9+10-LTS
+2026-10-10 04:55:18,395 : INFO  : main :  : NodeLogger :  :  : # java.vendor=Eclipse Adoptium
+2026-10-10 04:55:18,395 : INFO  : main :  : NodeLogger :  :  : # os.name=Windows 11
+2026-10-10 04:55:18,395 : INFO  : main :  : NodeLogger :  :  : # os.arch=amd64
+2026-10-10 04:55:18,395 : INFO  : main :  : NodeLogger :  :  : # number of CPUs=12
+2026-10-10 04:55:18,395 : INFO  : main :  : NodeLogger :  :  : # assertions=off
+2026-10-10 04:55:18,402 : INFO  : main :  : NodeLogger :  :  : # host=ILYALYCHA
+2026-10-10 04:55:18,404 : INFO  : main :  : NodeLogger :  :  : # username=ilyal
+2026-10-10 04:55:18,404 : INFO  : main :  : NodeLogger :  :  : # max mem=16312MB
+2026-10-10 04:55:18,404 : INFO  : main :  : NodeLogger :  :  : # application=org.knime.product.KNIME_APPLICATION
+2026-10-10 04:55:18,409 : INFO  : main :  : NodeLogger :  :  : # KNID=11-3dbea7a4c5783ee2-01-20725c6c0dcbae89
+2026-10-10 04:55:18,409 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-10-10 04:55:17,911 : INFO  : main :  : RegisterBouncyCastleProvider :  :  : Added BouncyCastleProvider to Java Security providers
+2026-10-10 04:55:21,272 : INFO  : main :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_database_drivers.txt' does not exist.
+2026-10-10 04:55:21,272 : INFO  : main :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_database_urls.txt' does not exist.
+2026-10-10 04:55:23,139 : INFO  : Node Repository Initializer :  : MovingAggregationNodeFactory :  :  : Modern dialog for Moving Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-10-10 04:55:23,149 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_string2date-formats.txt' does not exist.
+2026-10-10 04:55:24,229 : INFO  : main :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_org.knime.kerberos.name.txt' does not exist.
+2026-10-10 04:55:25,208 : INFO  : main :  : KNIMECorePlugin :  :  : Setting console view log level to WARN
+2026-10-10 04:55:26,028 : INFO  : Worker-1: Workflow Coach loader :  : ColumnAggregatorNodeFactory :  :  : Modern dialog for Column Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-10-10 04:55:26,203 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_createFileNameHistoryKey.txt' does not exist.
+2026-10-10 04:55:26,907 : INFO  : Worker-1: Workflow Coach loader :  : Pivot2NodeFactory :  :  : Modern dialog for Pivot node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-10-10 04:55:27,101 : INFO  : Worker-1: Workflow Coach loader :  : GroupByNodeFactory :  :  : Modern dialog for GroupBy node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-10-10 04:55:27,582 : INFO  : Worker-1: Workflow Coach loader :  : ProcessWatchdog :  :  : KNIME Process Watchdog memory limit not configured
+2026-10-10 04:55:27,582 : INFO  : Worker-1: Workflow Coach loader :  : ProcessWatchdog :  :  : External process memory watchdog is disabled, because the memory limit is set to -1
+2026-10-10 04:55:27,790 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-10-10 04:55:27,840 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-10-10 04:55:27,878 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-10-10 04:55:27,884 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-10-10 04:55:27,885 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-10-10 04:55:27,888 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-10-10 04:55:27,934 : INFO  : Worker-1: Workflow Coach loader :  : NodeRecommendationManager :  :  : Loading node recommendations from <org.knime.core.ui.workflowcoach.data.PrefsTripleProvider>
+2026-10-10 04:55:27,935 : INFO  : Worker-1: Workflow Coach loader :  : NodeRecommendationManager :  :  : Loading node recommendations from <org.knime.workbench.workflowcoach.data.CommunityTripleProvider>
+2026-10-10 04:55:27,935 : INFO  : Worker-1: Workflow Coach loader :  : NodeRecommendationManager :  :  : Loading node recommendations from <org.knime.workbench.workflowcoach.local.data.WorkspaceTripleProvider>
+2026-10-10 04:55:28,017 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=mssqlserver, name=Microsoft SQL Server, description=null)
+2026-10-10 04:55:28,017 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=mssqlserver, name=Microsoft SQL Server, description=null)
+2026-10-10 04:55:28,024 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=mssqlserver, name=Microsoft SQL Server, description=null)
+2026-10-10 05:03:12,586 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-10-10 05:03:12,588 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-10-10 05:03:12,589 : INFO  : main :  : NodeLogger :  :  : # Welcome to KNIME Analytics Platform v5.12.0.v202606180846 (Build June 15, 2026)       #
+2026-10-10 05:03:12,589 : INFO  : main :  : NodeLogger :  :  : # Based on Eclipse, http://www.eclipse.org                                              #
+2026-10-10 05:03:12,589 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-10-10 05:03:12,589 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-10-10 05:03:12,589 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-10-10 05:03:12,589 : INFO  : main :  : NodeLogger :  :  : # Copyright by KNIME AG, Zurich, Switzerland and others.                                #
+2026-10-10 05:03:12,589 : INFO  : main :  : NodeLogger :  :  : # Website: http://www.knime.com                                                         #
+2026-10-10 05:03:12,589 : INFO  : main :  : NodeLogger :  :  : # E-mail: contact@knime.com                                                             #
+2026-10-10 05:03:12,589 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-10-10 05:03:12,589 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-10-10 05:03:12,589 : INFO  : main :  : NodeLogger :  :  : # For more details see the KNIME log file:                                              #
+2026-10-10 05:03:12,589 : INFO  : main :  : NodeLogger :  :  : # D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\knime.log
+2026-10-10 05:03:12,589 : INFO  : main :  : NodeLogger :  :  : #---------------------------------------------------------------------------------------#
+2026-10-10 05:03:12,607 : INFO  : main :  : NodeLogger :  :  : # logging date=сб окт. 10 05:03:12 MSK 2026
+2026-10-10 05:03:12,607 : INFO  : main :  : NodeLogger :  :  : # java.version=21.0.9
+2026-10-10 05:03:12,607 : INFO  : main :  : NodeLogger :  :  : # java.vm.version=21.0.9+10-LTS
+2026-10-10 05:03:12,607 : INFO  : main :  : NodeLogger :  :  : # java.vendor=Eclipse Adoptium
+2026-10-10 05:03:12,607 : INFO  : main :  : NodeLogger :  :  : # os.name=Windows 11
+2026-10-10 05:03:12,607 : INFO  : main :  : NodeLogger :  :  : # os.arch=amd64
+2026-10-10 05:03:12,607 : INFO  : main :  : NodeLogger :  :  : # number of CPUs=12
+2026-10-10 05:03:12,607 : INFO  : main :  : NodeLogger :  :  : # assertions=off
+2026-10-10 05:03:12,615 : INFO  : main :  : NodeLogger :  :  : # host=ILYALYCHA
+2026-10-10 05:03:12,617 : INFO  : main :  : NodeLogger :  :  : # username=ilyal
+2026-10-10 05:03:12,617 : INFO  : main :  : NodeLogger :  :  : # max mem=16312MB
+2026-10-10 05:03:12,619 : INFO  : main :  : NodeLogger :  :  : # application=org.knime.product.KNIME_APPLICATION
+2026-10-10 05:03:12,623 : INFO  : main :  : NodeLogger :  :  : # KNID=11-3dbea7a4c5783ee2-01-20725c6c0dcbae89
+2026-10-10 05:03:12,623 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-10-10 05:03:12,130 : INFO  : main :  : RegisterBouncyCastleProvider :  :  : Added BouncyCastleProvider to Java Security providers
+2026-10-10 05:03:15,498 : INFO  : main :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_database_drivers.txt' does not exist.
+2026-10-10 05:03:15,498 : INFO  : main :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_database_urls.txt' does not exist.
+2026-10-10 05:03:16,385 : INFO  : main :  : KNIMECorePlugin :  :  : Setting console view log level to WARN
+2026-10-10 05:03:17,192 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_string2date-formats.txt' does not exist.
+2026-10-10 05:03:17,252 : INFO  : Node Repository Initializer :  : MovingAggregationNodeFactory :  :  : Modern dialog for Moving Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-10-10 05:03:17,823 : INFO  : main :  : MRUFileMenuItem :  :  : Could not find the workbench.xmi file - this is expected in new workspaces.
+java.io.FileNotFoundException: D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\.plugins\org.eclipse.e4.workbench\workbench.xmi (Не удается найти указанный файл)
+	at java.base/java.io.FileInputStream.open0(Native Method)
+	at java.base/java.io.FileInputStream.open(Unknown Source)
+	at java.base/java.io.FileInputStream.<init>(Unknown Source)
+	at java.base/java.io.FileInputStream.<init>(Unknown Source)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.connect(Unknown Source)
+	at java.base/sun.net.www.protocol.file.FileURLConnection.getInputStream(Unknown Source)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLEntityManager.setupCurrentEntity(Unknown Source)
+	at java.xml/com.sun.org.apache.xerces.internal.impl.XMLVersionDetector.determineDocVersion(Unknown Source)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(Unknown Source)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(Unknown Source)
+	at java.xml/com.sun.org.apache.xerces.internal.parsers.DOMParser.parse(Unknown Source)
+	at java.xml/com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderImpl.parse(Unknown Source)
+	at java.xml/javax.xml.parsers.DocumentBuilder.parse(Unknown Source)
+	at org.knime.workbench.editor2.menu.MRUFileMenuItem.assureMapInitialPopulation(MRUFileMenuItem.java:222)
+	at org.knime.workbench.editor2.menu.MRUFileMenuItem.fill(MRUFileMenuItem.java:165)
+	at org.eclipse.ui.internal.menus.DynamicMenuContributionItem.fill(DynamicMenuContributionItem.java:194)
+	at org.eclipse.jface.action.MenuManager.doItemFill(MenuManager.java:728)
+	at org.eclipse.jface.action.MenuManager.update(MenuManager.java:805)
+	at org.eclipse.jface.action.MenuManager.updateAll(MenuManager.java:918)
+	at org.eclipse.jface.action.MenuManager.update(MenuManager.java:825)
+	at org.eclipse.jface.action.MenuManager.updateAll(MenuManager.java:918)
+	at org.eclipse.jface.action.MenuManager.update(MenuManager.java:825)
+	at org.eclipse.jface.action.MenuManager.updateAll(MenuManager.java:918)
+	at org.knime.product.rcp.KNIMEApplicationWorkbenchWindowAdvisor.postWindowOpen(KNIMEApplicationWorkbenchWindowAdvisor.java:178)
+	at org.eclipse.ui.internal.WorkbenchWindow.fireWindowOpened(WorkbenchWindow.java:1771)
+	at org.eclipse.ui.internal.Workbench.createWorkbenchWindow(Workbench.java:1567)
+	at org.eclipse.ui.internal.StandardTrim.createStatusLine(StandardTrim.java:106)
+	at org.eclipse.ui.internal.StandardTrim.createWidget(StandardTrim.java:47)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:977)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:139)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:386)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:326)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:228)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:93)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:59)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:37)
+	at org.eclipse.ui.internal.WorkbenchContributionFactory.create(WorkbenchContributionFactory.java:51)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ToolControlRenderer.createWidget(ToolControlRenderer.java:129)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:991)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:658)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:762)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:727)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:711)
+	at org.eclipse.e4.ui.workbench.renderers.swt.SWTPartRenderer.processContents(SWTPartRenderer.java:72)
+	at org.eclipse.e4.ui.workbench.renderers.swt.TrimBarRenderer.processContents(TrimBarRenderer.java:106)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:672)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$1.run(PartRenderingEngine.java:543)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:527)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.processContents(WBWRenderer.java:684)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:672)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:762)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:727)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:711)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1079)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.knime.product.rcp.KNIMEApplication.start(KNIMEApplication.java:212)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+2026-10-10 05:03:18,689 : INFO  : main :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_org.knime.kerberos.name.txt' does not exist.
+2026-10-10 05:03:19,612 : INFO  : Worker-1: Workflow Coach loader :  : GroupByNodeFactory :  :  : Modern dialog for GroupBy node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-10-10 05:03:20,370 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_createFileNameHistoryKey.txt' does not exist.
+2026-10-10 05:03:20,853 : INFO  : Worker-1: Workflow Coach loader :  : ColumnAggregatorNodeFactory :  :  : Modern dialog for Column Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-10-10 05:03:21,060 : INFO  : Worker-1: Workflow Coach loader :  : Pivot2NodeFactory :  :  : Modern dialog for Pivot node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-10-10 05:03:21,478 : INFO  : Worker-1: Workflow Coach loader :  : ProcessWatchdog :  :  : KNIME Process Watchdog memory limit not configured
+2026-10-10 05:03:21,479 : INFO  : Worker-1: Workflow Coach loader :  : ProcessWatchdog :  :  : External process memory watchdog is disabled, because the memory limit is set to -1
+2026-10-10 05:03:21,535 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-10-10 05:03:21,575 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-10-10 05:03:21,590 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-10-10 05:03:21,592 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-10-10 05:03:21,593 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-10-10 05:03:21,598 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-10-10 05:03:21,789 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=mssqlserver, name=Microsoft SQL Server, description=null)
+2026-10-10 05:03:21,790 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=mssqlserver, name=Microsoft SQL Server, description=null)
+2026-10-10 05:03:21,808 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=mssqlserver, name=Microsoft SQL Server, description=null)
+2026-10-10 05:03:21,912 : INFO  : Worker-1: Workflow Coach loader :  : NodeRecommendationManager :  :  : Loading node recommendations from <org.knime.core.ui.workflowcoach.data.PrefsTripleProvider>
+2026-10-10 05:03:21,913 : INFO  : Worker-1: Workflow Coach loader :  : NodeRecommendationManager :  :  : Loading node recommendations from <org.knime.workbench.workflowcoach.data.CommunityTripleProvider>
+2026-10-10 05:03:21,913 : INFO  : Worker-1: Workflow Coach loader :  : NodeRecommendationManager :  :  : Loading node recommendations from <org.knime.workbench.workflowcoach.local.data.WorkspaceTripleProvider>
+2026-10-10 05:05:17,158 : WARN  : ModalContext :  : Node : CSV Reader : 3:1 : DataSpec generated by configure does not match spec after execution.
+2026-10-10 05:05:17,930 : ERROR : main :  : NodeMigrationRuleRegistry :  :  : Plug-in org.knime.database.nodes was unable to load class org.knime.database.node.utility.tablecreator3.DBTableCreate3NodeMigrationRule.
+org.eclipse.core.runtime.CoreException: Plug-in org.knime.database.nodes was unable to load class org.knime.database.node.utility.tablecreator3.DBTableCreate3NodeMigrationRule.
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.throwException(RegistryStrategyOSGI.java:245)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:228)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:1034)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:286)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:65)
+	at org.knime.workflow.migration.NodeMigrationRuleRegistry.<init>(NodeMigrationRuleRegistry.java:107)
+	at org.knime.workflow.migration.NodeMigrationRuleRegistry.<clinit>(NodeMigrationRuleRegistry.java:76)
+	at org.knime.workflow.migration.WorkflowMigrationManager.hasMatchingRule(WorkflowMigrationManager.java:793)
+	at org.knime.workflow.migration.MigrationWorkflowEditorEventListener.workflowLoaded(MigrationWorkflowEditorEventListener.java:102)
+	at org.knime.workbench.editor2.LoadWorkflowRunnable.lambda$6(LoadWorkflowRunnable.java:243)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:132)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4111)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3727)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.knime.product.rcp.KNIMEApplication.start(KNIMEApplication.java:212)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+Caused by: java.lang.ClassNotFoundException: org.knime.database.node.utility.tablecreator3.DBTableCreate3NodeMigrationRule cannot be found by org.knime.database.nodes_5.12.0.v202606171318
+	at org.eclipse.osgi.internal.loader.BundleLoader.generateException(BundleLoader.java:567)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass0(BundleLoader.java:562)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:438)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:195)
+	at java.base/java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.osgi.internal.framework.EquinoxBundle.loadClass(EquinoxBundle.java:652)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:226)
+	... 31 more
+2026-10-10 05:12:04,978 : INFO  : KNIME shutdown hooks - org.knime.core.util.FileUtil$$Lambda/0x0000017c514876a0 :  : FileUtil :  :  : Deleting 5 temporary files.
+2026-10-10 05:12:50,796 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-10-10 05:12:50,798 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-10-10 05:12:50,799 : INFO  : main :  : NodeLogger :  :  : # Welcome to KNIME Analytics Platform v5.12.0.v202606180846 (Build June 15, 2026)       #
+2026-10-10 05:12:50,799 : INFO  : main :  : NodeLogger :  :  : # Based on Eclipse, http://www.eclipse.org                                              #
+2026-10-10 05:12:50,799 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-10-10 05:12:50,799 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-10-10 05:12:50,799 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-10-10 05:12:50,799 : INFO  : main :  : NodeLogger :  :  : # Copyright by KNIME AG, Zurich, Switzerland and others.                                #
+2026-10-10 05:12:50,799 : INFO  : main :  : NodeLogger :  :  : # Website: http://www.knime.com                                                         #
+2026-10-10 05:12:50,799 : INFO  : main :  : NodeLogger :  :  : # E-mail: contact@knime.com                                                             #
+2026-10-10 05:12:50,799 : INFO  : main :  : NodeLogger :  :  : #                                                                                       #
+2026-10-10 05:12:50,799 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-10-10 05:12:50,799 : INFO  : main :  : NodeLogger :  :  : # For more details see the KNIME log file:                                              #
+2026-10-10 05:12:50,799 : INFO  : main :  : NodeLogger :  :  : # D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\knime.log
+2026-10-10 05:12:50,799 : INFO  : main :  : NodeLogger :  :  : #---------------------------------------------------------------------------------------#
+2026-10-10 05:12:50,817 : INFO  : main :  : NodeLogger :  :  : # logging date=сб окт. 10 05:12:50 MSK 2026
+2026-10-10 05:12:50,817 : INFO  : main :  : NodeLogger :  :  : # java.version=21.0.9
+2026-10-10 05:12:50,817 : INFO  : main :  : NodeLogger :  :  : # java.vm.version=21.0.9+10-LTS
+2026-10-10 05:12:50,817 : INFO  : main :  : NodeLogger :  :  : # java.vendor=Eclipse Adoptium
+2026-10-10 05:12:50,817 : INFO  : main :  : NodeLogger :  :  : # os.name=Windows 11
+2026-10-10 05:12:50,817 : INFO  : main :  : NodeLogger :  :  : # os.arch=amd64
+2026-10-10 05:12:50,817 : INFO  : main :  : NodeLogger :  :  : # number of CPUs=12
+2026-10-10 05:12:50,817 : INFO  : main :  : NodeLogger :  :  : # assertions=off
+2026-10-10 05:12:50,824 : INFO  : main :  : NodeLogger :  :  : # host=ILYALYCHA
+2026-10-10 05:12:50,827 : INFO  : main :  : NodeLogger :  :  : # username=ilyal
+2026-10-10 05:12:50,827 : INFO  : main :  : NodeLogger :  :  : # max mem=16312MB
+2026-10-10 05:12:50,828 : INFO  : main :  : NodeLogger :  :  : # application=org.knime.product.KNIME_APPLICATION
+2026-10-10 05:12:50,832 : INFO  : main :  : NodeLogger :  :  : # KNID=11-3dbea7a4c5783ee2-01-20725c6c0dcbae89
+2026-10-10 05:12:50,832 : INFO  : main :  : NodeLogger :  :  : #########################################################################################
+2026-10-10 05:12:50,326 : INFO  : main :  : RegisterBouncyCastleProvider :  :  : Added BouncyCastleProvider to Java Security providers
+2026-10-10 05:12:53,518 : INFO  : main :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_database_drivers.txt' does not exist.
+2026-10-10 05:12:53,518 : INFO  : main :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_database_urls.txt' does not exist.
+2026-10-10 05:12:55,312 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_string2date-formats.txt' does not exist.
+2026-10-10 05:12:55,374 : INFO  : Node Repository Initializer :  : MovingAggregationNodeFactory :  :  : Modern dialog for Moving Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-10-10 05:12:56,443 : INFO  : main :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_org.knime.kerberos.name.txt' does not exist.
+2026-10-10 05:12:57,429 : INFO  : main :  : KNIMECorePlugin :  :  : Setting console view log level to WARN
+2026-10-10 05:12:58,194 : INFO  : Worker-0: Workflow Coach loader :  : Pivot2NodeFactory :  :  : Modern dialog for Pivot node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-10-10 05:12:58,490 : INFO  : Worker-0: Workflow Coach loader :  : ColumnAggregatorNodeFactory :  :  : Modern dialog for Column Aggregator node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-10-10 05:12:58,806 : INFO  : Node Repository Initializer :  : StringHistory :  :  : History file 'D:\ycheba_guap\7 семестр\Методы искусственного интеллекта\lab1\knime_workspace\.metadata\knime\history_createFileNameHistoryKey.txt' does not exist.
+2026-10-10 05:12:59,424 : INFO  : Worker-0: Workflow Coach loader :  : GroupByNodeFactory :  :  : Modern dialog for GroupBy node can be enabled via system property "org.knime.base.node.preproc.groupby.dialog". Note: This property will be removed in a future version.
+
+2026-10-10 05:12:59,868 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-10-10 05:12:59,910 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-10-10 05:12:59,925 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=oracle, name=Oracle, description=null)
+2026-10-10 05:12:59,929 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-10-10 05:12:59,931 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-10-10 05:12:59,931 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=vertica, name=Vertica, description=Vertica Analytics Platform)
+2026-10-10 05:12:59,951 : INFO  : Worker-0: Workflow Coach loader :  : ProcessWatchdog :  :  : KNIME Process Watchdog memory limit not configured
+2026-10-10 05:12:59,952 : INFO  : Worker-0: Workflow Coach loader :  : ProcessWatchdog :  :  : External process memory watchdog is disabled, because the memory limit is set to -1
+2026-10-10 05:13:00,088 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=mssqlserver, name=Microsoft SQL Server, description=null)
+2026-10-10 05:13:00,096 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=mssqlserver, name=Microsoft SQL Server, description=null)
+2026-10-10 05:13:00,096 : INFO  : Node Repository Initializer :  : DBDriverRegistry :  :  : Could not find any driver for DBType: DBType(id=mssqlserver, name=Microsoft SQL Server, description=null)
+2026-10-10 05:13:00,313 : INFO  : Worker-0: Workflow Coach loader :  : NodeRecommendationManager :  :  : Loading node recommendations from <org.knime.core.ui.workflowcoach.data.PrefsTripleProvider>
+2026-10-10 05:13:00,313 : INFO  : Worker-0: Workflow Coach loader :  : NodeRecommendationManager :  :  : Loading node recommendations from <org.knime.workbench.workflowcoach.data.CommunityTripleProvider>
+2026-10-10 05:13:00,313 : INFO  : Worker-0: Workflow Coach loader :  : NodeRecommendationManager :  :  : Loading node recommendations from <org.knime.workbench.workflowcoach.local.data.WorkspaceTripleProvider>
+2026-10-10 05:18:35,135 : ERROR : main :  : runtime :  :  : Unable to create part
+org.eclipse.ui.PartInitException: Editor initialization failed: org.knime.workbench.editor.WorkflowEditor. Site is incorrect.
+	at org.eclipse.ui.internal.EditorReference.initialize(EditorReference.java:364)
+	at org.eclipse.ui.internal.e4.compatibility.CompatibilityPart.create(CompatibilityPart.java:346)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.e4.core.internal.di.MethodRequestor.execute(MethodRequestor.java:56)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:977)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.processAnnotated(InjectorImpl.java:939)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalInject(InjectorImpl.java:139)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.internalMake(InjectorImpl.java:386)
+	at org.eclipse.e4.core.internal.di.InjectorImpl.make(InjectorImpl.java:312)
+	at org.eclipse.e4.core.contexts.ContextInjectionFactory.make(ContextInjectionFactory.java:203)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.createFromBundle(ReflectionContributionFactory.java:90)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.doCreate(ReflectionContributionFactory.java:59)
+	at org.eclipse.e4.ui.internal.workbench.ReflectionContributionFactory.create(ReflectionContributionFactory.java:42)
+	at org.eclipse.ui.internal.WorkbenchContributionFactory.create(WorkbenchContributionFactory.java:46)
+	at org.eclipse.e4.ui.workbench.renderers.swt.ContributedPartRenderer.createWidget(ContributedPartRenderer.java:134)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createWidget(PartRenderingEngine.java:991)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:658)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.safeCreateGui(PartRenderingEngine.java:762)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$2.run(PartRenderingEngine.java:727)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.createGui(PartRenderingEngine.java:711)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.lambda$0(PartServiceImpl.java:105)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.lambda$0(UIEventHandler.java:38)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:183)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:133)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4870)
+	at org.eclipse.e4.ui.workbench.swt.DisplayUISynchronize.syncExec(DisplayUISynchronize.java:34)
+	at org.eclipse.e4.ui.services.internal.events.UIEventHandler.handleEvent(UIEventHandler.java:38)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:206)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:201)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.ListenerQueue.dispatchEventSynchronous(ListenerQueue.java:151)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.dispatchEvent(EventAdminImpl.java:132)
+	at org.eclipse.equinox.internal.event.EventAdminImpl.sendEvent(EventAdminImpl.java:73)
+	at org.eclipse.equinox.internal.event.EventComponent.sendEvent(EventComponent.java:48)
+	at org.eclipse.e4.ui.services.internal.events.EventBroker.send(EventBroker.java:55)
+	at org.eclipse.e4.ui.internal.workbench.UIEventPublisher.notifyChanged(UIEventPublisher.java:60)
+	at org.eclipse.emf.common.notify.impl.BasicNotifierImpl.eNotify(BasicNotifierImpl.java:424)
+	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElementGen(ElementContainerImpl.java:168)
+	at org.eclipse.e4.ui.model.application.ui.impl.ElementContainerImpl.setSelectedElement(ElementContainerImpl.java:187)
+	at org.eclipse.e4.ui.internal.workbench.PartServiceImpl.hidePart(PartServiceImpl.java:1391)
+	at org.eclipse.ui.internal.WorkbenchPage.hidePart(WorkbenchPage.java:1540)
+	at org.eclipse.ui.internal.WorkbenchPage.closeEditor(WorkbenchPage.java:1480)
+	at org.eclipse.ui.internal.Workbench$12.run(Workbench.java:1230)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.ui.internal.Workbench.persist(Workbench.java:1213)
+	at org.eclipse.ui.internal.Workbench.busyClose(Workbench.java:1154)
+	at org.eclipse.ui.internal.Workbench.lambda$5(Workbench.java:1466)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1466)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1437)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:1714)
+	at org.eclipse.ui.internal.WorkbenchWindow.lambda$5(WorkbenchWindow.java:1741)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:67)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1741)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1750)
+	at org.eclipse.ui.internal.WorkbenchWindow.lambda$2(WorkbenchWindow.java:505)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer.lambda$4(WBWRenderer.java:574)
+	at org.eclipse.swt.events.ShellListener$2.shellClosed(ShellListener.java:101)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:136)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:91)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4338)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1214)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1238)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1223)
+	at org.eclipse.swt.widgets.Decorations.closeWidget(Decorations.java:273)
+	at org.eclipse.swt.widgets.Decorations.WM_CLOSE(Decorations.java:1566)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4781)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:336)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1494)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2387)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5106)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(Native Method)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:513)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4881)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:336)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1494)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2387)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5106)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(Native Method)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:513)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4881)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:336)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1494)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2387)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5106)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(Native Method)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3722)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:678)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:583)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.knime.product.rcp.KNIMEApplication.start(KNIMEApplication.java:212)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:219)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:149)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:115)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:467)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:298)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:627)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:575)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1431)
+2026-10-10 05:18:36,353 : INFO  : KNIME shutdown hooks - org.knime.core.util.FileUtil$$Lambda/0x000001a95c4821c8 :  : FileUtil :  :  : Deleting 3 temporary files.

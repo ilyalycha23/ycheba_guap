@@ -38,16 +38,13 @@ export default function BurgerMenu() {
   const pathname = usePathname();
   const { user, logout } = useDemoAuth();
   // Создаём локальное состояние компонента.
-  const [open, setOpen] = useState(false);
+  const [openedOn, setOpenedOn] = useState<string | null>(null);
+  // Панель открыта только на маршруте, где её открыли: переход по ссылке закрывает меню.
+  const open = openedOn === pathname;
   const openButtonRef = useRef<HTMLButtonElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLElement>(null);
   const ignoreCloseRef = useRef(false);
-
-  // Закрываем панель при смене маршрута: layout живёт дольше страницы.
-  useEffect(() => {
-    setOpen(false);
-  }, [pathname]);
 
   // Синхронизируем компонент с браузерными событиями или внешним API.
   useEffect(() => {
@@ -59,7 +56,7 @@ export default function BurgerMenu() {
     closeButtonRef.current?.focus();
 
     function handleEscape(event: KeyboardEvent) {
-      if (event.key === "Escape") setOpen(false);
+      if (event.key === "Escape") setOpenedOn(null);
     }
 
     window.addEventListener("keydown", handleEscape);
@@ -74,19 +71,19 @@ export default function BurgerMenu() {
 
   function openMenu() {
     ignoreCloseRef.current = true;
-    setOpen(true);
+    setOpenedOn(pathname);
     window.setTimeout(() => {
       ignoreCloseRef.current = false;
     }, 400);
   }
 
   function closeMenu() {
-    setOpen(false);
+    setOpenedOn(null);
   }
 
   function closeMenuIfSettled() {
     if (ignoreCloseRef.current) return;
-    setOpen(false);
+    setOpenedOn(null);
   }
 
   // Не выпускаем клавиатурный фокус за границы открытого интерфейса.

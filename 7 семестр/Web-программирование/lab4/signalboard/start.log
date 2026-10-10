@@ -1,0 +1,9 @@
+
+> signalboard@0.1.0 start
+> next start --port 3004
+
+▲ Next.js 16.3.4
+- Local:         http://localhost:3004
+- Network:       http://198.18.0.1:3004
+✓ Ready in 184ms
+✓ Running next.config.ts took 52ms

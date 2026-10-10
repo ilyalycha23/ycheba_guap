@@ -1,0 +1,107 @@
+{
+  "matrix": [
+    {
+      "width": 320,
+      "route": "/start",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "route": "/gallery",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "route": "/auth/login",
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "route": "/auth/register",
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "route": "/start",
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "route": "/gallery",
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "route": "/auth/login",
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "route": "/auth/register",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "route": "/start",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "route": "/gallery",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "route": "/auth/login",
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "route": "/auth/register",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "route": "/start",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "route": "/gallery",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "route": "/auth/login",
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "route": "/auth/register",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "/start",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "/gallery",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "/auth/login",
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "/auth/register",
+      "overflow": false
+    }
+  ],
+  "anyOverflow": false,
+  "burgerEscape": true,
+  "closedAfterNav": true
+}

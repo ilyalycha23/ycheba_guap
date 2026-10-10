@@ -1,0 +1,168 @@
+{
+  "matrix": [
+    {
+      "width": 320,
+      "route": "/start",
+      "scrollWidth": 320,
+      "clientWidth": 320,
+      "columns": null,
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "route": "/signals",
+      "scrollWidth": 320,
+      "clientWidth": 320,
+      "columns": 1,
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "route": "/gallery",
+      "scrollWidth": 320,
+      "clientWidth": 320,
+      "columns": 1,
+      "overflow": false
+    },
+    {
+      "width": 320,
+      "route": "/auth/login",
+      "scrollWidth": 320,
+      "clientWidth": 320,
+      "columns": null,
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "route": "/start",
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "columns": null,
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "route": "/signals",
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "columns": 1,
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "route": "/gallery",
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "columns": 1,
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "route": "/auth/login",
+      "scrollWidth": 375,
+      "clientWidth": 375,
+      "columns": null,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "route": "/start",
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "columns": null,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "route": "/signals",
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "columns": 2,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "route": "/gallery",
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "columns": 2,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "route": "/auth/login",
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "columns": null,
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "route": "/start",
+      "scrollWidth": 1024,
+      "clientWidth": 1024,
+      "columns": null,
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "route": "/signals",
+      "scrollWidth": 1024,
+      "clientWidth": 1024,
+      "columns": 3,
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "route": "/gallery",
+      "scrollWidth": 1024,
+      "clientWidth": 1024,
+      "columns": 3,
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "route": "/auth/login",
+      "scrollWidth": 1024,
+      "clientWidth": 1024,
+      "columns": null,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "/start",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "columns": null,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "/signals",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "columns": 4,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "/gallery",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "columns": 3,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "route": "/auth/login",
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "columns": null,
+      "overflow": false
+    }
+  ],
+  "zoom200": {
+    "scrollWidth": 640,
+    "clientWidth": 640
+  }
+}

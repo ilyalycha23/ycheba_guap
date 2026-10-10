@@ -1,0 +1,79 @@
+signalboard/
+├── app/
+│   ├── about/
+│   │   └── page.tsx
+│   ├── api/
+│   │   ├── auth/
+│   │   │   ├── login/
+│   │   │   │   └── route.ts
+│   │   │   ├── logout/
+│   │   │   │   └── route.ts
+│   │   │   ├── me/
+│   │   │   │   └── route.ts
+│   │   │   └── register/
+│   │   │       └── route.ts
+│   │   └── favorites/
+│   │       └── [signalId]/
+│   │           └── route.ts
+│   ├── auth/
+│   │   ├── login/
+│   │   │   └── page.tsx
+│   │   └── register/
+│   │       └── page.tsx
+│   ├── cabinet/
+│   │   └── page.tsx
+│   ├── data/
+│   │   └── signals.ts
+│   ├── gallery/
+│   │   ├── _components/
+│   │   │   ├── PhotoMap.module.css
+│   │   │   ├── PhotoMap.tsx
+│   │   │   ├── PhotoModal.module.css
+│   │   │   ├── PhotoModal.tsx
+│   │   │   ├── SignalsGallery.module.css
+│   │   │   └── SignalsGallery.tsx
+│   │   └── page.tsx
+│   ├── lib/
+│   │   ├── auth.ts
+│   │   ├── current-user.ts
+│   │   ├── prisma.ts
+│   │   └── validation.ts
+│   ├── providers/
+│   │   └── DemoAuthProvider.tsx
+│   ├── signals/
+│   │   ├── [id]/
+│   │   │   └── page.tsx
+│   │   └── page.tsx
+│   ├── start/
+│   │   └── page.tsx
+│   ├── ui/
+│   │   ├── BurgerMenu/
+│   │   │   ├── BurgerMenu.tsx
+│   │   │   └── styles.module.css
+│   │   ├── AppNav.tsx
+│   │   └── FeatureCard.tsx
+│   ├── globals.css
+│   ├── layout.tsx
+│   └── page.tsx
+├── public/
+│   ├── images/
+│   │   └── places/
+│   │       ├── give-chair.jpg
+│   │       ├── lost-keys.jpg
+│   │       └── water-outage.jpg
+│   ├── file.svg
+│   ├── globe.svg
+│   ├── next.svg
+│   ├── vercel.svg
+│   └── window.svg
+├── prisma/
+│   ├── migrations/
+│   │   ├── 20260911120000_init_signalboard/
+│   │   │   └── migration.sql
+│   │   └── migration_lock.toml
+│   ├── schema.prisma
+│   └── seed.ts
+├── scripts/
+│   └── check-prisma.ts
+├── .env.example
+└── package.json

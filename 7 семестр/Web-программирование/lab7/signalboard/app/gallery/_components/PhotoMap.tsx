@@ -208,6 +208,7 @@ export default function PhotoMap({
       <div
         ref={containerRef}
         className={styles.canvas}
+        role="region"
         aria-label="Интерактивная карта локальных сигналов"
       />
     </section>

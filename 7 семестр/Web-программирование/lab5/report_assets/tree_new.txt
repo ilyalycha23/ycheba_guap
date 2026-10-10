@@ -1,0 +1,11 @@
+signalboard/
+├── app/
+│   └── lib/
+│       └── prisma.ts          # единый экземпляр PrismaClient
+├── prisma/
+│   └── schema.prisma          # generator, datasource, модель SetupCheck
+├── scripts/
+│   └── check-prisma.ts        # диагностический SQL-запрос из TypeScript
+├── .env                       # DATABASE_URL (не попадает в Git)
+├── .env.example               # шаблон без секрета
+└── package.json               # prisma и @prisma/client 6.19.2, скрипты db:*

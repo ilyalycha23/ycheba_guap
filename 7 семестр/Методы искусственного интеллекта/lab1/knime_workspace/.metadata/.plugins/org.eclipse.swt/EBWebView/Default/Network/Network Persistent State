@@ -1,1 +1,1 @@
-{"net":{"http_server_properties":{"servers":[{"anonymization":["DAAAAAcAAABmaWxlOi8vAA==",false,0],"server":"https://www.knime.com","supports_spdy":true}],"version":5},"network_qualities":{"CAASABiAgICA+P////8B":"4G"}}}
+{"net":{"http_server_properties":{"servers":[{"anonymization":["DAAAAAcAAABmaWxlOi8vAA==",false,0],"server":"https://www.knime.com","supports_spdy":true},{"anonymization":["GAAAABEAAABodHRwczovL2tuaW1lLmNvbQAAAA==",false,0],"server":"https://forum.knime.com","supports_spdy":true}],"version":5},"network_qualities":{"CAASABiAgICA+P////8B":"4G"}}}

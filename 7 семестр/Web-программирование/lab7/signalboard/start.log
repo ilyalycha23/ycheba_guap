@@ -1,0 +1,9 @@
+
+> signalboard@0.1.0 start
+> next start --port 3007
+
+▲ Next.js 16.3.4
+- Local:         http://localhost:3007
+- Network:       http://198.18.0.1:3007
+✓ Ready in 186ms
+✓ Running next.config.ts took 53ms

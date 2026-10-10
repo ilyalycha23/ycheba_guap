@@ -45,7 +45,7 @@ export default function SignalsGallery() {
   return (
     <>
       <div className={styles.grid}>
-        {neighborSignals.map((signal) => (
+        {neighborSignals.map((signal, index) => (
           <button
             className={styles.card}
             type="button"
@@ -59,6 +59,9 @@ export default function SignalsGallery() {
                 fill
                 sizes="(max-width: 47.99rem) calc(100vw - 2rem), (max-width: 74.99rem) 45vw, 22rem"
                 className={styles.image}
+                // Первая карточка является LCP-изображением первого экрана.
+                loading={index === 0 ? "eager" : "lazy"}
+                fetchPriority={index === 0 ? "high" : "auto"}
               />
             </span>
             <span className={styles.cardBody}>

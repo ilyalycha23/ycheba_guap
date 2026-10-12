@@ -1,9 +1,75 @@
 
-> signalboard@0.1.0 start
-> next start --port 3003
+> signalboard@0.1.0 dev
+> next dev --port 3003
 
-▲ Next.js 16.3.4
+▲ Next.js 16.3.4 (Turbopack)
 - Local:         http://localhost:3003
 - Network:       http://198.18.0.1:3003
-✓ Ready in 183ms
-✓ Running next.config.ts took 43ms
+- Environments: .env.local
+✓ Ready in 584ms
+✓ Running next.config.ts took 45ms
+
+ GET /gallery 200 in 439ms (next.js: 202ms, application-code: 238ms)
+ GET /gallery 200 in 223ms (next.js: 48ms, application-code: 175ms)
+ GET /gallery 200 in 73ms (next.js: 9ms, application-code: 65ms)
+[browser] Image with src "/images/places/lost-keys.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[browser] (Yandex Maps JS API): Invalid API key (https://api-maps.yandex.ru/2.1/?apikey=72f9dda2-74bd-4ba9-b5ae-335dadb26979&lang=ru_RU:1:28790)
+✓ Compiled in 25ms
+ GET /gallery 200 in 134ms (next.js: 57ms, application-code: 77ms)
+ GET /gallery 200 in 47ms (next.js: 10ms, application-code: 37ms)
+[browser] (Yandex Maps JS API): Invalid API key (https://api-maps.yandex.ru/2.1/?apikey=72f9dda2-74bd-4ba9-b5ae-335dadb26979&lang=ru_RU:1:28790)
+[browser] Image with src "/images/places/lost-keys.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+ GET /gallery 200 in 118ms (next.js: 16ms, application-code: 102ms)
+[browser] Image with src "/images/places/lost-keys.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[browser] (Yandex Maps JS API): Invalid API key (https://api-maps.yandex.ru/2.1/?apikey=72f9dda2-74bd-4ba9-b5ae-335dadb26979&lang=ru_RU:1:28790)
+ GET /start 200 in 50ms (next.js: 26ms, application-code: 24ms)
+ GET /signals 200 in 50ms (next.js: 27ms, application-code: 23ms)
+ GET /gallery 200 in 28ms (next.js: 7ms, application-code: 21ms)
+✓ Compiled in 36ms
+ GET /gallery 200 in 44ms (next.js: 19ms, application-code: 25ms)
+ GET /gallery 200 in 33ms (next.js: 5ms, application-code: 28ms)
+ GET /gallery 200 in 47ms (next.js: 6ms, application-code: 41ms)
+[browser] Image with src "/images/places/lost-keys.jpg" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[browser] (Yandex Maps JS API): Invalid API key (https://api-maps.yandex.ru/2.1/?apikey=72f9dda2-74bd-4ba9-b5ae-335dadb26979&lang=ru_RU:1:28790)
+ GET /gallery 200 in 45ms (next.js: 6ms, application-code: 39ms)
+[browser] (Yandex Maps JS API): Invalid API key (https://api-maps.yandex.ru/2.1/?apikey=72f9dda2-74bd-4ba9-b5ae-335dadb26979&lang=ru_RU:1:28790)
+ GET /gallery 200 in 14ms (next.js: 6ms, application-code: 9ms)
+ GET /gallery 200 in 21ms (next.js: 5ms, application-code: 16ms)
+ GET /gallery 200 in 42ms (next.js: 15ms, application-code: 27ms)
+✓ Compiled in 13ms
+ GET /signals 200 in 33ms (next.js: 12ms, application-code: 21ms)
+ GET /signals 200 in 48ms (next.js: 15ms, application-code: 34ms)
+ GET /signals 200 in 50ms (next.js: 13ms, application-code: 37ms)
+✓ Compiled in 25ms
+ GET /signals/lost-keys 200 in 998ms (next.js: 963ms, application-code: 35ms)
+ GET /signals/lost-keys 200 in 54ms (next.js: 19ms, application-code: 35ms)
+ GET /signals/lost-keys 200 in 52ms (next.js: 15ms, application-code: 37ms)
+ GET /signals 200 in 34ms (next.js: 12ms, application-code: 23ms)
+ GET /signals 200 in 27ms (next.js: 6ms, application-code: 21ms)
+✓ Compiled in 12ms
+ GET /gallery 200 in 31ms (next.js: 10ms, application-code: 21ms)
+ GET /gallery 200 in 36ms (next.js: 7ms, application-code: 29ms)
+[browser] (Yandex Maps JS API): Invalid API key (https://api-maps.yandex.ru/2.1/?apikey=72f9dda2-74bd-4ba9-b5ae-335dadb26979&lang=ru_RU:1:28790)
+ GET /gallery 200 in 39ms (next.js: 6ms, application-code: 33ms)
+[browser] (Yandex Maps JS API): Invalid API key (https://api-maps.yandex.ru/2.1/?apikey=72f9dda2-74bd-4ba9-b5ae-335dadb26979&lang=ru_RU:1:28790)
+✓ Compiled in 43ms
+ GET /gallery 200 in 74ms (next.js: 25ms, application-code: 49ms)
+ GET /gallery 200 in 30ms (next.js: 11ms, application-code: 19ms)
+✓ Compiled in 12ms
+ GET /start 200 in 34ms (next.js: 6ms, application-code: 28ms)
+ GET /signals 200 in 27ms (next.js: 9ms, application-code: 18ms)
+ GET /gallery 200 in 20ms (next.js: 5ms, application-code: 15ms)
+ GET /gallery 200 in 39ms (next.js: 5ms, application-code: 34ms)
+[browser] (Yandex Maps JS API): Invalid API key (https://api-maps.yandex.ru/2.1/?apikey=72f9dda2-74bd-4ba9-b5ae-335dadb26979&lang=ru_RU:1:28790)
+✓ Compiled in 27ms
+ GET /gallery 200 in 102ms (next.js: 18ms, application-code: 84ms)
+ GET /gallery 200 in 44ms (next.js: 19ms, application-code: 26ms)
+✓ Compiled in 18ms
+ GET /start 200 in 28ms (next.js: 6ms, application-code: 22ms)
+ GET /signals 200 in 35ms (next.js: 13ms, application-code: 23ms)
+ GET /gallery 200 in 31ms (next.js: 6ms, application-code: 24ms)
+ GET /cabinet 200 in 53ms (next.js: 30ms, application-code: 23ms)

@@ -207,7 +207,8 @@ class Report:
             p = self.doc.add_paragraph()
             fmt_para(p, indent=False)
             set_run_font(p.add_run(f"Файл {rel}"), bold=True)
-            self.code((self.src / rel).read_text(encoding="utf-8"))
+            # В отчёт идёт код без комментариев — пояснения не нужны в листинге.
+            self.code(strip_code_comments((self.src / rel).read_text(encoding="utf-8"), rel))
 
     def read_asset(self, name: str) -> str:
         return (self.assets / name).read_text(encoding="utf-8-sig", errors="replace")
@@ -217,6 +218,61 @@ class Report:
         print("saved", self.out)
         if pdf:
             export_pdf(self.out)
+
+
+def strip_code_comments(text: str, rel: str = "") -> str:
+    """Убирает комментарии из листингов отчёта (исходники на диске не трогает)."""
+    ext = Path(rel).suffix.lower()
+    # Блочные /* ... */ и JSX {/* ... */}
+    text = re.sub(r"/\*[\s\S]*?\*/", "", text)
+    lines: list[str] = []
+    for line in text.splitlines():
+        raw = line
+        stripped = raw.lstrip()
+        if stripped.startswith("//"):
+            continue
+        if ext in {".ts", ".tsx", ".js", ".jsx", ".mjs", ".cjs"}:
+            # Хвостовой // вне строк — грубо, но достаточно для учебных файлов.
+            in_str = None
+            out = []
+            i = 0
+            while i < len(raw):
+                ch = raw[i]
+                if in_str:
+                    out.append(ch)
+                    if ch == "\\" and i + 1 < len(raw):
+                        out.append(raw[i + 1])
+                        i += 2
+                        continue
+                    if ch == in_str:
+                        in_str = None
+                    i += 1
+                    continue
+                if ch in ('"', "'", "`"):
+                    in_str = ch
+                    out.append(ch)
+                    i += 1
+                    continue
+                if ch == "/" and i + 1 < len(raw) and raw[i + 1] == "/":
+                    break
+                out.append(ch)
+                i += 1
+            raw = "".join(out).rstrip()
+            if not raw.strip():
+                # сохраняем пустую строку только как разделитель блоков
+                if lines and lines[-1] != "":
+                    lines.append("")
+                continue
+            lines.append(raw)
+        else:
+            if not raw.strip():
+                if lines and lines[-1] != "":
+                    lines.append("")
+                continue
+            lines.append(raw.rstrip())
+    while lines and lines[-1] == "":
+        lines.pop()
+    return "\n".join(lines) + "\n"
 
 
 def export_pdf(docx_path: Path):

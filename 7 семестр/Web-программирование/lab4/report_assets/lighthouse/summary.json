@@ -1,18 +1,23 @@
 {
   "baseline_1": {
-    "performance": 99,
+    "performance": 98,
     "accessibility": 95,
-    "best-practices": 100,
+    "best-practices": 79,
     "seo": 100,
-    "LCP": 2173,
-    "TBT": 36,
+    "LCP": 2351,
+    "TBT": 44,
     "CLS": 0,
     "failed": [
+      "max-potential-fid",
+      "third-party-cookies",
       "lcp-lazy-loaded",
       "aria-prohibited-attr",
+      "uses-long-cache-ttl",
       "render-blocking-resources",
       "unused-javascript",
       "legacy-javascript",
+      "inspector-issues",
+      "cache-insight",
       "lcp-discovery-insight",
       "legacy-javascript-insight",
       "network-dependency-tree-insight",
@@ -21,7 +26,7 @@
     "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
     "form": "mobile",
     "throttling": "simulate",
-    "time": "2026-10-10T01:02:48.868Z",
+    "time": "2026-10-12T14:42:59.085Z",
     "lh": "12.8.2"
   },
   "baseline_2": {
@@ -29,10 +34,11 @@
     "accessibility": 95,
     "best-practices": 100,
     "seo": 100,
-    "LCP": 2159,
-    "TBT": 36,
+    "LCP": 2185,
+    "TBT": 48,
     "CLS": 0,
     "failed": [
+      "max-potential-fid",
       "lcp-lazy-loaded",
       "aria-prohibited-attr",
       "render-blocking-resources",
@@ -46,7 +52,7 @@
     "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
     "form": "mobile",
     "throttling": "simulate",
-    "time": "2026-10-10T01:03:03.189Z",
+    "time": "2026-10-12T14:43:13.154Z",
     "lh": "12.8.2"
   },
   "baseline_3": {
@@ -54,8 +60,8 @@
     "accessibility": 95,
     "best-practices": 100,
     "seo": 100,
-    "LCP": 2152,
-    "TBT": 33,
+    "LCP": 2153,
+    "TBT": 34,
     "CLS": 0,
     "failed": [
       "lcp-lazy-loaded",
@@ -71,15 +77,41 @@
     "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
     "form": "mobile",
     "throttling": "simulate",
-    "time": "2026-10-10T01:03:17.540Z",
+    "time": "2026-10-12T14:43:27.233Z",
     "lh": "12.8.2"
   },
   "final_1": {
     "performance": 99,
     "accessibility": 100,
+    "best-practices": 79,
+    "seo": 100,
+    "LCP": 2156,
+    "TBT": 22,
+    "CLS": 0,
+    "failed": [
+      "third-party-cookies",
+      "uses-long-cache-ttl",
+      "render-blocking-resources",
+      "unused-javascript",
+      "legacy-javascript",
+      "inspector-issues",
+      "cache-insight",
+      "legacy-javascript-insight",
+      "network-dependency-tree-insight",
+      "render-blocking-insight"
+    ],
+    "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
+    "form": "mobile",
+    "throttling": "simulate",
+    "time": "2026-10-12T14:43:54.586Z",
+    "lh": "12.8.2"
+  },
+  "final_2": {
+    "performance": 99,
+    "accessibility": 100,
     "best-practices": 100,
     "seo": 100,
-    "LCP": 2208,
+    "LCP": 2148,
     "TBT": 30,
     "CLS": 0,
     "failed": [
@@ -93,29 +125,7 @@
     "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
     "form": "mobile",
     "throttling": "simulate",
-    "time": "2026-10-10T01:06:43.260Z",
-    "lh": "12.8.2"
-  },
-  "final_2": {
-    "performance": 99,
-    "accessibility": 100,
-    "best-practices": 100,
-    "seo": 100,
-    "LCP": 2152,
-    "TBT": 32,
-    "CLS": 0,
-    "failed": [
-      "render-blocking-resources",
-      "unused-javascript",
-      "legacy-javascript",
-      "legacy-javascript-insight",
-      "network-dependency-tree-insight",
-      "render-blocking-insight"
-    ],
-    "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
-    "form": "mobile",
-    "throttling": "simulate",
-    "time": "2026-10-10T01:06:57.502Z",
+    "time": "2026-10-12T14:44:25.666Z",
     "lh": "12.8.2"
   },
   "final_3": {
@@ -123,8 +133,8 @@
     "accessibility": 100,
     "best-practices": 100,
     "seo": 100,
-    "LCP": 2034,
-    "TBT": 35,
+    "LCP": 2138,
+    "TBT": 26,
     "CLS": 0,
     "failed": [
       "render-blocking-resources",
@@ -137,7 +147,7 @@
     "ua": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/154.0.0.0 Safari/537.36",
     "form": "mobile",
     "throttling": "simulate",
-    "time": "2026-10-10T01:07:11.576Z",
+    "time": "2026-10-12T14:44:39.586Z",
     "lh": "12.8.2"
   }
 }

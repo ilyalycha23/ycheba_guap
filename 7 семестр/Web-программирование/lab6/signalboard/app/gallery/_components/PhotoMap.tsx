@@ -19,8 +19,13 @@ type YandexMap = {
   container: {
     fitToViewport: () => void;
   };
+  setBounds: (
+    bounds: [Coordinates, Coordinates],
+    options?: { checkZoomRange?: boolean; zoomMargin?: number },
+  ) => void;
   geoObjects: {
     add: (placemark: YandexPlacemark) => void;
+    getBounds: () => [Coordinates, Coordinates] | null;
   };
   destroy: () => void;
 };
@@ -134,7 +139,7 @@ export default function PhotoMap({
         // Создаём экземпляр карты в подготовленном DOM-контейнере.
         map = new ymaps.Map(containerRef.current, {
           center: [first.latitude, first.longitude],
-          zoom: 15,
+          zoom: 17,
           controls: ["zoomControl"],
         });
 
@@ -156,6 +161,11 @@ export default function PhotoMap({
           placemark.events.add("click", () => onSelect(signal));
           map?.geoObjects.add(placemark);
         });
+
+        const bounds = map.geoObjects.getBounds();
+        if (bounds) {
+          map.setBounds(bounds, { checkZoomRange: true, zoomMargin: 40 });
+        }
 
         // Следит за размером контейнера и уведомляет карту об изменении viewport.
         if (containerRef.current && typeof ResizeObserver !== "undefined") {

@@ -23,15 +23,15 @@ export async function POST(request: Request) {
       );
     }
 
-    const { name, email, password } = validation.data;
+    const { name, email, password, gender } = validation.data;
 
     // Хешируем пароль до записи строки User.
     const passwordHash = await hash(password, 12);
 
     // Создаём пользователя и сразу выбираем только безопасные поля.
     const user = await prisma.user.create({
-      data: { name, email, passwordHash },
-      select: { id: true, name: true, email: true },
+      data: { name, email, passwordHash, gender },
+      select: { id: true, name: true, email: true, gender: true, avatarUrl: true },
     });
 
     // Сохраняем минимальные данные в подписанной cookie-сессии.

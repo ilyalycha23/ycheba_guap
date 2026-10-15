@@ -41,6 +41,8 @@ export async function POST(request: Request) {
       id: account.id,
       name: account.name,
       email: account.email,
+      gender: account.gender,
+      avatarUrl: account.avatarUrl,
     };
 
     return NextResponse.json({ user });

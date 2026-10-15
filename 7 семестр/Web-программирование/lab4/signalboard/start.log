@@ -1,0 +1,19 @@
+
+> signalboard@0.1.0 dev
+> next dev --port 3004
+
+▲ Next.js 16.3.4 (Turbopack)
+- Local:         http://localhost:3004
+- Network:       http://198.18.0.1:3004
+- Environments: .env.local
+✓ Ready in 9.2s
+✓ Running next.config.ts took 7.7s
+⚠ Slow filesystem detected. The benchmark took 529ms. If \\?\D:\ycheba_guap\7 семестр\Web-программирование\lab4\signalboard\.next\dev is a network drive, consider moving it to a local folder.
+See more: https://nextjs.org/docs/app/guides/local-development
+
+○ Compiling / ...
+ GET /start 200 in 51ms (next.js: 14ms, application-code: 37ms)
+ GET / 307 in 72ms (next.js: 12ms, application-code: 61ms)
+ GET /start 200 in 51ms (next.js: 7ms, application-code: 45ms)
+ GET /gallery 200 in 92ms (next.js: 71ms, application-code: 21ms)
+[browser] (Yandex Maps JS API): Invalid API key (https://api-maps.yandex.ru/2.1/?apikey=72f9dda2-74bd-4ba9-b5ae-335dadb26979&lang=ru_RU:1:28790)

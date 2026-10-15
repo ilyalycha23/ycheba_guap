@@ -46,3 +46,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Загруженные файлы пользователей (шаблоны каталогов оставляем).
+/public/uploads/avatars/*
+!/public/uploads/avatars/.gitkeep
+/public/uploads/signals/*
+!/public/uploads/signals/.gitkeep

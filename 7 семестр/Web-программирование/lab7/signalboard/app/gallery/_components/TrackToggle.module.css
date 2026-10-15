@@ -1,0 +1,86 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 2.65rem;
+  padding: 0.55rem 1.05rem;
+  border: 1.5px solid color-mix(in srgb, var(--accent) 35%, var(--border));
+  border-radius: 999px;
+  background: color-mix(in srgb, white 92%, var(--accent) 8%);
+  color: var(--accent-ink);
+  font: inherit;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+  background: color-mix(in srgb, white 84%, var(--accent) 16%);
+  box-shadow: 0 8px 18px rgb(15 118 110 / 16%);
+}
+
+.button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.tracked {
+  border-color: transparent;
+  background: linear-gradient(135deg, #129287 0%, var(--accent) 55%, #0b5f59 100%);
+  color: #ffffff;
+  box-shadow: 0 10px 22px rgb(15 118 110 / 22%);
+}
+
+.tracked:hover:not(:disabled) {
+  border-color: transparent;
+  background: linear-gradient(135deg, #14a094 0%, #11857c 55%, #0c6861 100%);
+  color: #ffffff;
+  box-shadow: 0 12px 24px rgb(15 118 110 / 28%);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  width: 1.15rem;
+  height: 1.15rem;
+  flex-shrink: 0;
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.cardWrap {
+  margin: 0 1rem;
+}
+
+.cardWrap .button {
+  width: calc(100% - 0px);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1rem;
+  min-height: 2.65rem;
+  padding: 0.55rem 1.05rem;
+  border-radius: 999px;
+  border: 1.5px dashed color-mix(in srgb, var(--border) 80%, var(--accent));
+  background: color-mix(in srgb, white 90%, transparent);
+  color: var(--accent-ink);
+  font-weight: 650;
+  text-decoration: none;
+}

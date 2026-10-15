@@ -34,7 +34,7 @@ export default function LoginPage() {
   return (
     <main className="form-page">
       <h1>Вход</h1>
-      <form className="auth-form" onSubmit={handleSubmit}>
+      <form className="auth-form" method="post" onSubmit={handleSubmit}>
         <label htmlFor="email">Email</label>
         <input
           id="email"

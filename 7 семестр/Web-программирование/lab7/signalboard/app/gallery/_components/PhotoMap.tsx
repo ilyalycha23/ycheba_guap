@@ -1,109 +1,11 @@
-// Загружает API Яндекс Карт, создаёт карту и связывает метки с объектами.
-
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { COURTYARD_CENTER } from "@/app/lib/signal-categories";
+import { loadYandexMaps, type YandexMap } from "@/app/lib/yandex-maps";
 import type { NeighborSignalDTO } from "./SignalsGallery";
 import styles from "./PhotoMap.module.css";
 
-// Координаты представлены парой широты и долготы.
-type Coordinates = [number, number];
-
-type YandexPlacemark = {
-  events: {
-    add: (eventName: string, handler: () => void) => void;
-  };
-};
-
-type YandexMap = {
-  container: {
-    fitToViewport: () => void;
-  };
-  setBounds: (
-    bounds: [Coordinates, Coordinates],
-    options?: { checkZoomRange?: boolean; zoomMargin?: number },
-  ) => void;
-  geoObjects: {
-    add: (placemark: YandexPlacemark) => void;
-    getBounds: () => [Coordinates, Coordinates] | null;
-  };
-  destroy: () => void;
-};
-
-type YandexMapsApi = {
-  ready: (callback: () => void) => void;
-  Map: new (
-    container: HTMLElement,
-    state: { center: Coordinates; zoom: number; controls: string[] },
-  ) => YandexMap;
-  Placemark: new (
-    coordinates: Coordinates,
-    properties: { hintContent: string; balloonContent: string },
-    options: { preset: string; iconColor: string },
-  ) => YandexPlacemark;
-};
-
-// Дополняем тип Window объектом, который добавляет внешний API.
-declare global {
-  interface Window {
-    ymaps?: YandexMapsApi;
-  }
-}
-
-const scriptId = "signalboard-yandex-maps";
-let mapsPromise: Promise<YandexMapsApi> | null = null;
-
-// Загружаем скрипт карты один раз и ожидаем готовности API.
-function loadMaps(apiKey: string): Promise<YandexMapsApi> {
-  if (window.ymaps) {
-    return new Promise((resolve) => {
-      window.ymaps?.ready(() => resolve(window.ymaps as YandexMapsApi));
-    });
-  }
-
-  if (mapsPromise) return mapsPromise;
-
-  mapsPromise = new Promise((resolve, reject) => {
-    function resolveWhenReady() {
-      if (!window.ymaps) {
-        mapsPromise = null;
-        reject(new Error("Yandex Maps API is unavailable"));
-        return;
-      }
-
-      window.ymaps.ready(() => resolve(window.ymaps as YandexMapsApi));
-    }
-
-    const existing = document.getElementById(scriptId) as HTMLScriptElement | null;
-    if (existing) {
-      existing.addEventListener("load", resolveWhenReady, { once: true });
-      existing.addEventListener("error", () => reject(new Error("Map script error")), {
-        once: true,
-      });
-      return;
-    }
-
-    const script = document.createElement("script");
-    script.id = scriptId;
-    script.src = `https://api-maps.yandex.ru/2.1/?apikey=${encodeURIComponent(apiKey)}&lang=ru_RU`;
-    script.async = true;
-    script.addEventListener("load", resolveWhenReady, { once: true });
-    script.addEventListener(
-      "error",
-      () => {
-        mapsPromise = null;
-        reject(new Error("Map script error"));
-      },
-      { once: true },
-    );
-    // Подключаем внешний скрипт к документу.
-    document.head.appendChild(script);
-  });
-
-  return mapsPromise;
-}
-
-// Объявляем основной компонент этого файла.
 export default function PhotoMap({
   signals,
   onSelect,
@@ -112,19 +14,13 @@ export default function PhotoMap({
   onSelect: (signal: NeighborSignalDTO) => void;
 }) {
   const containerRef = useRef<HTMLDivElement>(null);
-  // Создаём локальное состояние компонента.
   const apiKey = process.env.NEXT_PUBLIC_YANDEX_MAPS_API_KEY ?? "";
   const [status, setStatus] = useState<"loading" | "ready" | "error" | "no-key">(
     apiKey ? "loading" : "no-key",
   );
 
-  // Синхронизируем компонент с браузерными событиями или внешним API.
   useEffect(() => {
-    if (!apiKey) {
-      return;
-    }
-
-    if (!containerRef.current || signals.length === 0) return;
+    if (!apiKey || !containerRef.current) return;
 
     let disposed = false;
     let map: YandexMap | null = null;
@@ -132,20 +28,19 @@ export default function PhotoMap({
 
     async function buildMap() {
       try {
-        const ymaps = await loadMaps(apiKey);
+        const ymaps = await loadYandexMaps(apiKey);
         if (disposed || !containerRef.current) return;
 
         const first = signals[0];
-        // Создаём экземпляр карты в подготовленном DOM-контейнере.
         map = new ymaps.Map(containerRef.current, {
-          center: [first.latitude, first.longitude],
+          center: first
+            ? [first.latitude, first.longitude]
+            : [COURTYARD_CENTER.latitude, COURTYARD_CENTER.longitude],
           zoom: 17,
           controls: ["zoomControl"],
         });
 
-        // Добавляем на карту метку для каждого сигнала.
         signals.forEach((signal) => {
-          // Создаём метку с координатами и данными текущего объекта.
           const placemark = new ymaps.Placemark(
             [signal.latitude, signal.longitude],
             {
@@ -162,19 +57,17 @@ export default function PhotoMap({
           map?.geoObjects.add(placemark);
         });
 
-        const bounds = map.geoObjects.getBounds();
-        if (bounds) {
-          map.setBounds(bounds, { checkZoomRange: true, zoomMargin: 40 });
+        if (signals.length > 0) {
+          const bounds = map.geoObjects.getBounds();
+          if (bounds) {
+            map.setBounds(bounds, { checkZoomRange: true, zoomMargin: 40 });
+          }
         }
 
-        // Следит за размером контейнера и уведомляет карту об изменении viewport.
         if (containerRef.current && typeof ResizeObserver !== "undefined") {
-          // Создаём наблюдатель за изменением размеров контейнера.
           resizeObserver = new ResizeObserver(() => {
-            // Просим API карты пересчитать доступную область.
             map?.container.fitToViewport();
           });
-          // Начинаем наблюдение за DOM-контейнером карты.
           resizeObserver.observe(containerRef.current);
         }
 
@@ -186,17 +79,13 @@ export default function PhotoMap({
 
     void buildMap();
 
-    // Освобождает наблюдатель и экземпляр карты при размонтировании компонента.
     return () => {
       disposed = true;
-      // Отключаем наблюдатель размеров.
       resizeObserver?.disconnect();
-      // Уничтожаем экземпляр карты и его обработчики.
       map?.destroy();
     };
   }, [apiKey, onSelect, signals]);
 
-  // Возвращаем JSX-разметку, которую React выведет на странице.
   return (
     <section className={styles.section} aria-labelledby="map-title">
       <h2 id="map-title">Карта сигналов двора</h2>

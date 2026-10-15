@@ -49,19 +49,38 @@ const signals = [
 
 async function main() {
   // Хешируем только демонстрационный пароль локальной development-базы.
-  const passwordHash = await hash("SignalPass_2026!", 12);
+  const passwordHash = await hash("12345678", 12);
 
-  // Создаём или обновляем одного демонстрационного пользователя.
+  // Создаём или обновляем демонстрационного пользователя.
   const user = await prisma.user.upsert({
     where: { email: "neighbor@example.test" },
     update: {
       name: "Демонстрационный сосед",
       passwordHash,
+      gender: "male",
     },
     create: {
       name: "Демонстрационный сосед",
       email: "neighbor@example.test",
       passwordHash,
+      gender: "male",
+    },
+  });
+
+  // Вторая учебная запись без своего фото — женская заглушка на странице «Соседи».
+  await prisma.user.upsert({
+    where: { email: "anna@example.test" },
+    update: {
+      name: "Анна Соседка",
+      passwordHash,
+      gender: "female",
+      avatarUrl: null,
+    },
+    create: {
+      name: "Анна Соседка",
+      email: "anna@example.test",
+      passwordHash,
+      gender: "female",
     },
   });
 
@@ -69,8 +88,8 @@ async function main() {
   for (const signal of signals) {
     await prisma.neighborSignal.upsert({
       where: { slug: signal.slug },
-      update: signal,
-      create: signal,
+      update: { ...signal, authorId: user.id },
+      create: { ...signal, authorId: user.id },
     });
   }
 
@@ -95,7 +114,7 @@ async function main() {
   });
 
   // Выводим проверяемый итог без пароля и хеша.
-  console.log("Seed complete: 1 user, 3 signals, 1 tracked");
+  console.log("Seed complete: 2 users, 3 signals, 1 tracked");
 }
 
 main()

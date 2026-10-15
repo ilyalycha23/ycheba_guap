@@ -1,5 +1,3 @@
-// Подключает форму регистрации к POST /api/auth/register.
-
 "use client";
 
 import Link from "next/link";
@@ -19,14 +17,18 @@ export default function RegisterPage() {
     setPending(true);
 
     const form = new FormData(event.currentTarget);
+    const genderRaw = String(form.get("gender") ?? "");
+    const gender = genderRaw === "female" ? "female" : genderRaw === "male" ? "male" : null;
 
     try {
-      // Формируем контракт регистрации из полей доступной HTML-формы.
+      if (!gender) throw new Error("Укажите пол: мужской или женский");
+
       await register({
         name: String(form.get("name") ?? ""),
         email: String(form.get("email") ?? ""),
         password: String(form.get("password") ?? ""),
         confirmPassword: String(form.get("confirmPassword") ?? ""),
+        gender,
       });
       router.push("/gallery");
     } catch (value) {
@@ -39,11 +41,22 @@ export default function RegisterPage() {
   return (
     <main className="form-page">
       <h1>Регистрация</h1>
-      <form className="auth-form" onSubmit={handleSubmit}>
+      <form className="auth-form" method="post" onSubmit={handleSubmit}>
         <label htmlFor="name">Имя пользователя</label>
         <input id="name" name="name" autoComplete="name" required />
+
         <label htmlFor="email">Email</label>
         <input id="email" name="email" type="email" autoComplete="email" required />
+
+        <label htmlFor="gender">Пол</label>
+        <select id="gender" name="gender" required defaultValue="">
+          <option value="" disabled>
+            Выберите…
+          </option>
+          <option value="male">Мужской</option>
+          <option value="female">Женский</option>
+        </select>
+
         <label htmlFor="password">Пароль</label>
         <input
           id="password"
@@ -53,6 +66,7 @@ export default function RegisterPage() {
           minLength={8}
           required
         />
+
         <label htmlFor="confirmPassword">Повторите пароль</label>
         <input
           id="confirmPassword"

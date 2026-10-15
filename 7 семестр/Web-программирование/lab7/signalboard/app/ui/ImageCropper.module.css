@@ -1,0 +1,107 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 3400;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgb(8 18 22 / 62%);
+}
+
+.dialog {
+  display: grid;
+  gap: 0.9rem;
+  justify-items: center;
+  width: min(26rem, 100%);
+  padding: 1.4rem;
+  border-radius: 1.3rem;
+  background: var(--surface);
+  box-shadow: var(--shadow-lift);
+}
+
+.dialog:focus {
+  outline: none;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  text-align: center;
+}
+
+.stage {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: #1b2a2f;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.stage:active {
+  cursor: grabbing;
+}
+
+.image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: none;
+  pointer-events: none;
+}
+
+.maskCircle {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 0 999px rgb(8 18 22 / 58%);
+  outline: 2px solid rgb(255 255 255 / 85%);
+  outline-offset: -2px;
+  pointer-events: none;
+}
+
+.maskRect {
+  position: absolute;
+  inset: 0;
+  border-radius: 0.85rem;
+  box-shadow: 0 0 0 999px rgb(8 18 22 / 58%);
+  outline: 2px solid rgb(255 255 255 / 85%);
+  outline-offset: -2px;
+  pointer-events: none;
+}
+
+.loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #dbe7ea;
+}
+
+.zoom {
+  display: grid;
+  gap: 0.35rem;
+  width: 100%;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 650;
+}
+
+.zoom input {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.actions {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: flex-end;
+  width: 100%;
+}

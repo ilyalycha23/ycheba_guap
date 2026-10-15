@@ -1,5 +1,3 @@
-// Синхронизирует клиентский интерфейс с серверной cookie-сессией.
-
 "use client";
 
 import {
@@ -16,6 +14,8 @@ export type UserDTO = {
   id: string;
   name: string;
   email: string;
+  gender: "male" | "female";
+  avatarUrl: string | null;
 };
 
 type AuthStatus = "loading" | "authenticated" | "guest";
@@ -24,19 +24,20 @@ type AuthContextValue = {
   user: UserDTO | null;
   status: AuthStatus;
   refresh: () => Promise<void>;
+  setUser: (user: UserDTO | null) => void;
   login: (email: string, password: string) => Promise<void>;
   register: (input: {
     name: string;
     email: string;
     password: string;
     confirmPassword: string;
+    gender: "male" | "female";
   }) => Promise<void>;
   logout: () => Promise<void>;
 };
 
 const AuthContext = createContext<AuthContextValue | null>(null);
 
-// Читаем безопасное сообщение из согласованного JSON-ответа.
 async function readError(response: Response): Promise<string> {
   const payload = (await response.json().catch(() => null)) as
     | { error?: string; errors?: string[] }
@@ -49,7 +50,6 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<UserDTO | null>(null);
   const [status, setStatus] = useState<AuthStatus>("loading");
 
-  // Восстанавливаем состояние из серверной cookie, не читая её на клиенте.
   const fetchCurrentUser = useCallback(async (): Promise<UserDTO | null> => {
     const response = await fetch("/api/auth/me", {
       cache: "no-store",
@@ -66,7 +66,6 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
 
   const refresh = useCallback(async () => {
     const currentUser = await fetchCurrentUser();
-
     setUser(currentUser);
     setStatus(currentUser ? "authenticated" : "guest");
   }, [fetchCurrentUser]);
@@ -98,6 +97,7 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
     email: string;
     password: string;
     confirmPassword: string;
+    gender: "male" | "female";
   }) => {
     const response = await fetch("/api/auth/register", {
       method: "POST",
@@ -124,9 +124,8 @@ export default function AuthProvider({ children }: { children: ReactNode }) {
     setStatus("guest");
   }, []);
 
-  // Стабилизируем объект контекста для дочерних Client Components.
   const value = useMemo(
-    () => ({ user, status, refresh, login, register, logout }),
+    () => ({ user, status, refresh, setUser, login, register, logout }),
     [user, status, refresh, login, register, logout],
   );
 

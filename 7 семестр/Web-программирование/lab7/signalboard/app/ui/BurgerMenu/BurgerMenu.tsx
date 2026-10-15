@@ -16,10 +16,9 @@ import styles from "./styles.module.css";
 // Описываем пункты меню единым массивом.
 const links = [
   { href: "/start", label: "Главная" },
-  { href: "/signals", label: "Лента" },
-  { href: "/gallery", label: "Галерея и карта" },
+  { href: "/gallery", label: "Сигналы" },
+  { href: "/neighbors", label: "Соседи" },
   { href: "/about", label: "О проекте" },
-  { href: "/cabinet", label: "Кабинет" },
 ];
 
 // Собираем селектор доступных элементов внутри меню.

@@ -1,0 +1,22 @@
+.wrap {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.canvas {
+  width: 100%;
+  min-height: 16rem;
+  height: clamp(16rem, 38vw, 22rem);
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--border) 70%, white);
+  background: #d7e0e3;
+}
+
+.status,
+.hint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}

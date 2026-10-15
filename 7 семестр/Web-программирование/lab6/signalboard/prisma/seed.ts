@@ -49,7 +49,7 @@ const signals = [
 
 async function main() {
   // Хешируем только демонстрационный пароль локальной development-базы.
-  const passwordHash = await hash("SignalPass_2026!", 12);
+  const passwordHash = await hash("12345678", 12);
 
   // Создаём или обновляем одного демонстрационного пользователя.
   const user = await prisma.user.upsert({

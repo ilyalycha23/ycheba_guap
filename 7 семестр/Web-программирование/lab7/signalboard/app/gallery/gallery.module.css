@@ -1,0 +1,19 @@
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.head h1 {
+  margin-bottom: 0.45rem;
+}
+
+.head p {
+  margin: 0;
+  max-width: 40rem;
+  color: var(--muted);
+  line-height: 1.55;
+}

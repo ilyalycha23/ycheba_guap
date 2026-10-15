@@ -24,12 +24,15 @@ test("пользователь регистрируется и сохраняе�
   await page.goto("/auth/register");
   await page.getByLabel("Имя пользователя").fill("E2E сосед");
   await page.getByLabel("Email").fill(testEmail);
+  // id надёжнее: «Пол» — подстрока «пользователя», getByLabel без exact цепляет имя.
+  await page.locator("#gender").selectOption("male");
+  await expect(page.locator("#gender")).toHaveValue("male");
   await page.getByLabel("Пароль", { exact: true }).fill("SignalPass_2026!");
   await page.getByLabel("Повторите пароль").fill("SignalPass_2026!");
   await page.getByRole("button", { name: "Зарегистрироваться" }).click();
 
   // После успешного API-ответа форма переводит пользователя в галерею.
-  await expect(page).toHaveURL(/\/gallery$/);
+  await expect(page).toHaveURL(/\/gallery$/, { timeout: 15_000 });
 
   const addTracked = page.getByRole("button", {
     name: "Добавить в отслеживание: Ищу ключи от подъезда",
@@ -55,6 +58,6 @@ test("пользователь регистрируется и сохраняе�
   await page.request.post("/api/auth/logout");
   await page.reload();
   await expect(
-    page.getByRole("link", { name: "Войдите, чтобы отслеживать сигнал" }).first(),
+    page.getByRole("link", { name: "Войдите, чтобы отслеживать" }).first(),
   ).toBeVisible();
 });

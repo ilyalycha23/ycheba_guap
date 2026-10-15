@@ -21,10 +21,12 @@ describe("validateRegistration", () => {
       email: "neighbor@example.test",
       password: "SignalPass_2026!",
       confirmPassword: "SignalPass_2026!",
+      gender: "male",
     });
 
     expect(result.errors).toEqual([]);
     expect(result.data?.email).toBe("neighbor@example.test");
+    expect(result.data?.gender).toBe("male");
   });
 
   test("отклоняет короткий пароль", () => {
@@ -33,6 +35,7 @@ describe("validateRegistration", () => {
       email: "neighbor@example.test",
       password: "short",
       confirmPassword: "short",
+      gender: "female",
     });
 
     expect(result.data).toBeNull();
@@ -47,8 +50,21 @@ describe("validateRegistration", () => {
       email: "neighbor@example.test",
       password: "SignalPass_2026!",
       confirmPassword: "Different_2026!",
+      gender: "male",
     });
 
     expect(result.errors).toContain("Пароли не совпадают");
+  });
+
+  test("отклоняет регистрацию без пола", () => {
+    const result = validateRegistration({
+      name: "Сосед",
+      email: "neighbor@example.test",
+      password: "SignalPass_2026!",
+      confirmPassword: "SignalPass_2026!",
+    });
+
+    expect(result.data).toBeNull();
+    expect(result.errors).toContain("Укажите пол: мужской или женский");
   });
 });

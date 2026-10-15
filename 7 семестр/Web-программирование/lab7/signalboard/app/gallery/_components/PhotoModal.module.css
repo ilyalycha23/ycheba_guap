@@ -52,6 +52,36 @@
   object-fit: cover;
 }
 
+.authorRow {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.35rem;
+}
+
+.authorText {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.authorRow p {
+  margin: 0;
+}
+
+.publishedAt {
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.authorAvatar {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;

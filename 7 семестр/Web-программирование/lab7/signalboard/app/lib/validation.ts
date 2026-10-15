@@ -1,10 +1,13 @@
 // Нормализует и проверяет непроверенные данные auth-запросов.
 
+import { normalizeGender, type UserGender } from "./avatar";
+
 export type RegistrationInput = {
   name: string;
   email: string;
   password: string;
   confirmPassword: string;
+  gender: UserGender;
 };
 
 // Приводим email к форме, используемой уникальным полем базы.
@@ -22,11 +25,14 @@ export function validateRegistration(value: unknown): {
       ? (value as Record<string, unknown>)
       : {};
 
+  const gender = normalizeGender(source.gender) ?? "male";
+
   const data: RegistrationInput = {
     name: String(source.name ?? "").trim(),
     email: normalizeEmail(source.email),
     password: String(source.password ?? ""),
     confirmPassword: String(source.confirmPassword ?? ""),
+    gender,
   };
 
   const errors: string[] = [];
@@ -34,6 +40,10 @@ export function validateRegistration(value: unknown): {
   // Проверяем учебные ограничения длины отображаемого имени.
   if (data.name.length < 2 || data.name.length > 80) {
     errors.push("Имя должно содержать от 2 до 80 символов");
+  }
+
+  if (!normalizeGender(source.gender)) {
+    errors.push("Укажите пол: мужской или женский");
   }
 
   // Выполняем базовую синтаксическую проверку email.

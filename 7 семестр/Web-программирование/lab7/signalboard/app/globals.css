@@ -1,16 +1,23 @@
-/* Задаёт дизайн-токены, базовую адаптивную страницу и режим уменьшенного движения. */
+/* SignalBoard visual system: courtyard teal + signal lamp amber. */
 
-/* Объявляем общие дизайн-токены приложения. */
 :root {
   --page-max: 72rem;
   --page-inline: clamp(1rem, 4vw, 3rem);
   --surface: #ffffff;
-  --background: #eef3f8;
-  --text: #17212b;
-  --muted: #52606d;
-  --border: #c7d4e4;
-  --accent: #134f9c;
-  --focus: #005fcc;
+  --background: #e7eef0;
+  --text: #122027;
+  --muted: #5b6d75;
+  --border: #c9d7db;
+  --accent: #0f766e;
+  --accent-ink: #0b4f4a;
+  --accent-hot: #e29a24;
+  --danger: #b42318;
+  --focus: #0f766e;
+  --shadow-soft: 0 10px 30px rgb(15 38 42 / 10%);
+  --shadow-lift: 0 18px 40px rgb(15 38 42 / 14%);
+  --radius: 1rem;
+  --font-sans: "Outfit", "Segoe UI", sans-serif;
+  --font-display: "Fraunces", "Georgia", serif;
 }
 
 *,
@@ -24,27 +31,55 @@ html {
   background: var(--background);
 }
 
-/* Задаём базовые параметры страницы и типографики. */
 body {
   min-width: 20rem;
   margin: 0;
-  background: var(--background);
   color: var(--text);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  background:
+    radial-gradient(1200px 520px at 8% -10%, rgb(226 154 36 / 18%), transparent 55%),
+    radial-gradient(900px 480px at 100% 0%, rgb(15 118 110 / 16%), transparent 50%),
+    linear-gradient(180deg, #f3f7f8 0%, var(--background) 42%, #dde8ea 100%);
+  background-attachment: fixed;
 }
 
-/* Ограничиваем ширину основного содержимого и выравниваем его по центру. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image:
+    linear-gradient(rgb(18 32 39 / 4%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(18 32 39 / 4%) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(180deg, #000 0%, transparent 78%);
+}
+
 main {
   width: min(var(--page-max), 100%);
   margin-inline: auto;
-  padding: clamp(4.5rem, 8vw, 6rem) var(--page-inline) 4rem;
+  padding: clamp(1.6rem, 4vw, 2.5rem) var(--page-inline) 4rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
 }
 
 h1 {
   margin-block: 0 1rem;
-  font-size: clamp(1.9rem, 5vw, 3.25rem);
-  line-height: 1.1;
-  text-wrap: balance;
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.08;
+}
+
+h2 {
+  margin-block: 0 0.75rem;
+  font-size: clamp(1.35rem, 3vw, 1.8rem);
 }
 
 img,
@@ -63,41 +98,94 @@ textarea {
 }
 
 a {
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 button {
   cursor: pointer;
 }
 
-/* Показываем заметный фокус при клавиатурной навигации. */
 :focus-visible {
-  outline: 0.25rem solid var(--focus);
-  outline-offset: 0.2rem;
+  outline: 0.2rem solid var(--focus);
+  outline-offset: 0.18rem;
 }
 
 .eyebrow {
-  margin-bottom: 8px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  margin-bottom: 0.55rem;
+  color: var(--accent-ink);
+  font-weight: 700;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  font-size: 0.78rem;
 }
 
 .lead {
-  max-width: 680px;
-  font-size: clamp(1.05rem, 2vw, 1.25rem);
-  line-height: 1.6;
+  max-width: 42rem;
+  color: var(--muted);
+  font-size: clamp(1.05rem, 2vw, 1.22rem);
+  line-height: 1.65;
 }
 
-.primary-link {
-  display: inline-block;
-  margin-top: 16px;
-  padding: 12px 18px;
-  border-radius: 10px;
-  background: var(--accent);
-  color: #ffffff;
+.btn,
+.primary-link,
+.auth-form button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 2.75rem;
+  padding: 0.7rem 1.15rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
   font-weight: 700;
+  letter-spacing: 0.01em;
   text-decoration: none;
+  transition:
+    transform 160ms ease,
+    box-shadow 160ms ease,
+    background 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.btn:hover,
+.primary-link:hover,
+.auth-form button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn:disabled,
+.auth-form button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btnPrimary,
+.primary-link,
+.auth-form button {
+  background: linear-gradient(135deg, #129287 0%, var(--accent) 55%, #0b5f59 100%);
+  color: #ffffff;
+  box-shadow: 0 10px 24px rgb(15 118 110 / 24%);
+}
+
+.btnGhost {
+  background: color-mix(in srgb, var(--surface) 80%, transparent);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.btnDanger {
+  background: color-mix(in srgb, var(--danger) 12%, white);
+  border-color: color-mix(in srgb, var(--danger) 35%, white);
+  color: var(--danger);
+}
+
+.btnHot {
+  background: linear-gradient(135deg, #f0b148, var(--accent-hot));
+  color: #2a1a00;
 }
 
 .feature-list,
@@ -108,64 +196,80 @@ button {
 }
 
 .feature-card,
-.card {
+.card,
+.auth-form,
+.surface-card {
   min-width: 0;
-  padding: 22px;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  background: var(--surface);
+  padding: 1.35rem;
+  border: 1px solid color-mix(in srgb, var(--border) 85%, white);
+  border-radius: calc(var(--radius) + 0.15rem);
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 94%), rgb(255 255 255 / 86%)),
+    var(--surface);
+  box-shadow: var(--shadow-soft);
 }
 
 .form-page {
-  max-width: 620px;
+  max-width: 34rem;
 }
 
 .auth-form {
   display: grid;
-  gap: 10px;
-  margin: 24px 0;
-  padding: 24px;
-  border-radius: 14px;
-  background: var(--surface);
+  gap: 0.7rem;
+  margin: 1.4rem 0;
 }
 
-.auth-form input {
-  min-height: 44px;
-  padding: 8px 10px;
-  border: 1px solid #8d99a6;
-  border-radius: 8px;
+.auth-form label,
+.field label {
+  font-size: 0.92rem;
+  font-weight: 650;
+  color: var(--muted);
 }
 
-.auth-form button {
-  min-height: 44px;
-  margin-top: 10px;
-  border: 0;
-  border-radius: 8px;
-  background: var(--accent);
-  color: #ffffff;
-  font-weight: 700;
+.auth-form input,
+.auth-form select,
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: 2.85rem;
+  padding: 0.65rem 0.85rem;
+  border: 1px solid #9eb0b6;
+  border-radius: 0.8rem;
+  background: #fbfeff;
+  color: var(--text);
 }
 
-.demo-warning {
-  padding: 12px 14px;
-  border-left: 4px solid #c67c00;
-  background: #fff4d6;
+.auth-form input:focus,
+.auth-form select:focus,
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 0.22rem color-mix(in srgb, var(--accent) 22%, transparent);
+  outline: none;
 }
 
 .form-error {
-  color: #9b1c1c;
+  color: var(--danger);
+  font-weight: 700;
+}
+
+.form-success {
+  color: var(--accent-ink);
   font-weight: 700;
 }
 
 .profile-list {
   display: grid;
   grid-template-columns: minmax(4rem, 6.25rem) 1fr;
-  gap: 8px 16px;
-  max-width: 520px;
+  gap: 0.5rem 1rem;
+  max-width: 32rem;
 }
 
 .profile-list dt {
   font-weight: 700;
+  color: var(--muted);
 }
 
 .profile-list dd {
@@ -173,7 +277,6 @@ button {
   overflow-wrap: anywhere;
 }
 
-/* Уменьшаем необязательное движение по системной настройке пользователя. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

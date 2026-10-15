@@ -9,17 +9,41 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// Пол пользователя для выбора заглушки аватара.
+enum Gender {
+  male
+  female
+}
+
 // Хранит зарегистрированного пользователя и его безопасные метаданные.
 model User {
   id           String   @id @default(uuid()) @db.Uuid
   name         String   @db.VarChar(80)
   email        String   @unique @db.VarChar(254)
   passwordHash String   @db.VarChar(255)
+  gender       Gender   @default(male)
+  avatarUrl    String?  @db.VarChar(240)
   createdAt    DateTime @default(now()) @db.Timestamptz(3)
   updatedAt    DateTime @updatedAt @db.Timestamptz(3)
 
   // Связывает пользователя со строками отслеживания сигналов.
   tracked TrackedSignal[]
+  // Сигналы, которые опубликовал этот сосед.
+  publishedSignals NeighborSignal[]
+  // Хранит прошлые хеши паролей, чтобы запретить повторное использование.
+  passwordHistory PasswordHistory[]
+}
+
+// Хранит ранее использованные хеши паролей пользователя.
+model PasswordHistory {
+  id           String   @id @default(uuid()) @db.Uuid
+  userId       String   @db.Uuid
+  passwordHash String   @db.VarChar(255)
+  createdAt    DateTime @default(now()) @db.Timestamptz(3)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
 }
 
 // Хранит локальный сигнал, отображаемый в ленте, галерее и на карте.
@@ -34,11 +58,18 @@ model NeighborSignal {
   imageAlt  String   @db.VarChar(240)
   latitude  Decimal  @db.Decimal(9, 6)
   longitude Decimal  @db.Decimal(9, 6)
-  createdAt DateTime @default(now()) @db.Timestamptz(3)
-  updatedAt DateTime @updatedAt @db.Timestamptz(3)
+  authorId   String    @db.Uuid
+  archivedAt DateTime? @db.Timestamptz(3)
+  createdAt  DateTime  @default(now()) @db.Timestamptz(3)
+  updatedAt  DateTime  @updatedAt @db.Timestamptz(3)
 
+  // Автор сигнала — зарегистрированный сосед.
+  author User @relation(fields: [authorId], references: [id], onDelete: Cascade)
   // Связывает сигнал со всеми пользовательскими отслеживаниями.
   tracked TrackedSignal[]
+
+  @@index([authorId])
+  @@index([archivedAt])
 }
 
 // Реализует явную связь многие-ко-многим между User и NeighborSignal.

@@ -1,16 +1,22 @@
-// Подключает интерактивную галерею к серверной странице маршрута.
-
+import Link from "next/link";
 import SignalsGallery from "./_components/SignalsGallery";
+import styles from "./gallery.module.css";
 
-// Объявляем основной компонент этого файла.
 export default function GalleryPage() {
-  // Возвращаем JSX-разметку, которую React выведет на странице.
   return (
     <main>
-      <h1>Галерея сигналов</h1>
-      <p>
-        Выберите карточку или метку на карте, чтобы открыть подробное окно.
-      </p>
+      <div className={styles.head}>
+        <div>
+          <h1>Сигналы</h1>
+          <p>
+            Объявления двора: публикация, метки на карте, отслеживание и архив ваших
+            сигналов.
+          </p>
+        </div>
+        <Link href="/gallery/archive" className="btn btnGhost">
+          Архив сигналов
+        </Link>
+      </div>
       <SignalsGallery />
     </main>
   );

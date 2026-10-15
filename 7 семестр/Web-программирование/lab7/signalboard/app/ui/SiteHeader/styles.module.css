@@ -1,0 +1,232 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 80%, transparent);
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter: blur(14px);
+}
+
+.inner {
+  width: min(var(--page-max), 100%);
+  margin-inline: auto;
+  padding: 0.85rem var(--page-inline);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-decoration: none;
+}
+
+.brandMark {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 999px;
+  background: radial-gradient(circle at 30% 30%, #ffe08a, var(--accent-hot) 45%, var(--accent) 100%);
+  box-shadow: 0 0 0 0.28rem color-mix(in srgb, var(--accent-hot) 28%, transparent);
+}
+
+.desktopNav,
+.desktopAuth {
+  display: none;
+}
+
+.navList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.4rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  color: var(--muted);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.navLink:hover {
+  color: var(--text);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+.navLink[aria-current="page"] {
+  color: var(--accent-ink);
+  background: color-mix(in srgb, var(--accent) 16%, white);
+}
+
+.desktopAuth {
+  margin-left: auto;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.userChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  max-width: 14rem;
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.userChip span:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.avatar {
+  display: grid;
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 auto;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 2px solid color-mix(in srgb, var(--accent) 35%, white);
+  background: linear-gradient(145deg, #1c4b45, #0f766e);
+  color: #f7fbfa;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.avatarMd {
+  width: 2.75rem;
+  height: 2.75rem;
+  font-size: 1.05rem;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.openButton {
+  margin-left: auto;
+  display: grid;
+  width: 2.85rem;
+  height: 2.85rem;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 0.9rem;
+  background: var(--surface);
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+}
+
+.openButton[aria-expanded="true"] {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.burgerIcon {
+  display: grid;
+  gap: 0.28rem;
+  width: 1.1rem;
+}
+
+.burgerIcon i {
+  display: block;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--text);
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2200;
+  display: flex;
+  justify-content: flex-end;
+  background: rgb(8 18 22 / 55%);
+}
+
+.panel {
+  width: min(22rem, 100%);
+  height: 100dvh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: max(1rem, env(safe-area-inset-top))
+    max(1rem, env(safe-area-inset-right))
+    max(1.25rem, env(safe-area-inset-bottom))
+    1rem;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--accent) 8%, white), white 28%),
+    var(--surface);
+  box-shadow: -1.25rem 0 3rem rgb(0 0 0 / 22%);
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.closeButton {
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 0;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--text) 8%, white);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.panel .navList {
+  display: grid;
+  gap: 0.45rem;
+  margin: 2rem 0 1.5rem;
+}
+
+.panel .navLink {
+  min-height: 2.85rem;
+  border-radius: 0.85rem;
+  font-size: 1.08rem;
+}
+
+.authRow {
+  display: grid;
+  gap: 0.85rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--border);
+}
+
+@media (min-width: 48rem) {
+  .desktopNav,
+  .desktopAuth {
+    display: flex;
+  }
+
+  .openButton,
+  .overlay {
+    display: none;
+  }
+}
+
+@media (max-width: 30rem) {
+  .panel {
+    width: 100%;
+  }
+}

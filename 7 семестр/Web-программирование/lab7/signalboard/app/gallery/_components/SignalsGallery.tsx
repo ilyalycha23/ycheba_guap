@@ -1,13 +1,16 @@
-// Загружает реальные сигналы и сохраняет отслеживание через серверный API.
-
 "use client";
 
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
+import UserAvatar from "@/app/ui/UserAvatar";
+import { useAuth } from "@/app/providers/AuthProvider";
+import { formatPublishedAt } from "@/app/lib/datetime";
+import CreateSignalForm from "./CreateSignalForm";
 import PhotoMap from "./PhotoMap";
 import PhotoModal from "./PhotoModal";
-import { useAuth } from "@/app/providers/AuthProvider";
+import TrackToggle from "./TrackToggle";
+import trackStyles from "./TrackToggle.module.css";
 import styles from "./SignalsGallery.module.css";
 
 export type NeighborSignalDTO = {
@@ -21,7 +24,16 @@ export type NeighborSignalDTO = {
   imageAlt: string;
   latitude: number;
   longitude: number;
+  createdAt: string;
+  archivedAt?: string | null;
   isTracked: boolean;
+  isOwn?: boolean;
+  author: {
+    id: string;
+    name: string;
+    gender: "male" | "female";
+    avatarUrl: string;
+  };
 };
 
 export default function SignalsGallery() {
@@ -48,7 +60,6 @@ export default function SignalsGallery() {
     setSelected(null);
   }
 
-  // Повторная загрузка вызывается кнопкой после сетевой ошибки.
   const retry = useCallback(() => setReloadKey((value) => value + 1), []);
 
   useEffect(() => {
@@ -70,7 +81,6 @@ export default function SignalsGallery() {
         const payload = (await response.json()) as { signals: NeighborSignalDTO[] };
         setSignals(payload.signals);
       } catch (value) {
-        // Игнорируем ожидаемую отмену при размонтировании компонента.
         if (value instanceof DOMException && value.name === "AbortError") return;
         setError(value instanceof Error ? value.message : "Ошибка загрузки");
       } finally {
@@ -79,8 +89,6 @@ export default function SignalsGallery() {
     }
 
     void loadSignals();
-
-    // Отменяем запрос, если компонент больше не используется.
     return () => controller.abort();
   }, [reloadKey, status]);
 
@@ -97,21 +105,29 @@ export default function SignalsGallery() {
       });
 
       if (response.status === 401) {
-        // Синхронизируем UI, если сервер больше не принимает сессию.
         await refresh();
         throw new Error("Сеанс завершён. Выполните вход снова.");
       }
 
-      if (!response.ok) throw new Error("Не удалось изменить отслеживание");
+      if (!response.ok) {
+        const payload = (await response.json().catch(() => null)) as
+          | { error?: string; errors?: string[] }
+          | null;
+        const message =
+          payload?.errors?.[0] ??
+          payload?.error ??
+          "Не удалось изменить отслеживание";
+        if (response.status === 404) {
+          throw new Error("Сигнал не найден");
+        }
+        throw new Error(message);
+      }
 
       const nextTracked = !signal.isTracked;
 
-      // Меняем только карточку, изменение которой подтвердил сервер.
       setSignals((current) =>
         current.map((item) =>
-          item.id === signal.id
-            ? { ...item, isTracked: nextTracked }
-            : item,
+          item.id === signal.id ? { ...item, isTracked: nextTracked } : item,
         ),
       );
       setSelected((current) =>
@@ -126,72 +142,102 @@ export default function SignalsGallery() {
     }
   }
 
-  if (loading) return <p role="status">Загрузка сигналов…</p>;
-
-  if (error && signals.length === 0) {
-    return (
-      <div role="alert">
-        <p>{error}</p>
-        <button type="button" onClick={retry}>Повторить</button>
-      </div>
-    );
+  function handleCreated(signal: NeighborSignalDTO) {
+    setSignals((current) => [signal, ...current]);
+    setSelected(signal);
   }
 
-  if (signals.length === 0) return <p>Сигналы пока не добавлены.</p>;
+  function handleUpdated(signal: NeighborSignalDTO) {
+    setSignals((current) =>
+      current.map((item) => (item.id === signal.id ? signal : item)),
+    );
+    setSelected(signal);
+  }
+
+  function handleArchived(signalId: string) {
+    setSignals((current) => current.filter((item) => item.id !== signalId));
+    setSelected(null);
+  }
 
   return (
     <>
-      {error ? <p role="alert">{error}</p> : null}
+      <CreateSignalForm onCreated={handleCreated} />
 
-      <div className={styles.grid}>
-        {signals.map((signal, index) => (
-          <article className={styles.card} key={signal.id}>
-            <button
-              className={styles.cardOpen}
-              type="button"
-              onClick={(event) => openFromCard(signal, event.currentTarget)}
-            >
-              <span className={styles.imageWrap}>
-                <Image
-                  src={signal.image}
-                  alt={signal.imageAlt}
-                  fill
-                  sizes="(max-width: 47.99rem) calc(100vw - 2rem), (max-width: 74.99rem) 45vw, 22rem"
-                  className={styles.image}
-                  // Первая карточка является LCP-изображением первого экрана.
-                  loading={index === 0 ? "eager" : "lazy"}
-                  fetchPriority={index === 0 ? "high" : "auto"}
-                />
-              </span>
-              <span className={styles.cardBody}>
-                <span className={styles.title}>{signal.title}</span>
-                <span className={styles.summary}>{signal.summary}</span>
-              </span>
-            </button>
+      {loading ? <p role="status">Загрузка сигналов…</p> : null}
 
-            {status === "authenticated" ? (
+      {error && signals.length === 0 && !loading ? (
+        <div role="alert">
+          <p>{error}</p>
+          <button type="button" className="btn btnGhost" onClick={retry}>
+            Повторить
+          </button>
+        </div>
+      ) : null}
+
+      {error && signals.length > 0 ? <p role="alert">{error}</p> : null}
+
+      {!loading && signals.length === 0 && !error ? (
+        <p>Сигналы пока не добавлены. Опубликуйте первый.</p>
+      ) : null}
+
+      {signals.length > 0 ? (
+        <div className={styles.grid}>
+          {signals.map((signal, index) => (
+            <article className={styles.card} key={signal.id}>
               <button
+                className={styles.cardOpen}
                 type="button"
-                className={styles.trackButton}
-                disabled={pendingId === signal.id}
-                aria-pressed={signal.isTracked}
-                aria-label={`${
-                  signal.isTracked
-                    ? "Удалить из отслеживания"
-                    : "Добавить в отслеживание"
-                }: ${signal.title}`}
-                onClick={() => void toggleTracked(signal)}
+                onClick={(event) => openFromCard(signal, event.currentTarget)}
               >
-                {signal.isTracked ? "В отслеживании" : "Отслеживать"}
+                <span className={styles.imageWrap}>
+                  <Image
+                    src={signal.image}
+                    alt={signal.imageAlt}
+                    fill
+                    sizes="(max-width: 47.99rem) calc(100vw - 2rem), (max-width: 74.99rem) 45vw, 22rem"
+                    className={styles.image}
+                    loading={index === 0 ? "eager" : "lazy"}
+                    fetchPriority={index === 0 ? "high" : "auto"}
+                  />
+                </span>
+                <span className={styles.cardBody}>
+                  <span className={styles.badge}>{signal.category}</span>
+                  <span className={styles.title}>{signal.title}</span>
+                  <span className={styles.summary}>{signal.summary}</span>
+                  <span className={styles.author}>
+                    <UserAvatar
+                      name={signal.author.name}
+                      avatarUrl={signal.author.avatarUrl}
+                      gender={signal.author.gender}
+                      className={styles.authorAvatar}
+                    />
+                    <span className={styles.authorMeta}>
+                      <span>{signal.author.name}</span>
+                      <time dateTime={signal.createdAt} className={styles.publishedAt}>
+                        {formatPublishedAt(signal.createdAt)}
+                      </time>
+                    </span>
+                  </span>
+                </span>
               </button>
-            ) : (
-              <Link className={styles.trackLink} href="/auth/login">
-                Войдите, чтобы отслеживать сигнал
-              </Link>
-            )}
-          </article>
-        ))}
-      </div>
+
+              {status === "authenticated" ? (
+                <TrackToggle
+                  layout="card"
+                  tracked={signal.isTracked}
+                  pending={pendingId === signal.id}
+                  title={signal.title}
+                  onClick={() => void toggleTracked(signal)}
+                />
+              ) : (
+                <Link className={trackStyles.link} href="/auth/login">
+                  Войдите, чтобы отслеживать
+                </Link>
+              )}
+            </article>
+          ))}
+        </div>
+      ) : null}
 
       <PhotoMap signals={signals} onSelect={openFromMap} />
 
@@ -201,6 +247,8 @@ export default function SignalsGallery() {
           pending={pendingId === selected.id}
           onToggleTracked={() => void toggleTracked(selected)}
           onClose={closeModal}
+          onUpdated={handleUpdated}
+          onArchived={handleArchived}
           returnFocusTo={returnFocusTo}
         />
       ) : null}

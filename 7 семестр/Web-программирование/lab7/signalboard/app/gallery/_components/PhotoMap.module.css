@@ -1,31 +1,165 @@
-/* Задаёт адаптивную высоту карты и оформление сообщений состояния. */
-
 .section {
   margin-top: clamp(2rem, 6vw, 3rem);
+  display: grid;
+  gap: 0.85rem;
 }
 
-/* Задаём явные размеры контейнера интерактивной карты. */
+.heading {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.heading h2 {
+  margin: 0;
+}
+
+.subtitle {
+  margin: 0;
+  max-width: 40rem;
+  color: var(--muted);
+  line-height: 1.5;
+  font-size: 0.98rem;
+}
+
 .canvas {
+  position: relative;
   width: 100%;
-  height: clamp(18rem, 58vh, 32rem);
+  height: clamp(18rem, 58vh, 34rem);
   overflow: hidden;
-  border: 1px solid var(--border);
-  border-radius: clamp(0.75rem, 2vw, 1rem);
-  background: #dbe3ea;
+  border: 1px solid color-mix(in srgb, var(--border) 65%, white);
+  border-radius: clamp(0.85rem, 2vw, 1.25rem);
+  background:
+    radial-gradient(ellipse at 50% 40%, #c5d4d8, #9eb0b6);
+  box-shadow: var(--shadow-soft);
 }
 
-/* Выделяем сообщения о загрузке или ошибке карты. */
-.status {
-  padding: 0.75rem 0.9rem;
-  border-left: 0.25rem solid var(--accent);
-  background: #e9f2f8;
-  overflow-wrap: anywhere;
+.basemap {
+  object-fit: cover;
+  object-position: center center;
 }
 
-/* Меняем раскладку на соответствующей контрольной ширине. */
+.pins {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  pointer-events: none;
+}
+
+.pinItem {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  pointer-events: auto;
+}
+
+.pin {
+  display: grid;
+  justify-items: center;
+  gap: 0.28rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  color: inherit;
+}
+
+.pinDot {
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  background: #0f766e;
+  box-shadow:
+    0 0 0 3px rgb(15 118 110 / 28%),
+    0 8px 18px rgb(8 24 28 / 35%);
+  transition:
+    transform 0.18s ease,
+    background 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.pin::after {
+  content: "";
+  width: 0.22rem;
+  height: 0.55rem;
+  margin-top: -0.3rem;
+  border-radius: 0 0 0.2rem 0.2rem;
+  background: #0b4f4a;
+}
+
+.pinLabel {
+  max-width: 9.5rem;
+  padding: 0.28rem 0.55rem;
+  border-radius: 0.55rem;
+  background: rgb(18 32 39 / 88%);
+  color: #f5faf9;
+  font-size: 0.72rem;
+  font-weight: 650;
+  line-height: 1.25;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity 0.18s ease,
+    transform 0.18s ease;
+  pointer-events: none;
+}
+
+.pin:hover .pinDot,
+.pin:focus-visible .pinDot {
+  transform: scale(1.18);
+  background: #e29a24;
+  box-shadow:
+    0 0 0 4px rgb(226 154 36 / 32%),
+    0 10px 22px rgb(8 24 28 / 35%);
+}
+
+.pin:hover .pinLabel,
+.pin:focus-visible .pinLabel {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pin:focus-visible {
+  outline: none;
+}
+
+.pin:focus-visible .pinDot {
+  outline: 2px solid #f0c36a;
+  outline-offset: 3px;
+}
+
+.empty {
+  position: absolute;
+  z-index: 3;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  margin: 0;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 88%);
+  color: var(--muted);
+  font-size: 0.9rem;
+  backdrop-filter: blur(6px);
+}
+
 @media (max-width: 30rem) {
   .canvas {
     height: min(65dvh, 24rem);
-    border-radius: 0.6rem;
+    border-radius: 0.7rem;
+  }
+
+  .pinLabel {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pinDot,
+  .pinLabel {
+    transition: none;
   }
 }

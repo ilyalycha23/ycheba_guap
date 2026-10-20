@@ -203,7 +203,7 @@ export default function SignalForm({
         </div>
 
         <div className={styles.field}>
-          <span className={styles.label}>Метка на карте</span>
+          <span className={styles.label}>Метка на схеме двора</span>
           <MapPicker
             latitude={latitude}
             longitude={longitude}

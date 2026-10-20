@@ -56,15 +56,58 @@ export const COURTYARD_CENTER = {
   longitude: 30.22145,
 } as const;
 
+/** Прямоугольник вокруг дома + прилегающая полоса на схеме двора. */
+export const COURTYARD_BOUNDS = {
+  latMin: 60.03495,
+  latMax: 60.03675,
+  lngMin: 30.22025,
+  lngMax: 30.22315,
+} as const;
+
+export const COURTYARD_MAP_IMAGE = "/images/courtyard/map-v2.jpg";
+
+function clamp(value: number, min: number, max: number): number {
+  return Math.min(max, Math.max(min, value));
+}
+
+/** Переводит lat/lng в проценты на схеме двора (0–100). */
+export function latLngToPercent(latitude: number, longitude: number): {
+  left: number;
+  top: number;
+} {
+  const { latMin, latMax, lngMin, lngMax } = COURTYARD_BOUNDS;
+  const left =
+    ((longitude - lngMin) / (lngMax - lngMin)) * 100;
+  const top = ((latMax - latitude) / (latMax - latMin)) * 100;
+  return {
+    left: clamp(left, 2, 98),
+    top: clamp(top, 2, 98),
+  };
+}
+
+/** Обратная проекция клика по схеме двора в lat/lng. */
+export function percentToLatLng(
+  leftPercent: number,
+  topPercent: number,
+): { latitude: number; longitude: number } {
+  const { latMin, latMax, lngMin, lngMax } = COURTYARD_BOUNDS;
+  const longitude = lngMin + (leftPercent / 100) * (lngMax - lngMin);
+  const latitude = latMax - (topPercent / 100) * (latMax - latMin);
+  return { latitude, longitude };
+}
+
 export function validateSignalCoords(latitude: number, longitude: number): string | null {
   if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) {
     return "Поставьте метку на карте";
   }
+  const { latMin, latMax, lngMin, lngMax } = COURTYARD_BOUNDS;
   if (
-    Math.abs(latitude - COURTYARD_CENTER.latitude) > 0.01 ||
-    Math.abs(longitude - COURTYARD_CENTER.longitude) > 0.01
+    latitude < latMin ||
+    latitude > latMax ||
+    longitude < lngMin ||
+    longitude > lngMax
   ) {
-    return "Метка должна быть рядом с двором на Плесецкой 16";
+    return "Метка должна быть на территории двора на Плесецкой 16";
   }
   return null;
 }

@@ -1,54 +1,394 @@
 .page {
   display: grid;
-  gap: 1.75rem;
+  gap: clamp(2rem, 5vw, 3.5rem);
+  padding-top: 0.25rem;
 }
 
+/* ——— Hero: full-bleed courtyard plane ——— */
 .hero {
+  position: relative;
+  isolation: isolate;
+  min-height: min(78vh, 42rem);
+  margin-inline: calc(50% - 50vw);
+  width: 100vw;
   display: grid;
-  gap: 0.55rem;
-  padding: clamp(1.4rem, 3vw, 2rem);
-  border-radius: 1.5rem;
-  border: 1px solid color-mix(in srgb, var(--border) 70%, white);
+  align-items: end;
+  overflow: hidden;
+  animation: aboutIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.heroMedia {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center 55%;
+  transform: scale(1.03);
+  animation: heroDrift 18s ease-in-out infinite alternate;
+}
+
+.heroWash {
+  position: absolute;
+  inset: 0;
   background:
-    radial-gradient(ellipse 70% 90% at 0% 0%, rgb(15 118 110 / 12%), transparent 55%),
-    linear-gradient(180deg, rgb(255 255 255 / 94%), rgb(247 251 251 / 88%));
-  box-shadow: var(--shadow-soft);
+    linear-gradient(105deg, rgb(6 20 24 / 72%) 0%, rgb(6 20 24 / 38%) 42%, rgb(6 20 24 / 18%) 72%),
+    linear-gradient(0deg, rgb(6 20 24 / 78%) 0%, rgb(6 20 24 / 18%) 42%, transparent 68%),
+    radial-gradient(ellipse 50% 45% at 78% 28%, rgb(226 154 36 / 22%), transparent 62%);
 }
 
-.hero h1 {
-  margin: 0;
-}
-
-.section {
+.heroInner {
+  position: relative;
+  z-index: 1;
+  width: min(var(--page-max), 100%);
+  margin-inline: auto;
+  padding: clamp(2.5rem, 7vw, 4.5rem) var(--page-inline) clamp(2.2rem, 5vw, 3.2rem);
   display: grid;
-  gap: 0.75rem;
-  padding: clamp(1.2rem, 2.5vw, 1.6rem);
-  border-radius: 1.25rem;
-  border: 1px solid color-mix(in srgb, var(--border) 75%, white);
-  background: color-mix(in srgb, white 92%, transparent);
-  box-shadow: var(--shadow-soft);
+  gap: 1rem;
+  color: #f5faf9;
 }
 
-.section h2 {
+.brand {
   margin: 0;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  font-weight: 750;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #f0c36a;
+  text-shadow: 0 2px 18px rgb(0 0 0 / 35%);
+  animation: aboutIn 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
 }
 
-.section p {
+.heroTitle {
   margin: 0;
-  color: var(--muted);
-  line-height: 1.65;
-  max-width: 48rem;
+  max-width: 11ch;
+  font-size: clamp(2.6rem, 8vw, 5rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+  color: #fff;
+  text-shadow: 0 8px 40px rgb(0 0 0 / 35%);
+  animation: aboutIn 0.95s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
 }
 
-.list {
-  margin: 0;
-  padding-left: 1.2rem;
-  color: var(--muted);
-  line-height: 1.7;
+.heroTitle span {
+  display: block;
+  color: color-mix(in srgb, #fff 78%, #f0c36a);
 }
 
-.actions {
+.heroLead {
+  margin: 0.2rem 0 0;
+  max-width: 28rem;
+  font-size: clamp(1.05rem, 2.2vw, 1.25rem);
+  line-height: 1.55;
+  color: rgb(245 250 249 / 88%);
+  animation: aboutIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.16s both;
+}
+
+.heroCta {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
+  margin-top: 0.6rem;
+  animation: aboutIn 1.05s cubic-bezier(0.22, 1, 0.36, 1) 0.22s both;
+}
+
+.ctaPrimary,
+.ctaGhost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.75rem 1.35rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.ctaPrimary {
+  background: #e29a24;
+  color: #1a1408;
+  box-shadow: 0 12px 30px rgb(226 154 36 / 35%);
+}
+
+.ctaPrimary:hover {
+  transform: translateY(-2px);
+  background: #f0ae3d;
+}
+
+.ctaGhost {
+  border: 1px solid rgb(255 255 255 / 35%);
+  background: rgb(255 255 255 / 8%);
+  color: #fff;
+  backdrop-filter: blur(8px);
+}
+
+.ctaGhost:hover {
+  transform: translateY(-2px);
+  border-color: rgb(255 255 255 / 55%);
+  background: rgb(255 255 255 / 14%);
+}
+
+.ctaPrimary:focus-visible,
+.ctaGhost:focus-visible,
+.githubBtn:focus-visible {
+  outline: 2px solid #f0c36a;
+  outline-offset: 3px;
+}
+
+/* ——— Manifesto ——— */
+.manifesto {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(0.2rem, 1vw, 0.5rem) 0;
+  animation: aboutIn 0.95s cubic-bezier(0.22, 1, 0.36, 1) 0.24s both;
+}
+
+.manifestoEyebrow {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 750;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.manifestoTitle {
+  margin: 0;
+  max-width: 12ch;
+  font-size: clamp(2rem, 5.5vw, 3.4rem);
+  line-height: 1.05;
+}
+
+.manifestoBody {
+  display: grid;
+  gap: 0.95rem;
+  max-width: 40rem;
+}
+
+.manifestoBody p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.quote {
+  margin: 0.6rem 0 0;
+  padding: 1.35rem 1.5rem;
+  max-width: 34rem;
+  border: 0;
+  border-radius: 0 1.25rem 1.25rem 0;
+  border-left: 4px solid var(--accent-hot);
+  background:
+    linear-gradient(105deg, rgb(226 154 36 / 14%), rgb(15 118 110 / 8%) 55%, transparent);
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2.8vw, 1.65rem);
+  font-weight: 550;
+  line-height: 1.35;
+  color: var(--text);
+  animation: aboutIn 1s cubic-bezier(0.22, 1, 0.36, 1) 0.28s both;
+}
+
+/* ——— Author ——— */
+.author {
+  display: grid;
+  gap: 0;
+  overflow: hidden;
+  border-radius: 1.7rem;
+  border: 1px solid color-mix(in srgb, var(--border) 55%, white);
+  box-shadow: var(--shadow-lift);
+  background: #fff;
+  animation: aboutIn 1.05s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+
+.authorVisual {
+  position: relative;
+  min-height: 14rem;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 0.4rem;
+  padding: 2rem;
+  overflow: hidden;
+  color: #f4fbfa;
+  background:
+    radial-gradient(circle at 30% 20%, rgb(226 154 36 / 35%), transparent 45%),
+    radial-gradient(circle at 80% 80%, rgb(255 255 255 / 12%), transparent 40%),
+    linear-gradient(145deg, #0f766e 0%, #0a3f3b 55%, #122027 100%);
+}
+
+.authorOrb {
+  position: absolute;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+  border: 1px solid rgb(255 255 255 / 18%);
+  animation: orbPulse 6s ease-in-out infinite;
+}
+
+.authorOrb::before {
+  content: "";
+  position: absolute;
+  inset: 1.4rem;
+  border-radius: 50%;
+  border: 1px dashed rgb(240 195 106 / 45%);
+}
+
+.authorInitials {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(4rem, 12vw, 5.5rem);
+  font-weight: 650;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+}
+
+.authorCity {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.authorCopy {
+  display: grid;
+  gap: 0.75rem;
+  padding: clamp(1.5rem, 4vw, 2.4rem);
+  align-content: center;
+}
+
+.authorLabel {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.authorCopy h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+}
+
+.authorCopy p {
+  margin: 0;
+  max-width: 36rem;
+  color: var(--muted);
+  line-height: 1.65;
+  font-size: 1.02rem;
+}
+
+.githubBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.85rem;
+  width: fit-content;
+  margin-top: 0.55rem;
+  padding: 0.85rem 1.2rem;
+  border-radius: 1.1rem;
+  background: #122027;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 14px 32px rgb(18 32 39 / 22%);
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.githubBtn:hover {
+  transform: translateY(-3px);
+  background: #0f766e;
+  box-shadow: 0 18px 36px rgb(15 118 110 / 28%);
+}
+
+.githubBtn span {
+  display: grid;
+  gap: 0.1rem;
+  line-height: 1.2;
+}
+
+.githubBtn strong {
+  font-size: 1rem;
+}
+
+.githubBtn small {
+  font-size: 0.78rem;
+  opacity: 0.72;
+}
+
+@keyframes aboutIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroDrift {
+  from {
+    transform: scale(1.04) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.1) translate3d(-1.5%, -1%, 0);
+  }
+}
+
+@keyframes orbPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 720px) {
+  .author {
+    grid-template-columns: minmax(14rem, 0.85fr) minmax(0, 1.35fr);
+  }
+
+  .authorVisual {
+    min-height: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero,
+  .brand,
+  .heroTitle,
+  .heroLead,
+  .heroCta,
+  .manifesto,
+  .quote,
+  .author,
+  .heroImage,
+  .authorOrb {
+    animation: none;
+  }
+
+  .ctaPrimary:hover,
+  .ctaGhost:hover,
+  .githubBtn:hover {
+    transform: none;
+  }
 }

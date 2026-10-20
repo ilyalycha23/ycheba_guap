@@ -1,12 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { COURTYARD_CENTER } from "@/app/lib/signal-categories";
+import Image from "next/image";
+import { useCallback, type KeyboardEvent, type MouseEvent } from "react";
 import {
-  loadYandexMaps,
-  type YandexMap,
-  type YandexPlacemark,
-} from "@/app/lib/yandex-maps";
+  COURTYARD_MAP_IMAGE,
+  latLngToPercent,
+  percentToLatLng,
+} from "@/app/lib/signal-categories";
 import styles from "./MapPicker.module.css";
 
 type Props = {
@@ -16,98 +16,61 @@ type Props = {
 };
 
 export default function MapPicker({ latitude, longitude, onChange }: Props) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const onChangeRef = useRef(onChange);
-  const apiKey = process.env.NEXT_PUBLIC_YANDEX_MAPS_API_KEY ?? "";
-  const [status, setStatus] = useState<"loading" | "ready" | "error" | "no-key">(
-    apiKey ? "loading" : "no-key",
+  const { left, top } = latLngToPercent(latitude, longitude);
+
+  const placeFromEvent = useCallback(
+    (event: MouseEvent<HTMLDivElement>) => {
+      const rect = event.currentTarget.getBoundingClientRect();
+      if (rect.width <= 0 || rect.height <= 0) return;
+      const leftPercent = ((event.clientX - rect.left) / rect.width) * 100;
+      const topPercent = ((event.clientY - rect.top) / rect.height) * 100;
+      onChange(percentToLatLng(leftPercent, topPercent));
+    },
+    [onChange],
   );
 
-  useEffect(() => {
-    onChangeRef.current = onChange;
-  }, [onChange]);
+  function onKeyDown(event: KeyboardEvent<HTMLDivElement>) {
+    const step = event.shiftKey ? 0.00008 : 0.000035;
+    let nextLat = latitude;
+    let nextLng = longitude;
 
-  useEffect(() => {
-    if (!apiKey || !containerRef.current) return;
+    if (event.key === "ArrowUp") nextLat += step;
+    else if (event.key === "ArrowDown") nextLat -= step;
+    else if (event.key === "ArrowLeft") nextLng -= step;
+    else if (event.key === "ArrowRight") nextLng += step;
+    else return;
 
-    let disposed = false;
-    let map: YandexMap | null = null;
-    let placemark: YandexPlacemark | null = null;
-
-    async function build() {
-      try {
-        const ymaps = await loadYandexMaps(apiKey);
-        if (disposed || !containerRef.current) return;
-
-        const start: [number, number] = [
-          latitude || COURTYARD_CENTER.latitude,
-          longitude || COURTYARD_CENTER.longitude,
-        ];
-
-        map = new ymaps.Map(containerRef.current, {
-          center: start,
-          zoom: 17,
-          controls: ["zoomControl"],
-        });
-
-        placemark = new ymaps.Placemark(
-          start,
-          { hintContent: "Место сигнала" },
-          {
-            preset: "islands#circleDotIcon",
-            iconColor: "#0f766e",
-            draggable: true,
-          },
-        );
-        map.geoObjects.add(placemark);
-
-        const publish = (coords: [number, number]) => {
-          onChangeRef.current({ latitude: coords[0], longitude: coords[1] });
-        };
-
-        map.events.add("click", (event) => {
-          const coords = event.get("coords");
-          placemark?.geometry.setCoordinates(coords);
-          publish(coords);
-        });
-
-        placemark.events.add("dragend", () => {
-          const coords = placemark?.geometry.getCoordinates();
-          if (coords) publish(coords);
-        });
-
-        setStatus("ready");
-      } catch {
-        if (!disposed) setStatus("error");
-      }
-    }
-
-    void build();
-
-    return () => {
-      disposed = true;
-      map?.destroy();
-    };
-    // Карту инициализируем один раз; координаты меняет клик/перетаскивание.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [apiKey]);
+    event.preventDefault();
+    onChange({ latitude: nextLat, longitude: nextLng });
+  }
 
   return (
     <div className={styles.wrap}>
-      {status === "no-key" ? (
-        <p className={styles.status}>Нет ключа карты. Можно указать координаты вручную ниже.</p>
-      ) : null}
-      {status === "error" ? (
-        <p className={styles.status}>Карта недоступна. Укажите координаты вручную.</p>
-      ) : null}
-      {status === "loading" ? <p className={styles.status}>Карта загружается…</p> : null}
       <div
-        ref={containerRef}
         className={styles.canvas}
-        role="region"
-        aria-label="Выбор места сигнала на карте"
-      />
-      <p className={styles.hint}>Кликните по карте или перетащите метку.</p>
+        role="button"
+        tabIndex={0}
+        aria-label="Схема двора: кликните, чтобы поставить метку сигнала"
+        onClick={placeFromEvent}
+        onKeyDown={onKeyDown}
+      >
+        <Image
+          src={COURTYARD_MAP_IMAGE}
+          alt=""
+          fill
+          sizes="(max-width: 768px) 100vw, 40rem"
+          className={styles.basemap}
+        />
+        <span
+          className={styles.pin}
+          style={{ left: `${left}%`, top: `${top}%` }}
+          aria-hidden="true"
+        />
+      </div>
+      <p className={styles.hint}>
+        Кликните по схеме двора (Плесецкая, 16), чтобы поставить метку. Стрелки
+        клавиатуры двигают точку.
+      </p>
     </div>
   );
 }

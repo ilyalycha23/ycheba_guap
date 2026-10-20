@@ -4,16 +4,44 @@
 }
 
 .canvas {
+  position: relative;
   width: 100%;
   min-height: 16rem;
   height: clamp(16rem, 38vw, 22rem);
   border-radius: 1rem;
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--border) 70%, white);
-  background: #d7e0e3;
+  background: #c5d4d8;
+  cursor: crosshair;
+  box-shadow: var(--shadow-soft);
 }
 
-.status,
+.canvas:focus-visible {
+  outline: 2px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.basemap {
+  object-fit: cover;
+  object-position: center center;
+  pointer-events: none;
+}
+
+.pin {
+  position: absolute;
+  z-index: 2;
+  width: 1.2rem;
+  height: 1.2rem;
+  transform: translate(-50%, -100%) rotate(-45deg);
+  border-radius: 50% 50% 50% 0;
+  border: 2px solid #fff;
+  background: #e29a24;
+  box-shadow:
+    0 0 0 3px rgb(226 154 36 / 28%),
+    0 8px 16px rgb(8 24 28 / 30%);
+  pointer-events: none;
+}
+
 .hint {
   margin: 0;
   color: var(--muted);

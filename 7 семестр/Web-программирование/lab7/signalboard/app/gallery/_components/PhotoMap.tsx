@@ -1,8 +1,10 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { COURTYARD_CENTER } from "@/app/lib/signal-categories";
-import { loadYandexMaps, type YandexMap } from "@/app/lib/yandex-maps";
+import Image from "next/image";
+import {
+  COURTYARD_MAP_IMAGE,
+  latLngToPercent,
+} from "@/app/lib/signal-categories";
 import type { NeighborSignalDTO } from "./SignalsGallery";
 import styles from "./PhotoMap.module.css";
 
@@ -13,103 +15,61 @@ export default function PhotoMap({
   signals: NeighborSignalDTO[];
   onSelect: (signal: NeighborSignalDTO) => void;
 }) {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const apiKey = process.env.NEXT_PUBLIC_YANDEX_MAPS_API_KEY ?? "";
-  const [status, setStatus] = useState<"loading" | "ready" | "error" | "no-key">(
-    apiKey ? "loading" : "no-key",
-  );
-
-  useEffect(() => {
-    if (!apiKey || !containerRef.current) return;
-
-    let disposed = false;
-    let map: YandexMap | null = null;
-    let resizeObserver: ResizeObserver | null = null;
-
-    async function buildMap() {
-      try {
-        const ymaps = await loadYandexMaps(apiKey);
-        if (disposed || !containerRef.current) return;
-
-        const first = signals[0];
-        map = new ymaps.Map(containerRef.current, {
-          center: first
-            ? [first.latitude, first.longitude]
-            : [COURTYARD_CENTER.latitude, COURTYARD_CENTER.longitude],
-          zoom: 17,
-          controls: ["zoomControl"],
-        });
-
-        signals.forEach((signal) => {
-          const placemark = new ymaps.Placemark(
-            [signal.latitude, signal.longitude],
-            {
-              hintContent: signal.title,
-              balloonContent: signal.location,
-            },
-            {
-              preset: "islands#circleDotIcon",
-              iconColor: "#134f9c",
-            },
-          );
-
-          placemark.events.add("click", () => onSelect(signal));
-          map?.geoObjects.add(placemark);
-        });
-
-        if (signals.length > 0) {
-          const bounds = map.geoObjects.getBounds();
-          if (bounds) {
-            map.setBounds(bounds, { checkZoomRange: true, zoomMargin: 40 });
-          }
-        }
-
-        if (containerRef.current && typeof ResizeObserver !== "undefined") {
-          resizeObserver = new ResizeObserver(() => {
-            map?.container.fitToViewport();
-          });
-          resizeObserver.observe(containerRef.current);
-        }
-
-        setStatus("ready");
-      } catch {
-        if (!disposed) setStatus("error");
-      }
-    }
-
-    void buildMap();
-
-    return () => {
-      disposed = true;
-      resizeObserver?.disconnect();
-      map?.destroy();
-    };
-  }, [apiKey, onSelect, signals]);
-
   return (
     <section className={styles.section} aria-labelledby="map-title">
-      <h2 id="map-title">Карта сигналов двора</h2>
-
-      {status === "no-key" ? (
-        <p className={styles.status}>
-          Добавьте NEXT_PUBLIC_YANDEX_MAPS_API_KEY в файл .env.local.
+      <div className={styles.heading}>
+        <h2 id="map-title">Карта двора · Плесецкая, 16</h2>
+        <p className={styles.subtitle}>
+          Локальная схема только вашего дома и двора — не городская карта.
+          Нажмите на метку, чтобы открыть сигнал.
         </p>
-      ) : null}
-
-      {status === "error" ? (
-        <p className={styles.status}>Не удалось загрузить карту.</p>
-      ) : null}
-
-      {status === "loading" ? (
-        <p className={styles.status}>Карта загружается…</p>
-      ) : null}
+      </div>
 
       <div
-        ref={containerRef}
         className={styles.canvas}
         role="region"
-        aria-label="Интерактивная карта локальных сигналов"
-      />
+        aria-label="Схема двора на Плесецкой, 16 с метками сигналов"
+      >
+        <Image
+          src={COURTYARD_MAP_IMAGE}
+          alt="Схема дома и двора на Плесецкой улице, 16"
+          fill
+          sizes="(max-width: 768px) 100vw, 72rem"
+          className={styles.basemap}
+          priority={false}
+        />
+
+        <ul className={styles.pins}>
+          {signals.map((signal) => {
+            const { left, top } = latLngToPercent(
+              signal.latitude,
+              signal.longitude,
+            );
+            return (
+              <li
+                key={signal.id}
+                className={styles.pinItem}
+                style={{ left: `${left}%`, top: `${top}%` }}
+              >
+                <button
+                  type="button"
+                  className={styles.pin}
+                  title={signal.title}
+                  aria-label={`Сигнал: ${signal.title}`}
+                  onClick={() => onSelect(signal)}
+                >
+                  <span className={styles.pinDot} aria-hidden="true" />
+                  <span className={styles.pinLabel}>{signal.title}</span>
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+
+        {signals.length === 0 ? (
+          <p className={styles.empty}>Пока нет сигналов на карте двора.</p>
+        ) : null}
+      </div>
     </section>
   );
 }

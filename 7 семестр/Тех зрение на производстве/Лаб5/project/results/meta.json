@@ -1,0 +1,125 @@
+{
+  "n_images": 48,
+  "n_scenes": 6,
+  "frames_per_scene": 8,
+  "class_counts": {
+    "pliers": 47,
+    "wrench": 47,
+    "hammer": 36
+  },
+  "classes": [
+    "wrench",
+    "hammer",
+    "pliers"
+  ],
+  "variant": 9,
+  "object": "инструмент на складе",
+  "split_scene": [
+    {
+      "split": "train",
+      "n_images": 32,
+      "scenes": [
+        "video02",
+        "video03",
+        "video04",
+        "video05"
+      ],
+      "boxes": {
+        "wrench": 32,
+        "pliers": 28,
+        "hammer": 28
+      },
+      "Kd": 1.14
+    },
+    {
+      "split": "valid",
+      "n_images": 8,
+      "scenes": [
+        "video01"
+      ],
+      "boxes": {
+        "pliers": 10,
+        "wrench": 10,
+        "hammer": 4
+      },
+      "Kd": 2.5
+    },
+    {
+      "split": "test",
+      "n_images": 8,
+      "scenes": [
+        "video06"
+      ],
+      "boxes": {
+        "hammer": 4,
+        "wrench": 5,
+        "pliers": 9
+      },
+      "Kd": 2.25
+    }
+  ],
+  "split_random": [
+    {
+      "split": "train",
+      "n_images": 33,
+      "scenes": [
+        "video01",
+        "video02",
+        "video03",
+        "video04",
+        "video05",
+        "video06"
+      ],
+      "boxes": {
+        "hammer": 25,
+        "pliers": 33,
+        "wrench": 29
+      },
+      "Kd": 1.32
+    },
+    {
+      "split": "valid",
+      "n_images": 9,
+      "scenes": [
+        "video01",
+        "video02",
+        "video04",
+        "video05",
+        "video06"
+      ],
+      "boxes": {
+        "wrench": 11,
+        "hammer": 5,
+        "pliers": 11
+      },
+      "Kd": 2.2
+    },
+    {
+      "split": "test",
+      "n_images": 6,
+      "scenes": [
+        "video01",
+        "video02",
+        "video03",
+        "video06"
+      ],
+      "boxes": {
+        "wrench": 7,
+        "hammer": 6,
+        "pliers": 3
+      },
+      "Kd": 2.33
+    }
+  ],
+  "scene_roles": {
+    "video04": "train",
+    "video02": "train",
+    "video03": "train",
+    "video05": "train",
+    "video01": "valid",
+    "video06": "test"
+  },
+  "Kd_total": 1.31,
+  "export_dir": "D:\\ycheba_guap\\7 семестр\\Тех зрение на производстве\\Лаб5\\project\\dataset\\yolov8_export",
+  "note": "Разбиение по роликам использовано для финального YOLOv8-экспорта (ЛР6)."
+}

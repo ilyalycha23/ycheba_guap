@@ -1,0 +1,11 @@
+=== Разбиение по роликам (seed=42) ===
+train images=32 scenes=['video02', 'video03', 'video04', 'video05'] boxes={'wrench': 32, 'pliers': 28, 'hammer': 28} Kd=1.14
+valid images= 8 scenes=['video01'] boxes={'pliers': 10, 'wrench': 10, 'hammer': 4} Kd=2.5
+test  images= 8 scenes=['video06'] boxes={'hammer': 4, 'wrench': 5, 'pliers': 9} Kd=2.25
+=== Случайное разбиение по кадрам (seed=42) ===
+train images=33 scenes=['video01', 'video02', 'video03', 'video04', 'video05', 'video06'] boxes={'hammer': 25, 'pliers': 33, 'wrench': 29} Kd=1.32
+valid images= 9 scenes=['video01', 'video02', 'video04', 'video05', 'video06'] boxes={'wrench': 11, 'hammer': 5, 'pliers': 11} Kd=2.2
+test  images= 6 scenes=['video01', 'video02', 'video03', 'video06'] boxes={'wrench': 7, 'hammer': 6, 'pliers': 3} Kd=2.33
+ролики не пересекают выборки: True
+при случайном разбиении ролики в нескольких выборках: {'video04': ['train', 'valid'], 'video03': ['train', 'test'], 'video02': ['train', 'test', 'valid'], 'video05': ['train', 'valid'], 'video01': ['train', 'test', 'valid'], 'video06': ['train', 'test', 'valid']}
+Kд по всему набору: 1.31

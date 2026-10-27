@@ -1,0 +1,8 @@
+names:
+  0: wrench
+  1: hammer
+  2: pliers
+nc: 3
+train: train/images
+val: valid/images
+test: test/images

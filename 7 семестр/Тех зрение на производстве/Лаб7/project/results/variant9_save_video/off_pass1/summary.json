@@ -1,0 +1,14 @@
+{
+  "frames": 420,
+  "source_fps": 15.0,
+  "imgsz": 640,
+  "conf": 0.55,
+  "device": "0",
+  "save_video": false,
+  "predict_mean_ms": 29.522312858413596,
+  "cycle_mean_ms": 35.08194690304143,
+  "cycle_median_ms": 29.834150045644492,
+  "cycle_p95_ms": 65.04750000894998,
+  "processing_fps": 28.50468939947301,
+  "over_budget_percent": 4.761904761904762
+}

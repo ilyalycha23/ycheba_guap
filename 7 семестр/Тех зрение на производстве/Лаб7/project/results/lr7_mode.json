@@ -1,0 +1,223 @@
+{
+  "weights": "runs/lr6/v09_b/weights/best.pt",
+  "imgsz": 640,
+  "dataset_version": "ЛР5_lab5_tools_scene_split_v1 (Roboflow ilyalycha_4321 / локальный экспорт yolov8, split по роликам)",
+  "preprocessing": "prepare_frame: без изменений (BGR uint8). Разметка ЛР5 выполнена на кадрах без внешней коррекции яркости/фильтрации.",
+  "classes": {
+    "0": "wrench",
+    "1": "hammer",
+    "2": "pliers"
+  },
+  "chosen_run": "v09_b",
+  "chosen_source": "yolov8s.pt",
+  "map50": 0.8734288194444444,
+  "map50_95": 0.743534581470598,
+  "train_s": 111.71,
+  "weights_mb": 22.515,
+  "selection_rule": "По правилу работы выбран опыт с большим mAP@0.5:0.95 на valid: v09_b (yolov8s.pt) = 0.7435 против 0.5872 (разница 0.1563 > 0.01).",
+  "splits": {
+    "train": {
+      "n_images": 32,
+      "empty_labels": 0,
+      "boxes": {
+        "wrench": 32,
+        "pliers": 28,
+        "hammer": 28
+      },
+      "scenes": [
+        "video02",
+        "video03",
+        "video04",
+        "video05"
+      ],
+      "missing_classes": []
+    },
+    "valid": {
+      "n_images": 8,
+      "empty_labels": 0,
+      "boxes": {
+        "pliers": 10,
+        "wrench": 10,
+        "hammer": 4
+      },
+      "scenes": [
+        "video01"
+      ],
+      "missing_classes": []
+    },
+    "test": {
+      "n_images": 8,
+      "empty_labels": 0,
+      "boxes": {
+        "hammer": 4,
+        "wrench": 5,
+        "pliers": 9
+      },
+      "scenes": [
+        "video06"
+      ],
+      "missing_classes": []
+    },
+    "scene_overlap": []
+  },
+  "environment": {
+    "python": "3.12.10",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "cpu": "11th Gen Intel(R) Core(TM) i5-11400F @ 2.60GHz",
+    "ram_gb": 34.2,
+    "torch": "2.11.0+cu128",
+    "cuda": "12.8",
+    "gpu": "NVIDIA GeForce RTX 5060 Ti",
+    "ultralytics": "8.4.202"
+  },
+  "args_yaml_key_fields": {
+    "model": "yolov8s.pt",
+    "epochs": 40,
+    "imgsz": 640,
+    "batch": 4,
+    "optimizer": "AdamW",
+    "lr0": 0.001,
+    "seed": 42,
+    "device": "0",
+    "patience": 0,
+    "mosaic": 0.0,
+    "fliplr": 0.0,
+    "hsv_v": 0.0
+  },
+  "compare": [
+    {
+      "run": "v09_a",
+      "factor": "model",
+      "value": "yolov8n.pt",
+      "source": "yolov8n.pt",
+      "imgsz": 640,
+      "epochs": 40,
+      "train_s": 63.12,
+      "map50": 0.7371309246309247,
+      "map50_95": 0.5872108793983795,
+      "weights_mb": 6.501,
+      "weights": "D:\\ycheba_guap\\7 семестр\\Тех зрение на производстве\\Лаб6\\project\\runs\\lr6\\v09_a\\weights\\best.pt"
+    },
+    {
+      "run": "v09_b",
+      "factor": "model",
+      "value": "yolov8s.pt",
+      "source": "yolov8s.pt",
+      "imgsz": 640,
+      "epochs": 40,
+      "train_s": 111.71,
+      "map50": 0.8734288194444444,
+      "map50_95": 0.743534581470598,
+      "weights_mb": 22.515,
+      "weights": "D:\\ycheba_guap\\7 семестр\\Тех зрение на производстве\\Лаб6\\project\\runs\\lr6\\v09_b\\weights\\best.pt"
+    }
+  ],
+  "valid_notes": [
+    {
+      "image": "video01_0001.jpg",
+      "gt": 3,
+      "pred": 3,
+      "tp": 3,
+      "miss": 0,
+      "extra": 0,
+      "wrong_class": [],
+      "kinds": [
+        "TP"
+      ]
+    },
+    {
+      "image": "video01_0002.jpg",
+      "gt": 3,
+      "pred": 2,
+      "tp": 2,
+      "miss": 1,
+      "extra": 0,
+      "wrong_class": [],
+      "kinds": [
+        "TP",
+        "miss"
+      ]
+    },
+    {
+      "image": "video01_0003.jpg",
+      "gt": 2,
+      "pred": 3,
+      "tp": 2,
+      "miss": 0,
+      "extra": 1,
+      "wrong_class": [],
+      "kinds": [
+        "TP",
+        "extra"
+      ]
+    },
+    {
+      "image": "video01_0004.jpg",
+      "gt": 3,
+      "pred": 6,
+      "tp": 3,
+      "miss": 0,
+      "extra": 3,
+      "wrong_class": [],
+      "kinds": [
+        "TP",
+        "extra"
+      ]
+    },
+    {
+      "image": "video01_0005.jpg",
+      "gt": 4,
+      "pred": 6,
+      "tp": 4,
+      "miss": 0,
+      "extra": 2,
+      "wrong_class": [],
+      "kinds": [
+        "TP",
+        "extra"
+      ]
+    },
+    {
+      "image": "video01_0006.jpg",
+      "gt": 2,
+      "pred": 2,
+      "tp": 2,
+      "miss": 0,
+      "extra": 0,
+      "wrong_class": [],
+      "kinds": [
+        "TP"
+      ]
+    },
+    {
+      "image": "video01_0007.jpg",
+      "gt": 4,
+      "pred": 3,
+      "tp": 3,
+      "miss": 1,
+      "extra": 0,
+      "wrong_class": [],
+      "kinds": [
+        "TP",
+        "miss"
+      ]
+    },
+    {
+      "image": "video01_0008.jpg",
+      "gt": 3,
+      "pred": 2,
+      "tp": 2,
+      "miss": 1,
+      "extra": 0,
+      "wrong_class": [],
+      "kinds": [
+        "TP",
+        "miss"
+      ]
+    }
+  ],
+  "valid_pred_conf": 0.25,
+  "conf": 0.55,
+  "nms_iou": 0.7,
+  "match_iou": 0.5
+}

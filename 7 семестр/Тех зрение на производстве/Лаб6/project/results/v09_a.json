@@ -1,0 +1,13 @@
+{
+  "run": "v09_a",
+  "factor": "model",
+  "value": "yolov8n.pt",
+  "source": "yolov8n.pt",
+  "imgsz": 640,
+  "epochs": 40,
+  "train_s": 63.12,
+  "map50": 0.7371309246309247,
+  "map50_95": 0.5872108793983795,
+  "weights_mb": 6.501,
+  "weights": "D:\\ycheba_guap\\7 семестр\\Тех зрение на производстве\\Лаб6\\project\\runs\\lr6\\v09_a\\weights\\best.pt"
+}

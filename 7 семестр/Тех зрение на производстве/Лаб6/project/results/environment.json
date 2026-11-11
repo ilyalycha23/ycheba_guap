@@ -1,0 +1,10 @@
+{
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "cpu": "11th Gen Intel(R) Core(TM) i5-11400F @ 2.60GHz",
+  "ram_gb": 34.2,
+  "torch": "2.11.0+cu128",
+  "cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 5060 Ti",
+  "ultralytics": "8.4.202"
+}

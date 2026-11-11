@@ -1,0 +1,45 @@
+{
+  "train": {
+    "n_images": 32,
+    "empty_labels": 0,
+    "boxes": {
+      "wrench": 32,
+      "pliers": 28,
+      "hammer": 28
+    },
+    "scenes": [
+      "video02",
+      "video03",
+      "video04",
+      "video05"
+    ],
+    "missing_classes": []
+  },
+  "valid": {
+    "n_images": 8,
+    "empty_labels": 0,
+    "boxes": {
+      "pliers": 10,
+      "wrench": 10,
+      "hammer": 4
+    },
+    "scenes": [
+      "video01"
+    ],
+    "missing_classes": []
+  },
+  "test": {
+    "n_images": 8,
+    "empty_labels": 0,
+    "boxes": {
+      "hammer": 4,
+      "wrench": 5,
+      "pliers": 9
+    },
+    "scenes": [
+      "video06"
+    ],
+    "missing_classes": []
+  },
+  "scene_overlap": []
+}

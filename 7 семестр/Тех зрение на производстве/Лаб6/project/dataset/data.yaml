@@ -1,0 +1,8 @@
+names:
+  0: wrench
+  1: hammer
+  2: pliers
+path: D:\ycheba_guap\7 семестр\Тех зрение на производстве\Лаб6\project\dataset
+test: test/images
+train: train/images
+val: valid/images

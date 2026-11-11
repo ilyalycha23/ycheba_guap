@@ -1,0 +1,416 @@
+{
+  "video": "data/video/test_video.mp4",
+  "fps": 15,
+  "duration_s": 28,
+  "frames_total": 420,
+  "resolution": [
+    1280,
+    720
+  ],
+  "labeled_frames": 36,
+  "empty_labeled": 2,
+  "class_boxes": {
+    "wrench": 26,
+    "hammer": 24,
+    "pliers": 20
+  },
+  "note": "RGBA rembg-вырезки + жёсткая альфа-вклейка (без seamlessClone). conf/модель/test не менялись.",
+  "frames": [
+    {
+      "frame": 8,
+      "file": "test_video_000008",
+      "n_objects": 3,
+      "boxes": {
+        "wrench": 0,
+        "hammer": 2,
+        "pliers": 1
+      },
+      "empty": false
+    },
+    {
+      "frame": 19,
+      "file": "test_video_000019",
+      "n_objects": 3,
+      "boxes": {
+        "wrench": 1,
+        "hammer": 2,
+        "pliers": 0
+      },
+      "empty": false
+    },
+    {
+      "frame": 30,
+      "file": "test_video_000030",
+      "n_objects": 2,
+      "boxes": {
+        "wrench": 2,
+        "hammer": 0,
+        "pliers": 0
+      },
+      "empty": false
+    },
+    {
+      "frame": 42,
+      "file": "test_video_000042",
+      "n_objects": 1,
+      "boxes": {
+        "wrench": 1,
+        "hammer": 0,
+        "pliers": 0
+      },
+      "empty": false
+    },
+    {
+      "frame": 53,
+      "file": "test_video_000053",
+      "n_objects": 3,
+      "boxes": {
+        "wrench": 1,
+        "hammer": 0,
+        "pliers": 2
+      },
+      "empty": false
+    },
+    {
+      "frame": 65,
+      "file": "test_video_000065",
+      "n_objects": 3,
+      "boxes": {
+        "wrench": 1,
+        "hammer": 0,
+        "pliers": 2
+      },
+      "empty": false
+    },
+    {
+      "frame": 76,
+      "file": "test_video_000076",
+      "n_objects": 2,
+      "boxes": {
+        "wrench": 0,
+        "hammer": 2,
+        "pliers": 0
+      },
+      "empty": false
+    },
+    {
+      "frame": 88,
+      "file": "test_video_000088",
+      "n_objects": 1,
+      "boxes": {
+        "wrench": 0,
+        "hammer": 1,
+        "pliers": 0
+      },
+      "empty": false
+    },
+    {
+      "frame": 99,
+      "file": "test_video_000099",
+      "n_objects": 3,
+      "boxes": {
+        "wrench": 2,
+        "hammer": 0,
+        "pliers": 1
+      },
+      "empty": false
+    },
+    {
+      "frame": 111,
+      "file": "test_video_000111",
+      "n_objects": 3,
+      "boxes": {
+        "wrench": 3,
+        "hammer": 0,
+        "pliers": 0
+      },
+      "empty": false
+    },
+    {
+      "frame": 122,
+      "file": "test_video_000122",
+      "n_objects": 2,
+      "boxes": {
+        "wrench": 0,
+        "hammer": 0,
+        "pliers": 2
+      },
+      "empty": false
+    },
+    {
+      "frame": 134,
+      "file": "test_video_000134",
+      "n_objects": 1,
+      "boxes": {
+        "wrench": 0,
+        "hammer": 0,
+        "pliers": 1
+      },
+      "empty": false
+    },
+    {
+      "frame": 145,
+      "file": "test_video_000145",
+      "n_objects": 2,
+      "boxes": {
+        "wrench": 0,
+        "hammer": 2,
+        "pliers": 0
+      },
+      "empty": false
+    },
+    {
+      "frame": 157,
+      "file": "test_video_000157",
+      "n_objects": 2,
+      "boxes": {
+        "wrench": 0,
+        "hammer": 2,
+        "pliers": 0
+      },
+      "empty": false
+    },
+    {
+      "frame": 168,
+      "file": "test_video_000168",
+      "n_objects": 2,
+      "boxes": {
+        "wrench": 2,
+        "hammer": 0,
+        "pliers": 0
+      },
+      "empty": false
+    },
+    {
+      "frame": 180,
+      "file": "test_video_000180",
+      "n_objects": 3,
+      "boxes": {
+        "wrench": 2,
+        "hammer": 1,
+        "pliers": 0
+      },
+      "empty": false
+    },
+    {
+      "frame": 191,
+      "file": "test_video_000191",
+      "n_objects": 2,
+      "boxes": {
+        "wrench": 0,
+        "hammer": 1,
+        "pliers": 1
+      },
+      "empty": false
+    },
+    {
+      "frame": 203,
+      "file": "test_video_000203",
+      "n_objects": 1,
+      "boxes": {
+        "wrench": 0,
+        "hammer": 0,
+        "pliers": 1
+      },
+      "empty": false
+    },
+    {
+      "frame": 214,
+      "file": "test_video_000214",
+      "n_objects": 3,
+      "boxes": {
+        "wrench": 0,
+        "hammer": 3,
+        "pliers": 0
+      },
+      "empty": false
+    },
+    {
+      "frame": 226,
+      "file": "test_video_000226",
+      "n_objects": 1,
+      "boxes": {
+        "wrench": 0,
+        "hammer": 1,
+        "pliers": 0
+      },
+      "empty": false
+    },
+    {
+      "frame": 237,
+      "file": "test_video_000237",
+      "n_objects": 2,
+      "boxes": {
+        "wrench": 1,
+        "hammer": 0,
+        "pliers": 1
+      },
+      "empty": false
+    },
+    {
+      "frame": 249,
+      "file": "test_video_000249",
+      "n_objects": 2,
+      "boxes": {
+        "wrench": 1,
+        "hammer": 0,
+        "pliers": 1
+      },
+      "empty": false
+    },
+    {
+      "frame": 260,
+      "file": "test_video_000260",
+      "n_objects": 1,
+      "boxes": {
+        "wrench": 0,
+        "hammer": 0,
+        "pliers": 1
+      },
+      "empty": false
+    },
+    {
+      "frame": 272,
+      "file": "test_video_000272",
+      "n_objects": 3,
+      "boxes": {
+        "wrench": 2,
+        "hammer": 0,
+        "pliers": 1
+      },
+      "empty": false
+    },
+    {
+      "frame": 283,
+      "file": "test_video_000283",
+      "n_objects": 1,
+      "boxes": {
+        "wrench": 0,
+        "hammer": 1,
+        "pliers": 0
+      },
+      "empty": false
+    },
+    {
+      "frame": 295,
+      "file": "test_video_000295",
+      "n_objects": 2,
+      "boxes": {
+        "wrench": 1,
+        "hammer": 1,
+        "pliers": 0
+      },
+      "empty": false
+    },
+    {
+      "frame": 306,
+      "file": "test_video_000306",
+      "n_objects": 2,
+      "boxes": {
+        "wrench": 1,
+        "hammer": 1,
+        "pliers": 0
+      },
+      "empty": false
+    },
+    {
+      "frame": 318,
+      "file": "test_video_000318",
+      "n_objects": 2,
+      "boxes": {
+        "wrench": 2,
+        "hammer": 0,
+        "pliers": 0
+      },
+      "empty": false
+    },
+    {
+      "frame": 329,
+      "file": "test_video_000329",
+      "n_objects": 1,
+      "boxes": {
+        "wrench": 0,
+        "hammer": 0,
+        "pliers": 1
+      },
+      "empty": false
+    },
+    {
+      "frame": 341,
+      "file": "test_video_000341",
+      "n_objects": 2,
+      "boxes": {
+        "wrench": 0,
+        "hammer": 0,
+        "pliers": 2
+      },
+      "empty": false
+    },
+    {
+      "frame": 352,
+      "file": "test_video_000352",
+      "n_objects": 3,
+      "boxes": {
+        "wrench": 1,
+        "hammer": 1,
+        "pliers": 1
+      },
+      "empty": false
+    },
+    {
+      "frame": 364,
+      "file": "test_video_000364",
+      "n_objects": 1,
+      "boxes": {
+        "wrench": 0,
+        "hammer": 1,
+        "pliers": 0
+      },
+      "empty": false
+    },
+    {
+      "frame": 375,
+      "file": "test_video_000375",
+      "n_objects": 0,
+      "boxes": {
+        "wrench": 0,
+        "hammer": 0,
+        "pliers": 0
+      },
+      "empty": true
+    },
+    {
+      "frame": 387,
+      "file": "test_video_000387",
+      "n_objects": 3,
+      "boxes": {
+        "wrench": 2,
+        "hammer": 1,
+        "pliers": 0
+      },
+      "empty": false
+    },
+    {
+      "frame": 398,
+      "file": "test_video_000398",
+      "n_objects": 0,
+      "boxes": {
+        "wrench": 0,
+        "hammer": 0,
+        "pliers": 0
+      },
+      "empty": true
+    },
+    {
+      "frame": 410,
+      "file": "test_video_000410",
+      "n_objects": 2,
+      "boxes": {
+        "wrench": 0,
+        "hammer": 1,
+        "pliers": 1
+      },
+      "empty": false
+    }
+  ]
+}
